@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Madrassa — EduNoor</string>
+
+    <string name="brand_title">MADRASSA</string>
+    <string name="brand_subtitle">إدارة</string>
+
+    <string name="greeting">﷽</string>
+    <string name="hero_title">مَرْحَبًا بِكُمْ فِي رِحَابِ الْعِلْمِ وَالْقُرْآنِ</string>
+    <string name="hero_description">Elimu • Malezi • Maendeleo</string>
+
+    <string name="parent_title">MZAZI</string>
+    <string name="parent_subtitle">Fuatilia maendeleo ya mtoto</string>
+    <string name="parent_action">Endelea kama Mzazi</string>
+
+    <string name="ustadh_title">USTADH</string>
+    <string name="ustadh_subtitle">Simamia Madrassa yako</string>
+    <string name="ustadh_action">Endelea kama Ustadh</string>
+
+    <string name="language">Lugha</string>
+    <string name="privacy">Faragha</string>
+    <string name="terms">Masharti</string>
+    <string name="help">Msaada</string>
+</resources>

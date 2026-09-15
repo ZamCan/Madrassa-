@@ -1,0 +1,26 @@
+<resources>
+    <!-- EduNoor Visual v3 — Parchment / Walnut / Clay / Gold -->
+    <color name="edunoor_background">#F3E8D3</color>
+    <color name="edunoor_surface">#FFF9ED</color>
+    <color name="edunoor_surface_warm">#EAD9BD</color>
+
+    <color name="edunoor_walnut">#3E2920</color>
+    <color name="edunoor_ink">#3E2920</color>
+    <color name="edunoor_ink_soft">#60483A</color>
+    <color name="edunoor_muted">#806E60</color>
+
+    <color name="edunoor_clay">#A95F3D</color>
+    <color name="edunoor_clay_dark">#81452F</color>
+    <color name="edunoor_clay_soft">#E8C9B5</color>
+
+    <color name="edunoor_gold">#C69A45</color>
+    <color name="edunoor_gold_soft">#E7D19B</color>
+
+    <color name="edunoor_dusty_blue">#5E7180</color>
+    <color name="edunoor_teal">#55706B</color>
+
+    <color name="edunoor_border">#D8C5A8</color>
+    <color name="edunoor_pattern">#D9C5A5</color>
+
+    <color name="edunoor_white">#FFFDF8</color>
+</resources>

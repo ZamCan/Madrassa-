@@ -1,0 +1,9 @@
+.gradle/
+build/
+
+manual/apk/
+manual/classes/
+manual/dex/
+manual/res-compiled/
+manual/aapt/base.apk
+manual/aapt/resources.zip

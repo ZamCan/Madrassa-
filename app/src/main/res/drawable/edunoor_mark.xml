@@ -1,0 +1,55 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Walnut seal -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/edunoor_walnut"/>
+        </shape>
+    </item>
+
+    <!-- Antique gold ring -->
+    <item
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp">
+
+        <shape android:shape="oval">
+
+            <solid android:color="@android:color/transparent"/>
+
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/edunoor_gold"/>
+
+        </shape>
+
+    </item>
+
+    <!-- Clay inner seal -->
+    <item
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp">
+
+        <shape android:shape="oval">
+            <solid android:color="@color/edunoor_clay"/>
+        </shape>
+
+    </item>
+
+    <!-- Knowledge point -->
+    <item
+        android:left="17dp"
+        android:top="17dp"
+        android:right="17dp"
+        android:bottom="17dp">
+
+        <shape android:shape="oval">
+            <solid android:color="@color/edunoor_gold"/>
+        </shape>
+
+    </item>
+
+</layer-list>

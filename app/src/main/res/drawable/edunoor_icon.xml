@@ -1,0 +1,101 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Premium walnut foundation -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/edunoor_walnut"/>
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+
+    <!-- Architectural gold frame -->
+    <item
+        android:left="3dp"
+        android:top="3dp"
+        android:right="3dp"
+        android:bottom="3dp">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/edunoor_gold"/>
+
+            <corners android:radius="13dp"/>
+        </shape>
+    </item>
+
+    <!-- Clay arch body -->
+    <item
+        android:left="9dp"
+        android:top="8dp"
+        android:right="9dp"
+        android:bottom="12dp">
+
+        <shape android:shape="rectangle">
+
+            <solid
+                android:color="@color/edunoor_clay"/>
+
+            <corners android:radius="10dp"/>
+
+        </shape>
+
+    </item>
+
+    <!-- Inner knowledge field -->
+    <item
+        android:left="13dp"
+        android:top="12dp"
+        android:right="13dp"
+        android:bottom="16dp">
+
+        <shape android:shape="rectangle">
+
+            <solid
+                android:color="@color/edunoor_gold"/>
+
+            <corners android:radius="7dp"/>
+
+        </shape>
+
+    </item>
+
+    <!-- Book / Qur'an pages -->
+    <item
+        android:left="15dp"
+        android:top="24dp"
+        android:right="15dp"
+        android:bottom="17dp">
+
+        <shape android:shape="rectangle">
+
+            <solid
+                android:color="@color/edunoor_surface"/>
+
+            <corners android:radius="2dp"/>
+
+        </shape>
+
+    </item>
+
+    <!-- Central book spine -->
+    <item
+        android:left="20dp"
+        android:top="24dp"
+        android:right="20dp"
+        android:bottom="17dp">
+
+        <shape android:shape="rectangle">
+
+            <solid
+                android:color="@color/edunoor_clay_dark"/>
+
+            <corners android:radius="1dp"/>
+
+        </shape>
+
+    </item>
+
+</layer-list>

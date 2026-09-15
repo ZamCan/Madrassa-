@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">المدرسة — EduNoor</string>
+
+    <string name="brand_title">المدرسة</string>
+    <string name="brand_subtitle">إدارة</string>
+
+    <string name="greeting">﷽</string>
+    <string name="hero_title">مَرْحَبًا بِكُمْ فِي رِحَابِ الْعِلْمِ وَالْقُرْآنِ</string>
+    <string name="hero_description">العلم • التربية • التقدم</string>
+
+    <string name="parent_title">وَلِيُّ الأَمْر</string>
+    <string name="parent_subtitle">تابع تقدم طفلك</string>
+    <string name="parent_action">المتابعة كولي أمر</string>
+
+    <string name="ustadh_title">الأُسْتَاذ</string>
+    <string name="ustadh_subtitle">أدر مدرستك</string>
+    <string name="ustadh_action">المتابعة كأستاذ</string>
+
+    <string name="language">اللغة</string>
+    <string name="privacy">الخصوصية</string>
+    <string name="terms">الشروط</string>
+    <string name="help">المساعدة</string>
+</resources>

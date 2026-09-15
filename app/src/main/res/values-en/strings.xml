@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Madrassa — EduNoor</string>
+
+    <string name="brand_title">MADRASSA</string>
+    <string name="brand_subtitle">إدارة</string>
+
+    <string name="greeting">﷽</string>
+    <string name="hero_title">Welcome to the path of knowledge and Qur\'an</string>
+    <string name="hero_description">Education • Character • Progress</string>
+
+    <string name="parent_title">PARENT</string>
+    <string name="parent_subtitle">Follow your child\'s progress</string>
+    <string name="parent_action">Continue as Parent</string>
+
+    <string name="ustadh_title">USTADH</string>
+    <string name="ustadh_subtitle">Manage your Madrassa</string>
+    <string name="ustadh_action">Continue as Ustadh</string>
+
+    <string name="language">Language</string>
+    <string name="privacy">Privacy</string>
+    <string name="terms">Terms</string>
+    <string name="help">Help</string>
+</resources>
