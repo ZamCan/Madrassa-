@@ -22,7 +22,7 @@ toolchain.
 | Languages | Swahili/English/Arabic, **170 / 170 / 170** identical key sets; `attachBaseContext(LanguageManager.wrap)` on every activity; true RTL honoured. |
 | Startup | Splash no longer sleeps a fixed 1100 ms — it performs real initialization (open store → load records → check status) with a live status line; post-login uses the new `InitializationActivity` (spec §11). |
 | Registration | Submits through the domain `RegistrationService` (policy → PBKDF2 hash → single SQLite transaction), off the main thread, with per-error-code localized messages. |
-| Verification | Pre-build checklist §5 passed; manual build `BUILD COMPLETE`; string parity, manifest and zero-byte checks all green. |
+| Verification | Pre-build checklist §5 passed; **both builds green** — manual `BUILD COMPLETE` (334K APK, v2+v3) and Gradle `BUILD SUCCESSFUL in 2m 43s`; string parity, manifest and zero-byte checks all green. |
 
 ---
 
@@ -242,11 +242,21 @@ This is the first build to include the new `InitializationActivity`, the
 rewritten registration/login/splash flows and every Box 1–3 edit; `javac`
 compiled all sources without error.
 
-### 5.3 Gradle compile check
+### 5.3 Gradle compile check — PASSED
 
-`gradle :app:compileDebugJavaWithJavac` — **result recorded in §5.4**
-(Gradle remains the secondary, environment-flaky path under proton/futex;
-the manual build above is authoritative).
+```
+> Task :app:compileDebugJavaWithJavac
+BUILD SUCCESSFUL in 2m 43s
+15 actionable tasks: 10 executed, 5 up-to-date
+GRADLE_EXIT: 0
+```
+
+Notes: `compileDebugKotlin NO-SOURCE` (project is pure Java), only
+deprecation notes — no warnings or errors from this round's code. The
+manifest `package=` attribute warning is a pre-existing AGP 8 namespace
+recommendation, not a failure. Gradle remains the secondary path (flaky
+under proot/futex); the manual build above is the release gate. **Both
+build paths are green.**
 
 ### 5.4 Additional invariants
 
@@ -306,7 +316,8 @@ the manual build above is authoritative).
 3. **Second-device install/launch still open** — no adb device answered at
    the last three known addresses; a fresh wireless pairing is needed before
    the install + test checkpoint (`BUILD_REFERENCE.md` §5 still lists this).
-4. **Gradle path is environmental** — flaky under proton/futex; the manual
+4. **Gradle path is environmental** — this run succeeded, but it stays
+   flaky under proot/futex; the manual
    build is the release gate.
 5. **All work uncommitted** — 172 files are staged; a git checkpoint commit
    is recommended as the immediate next step.
@@ -347,8 +358,10 @@ the manual build above is authoritative).
 
 ## 10. Recommended next steps
 
-1. Git checkpoint commit of the staged work.
-2. Second-device install/launch verification (fresh adb pairing).
+1. Git checkpoint commit of the staged work (currently 172 files staged,
+   uncommitted).
+2. Second-device install/launch verification (fresh adb pairing) — still
+   blocked; no device answered at the last three known addresses.
 3. Build the management dashboard and point `InitializationActivity`'s
    end state at it.
 4. Add parent provisioning so parent login can be exercised end-to-end.
