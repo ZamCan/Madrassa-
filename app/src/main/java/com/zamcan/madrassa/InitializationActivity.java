@@ -19,6 +19,8 @@ import com.zamcan.madrassa.data.model.Madrassa;
 import com.zamcan.madrassa.data.model.Parent;
 import com.zamcan.madrassa.data.repository.MadrassaRepository;
 import com.zamcan.madrassa.data.repository.ParentRepository;
+import com.zamcan.madrassa.domain.academic.AcademicCoreServiceFactory;
+import com.zamcan.madrassa.domain.programme.ProgrammeSetupService;
 import com.zamcan.madrassa.domain.session.ParentSession;
 import com.zamcan.madrassa.domain.session.ParentSessionFactory;
 import com.zamcan.madrassa.ui.components.EduNoorButton;
@@ -422,6 +424,16 @@ public class InitializationActivity extends Activity {
 
                     if (madrassa != null) {
                         madrassaName = madrassa.name;
+
+                        /*
+                         * Runtime Academic Core binding:
+                         * parent academic access is scoped to the
+                         * authenticated parent's Madrassa.
+                         */
+                        AcademicCoreServiceFactory.forMadrassa(
+                                database,
+                                parent.madrassaId
+                        );
                     }
 
                     /*
@@ -471,6 +483,27 @@ public class InitializationActivity extends Activity {
                                                 .login_madrassa_inactive
                                 );
                     } else {
+                        /*
+                         * Runtime Academic Core binding:
+                         * an authenticated Madrassa session is now
+                         * composed with an explicit tenant scope.
+                         * No tenant is inferred from academic IDs.
+                         */
+                        AcademicCoreServiceFactory.forMadrassa(
+                                database,
+                                madrassaId
+                        );
+
+                        /*
+                         * Standard academic programmes are ensured
+                         * once the Madrassa is confirmed active.
+                         * Existing records are reused.
+                         */
+                        new ProgrammeSetupService(
+                                new com.zamcan.madrassa.data.repository
+                                        .ProgrammeRepository(database)
+                        ).ensureMadrassaDefaults(madrassaId);
+
                         statusLine =
                                 getString(
                                         R.string
