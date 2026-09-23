@@ -128,7 +128,7 @@ public final class AcademicCoreService {
      * A global course is represented by madrassaId == null.
      */
     public OperationResult<Course> createCourse(Course value) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -192,7 +192,7 @@ public final class AcademicCoreService {
     public OperationResult<AcademicUnit> createUnit(
             AcademicUnit value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -284,7 +284,7 @@ public final class AcademicCoreService {
     public OperationResult<Lesson> createLesson(
             Lesson value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -394,7 +394,7 @@ public final class AcademicCoreService {
     public OperationResult<LearningMaterial> createMaterial(
             LearningMaterial value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -452,7 +452,7 @@ public final class AcademicCoreService {
     public OperationResult<Assignment> createAssignment(
             Assignment value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -673,7 +673,7 @@ public final class AcademicCoreService {
     public OperationResult<Assessment> recordAssessment(
             Assessment value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -766,7 +766,7 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordStudentProgress(
             LearningProgress value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
@@ -899,7 +899,7 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordSoloProgress(
             LearningProgress value
     ) {
-        if (!authorizedScope(value.madrassaId)) {
+        if (value == null || !authorizedScope(value.madrassaId)) {
             return forbidden("academic_scope_not_authorized");
         }
 
