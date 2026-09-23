@@ -424,6 +424,16 @@ public class InitializationActivity extends Activity {
 
                     if (madrassa != null) {
                         madrassaName = madrassa.name;
+
+                        /*
+                         * Runtime Academic Core binding:
+                         * parent academic access is scoped to the
+                         * authenticated parent's Madrassa.
+                         */
+                        AcademicCoreServiceFactory.forMadrassa(
+                                database,
+                                parent.madrassaId
+                        );
                     }
 
                     /*
