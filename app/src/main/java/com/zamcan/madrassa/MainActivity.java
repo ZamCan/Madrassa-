@@ -3,6 +3,8 @@ package com.zamcan.madrassa;
 import android.app.Activity;
 import android.os.Bundle;
 import android.content.Intent;
+import com.zamcan.madrassa.core.LanguageManager;
+import com.zamcan.madrassa.ui.components.EduNoorCard;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -13,6 +15,7 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -92,190 +95,89 @@ public class MainActivity extends Activity {
         );
     }
 
+    /*
+     * Gateway cards (Solo Learning / Parent / Ustadh).
+     *
+     * All three are built by the shared EduNoorCard.gateway()
+     * component: one radius, one padding system, one type
+     * hierarchy, one press behaviour, start-aligned text for RTL.
+     * Each card only supplies its identity treatment — symbol,
+     * background drawable and accent colours — so the group stays
+     * one design family while remaining recognisable.
+     *
+     * Text wraps and the height is a minimum, not a fixed value,
+     * so longer translations and larger system font scaling grow
+     * the card instead of clipping it.
+     */
+    private LinearLayout soloCard() {
+
+        LinearLayout card =
+                EduNoorCard.gateway(
+                        this,
+                        "✦",
+                        getColor(R.color.edunoor_teal),
+                        R.drawable.solo_card,
+                        getString(R.string.solo_card_title),
+                        getColor(R.color.edunoor_walnut),
+                        getString(R.string.solo_card_subtitle),
+                        getColor(R.color.edunoor_muted),
+                        getColor(R.color.edunoor_teal)
+                );
+
+        /*
+         * 3F-A6: Solo stays independent and offline-first — the
+         * card opens the learning area, never an account login.
+         */
+        card.setOnClickListener(
+                v -> startActivity(
+                        new Intent(
+                                this,
+                                SoloLearningActivity.class
+                        )
+                )
+        );
+
+        return card;
+    }
+
     private LinearLayout roleCard(
             String title,
             String subtitle,
             boolean primary
     ) {
 
-        int walnut =
-                getColor(R.color.edunoor_walnut);
-
-        int clay =
-                getColor(R.color.edunoor_clay);
-
-        int gold =
-                getColor(R.color.edunoor_gold);
-
-        int goldSoft =
-                getColor(R.color.edunoor_gold_soft);
-
-        int muted =
-                getColor(R.color.edunoor_muted);
-
         LinearLayout card =
-                new LinearLayout(this);
-
-        card.setOrientation(
-                LinearLayout.HORIZONTAL
-        );
-
-        card.setGravity(
-                Gravity.CENTER_VERTICAL
-        );
-
-        /*
-         * Extra horizontal breathing room.
-         */
-        card.setPadding(
-                dp(15),
-                0,
-                dp(9),
-                0
-        );
-
-        card.setMinimumHeight(
-                dp(68)
-        );
-
-        card.setBackgroundResource(
-                primary
-                        ? R.drawable.parent_card
-                        : R.drawable.ustadh_card
-        );
-
-        TextView symbol =
-                text(
+                EduNoorCard.gateway(
+                        this,
                         primary ? "◈" : "◇",
-                        19,
-                        primary ? gold : clay,
-                        true
-                );
-
-        card.addView(
-                symbol,
-                new LinearLayout.LayoutParams(
-                        dp(40),
-                        dp(52)
-                )
-        );
-
-        LinearLayout words =
-                new LinearLayout(this);
-
-        words.setOrientation(
-                LinearLayout.VERTICAL
-        );
-
-        words.setGravity(
-                Gravity.CENTER_VERTICAL
-        );
-
-        words.setPadding(
-                dp(7),
-                0,
-                dp(4),
-                0
-        );
-
-        TextView titleView =
-                text(
+                        primary
+                                ? getColor(R.color.edunoor_gold)
+                                : getColor(R.color.edunoor_clay),
+                        primary
+                                ? R.drawable.parent_card
+                                : R.drawable.ustadh_card,
                         title,
-                        15,
                         primary
                                 ? Color.WHITE
-                                : walnut,
-                        true
-                );
-
-        titleView.setGravity(
-                Gravity.LEFT |
-                Gravity.CENTER_VERTICAL
-        );
-
-        TextView subtitleView =
-                text(
+                                : getColor(R.color.edunoor_walnut),
                         subtitle,
-                        10.5f,
                         primary
-                                ? goldSoft
-                                : muted,
-                        false
-                );
-
-        subtitleView.setGravity(
-                Gravity.LEFT |
-                Gravity.CENTER_VERTICAL
-        );
-
-        words.addView(
-                titleView,
-                new LinearLayout.LayoutParams(
-                        -1,
-                        dp(25)
-                )
-        );
-
-        words.addView(
-                subtitleView,
-                new LinearLayout.LayoutParams(
-                        -1,
-                        dp(21)
-                )
-        );
-
-        card.addView(
-                words,
-                new LinearLayout.LayoutParams(
-                        0,
-                        -1,
-                        1
-                )
-        );
-
-        TextView arrow =
-                text(
-                        "›",
-                        27,
+                                ? getColor(R.color.edunoor_gold_soft)
+                                : getColor(R.color.edunoor_muted),
                         primary
                                 ? Color.WHITE
-                                : clay,
-                        false
+                                : getColor(R.color.edunoor_clay)
                 );
-
-        arrow.setGravity(Gravity.CENTER);
-
-        card.addView(
-                arrow,
-                new LinearLayout.LayoutParams(
-                        dp(32),
-                        dp(52)
-                )
-        );
-
-        pressEffect(card);
 
         card.setOnClickListener(
-                v -> {
-
-                    if (primary) {
-
-                        Toast.makeText(
+                v -> startActivity(
+                        new Intent(
                                 this,
-                                "Parent access will open here.",
-                                Toast.LENGTH_SHORT
-                        ).show();
-
-                    } else {
-
-                        Toast.makeText(
-                                this,
-                                "Ustadh access will open here.",
-                                Toast.LENGTH_SHORT
-                        ).show();
-
-                    }
-                }
+                                primary
+                                        ? com.zamcan.madrassa.auth.parent.ParentLoginActivity.class
+                                        : com.zamcan.madrassa.auth.ustadh.UstadhLoginActivity.class
+                        )
+                )
         );
 
         return card;
@@ -302,8 +204,9 @@ public class MainActivity extends Activity {
                 Gravity.CENTER
         );
 
+        /* minimum 48dp touch target for the utility bar */
         item.setMinimumHeight(
-                dp(44)
+                dp(48)
         );
 
         pressEffect(item);
@@ -320,47 +223,97 @@ public class MainActivity extends Activity {
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(
-                        "OK",
+                        getString(R.string.dialog_ok),
                         null
                 )
                 .show();
     }
 
-    private void showLanguageDialog() {
+    /*
+     * Header language toggle: shows the active language code.
+     * Tapping it opens the language dialog (same as the bottom
+     * Language item), so the toggle is visible without scrolling.
+     */
+    private String languageCode() {
 
-        final String[] languages = {
+        String current =
+                LanguageManager.getLanguage(this);
+
+        if ("en".equals(current)) {
+            return "EN";
+        }
+
+        if ("ar".equals(current)) {
+            return "AR";
+        }
+
+        return "SW";
+    }
+
+    private void showLanguageDialog() {
+        final String[] languageNames = {
                 "Kiswahili",
                 "English",
                 "العربية"
         };
 
+        final String[] languageCodes = {
+                "sw",
+                "en",
+                "ar"
+        };
+
+        String current =
+                LanguageManager.getLanguage(this);
+
+        int checked = 0;
+
+        for (int i = 0; i < languageCodes.length; i++) {
+            if (languageCodes[i].equals(current)) {
+                checked = i;
+                break;
+            }
+        }
+
         new android.app.AlertDialog.Builder(this)
                 .setTitle(
-                        getString(
-                                R.string.language
-                        )
+                        getString(R.string.language)
                 )
-                .setItems(
-                        languages,
+                .setSingleChoiceItems(
+                        languageNames,
+                        checked,
                         (dialog, which) -> {
 
                             String selected =
-                                    languages[which];
+                                    languageCodes[which];
 
-                            Toast.makeText(
+                            LanguageManager.setLanguage(
                                     this,
-                                    selected,
-                                    Toast.LENGTH_SHORT
-                            ).show();
+                                    selected
+                            );
 
-                            /*
-                             * Full runtime language switching
-                             * will be connected in the
-                             * localization stage.
-                             */
+                            dialog.dismiss();
+
+                            recreate();
                         }
                 )
                 .show();
+    }
+
+    /*
+     * Applies the saved Swahili/English/Arabic locale to this
+     * screen. Without this the language picker on the landing
+     * page could not change anything here: getString() would
+     * keep resolving against the device locale instead of the
+     * user's EduNoor choice.
+     */
+    @Override
+    protected void attachBaseContext(
+            android.content.Context newBase
+    ) {
+        super.attachBaseContext(
+                LanguageManager.wrap(newBase)
+        );
     }
 
     @Override
@@ -503,7 +456,7 @@ public class MainActivity extends Activity {
                 );
 
         appName.setGravity(
-                Gravity.LEFT |
+                Gravity.START |
                 Gravity.CENTER_VERTICAL
         );
 
@@ -522,7 +475,7 @@ public class MainActivity extends Activity {
         );
 
         management.setGravity(
-                Gravity.LEFT |
+                Gravity.START |
                 Gravity.CENTER_VERTICAL
         );
 
@@ -530,7 +483,7 @@ public class MainActivity extends Activity {
                 appName,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(22)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -538,7 +491,7 @@ public class MainActivity extends Activity {
                 management,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(18)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -553,21 +506,27 @@ public class MainActivity extends Activity {
 
         TextView headerMark =
                 text(
-                        "✦",
-                        15,
+                        languageCode(),
+                        13,
                         gold,
-                        false
+                        true
                 );
 
         headerMark.setGravity(
                 Gravity.CENTER
         );
 
+        pressEffect(headerMark);
+
+        headerMark.setOnClickListener(
+                v -> showLanguageDialog()
+        );
+
         header.addView(
                 headerMark,
                 new LinearLayout.LayoutParams(
-                        dp(32),
-                        dp(44)
+                        dp(48),
+                        dp(48)
                 )
         );
 
@@ -575,7 +534,7 @@ public class MainActivity extends Activity {
                 header,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(50)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -607,7 +566,7 @@ public class MainActivity extends Activity {
 
         content.setPadding(
                 dp(17),
-                dp(27),
+                dp(20),
                 dp(17),
                 dp(10)
         );
@@ -633,7 +592,7 @@ public class MainActivity extends Activity {
                 bismillah,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(30)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -656,7 +615,7 @@ public class MainActivity extends Activity {
         LinearLayout.LayoutParams heroParams =
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(58)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
         heroParams.topMargin =
@@ -680,7 +639,7 @@ public class MainActivity extends Activity {
         LinearLayout.LayoutParams taglineParams =
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(25)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
         taglineParams.topMargin =
@@ -765,8 +724,17 @@ public class MainActivity extends Activity {
 
         /*
          * =====================================================
-         * ROLE CARDS
+         * SOLO + ROLE CARDS
+         *
+         * 3F-A6:
+         * Solo Learning is intentionally above the account
+         * gateways. Solo remains independent and offline-first.
          * =====================================================
+         */
+        /*
+         * Gateway cards share one geometry (68dp each) so no card
+         * is cut on small screens. Height wraps content; side
+         * margins centre the group on the page.
          */
         LinearLayout roles =
                 new LinearLayout(this);
@@ -778,7 +746,7 @@ public class MainActivity extends Activity {
         LinearLayout.LayoutParams rolesParams =
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(146)
+                        -2
                 );
 
         rolesParams.topMargin =
@@ -786,6 +754,23 @@ public class MainActivity extends Activity {
 
         rolesParams.bottomMargin =
                 dp(0);
+
+        rolesParams.leftMargin =
+                dp(8);
+
+        rolesParams.rightMargin =
+                dp(8);
+
+        LinearLayout solo =
+                soloCard();
+
+        roles.addView(
+                solo,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
 
         LinearLayout parent =
                 roleCard(
@@ -798,12 +783,18 @@ public class MainActivity extends Activity {
                         true
                 );
 
-        roles.addView(
-                parent,
+        LinearLayout.LayoutParams parentParams =
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(68)
-                )
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        parentParams.topMargin =
+                dp(10);
+
+        roles.addView(
+                parent,
+                parentParams
         );
 
         LinearLayout ustadh =
@@ -820,7 +811,7 @@ public class MainActivity extends Activity {
         LinearLayout.LayoutParams ustadhParams =
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(68)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
         ustadhParams.topMargin =
@@ -936,8 +927,28 @@ public class MainActivity extends Activity {
                 )
         );
 
-        root.addView(
+        /*
+         * Scrollable middle canvas: on short screens the gateway
+         * cards scroll instead of being cut; on tall screens the
+         * spacer still pushes the EDU NOOR mark to the bottom.
+         */
+        ScrollView scroll =
+                new ScrollView(this);
+
+        scroll.setFillViewport(true);
+        scroll.setVerticalScrollBarEnabled(false);
+        scroll.setClipToPadding(false);
+
+        scroll.addView(
                 canvas,
+                new ScrollView.LayoutParams(
+                        -1,
+                        -2
+                )
+        );
+
+        root.addView(
+                scroll,
                 new LinearLayout.LayoutParams(
                         -1,
                         0,
@@ -988,7 +999,7 @@ public class MainActivity extends Activity {
         TextView language =
                 utility(
                         getString(
-                                R.string.language
+                                R.string.language_switch_label
                         )
                 );
 
@@ -1008,7 +1019,9 @@ public class MainActivity extends Activity {
                         getString(
                                 R.string.privacy
                         ),
-                        "Your information is handled securely by Madrassa — EduNoor."
+                        getString(
+                                R.string.privacy_message
+                        )
                 )
         );
 
@@ -1024,7 +1037,9 @@ public class MainActivity extends Activity {
                         getString(
                                 R.string.terms
                         ),
-                        "Madrassa — EduNoor terms and conditions will be displayed here."
+                        getString(
+                                R.string.terms_message
+                        )
                 )
         );
 
@@ -1040,7 +1055,9 @@ public class MainActivity extends Activity {
                         getString(
                                 R.string.help
                         ),
-                        "For assistance, please contact your Madrassa administrator."
+                        getString(
+                                R.string.help_message
+                        )
                 )
         );
 
@@ -1048,7 +1065,7 @@ public class MainActivity extends Activity {
                 language,
                 new LinearLayout.LayoutParams(
                         0,
-                        dp(44),
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         1
                 )
         );
@@ -1057,7 +1074,7 @@ public class MainActivity extends Activity {
                 privacy,
                 new LinearLayout.LayoutParams(
                         0,
-                        dp(44),
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         1
                 )
         );
@@ -1066,7 +1083,7 @@ public class MainActivity extends Activity {
                 terms,
                 new LinearLayout.LayoutParams(
                         0,
-                        dp(44),
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         1
                 )
         );
@@ -1075,16 +1092,22 @@ public class MainActivity extends Activity {
                 help,
                 new LinearLayout.LayoutParams(
                         0,
-                        dp(44),
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         1
                 )
         );
 
+        /*
+         * Wraps content instead of forcing 48dp: each column
+         * already declares a 48dp minimum touch target, so the
+         * bar stays 48dp tall normally but grows rather than
+         * clipping a wrapped label at large font scales.
+         */
         root.addView(
                 bottom,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(48)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 

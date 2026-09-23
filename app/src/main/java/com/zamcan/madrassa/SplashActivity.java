@@ -13,7 +13,35 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zamcan.madrassa.core.LanguageManager;
+import com.zamcan.madrassa.data.local.EduNoorDatabase;
+import com.zamcan.madrassa.data.model.ApprovalStatus;
+import com.zamcan.madrassa.data.model.Madrassa;
+import com.zamcan.madrassa.data.repository.MadrassaRepository;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class SplashActivity extends Activity {
+
+    /*
+     * Minimum time the branded entrance is allowed to play.
+     * This is animation pacing only — the status line below
+     * is driven by the real initialization work, not by a
+     * scripted timer.
+     */
+    private static final long ENTRANCE_MS = 900L;
+
+    private final ExecutorService worker =
+            Executors.newSingleThreadExecutor();
+
+    private final Handler ui = new Handler();
+
+    private TextView stepView;
+
+    private volatile boolean workFinished = false;
+    private boolean entranceFinished = false;
+    private boolean navigated = false;
 
     private int dp(float value) {
         return (int) (
@@ -48,6 +76,15 @@ public class SplashActivity extends Activity {
         );
 
         return v;
+    }
+
+    @Override
+    protected void attachBaseContext(
+            android.content.Context newBase
+    ) {
+        super.attachBaseContext(
+                LanguageManager.wrap(newBase)
+        );
     }
 
     @Override
@@ -212,6 +249,31 @@ public class SplashActivity extends Activity {
                 )
         );
 
+        /*
+         * REAL INITIALIZATION STATUS — each line shown here is
+         * the work genuinely running at that moment (opening
+         * the local store, loading records, checking their
+         * status), never a fake progress bar.
+         */
+        stepView = text(
+                "",
+                10,
+                getColor(R.color.edunoor_gold_soft),
+                false
+        );
+
+        stepView.setAlpha(0f);
+
+        LinearLayout.LayoutParams stepParams =
+                new LinearLayout.LayoutParams(
+                        -1,
+                        dp(24)
+                );
+
+        stepParams.topMargin = dp(10);
+
+        root.addView(stepView, stepParams);
+
         setContentView(root);
 
         /*
@@ -248,32 +310,140 @@ public class SplashActivity extends Activity {
                 .setDuration(350)
                 .start();
 
+        stepView.animate()
+                .alpha(1f)
+                .setStartDelay(600)
+                .setDuration(300)
+                .start();
+
         /*
-         * Short boot period.
-         *
-         * This will later become the real initialization
-         * point for database/security/session checks.
+         * The boot period is no longer a fixed sleep: the
+         * entrance plays while the real initialization below
+         * runs in parallel, and the screen advances only when
+         * both are finished.
          */
-        new Handler().postDelayed(
+        ui.postDelayed(
                 () -> {
+                    entranceFinished = true;
+                    advanceIfReady();
+                },
+                ENTRANCE_MS
+        );
 
-                    Intent intent =
-                            new Intent(
-                                    SplashActivity.this,
-                                    MainActivity.class
-                            );
+        worker.execute(this::runInitialization);
+    }
 
-                    startActivity(intent);
+    /*
+     * Real startup work (spec §11). Every announce() call names
+     * work that genuinely happens right after it — local-first,
+     * on-device only, no network.
+     */
+    private void runInitialization() {
 
-                    overridePendingTransition(
-                            android.R.anim.fade_in,
-                            android.R.anim.fade_out
+        String statusLine;
+
+        try {
+            /*
+             * Step 1 — open the local store. On a fresh install
+             * this creates (or migrates) the schema, which is
+             * the real first cost of a session.
+             */
+            announce(R.string.init_step_database);
+
+            EduNoorDatabase database =
+                    new EduNoorDatabase(this);
+
+            database.getWritableDatabase();
+
+            /*
+             * Step 2 — load the Madrassa records this device
+             * actually holds, so the app starts from real data.
+             */
+            announce(R.string.init_step_madrassa);
+
+            java.util.List<Madrassa> madrassas =
+                    new MadrassaRepository(this).findAll();
+
+            /*
+             * Step 3 — report the approval status genuinely
+             * stored for this device's Madrassa.
+             */
+            announce(R.string.init_step_ustadh_status);
+
+            Madrassa current = madrassas.isEmpty()
+                    ? null
+                    : madrassas.get(0);
+
+            statusLine = current == null ||
+                    current.approvalStatus
+                            == ApprovalStatus.ACTIVE
+                    ? getString(R.string.init_session_ready)
+                    : getString(
+                            R.string.login_madrassa_inactive
                     );
 
-                    finish();
+        } catch (RuntimeException error) {
+            /*
+             * Local-first resilience: a storage problem must
+             * degrade into an honest message, never a crash.
+             */
+            statusLine = getString(R.string.login_failed);
+        }
 
-                },
-                1100
+        final String finalStatus = statusLine;
+
+        ui.post(() -> {
+            workFinished = true;
+
+            stepView.setText(finalStatus);
+
+            advanceIfReady();
+        });
+    }
+
+    private void announce(int messageRes) {
+        ui.post(() -> stepView.setText(getString(messageRes)));
+    }
+
+    /*
+     * Advances only when both the real work and the designed
+     * entrance are finished, so a fast device moves fast and a
+     * slow device is never cut off mid-load.
+     */
+    private void advanceIfReady() {
+
+        if (!workFinished
+                || !entranceFinished
+                || navigated) {
+            return;
+        }
+
+        if (isFinishing() || isDestroyed()) {
+            return;
+        }
+
+        navigated = true;
+
+        startActivity(
+                new Intent(
+                        SplashActivity.this,
+                        MainActivity.class
+                )
         );
+
+        overridePendingTransition(
+                android.R.anim.fade_in,
+                android.R.anim.fade_out
+        );
+
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        worker.shutdownNow();
+        ui.removeCallbacksAndMessages(null);
     }
 }

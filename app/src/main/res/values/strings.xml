@@ -20,4 +20,186 @@
     <string name="privacy">Faragha</string>
     <string name="terms">Masharti</string>
     <string name="help">Msaada</string>
+
+    <!-- V7.1 Authentication -->
+    <string name="parent_role">MZAZI/MLEZI</string>
+    <string name="parent_login_title">INGIA KAMA MZAZI/MLEZI</string>
+    <string name="parent_login_subtitle">Fuatilia maendeleo ya mtoto</string>
+    <string name="phone_number">Namba ya simu</string>
+    <string name="password">Nenosiri</string>
+    <string name="login">INGIA</string>
+    <string name="forgot_password">Umesahau nenosiri? RESET</string>
+    <string name="parent_phone_hint">Tumia namba ya simu iliyosajiliwa na Madrassa.</string>
+    <string name="enter_phone">Ingiza namba ya simu</string>
+    <string name="enter_password">Ingiza nenosiri</string>
+    <string name="reset_v71_message">RESET itaunganishwa na OTP katika hatua inayofuata.</string>
+    <string name="login_ui_ready">Muonekano wa kuingia uko tayari.</string>
+
+    <!-- V7.1 Ustadh Authentication -->
+    <string name="ustadh_role">USTADH</string>
+    <string name="ustadh_login_title">INGIA KAMA USTADH</string>
+    <string name="ustadh_login_subtitle">Simamia Madrassa yako</string>
+    <string name="madrassa_name">Jina la Madrassa</string>
+    <string name="enter_madrassa_name">Ingiza jina la Madrassa</string>
+    <string name="register_madrassa">SAJILI MADRASSA</string>
+    <string name="not_registered">Bado hujasajiliwa?</string>
+    <string name="registration_v71_message">Usajili wa Madrassa utaanza katika hatua inayofuata.</string>
+
+    <string name="language_switch_label">Lugha</string>
+    <string name="privacy_icon">◉</string>
+    <string name="terms_icon">§</string>
+    <string name="help_icon">?</string>
+    <string name="language_icon">文</string>
+    <string name="ustadh_identifier">Jina la Madrassa au namba ya simu</string>
+    <string name="enter_ustadh_identifier">Ingiza jina la Madrassa au namba ya simu</string>
+    <string name="password_requirements_parent">Angalau herufi 6, zikiwa na herufi na namba.</string>
+    <string name="password_requirements_ustadh">Angalau herufi 6, zikiwa na herufi, namba na alama maalum.</string>
+
+    <string name="parent_password_requirement">Angalau herufi 6, herufi na namba</string>
+
+    <!-- 3F-A6 Solo Learning -->
+    <string name="solo_learning_title">SOLO LEARNING</string>
+    <string name="solo_learning_subtitle">Jifunze Qur’an na elimu ya Kiislamu</string>
+    <string name="solo_learning_welcome">Jifunze kwa utulivu</string>
+    <string name="solo_card_title">Solo Learning</string>
+    <string name="solo_card_subtitle">Jifunze kwa utulivu • Qur’an na elimu ya Kiislamu</string>
+    <string name="field_example_phone">Mfano: 0712 345 678</string>
+    <string name="password_strength_weak">Nenosiri dhaifu</string>
+    <string name="password_strength_fair">Nenosiri la wastani</string>
+    <string name="password_strength_strong">Nenosiri imara</string>
+    <string name="password_missing_length">Ongeza angalau herufi 6</string>
+    <string name="password_missing_letter">Ongeza herufi (a–z)</string>
+    <string name="password_missing_number">Ongeza namba (0–9)</string>
+    <string name="password_missing_special">Ongeza alama maalum kama , % @ # ! ?</string>
+    <string name="solo_learning_offline">Eneo la kujifunza linaloweza kutumika bila kuhitaji akaunti ya Madrassa au muunganisho wa seva.</string>
+
+    <string name="solo_learning_areas">Maeneo ya Kujifunza</string>
+    <string name="solo_learning_areas_subtitle">Maudhui ya msingi ya kujifunza binafsi</string>
+
+    <string name="solo_quran_eyebrow">QUR’AN</string>
+    <string name="solo_quran_title">Qur’an</string>
+    <string name="solo_quran_description">Soma na endelea kujifunza Qur’an katika mazingira ya kujifunza binafsi.</string>
+
+    <string name="solo_islamic_eyebrow">ELIMU YA KIISLAMU</string>
+    <string name="solo_islamic_title">Masomo ya Kiislamu</string>
+    <string name="solo_islamic_description">Mafunzo yaliyopangwa kwa mada, masomo na hatua za kujifunza.</string>
+
+    <string name="solo_books_eyebrow">VITABU</string>
+    <string name="solo_books_title">Vitabu na Masomo</string>
+    <string name="solo_books_description">Maudhui ya kielimu yanayoweza kupangwa na kusomwa kwa mpangilio.</string>
+
+    <string name="solo_progress_title">Maendeleo Yangu</string>
+    <string name="solo_progress_subtitle">Msingi wa kufuatilia maendeleo ya mwanafunzi wa Solo</string>
+    <string name="solo_progress_learning">Masomo yaliyokamilika</string>
+
+    <string name="solo_content_ready_title">Msingi wa Solo uko tayari</string>
+    <string name="solo_content_ready_message">Muundo huu umeunganishwa na academic UI foundation. Maudhui halisi ya Solo yatafungwa kwenye canonical global content bila kuunda nakala za maudhui ya Madrassa.</string>
+
+    <string name="solo_quran_placeholder">Qur’an content module itaunganishwa kwenye canonical global learning content.</string>
+    <string name="solo_content_placeholder">Learning content module itaunganishwa kwenye canonical global academic content.</string>
+<string name="registration_identity_section">Taarifa za Madrassa</string>
+<string name="registration_identity_title">Utambulisho wa Madrassa</string>
+<string name="registration_identity_subtitle">Weka taarifa za msingi za Madrassa yako.</string>
+<string name="registration_madrassa_name">Jina la Madrassa</string>
+<string name="registration_enter_madrassa_name">Ingiza jina la Madrassa</string>
+<string name="registration_madrassa_type">Aina ya Madrassa</string>
+<string name="registration_enter_madrassa_type">Mfano: Madrassa ya Msikiti</string>
+<string name="registration_administration_type">Aina ya Uendeshaji</string>
+<string name="registration_enter_administration_type">Mfano: Kujitegemea / Chini ya Msikiti</string>
+<string name="registration_region">Mkoa</string>
+<string name="registration_enter_region">Ingiza mkoa</string>
+<string name="registration_district">Wilaya</string>
+<string name="registration_enter_district">Ingiza wilaya</string>
+<string name="registration_ward">Kata</string>
+<string name="registration_enter_ward">Ingiza kata</string>
+<string name="registration_area">Eneo / Mtaa</string>
+<string name="registration_enter_area">Ingiza eneo au mtaa</string>
+<string name="registration_landmark">Msikiti / Alama ya Karibu</string>
+<string name="registration_administration_section">Uongozi</string>
+<string name="registration_administration_title">Taarifa za Uongozi</string>
+<string name="registration_administration_subtitle">Taarifa za Ustadh na mawasiliano ya Madrassa.</string>
+<string name="registration_ustadh_count">Idadi ya Ustadh</string>
+<string name="registration_enter_ustadh_count">Ingiza idadi ya Ustadh</string>
+<string name="registration_head_ustadh">Ustadh Mkuu</string>
+<string name="registration_enter_head_ustadh">Jina la Ustadh Mkuu</string>
+<string name="registration_phone">Namba ya Simu</string>
+<string name="registration_secondary_phone">Namba ya Simu ya Ziada</string>
+<string name="registration_email">Barua Pepe</string>
+<string name="registration_enter_email">Ingiza barua pepe</string>
+<string name="registration_masjid_name">Jina la Msikiti</string>
+<string name="registration_masjid_location">Mahali Ulipo Msikiti</string>
+<string name="registration_security_section">Usalama</string>
+<string name="registration_security_title">Taarifa za Kuingia</string>
+<string name="registration_security_subtitle">Weka taarifa salama za kuingia kwa Ustadh.</string>
+<string name="registration_username">Jina la Mtumiaji</string>
+<string name="registration_enter_username">Ingiza jina la mtumiaji</string>
+<string name="registration_password">Neno la Siri</string>
+<string name="registration_confirm_password">Thibitisha Neno la Siri</string>
+<string name="registration_invalid_password">Neno la siri lazima liwe na angalau herufi 6, herufi, namba na alama maalum.</string>
+<string name="registration_invalid_phone">Namba ya simu si sahihi. Angalia msimbo wa nchi na tarakimu, mfano 0712 345 678.</string>
+<string name="registration_password_mismatch">Maneno ya siri hayafanani.</string>
+<string name="registration_invalid_email">Barua pepe si sahihi. Mfano: ustadh@madrassa.go.tz.</string>
+<string name="registration_invalid_count">Ingiza idadi sahihi ya Ustadh (1 au zaidi).</string>
+<string name="registration_review">Kagua</string>
+<string name="registration_review_title">Kagua Taarifa</string>
+<string name="registration_review_subtitle">Hakikisha taarifa zote ni sahihi kabla ya kutuma ombi.</string>
+<string name="registration_status">Hali ya Ombi</string>
+<string name="registration_draft">DRAFT</string>
+<string name="registration_submitted_title">Ombi Limetumwa</string>
+<string name="registration_submitted_subtitle">Ombi lako la usajili limepokelewa na litasubiri ukaguzi.</string>
+<string name="registration_submitted_message">Taarifa za Madrassa zitakaguliwa kabla ya akaunti kuamilishwa.</string>
+<string name="registration_submitted_status">SUBMITTED</string>
+<string name="registration_pending_review">Linasubiri Ukaguzi</string>
+<string name="registration_step_1">Hatua ya 1 kati ya 5</string>
+<string name="registration_step_2">Hatua ya 2 kati ya 5</string>
+<string name="registration_step_3">Hatua ya 3 kati ya 5</string>
+<string name="registration_step_4">Hatua ya 4 kati ya 5</string>
+<string name="registration_step_5">Hatua ya 5 kati ya 5</string>
+<string name="registration_back">RUDI</string>
+<string name="registration_next">ENDELEA</string>
+<string name="registration_submit">TUMA OMBI</string>
+<string name="registration_cancel">GHAIRISHA</string>
+<string name="registration_close">FUNGA</string>
+
+<!-- V7.3 registration location + country-code pickers -->
+<string name="registration_select_region">Chagua Mkoa</string>
+<string name="registration_select_district">Chagua Wilaya</string>
+<string name="registration_pick_region_first">Chagua kwanza mkoa</string>
+<string name="registration_select_country_code">Chagua msimbo wa nchi</string>
+<string name="field_example_ward">Mfano: Kariakoo</string>
+
+<!-- V7.3 shared dialog copy (utility bar + state dialogs) -->
+<string name="dialog_ok">SAWA</string>
+<string name="privacy_message">Taarifa zako zinatunzwa kwa usalama na Madrassa — EduNoor.</string>
+<string name="terms_message">Masharti ya Madrassa — EduNoor yataonyeshwa hapa.</string>
+<string name="help_message">Kwa msaada, tafadhali wasiliana na msimamizi wa Madrassa yako.</string>
+
+<!-- V7.5 password visibility (a11y descriptions) -->
+<string name="show_password">Onesha nenosiri</string>
+<string name="hide_password">Ficha nenosiri</string>
+
+<!-- V7.5 real authentication results -->
+<string name="login_in_progress">Inaingia…</string>
+<string name="login_invalid_credentials">Nenosiri au taarifa za kuingia si sahihi.</string>
+<string name="login_account_inactive">Akaunti haijaamilishwa.</string>
+<string name="login_madrassa_inactive">Madrassa bado haijaamilishwa; inasubiri ukaguzi.</string>
+<string name="login_password_change_required">Badilisha nenosiri lako la awali kwanza.</string>
+<string name="login_failed">Kuingia kumeshindikana. Jaribu tena.</string>
+<string name="login_invalid_phone">Namba ya simu si sahihi. Angalia msimbo wa nchi na tarakimu, mfano 0712 345 678.</string>
+
+<!-- V7.5 registration submission through the domain layer -->
+<string name="registration_name_exists">Madrassa yenye jina hili tayari ipo.</string>
+<string name="registration_save_failed">Usajili haukuweza kuhifadhiwa. Jaribu tena.</string>
+<string name="registration_invalid_data">Hakikisha taarifa zote ni sahihi.</string>
+
+<!-- V7.5 branded post-login initialization (spec 11) -->
+<string name="init_step_database">Kufungua hifadhi ya ndani…</string>
+<string name="init_step_madrassa">Kupakia taarifa za Madrassa…</string>
+<string name="init_step_ustadh_status">Kuhakiki hadhi ya usajili…</string>
+<string name="init_step_parent_account">Kupakia akaunti ya mzazi…</string>
+<string name="init_step_parent_session">Kuandaa kikao salama…</string>
+<string name="init_session_ready">Kikao kiko tayari</string>
+<string name="init_welcome">Karibu</string>
+<string name="init_next_stage">Dashibodi ya usimamizi itaunganishwa katika hatua inayofuata.</string>
+
 </resources>

@@ -20,4 +20,179 @@
     <string name="privacy">Privacy</string>
     <string name="terms">Terms</string>
     <string name="help">Help</string>
+
+    <!-- V7.1 Authentication -->
+    <string name="parent_role">PARENT/GUARDIAN</string>
+    <string name="parent_login_title">PARENT/GUARDIAN LOGIN</string>
+    <string name="parent_login_subtitle">Follow the progress of your child</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot password? RESET</string>
+    <string name="parent_phone_hint">Use the phone number registered by the Madrassa.</string>
+    <string name="enter_phone">Enter phone number</string>
+    <string name="enter_password">Enter password</string>
+    <string name="reset_v71_message">RESET will be connected to OTP in the next stage.</string>
+    <string name="login_ui_ready">The login interface is ready.</string>
+
+    <!-- V7.1 Ustadh Authentication -->
+    <string name="ustadh_role">USTADH</string>
+    <string name="ustadh_login_title">USTADH LOGIN</string>
+    <string name="ustadh_login_subtitle">Manage your Madrassa</string>
+    <string name="madrassa_name">Madrassa name</string>
+    <string name="enter_madrassa_name">Enter Madrassa name</string>
+    <string name="register_madrassa">REGISTER MADRASSA</string>
+    <string name="not_registered">Not registered yet?</string>
+    <string name="registration_v71_message">Madrassa registration will begin in the next stage.</string>
+
+    <string name="language_switch_label">Language</string>
+    <string name="privacy_icon">◉</string>
+    <string name="terms_icon">§</string>
+    <string name="help_icon">?</string>
+    <string name="language_icon">文</string>
+    <string name="ustadh_identifier">Madrassa name or phone number</string>
+    <string name="enter_ustadh_identifier">Enter Madrassa name or phone number</string>
+    <string name="password_requirements_parent">At least 6 characters, including letters and numbers.</string>
+    <string name="password_requirements_ustadh">At least 6 characters, including letters, numbers and a special character.</string>
+    <string name="parent_password_requirement">At least 6 characters, with letters and numbers</string>
+<string name="registration_identity_section">Madrassa Information</string>
+<string name="registration_identity_title">Madrassa Identity</string>
+<string name="registration_identity_subtitle">Enter the basic information about your Madrassa.</string>
+<string name="registration_madrassa_name">Madrassa Name</string>
+<string name="registration_enter_madrassa_name">Enter Madrassa name</string>
+<string name="registration_madrassa_type">Madrassa Type</string>
+<string name="registration_enter_madrassa_type">Example: Mosque-based Madrassa</string>
+<string name="registration_administration_type">Administration Type</string>
+<string name="registration_enter_administration_type">Example: Independent / Under Mosque</string>
+<string name="registration_region">Region</string>
+<string name="registration_enter_region">Enter region</string>
+<string name="registration_district">District</string>
+<string name="registration_enter_district">Enter district</string>
+<string name="registration_ward">Ward</string>
+<string name="registration_enter_ward">Enter ward</string>
+<string name="registration_area">Area / Street</string>
+<string name="registration_enter_area">Enter area or street</string>
+<string name="registration_landmark">Mosque / Nearby Landmark</string>
+<string name="registration_administration_section">Administration</string>
+<string name="registration_administration_title">Administration Details</string>
+<string name="registration_administration_subtitle">Madrassa leadership and contact information.</string>
+<string name="registration_ustadh_count">Number of Ustadhs</string>
+<string name="registration_enter_ustadh_count">Enter number of Ustadhs</string>
+<string name="registration_head_ustadh">Head Ustadh</string>
+<string name="registration_enter_head_ustadh">Head Ustadh name</string>
+<string name="registration_phone">Phone Number</string>
+<string name="registration_secondary_phone">Secondary Phone Number</string>
+<string name="registration_email">Email Address</string>
+<string name="registration_enter_email">Enter email address</string>
+<string name="registration_masjid_name">Mosque Name</string>
+<string name="registration_masjid_location">Mosque Location</string>
+<string name="registration_security_section">Security</string>
+<string name="registration_security_title">Login Details</string>
+<string name="registration_security_subtitle">Create secure Ustadh login credentials.</string>
+<string name="registration_username">Username</string>
+<string name="registration_enter_username">Enter username</string>
+<string name="registration_password">Password</string>
+<string name="registration_confirm_password">Confirm Password</string>
+<string name="registration_invalid_password">Password must contain at least 6 characters, including letters, numbers and a special character.</string>
+<string name="registration_invalid_phone">That phone number is not valid. Check the country code and digits, e.g. 0712 345 678.</string>
+<string name="registration_password_mismatch">Passwords do not match.</string>
+<string name="registration_invalid_email">That email is not valid. Example: ustadh@madrassa.go.tz.</string>
+<string name="registration_invalid_count">Enter a valid number of Ustadhs (1 or more).</string>
+<string name="registration_review">Review</string>
+<string name="registration_review_title">Review Information</string>
+<string name="registration_review_subtitle">Make sure all information is correct before submitting.</string>
+<string name="registration_status">Application Status</string>
+<string name="registration_draft">DRAFT</string>
+<string name="registration_submitted_title">Application Submitted</string>
+<string name="registration_submitted_subtitle">Your registration application has been received and is awaiting review.</string>
+<string name="registration_submitted_message">The Madrassa information will be reviewed before the account is activated.</string>
+<string name="registration_submitted_status">SUBMITTED</string>
+<string name="registration_pending_review">Pending Review</string>
+<string name="registration_step_1">Step 1 of 5</string>
+<string name="registration_step_2">Step 2 of 5</string>
+<string name="registration_step_3">Step 3 of 5</string>
+<string name="registration_step_4">Step 4 of 5</string>
+<string name="registration_step_5">Step 5 of 5</string>
+<string name="registration_back">BACK</string>
+<string name="registration_next">CONTINUE</string>
+<string name="registration_submit">SUBMIT APPLICATION</string>
+<string name="registration_cancel">CANCEL</string>
+<string name="registration_close">CLOSE</string>
+
+
+    <!-- 3F-A6 Solo Learning -->
+    <string name="solo_learning_title">SOLO LEARNING</string>
+    <string name="solo_learning_subtitle">Learn Qur\'an and Islamic knowledge</string>
+    <string name="solo_learning_welcome">Learn with calm and focus</string>
+    <string name="solo_card_title">Solo Learning</string>
+    <string name="solo_card_subtitle">Learn with calm and focus • Qur’an and Islamic knowledge</string>
+    <string name="field_example_phone">e.g. 0712 345 678</string>
+    <string name="password_strength_weak">Weak password</string>
+    <string name="password_strength_fair">Fair password</string>
+    <string name="password_strength_strong">Strong password</string>
+    <string name="password_missing_length">Use at least 6 characters</string>
+    <string name="password_missing_letter">Add letters (a–z)</string>
+    <string name="password_missing_number">Add numbers (0–9)</string>
+    <string name="password_missing_special">Add a special character such as , % @ # ! ?</string>
+    <string name="solo_learning_offline">A learning area that works without a Madrassa account or server connection.</string>
+    <string name="solo_learning_areas">Learning Areas</string>
+    <string name="solo_learning_areas_subtitle">Core content for independent learning</string>
+    <string name="solo_quran_eyebrow">QUR\'AN</string>
+    <string name="solo_quran_title">Qur\'an</string>
+    <string name="solo_quran_description">Read and continue learning the Qur\'an in an independent learning environment.</string>
+    <string name="solo_islamic_eyebrow">ISLAMIC STUDIES</string>
+    <string name="solo_islamic_title">Islamic Lessons</string>
+    <string name="solo_islamic_description">Structured lessons organised by topic, lesson and learning step.</string>
+    <string name="solo_books_eyebrow">BOOKS</string>
+    <string name="solo_books_title">Books and Lessons</string>
+    <string name="solo_books_description">Educational content that can be organised and read in sequence.</string>
+    <string name="solo_progress_title">My Progress</string>
+    <string name="solo_progress_subtitle">Foundation for tracking Solo learner progress</string>
+    <string name="solo_progress_learning">Lessons completed</string>
+    <string name="solo_content_ready_title">Solo foundation is ready</string>
+    <string name="solo_content_ready_message">This structure is connected to the academic UI foundation. Real Solo content will be bound to canonical global content without duplicating Madrassa content.</string>
+    <string name="solo_quran_placeholder">The Qur\'an content module will be connected to canonical global learning content.</string>
+    <string name="solo_content_placeholder">The learning content module will be connected to canonical global academic content.</string>
+
+    <!-- V7.3 registration location + country-code pickers -->
+    <string name="registration_select_region">Select Region</string>
+    <string name="registration_select_district">Select District</string>
+    <string name="registration_pick_region_first">Select the region first</string>
+    <string name="registration_select_country_code">Select country code</string>
+    <string name="field_example_ward">e.g. Kariakoo</string>
+
+    <!-- V7.3 shared dialog copy (utility bar + state dialogs) -->
+    <string name="dialog_ok">OK</string>
+    <string name="privacy_message">Your information is handled securely by Madrassa — EduNoor.</string>
+    <string name="terms_message">Madrassa — EduNoor terms and conditions will be displayed here.</string>
+    <string name="help_message">For assistance, please contact your Madrassa administrator.</string>
+
+    <!-- V7.5 password visibility (a11y descriptions) -->
+    <string name="show_password">Show password</string>
+    <string name="hide_password">Hide password</string>
+
+    <!-- V7.5 real authentication results -->
+    <string name="login_in_progress">Signing in…</string>
+    <string name="login_invalid_credentials">That phone number or password is not correct.</string>
+    <string name="login_account_inactive">This account is not active.</string>
+    <string name="login_madrassa_inactive">This Madrassa is not active yet; it is awaiting approval.</string>
+    <string name="login_password_change_required">Please change your initial password first.</string>
+    <string name="login_failed">Sign-in failed. Please try again.</string>
+    <string name="login_invalid_phone">That phone number is not valid. Check the country code and digits, e.g. 0712 345 678.</string>
+
+    <!-- V7.5 registration submission through the domain layer -->
+    <string name="registration_name_exists">A Madrassa with this name already exists.</string>
+    <string name="registration_save_failed">The registration could not be saved. Please try again.</string>
+    <string name="registration_invalid_data">Please check that every field is correct.</string>
+
+    <!-- V7.5 branded post-login initialization (spec 11) -->
+    <string name="init_step_database">Opening the local database…</string>
+    <string name="init_step_madrassa">Loading Madrassa details…</string>
+    <string name="init_step_ustadh_status">Checking registration status…</string>
+    <string name="init_step_parent_account">Loading the parent account…</string>
+    <string name="init_step_parent_session">Preparing a secure session…</string>
+    <string name="init_session_ready">Your session is ready</string>
+    <string name="init_welcome">Welcome</string>
+    <string name="init_next_stage">The management dashboard arrives in the next stage.</string>
+
 </resources>

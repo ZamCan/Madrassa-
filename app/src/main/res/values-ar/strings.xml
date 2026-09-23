@@ -20,4 +20,178 @@
     <string name="privacy">الخصوصية</string>
     <string name="terms">الشروط</string>
     <string name="help">المساعدة</string>
+
+    <!-- V7.1 Authentication -->
+    <string name="parent_role">ولي الأمر</string>
+    <string name="parent_login_title">تسجيل دخول ولي الأمر</string>
+    <string name="parent_login_subtitle">تابع تقدم طفلك</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">دخول</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟ إعادة التعيين</string>
+    <string name="parent_phone_hint">استخدم رقم الهاتف المسجل لدى المدرسة القرآنية.</string>
+    <string name="enter_phone">أدخل رقم الهاتف</string>
+    <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="reset_v71_message">سيتم ربط إعادة التعيين برمز OTP في المرحلة التالية.</string>
+    <string name="login_ui_ready">واجهة تسجيل الدخول جاهزة.</string>
+
+    <!-- V7.1 Ustadh Authentication -->
+    <string name="ustadh_role">الأستاذ</string>
+    <string name="ustadh_login_title">تسجيل دخول الأستاذ</string>
+    <string name="ustadh_login_subtitle">إدارة المدرسة القرآنية الخاصة بك</string>
+    <string name="madrassa_name">اسم المدرسة القرآنية</string>
+    <string name="enter_madrassa_name">أدخل اسم المدرسة القرآنية</string>
+    <string name="register_madrassa">تسجيل المدرسة القرآنية</string>
+    <string name="not_registered">لم يتم التسجيل بعد؟</string>
+    <string name="registration_v71_message">سيبدأ تسجيل المدرسة القرآنية في المرحلة التالية.</string>
+
+    <string name="language_switch_label">اللغة</string>
+    <string name="privacy_icon">◉</string>
+    <string name="terms_icon">§</string>
+    <string name="help_icon">?</string>
+    <string name="language_icon">文</string>
+    <string name="ustadh_identifier">اسم المدرسة القرآنية أو رقم الهاتف</string>
+    <string name="enter_ustadh_identifier">أدخل اسم المدرسة القرآنية أو رقم الهاتف</string>
+    <string name="password_requirements_parent">٦ أحرف على الأقل، مع حروف وأرقام.</string>
+    <string name="password_requirements_ustadh">٦ أحرف على الأقل، مع حروف وأرقام ورمز خاص.</string>
+    <string name="parent_password_requirement">6 أحرف على الأقل، مع حروف وأرقام</string>
+<string name="registration_identity_section">معلومات المدرسة القرآنية</string>
+<string name="registration_identity_title">هوية المدرسة القرآنية</string>
+<string name="registration_identity_subtitle">أدخل المعلومات الأساسية للمدرسة القرآنية.</string>
+<string name="registration_madrassa_name">اسم المدرسة القرآنية</string>
+<string name="registration_enter_madrassa_name">أدخل اسم المدرسة القرآنية</string>
+<string name="registration_madrassa_type">نوع المدرسة القرآنية</string>
+<string name="registration_enter_madrassa_type">مثال: مدرسة تابعة للمسجد</string>
+<string name="registration_administration_type">نوع الإدارة</string>
+<string name="registration_enter_administration_type">مثال: مستقلة / تابعة للمسجد</string>
+<string name="registration_region">المنطقة</string>
+<string name="registration_enter_region">أدخل المنطقة</string>
+<string name="registration_district">المقاطعة</string>
+<string name="registration_enter_district">أدخل المقاطعة</string>
+<string name="registration_ward">الحَيّ</string>
+<string name="registration_enter_ward">أدخل الحَيّ</string>
+<string name="registration_area">المنطقة / الشارع</string>
+<string name="registration_enter_area">أدخل المنطقة أو الشارع</string>
+<string name="registration_landmark">المسجد / معلم قريب</string>
+<string name="registration_administration_section">الإدارة</string>
+<string name="registration_administration_title">بيانات الإدارة</string>
+<string name="registration_administration_subtitle">بيانات قيادة المدرسة القرآنية ووسائل الاتصال.</string>
+<string name="registration_ustadh_count">عدد الأساتذة</string>
+<string name="registration_enter_ustadh_count">أدخل عدد الأساتذة</string>
+<string name="registration_head_ustadh">الأستاذ المسؤول</string>
+<string name="registration_enter_head_ustadh">اسم الأستاذ المسؤول</string>
+<string name="registration_phone">رقم الهاتف</string>
+<string name="registration_secondary_phone">رقم هاتف إضافي</string>
+<string name="registration_email">البريد الإلكتروني</string>
+<string name="registration_enter_email">أدخل البريد الإلكتروني</string>
+<string name="registration_masjid_name">اسم المسجد</string>
+<string name="registration_masjid_location">موقع المسجد</string>
+<string name="registration_security_section">الأمان</string>
+<string name="registration_security_title">بيانات الدخول</string>
+<string name="registration_security_subtitle">أنشئ بيانات دخول آمنة للأستاذ.</string>
+<string name="registration_username">اسم المستخدم</string>
+<string name="registration_enter_username">أدخل اسم المستخدم</string>
+<string name="registration_password">كلمة المرور</string>
+<string name="registration_confirm_password">تأكيد كلمة المرور</string>
+<string name="registration_invalid_password">يجب أن تتكون كلمة المرور من 6 أحرف على الأقل، وتتضمن حروفًا وأرقامًا ورمزًا خاصًا.</string>
+<string name="registration_invalid_phone">رقم الهاتف غير صالح. تحقق من رمز الدولة والأرقام، مثال: 0712 345 678.</string>
+<string name="registration_password_mismatch">كلمتا المرور غير متطابقتين.</string>
+<string name="registration_invalid_email">البريد الإلكتروني غير صالح. مثال: ustadh@madrassa.go.tz.</string>
+<string name="registration_invalid_count">أدخل عددًا صحيحًا للأساتذة (1 أو أكثر).</string>
+<string name="registration_review">مراجعة</string>
+<string name="registration_review_title">مراجعة المعلومات</string>
+<string name="registration_review_subtitle">تأكد من صحة جميع المعلومات قبل إرسال الطلب.</string>
+<string name="registration_status">حالة الطلب</string>
+<string name="registration_draft">مسودة</string>
+<string name="registration_submitted_title">تم إرسال الطلب</string>
+<string name="registration_submitted_subtitle">تم استلام طلب التسجيل وهو الآن في انتظار المراجعة.</string>
+<string name="registration_submitted_message">سيتم مراجعة معلومات المدرسة القرآنية قبل تفعيل الحساب.</string>
+<string name="registration_submitted_status">تم الإرسال</string>
+<string name="registration_pending_review">في انتظار المراجعة</string>
+<string name="registration_step_1">الخطوة 1 من 5</string>
+<string name="registration_step_2">الخطوة 2 من 5</string>
+<string name="registration_step_3">الخطوة 3 من 5</string>
+<string name="registration_step_4">الخطوة 4 من 5</string>
+<string name="registration_step_5">الخطوة 5 من 5</string>
+<string name="registration_back">رجوع</string>
+<string name="registration_next">متابعة</string>
+<string name="registration_submit">إرسال الطلب</string>
+<string name="registration_cancel">إلغاء</string>
+<string name="registration_close">إغلاق</string>
+
+
+    <!-- 3F-A6 Solo Learning -->
+    <string name="solo_learning_title">التعلّم الفردي</string>
+    <string name="solo_learning_subtitle">تعلّم القرآن الكريم والعلوم الإسلامية</string>
+    <string name="solo_learning_welcome">تعلّم بهدوء وتركيز</string>
+    <string name="solo_card_title">Solo Learning</string>
+    <string name="solo_card_subtitle">تعلّم بهدوء وتركيز • القرآن الكريم والعلوم الإسلامية</string>
+    <string name="field_example_phone">مثال: 0712 345 678</string>
+    <string name="password_strength_weak">كلمة مرور ضعيفة</string>
+    <string name="password_strength_fair">كلمة مرور متوسطة</string>
+    <string name="password_strength_strong">كلمة مرور قوية</string>
+    <string name="password_missing_length">استخدم ٦ أحرف على الأقل</string>
+    <string name="password_missing_letter">أضف حروفًا (a–z)</string>
+    <string name="password_missing_number">أضف أرقامًا (0–9)</string>
+    <string name="password_missing_special">أضف رمزًا خاصًا مثل , % @ # ! ؟</string>
+    <string name="solo_learning_offline">مساحة تعلّم تعمل دون الحاجة إلى حساب مدرسة قرآنية أو اتصال بالخادم.</string>
+    <string name="solo_learning_areas">مجالات التعلّم</string>
+    <string name="solo_learning_areas_subtitle">محتوى أساسي للتعلّم الذاتي</string>
+    <string name="solo_quran_eyebrow">القرآن الكريم</string>
+    <string name="solo_quran_title">القرآن الكريم</string>
+    <string name="solo_quran_description">اقرأ وواصل تعلّم القرآن الكريم في بيئة تعلّم فردية.</string>
+    <string name="solo_islamic_eyebrow">العلوم الإسلامية</string>
+    <string name="solo_islamic_title">الدروس الإسلامية</string>
+    <string name="solo_islamic_description">دروس منظمة حسب الموضوع والدرس وخطوات التعلّم.</string>
+    <string name="solo_books_eyebrow">الكتب</string>
+    <string name="solo_books_title">الكتب والدروس</string>
+    <string name="solo_books_description">محتوى تعليمي يمكن تنظيمه وقراءته بالتسلسل.</string>
+    <string name="solo_progress_title">تقدّمي</string>
+    <string name="solo_progress_subtitle">أساس متابعة تقدّم المتعلّم الفردي</string>
+    <string name="solo_progress_learning">الدروس المكتملة</string>
+    <string name="solo_content_ready_title">أساس التعلّم الفردي جاهز</string>
+    <string name="solo_content_ready_message">هذا الهيكل مرتبط بأساس واجهة الأكاديمية. سيتم ربط المحتوى الحقيقي بالمحتوى العام المعتمد دون تكرار محتوى المدرسة.</string>
+    <string name="solo_quran_placeholder">سيتم ربط وحدة محتوى القرآن الكريم بالمحتوى التعليمي العام المعتمد.</string>
+    <string name="solo_content_placeholder">سيتم ربط وحدة المحتوى التعليمي بالمحتوى الأكاديمي العام المعتمد.</string>
+    <!-- V7.3 registration location + country-code pickers -->
+    <string name="registration_select_region">اختر المنطقة</string>
+    <string name="registration_select_district">اختر المديرية</string>
+    <string name="registration_pick_region_first">اختر المنطقة أولاً</string>
+    <string name="registration_select_country_code">اختر رمز الدولة</string>
+    <string name="field_example_ward">مثال: كارياكوو</string>
+
+    <!-- V7.3 shared dialog copy (utility bar + state dialogs) -->
+    <string name="dialog_ok">موافق</string>
+    <string name="privacy_message">تُعالج معلوماتك بأمان من قِبل Madrassa — EduNoor.</string>
+    <string name="terms_message">ستعرض شروط وأحكام Madrassa — EduNoor هنا.</string>
+    <string name="help_message">للحصول على المساعدة، يرجى التواصل مع مسؤول المدرسة لديك.</string>
+
+    <!-- V7.5 password visibility (a11y descriptions) -->
+    <string name="show_password">إظهار كلمة المرور</string>
+    <string name="hide_password">إخفاء كلمة المرور</string>
+
+    <!-- V7.5 real authentication results -->
+    <string name="login_in_progress">جارٍ تسجيل الدخول…</string>
+    <string name="login_invalid_credentials">رقم الهاتف أو كلمة المرور غير صحيحة.</string>
+    <string name="login_account_inactive">الحساب غير مفعل.</string>
+    <string name="login_madrassa_inactive">لم يتم تفعيل المدرسة بعد؛ وهي بصمة انتظار المراجعة.</string>
+    <string name="login_password_change_required">يرجى تغيير كلمة المرور الأولية أولًا.</string>
+    <string name="login_failed">فشل تسجيل الدخول. حاول مرة أخرى.</string>
+    <string name="login_invalid_phone">رقم الهاتف غير صالح. تحقق من رمز الدولة والأرقام، مثال: 0712 345 678.</string>
+
+    <!-- V7.5 registration submission through the domain layer -->
+    <string name="registration_name_exists">توجد مدرسة تحمل هذا الاسم بالفعل.</string>
+    <string name="registration_save_failed">تعذر حفظ التسجيل. حاول مرة أخرى.</string>
+    <string name="registration_invalid_data">يرجى التأكد من صحة جميع الحقول.</string>
+
+    <!-- V7.5 branded post-login initialization (spec 11) -->
+    <string name="init_step_database">فتح قاعدة البيانات المحلية…</string>
+    <string name="init_step_madrassa">تحميل بيانات المدرسة…</string>
+    <string name="init_step_ustadh_status">التحقق من حالة التسجيل…</string>
+    <string name="init_step_parent_account">تحميل حساب ولي الأمر…</string>
+    <string name="init_step_parent_session">تجهيز جلسة آمنة…</string>
+    <string name="init_session_ready">الجلسة جاهزة</string>
+    <string name="init_welcome">أهلاً بك</string>
+    <string name="init_next_stage">ستُربط لوحة الإدارة في المرحلة التالية.</string>
+
 </resources>

@@ -7,14 +7,38 @@
     <application
         android:theme="@style/AppTheme"
         android:label="@string/app_name"
-        android:icon="@drawable/edunoor_icon"
-        android:roundIcon="@drawable/edunoor_icon"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:allowBackup="false"
         android:supportsRtl="true">
 
         <activity
+            android:name=".SoloLearningActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".auth.parent.ParentLoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".auth.ustadh.UstadhLoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+
+        <activity
+            android:name=".InitializationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".registration.MadrassaRegistrationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".SplashActivity"

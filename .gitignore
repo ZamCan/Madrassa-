@@ -7,3 +7,15 @@ manual/dex/
 manual/res-compiled/
 manual/aapt/base.apk
 manual/aapt/resources.zip
+
+# Local, machine-specific SDK path
+local.properties
+
+# Editor/repair backup copies
+*.bak
+*.bak-*
+
+# Manual build outputs / compiled class files
+manual/v71/
+manual/check-domain/
+manual/check-ui/

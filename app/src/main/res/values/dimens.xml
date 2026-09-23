@@ -22,12 +22,38 @@
 
     <dimen name="role_area_gap">15dp</dimen>
 
-    <dimen name="role_card_height">64dp</dimen>
+    <dimen name="role_card_height">68dp</dimen>
 
     <dimen name="role_card_gap">10dp</dimen>
 
     <dimen name="card_radius">15dp</dimen>
 
     <dimen name="bottom_bar_height">44dp</dimen>
+
+    <!-- EduNoor spacing + type tokens (Box 1 design system) -->
+
+    <dimen name="space_xxs">2dp</dimen>
+
+    <dimen name="space_xs">4dp</dimen>
+
+    <dimen name="space_sm">8dp</dimen>
+
+    <dimen name="space_md">12dp</dimen>
+
+    <dimen name="space_lg">18dp</dimen>
+
+    <dimen name="space_xl">24dp</dimen>
+
+    <dimen name="control_height">48dp</dimen>
+
+    <dimen name="field_height">58dp</dimen>
+
+    <dimen name="text_caption">12sp</dimen>
+
+    <dimen name="text_body">14sp</dimen>
+
+    <dimen name="text_subtitle">16sp</dimen>
+
+    <dimen name="text_title">23sp</dimen>
 
 </resources>

@@ -3,8 +3,13 @@ import zlib
 import zipfile
 from pathlib import Path
 
-src = Path("manual/apk/Madrassa-v3-unsigned.apk")
-dst = Path("manual/apk/Madrassa-v3-aligned-unsigned.apk")
+import sys
+
+if len(sys.argv) != 3:
+    raise SystemExit("Usage: align_apk.py <input.apk> <output.apk>")
+
+src = Path(sys.argv[1])
+dst = Path(sys.argv[2])
 
 with zipfile.ZipFile(src, "r") as zin:
     entries = zin.infolist()
