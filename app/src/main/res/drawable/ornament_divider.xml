@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ornamental divider: line - diamond - line, from the approved V6 design -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="86dp"
+    android:height="10dp"
+    android:viewportWidth="86"
+    android:viewportHeight="10">
+    <path
+        android:pathData="M2,5 L33,5 M53,5 L84,5"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1"
+        android:fillColor="@android:color/transparent"/>
+    <path
+        android:pathData="M43,1.6 L46.4,5 L43,8.4 L39.6,5 Z"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1"
+        android:fillColor="@android:color/transparent"/>
+</vector>

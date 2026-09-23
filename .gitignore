@@ -19,3 +19,10 @@ local.properties
 manual/v71/
 manual/check-domain/
 manual/check-ui/
+
+# IDE / build hygiene
+.idea/
+*.iml
+captures/
+.kotlin/
+*.apk

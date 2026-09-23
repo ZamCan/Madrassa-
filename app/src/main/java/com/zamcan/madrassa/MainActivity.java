@@ -383,8 +383,12 @@ public class MainActivity extends Activity {
                 LinearLayout.VERTICAL
         );
 
-        root.setBackgroundColor(
-                background
+        /*
+         * V7 brand canvas: cream girih pattern with gilded gold
+         * artifacts (design/pipeline.py -> drawable-nodpi).
+         */
+        root.setBackgroundResource(
+                R.drawable.edunoor_landing_bg
         );
 
         root.setPadding(
@@ -414,7 +418,7 @@ public class MainActivity extends Activity {
                 new ImageView(this);
 
         mark.setImageResource(
-                R.drawable.edunoor_icon
+                R.drawable.brand_icon
         );
 
         mark.setScaleType(

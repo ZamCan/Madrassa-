@@ -23,4 +23,23 @@
     <color name="edunoor_pattern">#D9C5A5</color>
 
     <color name="edunoor_white">#FFFDF8</color>
+
+    <!-- ============================================================ -->
+    <!-- V7 brand tokens — "Emerald Night & Gold" (MY MADRASSA icon). -->
+    <!-- Definitions & usage rules: docs/architecture/BRAND_SYSTEM.md -->
+    <!-- ============================================================ -->
+    <color name="edunoor_emerald">#061A13</color>
+    <color name="edunoor_emerald_deep">#04120D</color>
+    <color name="edunoor_emerald_glass">#0C2B1F</color>
+    <color name="edunoor_emerald_primary">#155941</color>
+
+    <color name="edunoor_gold_bright">#E8C97E</color>
+    <color name="edunoor_gold_deep">#8A6A2C</color>
+
+    <color name="edunoor_parchment">#F3E8D3</color>
+    <color name="edunoor_text_light">#F5EEDC</color>
+    <color name="edunoor_text_faded">#C7B99B</color>
+
+    <!-- Adaptive launcher icon background -->
+    <color name="ic_launcher_bg">#04120D</color>
 </resources>

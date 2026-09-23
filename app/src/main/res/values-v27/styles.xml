@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- windowLightNavigationBar requires API 27 -> lives in values-v27/styles.xml -->
-
+    <!-- AppTheme (API 27+) - adds windowLightNavigationBar. Keep in sync with values/styles.xml. -->
     <style name="AppTheme"
         parent="@android:style/Theme.Material.Light.NoActionBar">
 
@@ -13,6 +12,7 @@
         <item name="android:statusBarColor">@color/edunoor_background</item>
 
         <item name="android:navigationBarColor">@color/edunoor_background</item>
+        <item name="android:windowLightNavigationBar">true</item>
 
         <item name="android:colorAccent">@color/edunoor_clay</item>
 

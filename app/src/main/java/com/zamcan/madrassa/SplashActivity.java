@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -96,13 +95,13 @@ public class SplashActivity extends Activity {
 
         getWindow().setStatusBarColor(
                 getColor(
-                        R.color.edunoor_walnut
+                        R.color.edunoor_emerald_deep
                 )
         );
 
         getWindow().setNavigationBarColor(
                 getColor(
-                        R.color.edunoor_walnut
+                        R.color.edunoor_emerald_deep
                 )
         );
 
@@ -120,29 +119,19 @@ public class SplashActivity extends Activity {
                 Gravity.CENTER
         );
 
-        GradientDrawable background =
-                new GradientDrawable(
-                        GradientDrawable.Orientation.TL_BR,
-                        new int[] {
-                                getColor(
-                                        R.color.edunoor_walnut
-                                ),
-                                getColor(
-                                        R.color.edunoor_clay_dark
-                                ),
-                                getColor(
-                                        R.color.edunoor_walnut
-                                )
-                        }
-                );
-
-        root.setBackground(background);
+        /*
+         * V7 brand canvas: emerald night gradient with glowing gold
+         * artifacts (design/pipeline.py -> drawable-nodpi).
+         */
+        root.setBackgroundResource(
+                R.drawable.edunoor_splash_bg
+        );
 
         ImageView icon =
                 new ImageView(this);
 
         icon.setImageResource(
-                R.drawable.edunoor_icon
+                R.drawable.brand_icon
         );
 
         icon.setAlpha(0f);

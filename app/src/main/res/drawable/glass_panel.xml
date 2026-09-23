@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Glass on light surfaces uses dark-emerald fills with gold hairlines
+    (see docs/architecture/BRAND_SYSTEM.md - "Glass recipes").
+    Alpha hex: B8=72%, C2=76%, 99=60%, 96=59%, A6=65%, 8F=56%
+-->
+
+<!-- Large canvas panel that hosts the hero + role cards -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#B80C2B1F"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:width="1dp" android:color="#59C69A45"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+</layer-list>
