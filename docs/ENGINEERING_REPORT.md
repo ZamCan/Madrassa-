@@ -22,7 +22,7 @@ toolchain.
 | Languages | Swahili/English/Arabic, **170 / 170 / 170** identical key sets; `attachBaseContext(LanguageManager.wrap)` on every activity; true RTL honoured. |
 | Startup | Splash no longer sleeps a fixed 1100 ms — it performs real initialization (open store → load records → check status) with a live status line; post-login uses the new `InitializationActivity` (spec §11). |
 | Registration | Submits through the domain `RegistrationService` (policy → PBKDF2 hash → single SQLite transaction), off the main thread, with per-error-code localized messages. |
-| Verification | Pre-build checklist §5 passed; **both builds green** — manual `BUILD COMPLETE` (334K APK, v2+v3) and Gradle `BUILD SUCCESSFUL in 2m 43s`; string parity, manifest and zero-byte checks all green. |
+| Verification | Pre-build checklist §5 passed; **both builds green** — manual `BUILD COMPLETE` (334K APK, v2+v3) and Gradle `BUILD SUCCESSFUL in 2m 43s`; string parity, manifest and zero-byte checks all green. All work **committed and pushed** to `origin/main`. |
 
 ---
 
@@ -262,8 +262,12 @@ build paths are green.**
 
 - String parity: **170 / 170 / 170**, identical key sets (verified by `diff`).
 - Hardcoded colors: **0** live `.java` files contain `Color.rgb`.
-- Work is **staged but uncommitted**: 172 files, +25,849 / −237 on top of
-  commits `3b4da04` → `a53bcaa` → `3c70062`.
+- Source control: **committed and pushed** — 172 files, +25,849 / −237
+  landed in `32c12f7` (domain, auth, registration and UI layers),
+  `c7a87b1` and `c607b2e` (this report), on top of `3b4da04` →
+  `a53bcaa` → `3c70062`. `git ls-remote origin` confirms
+  `refs/heads/main` equals local `HEAD`, and `git push` reports
+  *Everything up-to-date*.
 
 ---
 
@@ -319,8 +323,6 @@ build paths are green.**
 4. **Gradle path is environmental** — this run succeeded, but it stays
    flaky under proot/futex; the manual
    build is the release gate.
-5. **All work uncommitted** — 172 files are staged; a git checkpoint commit
-   is recommended as the immediate next step.
 
 ---
 
@@ -358,10 +360,8 @@ build paths are green.**
 
 ## 10. Recommended next steps
 
-1. Git checkpoint commit of the staged work (currently 172 files staged,
-   uncommitted).
-2. Second-device install/launch verification (fresh adb pairing) — still
+1. Second-device install/launch verification (fresh adb pairing) — still
    blocked; no device answered at the last three known addresses.
-3. Build the management dashboard and point `InitializationActivity`'s
+2. Build the management dashboard and point `InitializationActivity`'s
    end state at it.
-4. Add parent provisioning so parent login can be exercised end-to-end.
+3. Add parent provisioning so parent login can be exercised end-to-end.
