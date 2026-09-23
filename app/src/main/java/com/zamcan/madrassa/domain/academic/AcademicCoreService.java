@@ -868,6 +868,22 @@ public final class AcademicCoreService {
         value.lessonId = lessonId;
         value.updatedAt = System.currentTimeMillis();
 
+        LearningProgress existing =
+                progress.findByLearnerAndLesson(
+                        learnerId,
+                        lessonId
+                );
+
+        if (existing != null) {
+            existing.madrassaId = madrassaId;
+            existing.status = value.status;
+            existing.updatedAt = value.updatedAt;
+
+            return progress.update(existing)
+                    ? OperationResult.success(existing)
+                    : failed("progress_update_failed");
+        }
+
         return progress.save(value)
                 ? OperationResult.success(value)
                 : failed("progress_save_failed");
@@ -917,6 +933,25 @@ public final class AcademicCoreService {
         value.lessonId = lessonId;
         value.madrassaId = null;
         value.updatedAt = System.currentTimeMillis();
+
+        LearningProgress existing =
+                progress.findByLearnerAndLesson(
+                        value.learnerId,
+                        lessonId
+                );
+
+        if (existing != null) {
+            if (existing.madrassaId != null) {
+                return forbidden("solo_progress_tenant_conflict");
+            }
+
+            existing.status = value.status;
+            existing.updatedAt = value.updatedAt;
+
+            return progress.update(existing)
+                    ? OperationResult.success(existing)
+                    : failed("solo_progress_update_failed");
+        }
 
         return progress.save(value)
                 ? OperationResult.success(value)
