@@ -11,6 +11,7 @@ import com.zamcan.madrassa.data.model.Programme;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.OperationResult;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.AcademicAccessContext;
 import com.zamcan.madrassa.domain.repository.AcademicUnitStore;
 import com.zamcan.madrassa.domain.repository.AssessmentStore;
 import com.zamcan.madrassa.domain.repository.AssignmentStore;
@@ -41,7 +42,13 @@ public final class AcademicCoreService {
     private final AssessmentStore assessments;
     private final LearningProgressStore progress;
     private final StudentStore students;
+    private final AcademicAccessContext accessContext;
 
+    /**
+     * Compatibility constructor. It intentionally creates an unbound service:
+     * Madrassa/solo writes require the explicit access-context constructor.
+     */
+    @Deprecated
     public AcademicCoreService(
             ProgrammeStore programmes,
             CourseStore courses,
@@ -52,6 +59,38 @@ public final class AcademicCoreService {
             AssessmentStore assessments,
             LearningProgressStore progress,
             StudentStore students
+    ) {
+        this(
+                programmes,
+                courses,
+                units,
+                lessons,
+                materials,
+                assignments,
+                assessments,
+                progress,
+                students,
+                null
+        );
+    }
+
+    /**
+     * Creates an academic service bound to one explicit tenant scope.
+     *
+     * Use AcademicAccessContext.forMadrassa(...) for Madrassa work or
+     * AcademicAccessContext.forSolo() for global/local-only Solo work.
+     */
+    public AcademicCoreService(
+            ProgrammeStore programmes,
+            CourseStore courses,
+            AcademicUnitStore units,
+            LessonStore lessons,
+            LearningMaterialStore materials,
+            AssignmentStore assignments,
+            AssessmentStore assessments,
+            LearningProgressStore progress,
+            StudentStore students,
+            AcademicAccessContext accessContext
     ) {
         if (programmes == null
                 || courses == null
@@ -76,6 +115,7 @@ public final class AcademicCoreService {
         this.assessments = assessments;
         this.progress = progress;
         this.students = students;
+        this.accessContext = accessContext;
     }
 
     /**
@@ -88,6 +128,10 @@ public final class AcademicCoreService {
      * A global course is represented by madrassaId == null.
      */
     public OperationResult<Course> createCourse(Course value) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.programmeId)
@@ -148,6 +192,10 @@ public final class AcademicCoreService {
     public OperationResult<AcademicUnit> createUnit(
             AcademicUnit value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.courseId)
@@ -236,6 +284,10 @@ public final class AcademicCoreService {
     public OperationResult<Lesson> createLesson(
             Lesson value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.unitId)
@@ -342,6 +394,10 @@ public final class AcademicCoreService {
     public OperationResult<LearningMaterial> createMaterial(
             LearningMaterial value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.programmeId)
@@ -396,6 +452,10 @@ public final class AcademicCoreService {
     public OperationResult<Assignment> createAssignment(
             Assignment value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.programmeId)
@@ -613,6 +673,10 @@ public final class AcademicCoreService {
     public OperationResult<Assessment> recordAssessment(
             Assessment value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.madrassaId)
@@ -702,6 +766,10 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordStudentProgress(
             LearningProgress value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.learnerId)
@@ -815,6 +883,10 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordSoloProgress(
             LearningProgress value
     ) {
+        if (!authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
         if (value == null
                 || blank(value.id)
                 || blank(value.learnerId)
@@ -849,6 +921,18 @@ public final class AcademicCoreService {
         return progress.save(value)
                 ? OperationResult.success(value)
                 : failed("solo_progress_save_failed");
+    }
+
+    private boolean authorizedScope(String madrassaId) {
+        if (accessContext == null) {
+            return false;
+        }
+
+        if (blank(madrassaId)) {
+            return accessContext.allowsGlobal();
+        }
+
+        return accessContext.allowsMadrassa(madrassaId);
     }
 
     private boolean isEnrolled(
