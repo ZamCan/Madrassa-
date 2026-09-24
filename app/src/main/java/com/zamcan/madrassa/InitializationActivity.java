@@ -349,6 +349,11 @@ public class InitializationActivity extends Activity {
         setContentView(root);
 
         continueButton.setOnClickListener(v -> {
+            if (ROLE_PARENT.equals(role) && madrassaId != null) {
+                startActivity(RoleDashboardActivity.forParent(this, parentId, madrassaId));
+            } else if (ROLE_USTADH.equals(role) && madrassaId != null) {
+                startActivity(RoleDashboardActivity.forUstadh(this, madrassaId));
+            }
             setResult(RESULT_OK);
             finish();
         });
