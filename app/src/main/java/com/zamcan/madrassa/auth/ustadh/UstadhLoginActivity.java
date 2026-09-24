@@ -584,7 +584,10 @@ public class UstadhLoginActivity extends Activity {
                 startActivity(
                         InitializationActivity.forUstadh(
                                 this,
-                                result.madrassa.id
+                                result.madrassa.id,
+                                result.ustadh != null
+                                        ? result.ustadh.id
+                                        : null
                         )
                 );
 

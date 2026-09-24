@@ -36,6 +36,14 @@
             android:exported="false" />
 
         <activity
+            android:name="com.zamcan.madrassa.role.RoleDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.zamcan.madrassa.role.RoleListActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
 

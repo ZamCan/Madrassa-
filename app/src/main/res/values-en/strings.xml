@@ -288,4 +288,46 @@
     <string name="deen_hijri_days">Hijri adjustment: %+d</string>
     <string name="deen_hijri_caption">Display adjustment for the Hijri date (your local moon sighting).</string>
 
+    <!-- Role dashboards -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_subtitle_parent">Your children\u2019s standing under the madrassa ID</string>
+    <string name="dashboard_subtitle_ustadh">The madrassa\u2019s standing under your ID</string>
+    <string name="role_parent">Parent</string>
+    <string name="role_ustadh">Ustadh</string>
+    <string name="dashboard_welcome">Welcome, %1$s</string>
+    <string name="dashboard_madrassa_id">ID: %1$s</string>
+    <string name="stat_children">Children</string>
+    <string name="stat_students">Students</string>
+    <string name="stat_classes">Classes</string>
+    <string name="stat_madeni">Debts</string>
+    <string name="stat_progress">Progress</string>
+    <string name="section_children">My children</string>
+    <string name="section_students">Students</string>
+    <string name="section_classes">Classes</string>
+    <string name="section_fees">Fees and debts</string>
+    <string name="section_progress">Progress</string>
+    <string name="section_calendar">Calendar</string>
+    <string name="list_empty_students">No student registered yet</string>
+    <string name="list_empty_classes">No class teaching yet</string>
+    <string name="list_empty_fees">No fee records yet</string>
+    <string name="list_empty_progress">No progress records yet</string>
+    <string name="list_capped">Showing: %1$d</string>
+    <string name="level_quran">Qur\u2019an: %1$s</string>
+    <string name="level_hifz">Hifz: %1$s</string>
+    <string name="fees_outstanding">Outstanding debts</string>
+    <string name="fee_paid">Paid</string>
+    <string name="fee_pending">Pending</string>
+    <string name="fee_overdue">Overdue</string>
+    <string name="fee_cancelled">Cancelled</string>
+    <string name="fee_locked">Locked</string>
+    <string name="fee_unpaid">Unpaid</string>
+    <string name="progress_pick">Choose a student</string>
+    <string name="progress_of">Lesson progress</string>
+    <string name="progress_started">Started</string>
+    <string name="progress_in_progress">In progress</string>
+    <string name="progress_completed">Completed</string>
+    <string name="progress_reviewing">Reviewing</string>
+    <string name="progress_needs_review">Needs review</string>
+    <string name="progress_not_started">Not started</string>
+
 </resources>

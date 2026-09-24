@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zamcan.madrassa.role.RoleDashboardActivity;
+
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
 import com.zamcan.madrassa.data.model.Madrassa;
@@ -47,6 +49,7 @@ public class InitializationActivity extends Activity {
     private static final String EXTRA_ROLE = "edunoor_role";
     private static final String EXTRA_MADRASSA_ID = "edunoor_madrassa_id";
     private static final String EXTRA_PARENT_ID = "edunoor_parent_id";
+    private static final String EXTRA_USTADH_ID = "edunoor_ustadh_id";
 
     private static final String ROLE_USTADH = "ustadh";
     private static final String ROLE_PARENT = "parent";
@@ -62,11 +65,20 @@ public class InitializationActivity extends Activity {
             Context context,
             String madrassaId
     ) {
+        return forUstadh(context, madrassaId, null);
+    }
+
+    public static Intent forUstadh(
+            Context context,
+            String madrassaId,
+            String ustadhId
+    ) {
         Intent intent =
                 new Intent(context, InitializationActivity.class);
 
         intent.putExtra(EXTRA_ROLE, ROLE_USTADH);
         intent.putExtra(EXTRA_MADRASSA_ID, madrassaId);
+        intent.putExtra(EXTRA_USTADH_ID, ustadhId);
 
         return intent;
     }
@@ -102,6 +114,7 @@ public class InitializationActivity extends Activity {
     private String role;
     private String madrassaId;
     private String parentId;
+    private String ustadhId;
 
     private volatile boolean workFinished = false;
     private boolean entranceFinished = false;
@@ -153,6 +166,7 @@ public class InitializationActivity extends Activity {
         role = getIntent().getStringExtra(EXTRA_ROLE);
         madrassaId = getIntent().getStringExtra(EXTRA_MADRASSA_ID);
         parentId = getIntent().getStringExtra(EXTRA_PARENT_ID);
+        ustadhId = getIntent().getStringExtra(EXTRA_USTADH_ID);
 
         int walnut = getColor(R.color.edunoor_walnut);
         int gold = getColor(R.color.edunoor_gold);
@@ -347,6 +361,41 @@ public class InitializationActivity extends Activity {
         setContentView(root);
 
         continueButton.setOnClickListener(v -> {
+
+            /*
+             * Hand over to the role dashboard: the live
+             * post-login home for this parent or ustadh under
+             * their madrassa ID.
+             */
+            android.content.Intent dashboard = new
+                    android.content.Intent(
+                    this,
+                    RoleDashboardActivity.class
+            );
+
+            dashboard.putExtra(
+                    RoleDashboardActivity.EXTRA_ROLE,
+                    role
+            );
+            dashboard.putExtra(
+                    RoleDashboardActivity.EXTRA_MADRASSA_ID,
+                    madrassaId
+            );
+
+            if (RoleDashboardActivity.ROLE_PARENT.equals(role)) {
+                dashboard.putExtra(
+                        RoleDashboardActivity.EXTRA_ACTOR_ID,
+                        parentId
+                );
+            } else {
+                dashboard.putExtra(
+                        RoleDashboardActivity.EXTRA_ACTOR_ID,
+                        ustadhId
+                );
+            }
+
+            startActivity(dashboard);
+
             setResult(RESULT_OK);
             finish();
         });

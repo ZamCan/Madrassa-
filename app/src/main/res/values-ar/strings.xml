@@ -287,4 +287,46 @@
     <string name="deen_hijri_days">تعديل الهجري: %+d</string>
     <string name="deen_hijri_caption">تعديل عرض التاريخ الهجري (رؤية الهلال عندك).</string>
 
+    <!-- Role dashboards -->
+    <string name="dashboard_title">لوحة التحكم</string>
+    <string name="dashboard_subtitle_parent">وضع أبنائك تحت هوية المدرسة</string>
+    <string name="dashboard_subtitle_ustadh">وضع المدرسة تحت هويتك</string>
+    <string name="role_parent">وليّ الأمر</string>
+    <string name="role_ustadh">الأستاذ</string>
+    <string name="dashboard_welcome">مرحباً، %1$s</string>
+    <string name="dashboard_madrassa_id">الرقم: %1$s</string>
+    <string name="stat_children">الأبناء</string>
+    <string name="stat_students">الطلاب</string>
+    <string name="stat_classes">الفصول</string>
+    <string name="stat_madeni">الديون</string>
+    <string name="stat_progress">التقدّم</string>
+    <string name="section_children">أبنائي</string>
+    <string name="section_students">الطلاب</string>
+    <string name="section_classes">الفصول</string>
+    <string name="section_fees">الرسوم والديون</string>
+    <string name="section_progress">التقدّم</string>
+    <string name="section_calendar">التقويم</string>
+    <string name="list_empty_students">لا يوجد طالب مسجّل بعد</string>
+    <string name="list_empty_classes">لا يوجد فصل قيد التدريس بعد</string>
+    <string name="list_empty_fees">لا توجد سجلات رسوم بعد</string>
+    <string name="list_empty_progress">لا توجد سجلات تقدّم بعد</string>
+    <string name="list_capped">المعروض: %1$d</string>
+    <string name="level_quran">القرآن: %1$s</string>
+    <string name="level_hifz">الحفظ: %1$s</string>
+    <string name="fees_outstanding">مجموع الديون</string>
+    <string name="fee_paid">مدفوعة</string>
+    <string name="fee_pending">قيد الانتظار</string>
+    <string name="fee_overdue">متأخرة</string>
+    <string name="fee_cancelled">ملغاة</string>
+    <string name="fee_locked">مقفلة</string>
+    <string name="fee_unpaid">غير مدفوعة</string>
+    <string name="progress_pick">اختر طالباً</string>
+    <string name="progress_of">تقدّم الدروس</string>
+    <string name="progress_started">بدأ</string>
+    <string name="progress_in_progress">جارٍ</string>
+    <string name="progress_completed">مكتمل</string>
+    <string name="progress_reviewing">قيد المراجعة</string>
+    <string name="progress_needs_review">يحتاج مراجعة</string>
+    <string name="progress_not_started">لم يبدأ</string>
+
 </resources>

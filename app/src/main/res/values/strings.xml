@@ -295,4 +295,46 @@
     <string name="deen_hijri_days">Rekebisho la Hijri: %+d</string>
     <string name="deen_hijri_caption">Rekebisho la mwonekano wa tarehe ya Hijri (msemo wa mwezi kwako).</string>
 
+    <!-- Role dashboards -->
+    <string name="dashboard_title">Dashibodi</string>
+    <string name="dashboard_subtitle_parent">Hali ya watoto wako chini ya ID ya madrasa</string>
+    <string name="dashboard_subtitle_ustadh">Hali ya madrasa chini ya ID yako</string>
+    <string name="role_parent">Mzazi</string>
+    <string name="role_ustadh">Ustadh</string>
+    <string name="dashboard_welcome">Karibu, %1$s</string>
+    <string name="dashboard_madrassa_id">ID: %1$s</string>
+    <string name="stat_children">Watoto</string>
+    <string name="stat_students">Wanafunzi</string>
+    <string name="stat_classes">Madarasa</string>
+    <string name="stat_madeni">Madeni</string>
+    <string name="stat_progress">Maendeleo</string>
+    <string name="section_children">Watoto wangu</string>
+    <string name="section_students">Wanafunzi</string>
+    <string name="section_classes">Madarasa</string>
+    <string name="section_fees">Ada na madeni</string>
+    <string name="section_progress">Maendeleo</string>
+    <string name="section_calendar">Kalenda</string>
+    <string name="list_empty_students">Hakuna mwanafunzi aliyesajiliwa bado</string>
+    <string name="list_empty_classes">Hakuna darasa linalofundishwa bado</string>
+    <string name="list_empty_fees">Hakuna rekodi ya ada bado</string>
+    <string name="list_empty_progress">Hakuna rekodi ya maendeleo bado</string>
+    <string name="list_capped">Imeonyesha: %1$d</string>
+    <string name="level_quran">Qur\u2019an: %1$s</string>
+    <string name="level_hifz">Hifz: %1$s</string>
+    <string name="fees_outstanding">Jumla ya madeni</string>
+    <string name="fee_paid">Imelipwa</string>
+    <string name="fee_pending">Inasubiri</string>
+    <string name="fee_overdue">Imeliwaza</string>
+    <string name="fee_cancelled">Imefutwa</string>
+    <string name="fee_locked">Imefungwa</string>
+    <string name="fee_unpaid">Haijalipwa</string>
+    <string name="progress_pick">Chagua mwanafunzi</string>
+    <string name="progress_of">Maendeleo ya masomo</string>
+    <string name="progress_started">Imeanza</string>
+    <string name="progress_in_progress">Inaendelea</string>
+    <string name="progress_completed">Imekamilika</string>
+    <string name="progress_reviewing">Inapitiwa</string>
+    <string name="progress_needs_review">Inahitaji kupitiwa</string>
+    <string name="progress_not_started"> Haijaanza</string>
+
 </resources>
