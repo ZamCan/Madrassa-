@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/edunoor_walnut"
+        android:pathData="M12,15 L36,15 L40,19 L40,37 L8,37 L8,19 Z" />
+    <path
+        android:fillColor="@color/edunoor_gold"
+        android:pathData="M8,19 L40,19 L40,23 L8,23 Z" />
+    <path
+        android:fillColor="@color/edunoor_gold_soft"
+        android:pathData="M19,24 L29,24 L29,37 L19,37 Z" />
+    <path
+        android:fillColor="@color/edunoor_gold_deep"
+        android:pathData="M16,12 L32,12 L36,15 L12,15 Z" />
+    <path
+        android:fillColor="@color/edunoor_clay"
+        android:pathData="M8,37 L40,37 L36,41 L12,41 Z" />
+</vector>
