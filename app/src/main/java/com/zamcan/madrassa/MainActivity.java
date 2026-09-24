@@ -29,6 +29,16 @@ public class MainActivity extends Activity {
         );
     }
 
+    /*
+     * Design-system spacing token accessor (values/dimens.xml).
+     * Landing-page rhythm comes from the authored tokens instead
+     * of scattered magic numbers, so the page grid has one
+     * source of truth.
+     */
+    private int dim(int resource) {
+        return getResources().getDimensionPixelSize(resource);
+    }
+
     private TextView text(
             String value,
             float size,
@@ -740,7 +750,7 @@ public class MainActivity extends Activity {
                 );
 
         ornamentParams.topMargin =
-                dp(8);
+                dim(R.dimen.space_sm);
 
         content.addView(
                 ornament,
@@ -774,17 +784,22 @@ public class MainActivity extends Activity {
                         -2
                 );
 
+        /*
+         * Hero -> gateway-group gap uses the authored
+         * role_area_gap token (15dp), replacing the ad-hoc 13dp
+         * so the page rhythm matches the documented grid.
+         */
         rolesParams.topMargin =
-                dp(13);
+                dim(R.dimen.role_area_gap);
 
         rolesParams.bottomMargin =
                 dp(0);
 
         rolesParams.leftMargin =
-                dp(8);
+                dim(R.dimen.space_sm);
 
         rolesParams.rightMargin =
-                dp(8);
+                dim(R.dimen.space_sm);
 
         LinearLayout solo =
                 soloCard();
@@ -815,7 +830,7 @@ public class MainActivity extends Activity {
                 );
 
         parentParams.topMargin =
-                dp(10);
+                dim(R.dimen.role_card_gap);
 
         roles.addView(
                 parent,
@@ -840,7 +855,7 @@ public class MainActivity extends Activity {
                 );
 
         ustadhParams.topMargin =
-                dp(10);
+                dim(R.dimen.role_card_gap);
 
         roles.addView(
                 ustadh,
