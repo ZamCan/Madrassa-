@@ -94,7 +94,7 @@ public final class MadrassaOperationsActivity extends Activity {
         EditText name=new EditText(this);name.setHint(getString(R.string.dashboard_class_name));box.addView(name);
         EditText code=new EditText(this);code.setHint(getString(R.string.dashboard_class_code));box.addView(code);
         new AlertDialog.Builder(this).setTitle(getString(R.string.dashboard_add_class)).setView(box).setNegativeButton(getString(R.string.dialog_cancel),null).setPositiveButton(getString(R.string.dialog_save),(d,w)->{
-            try{ClassGroup x=new ClassGroup();x.id=IdGenerator.newId();x.madrassaId=madrassaId;x.name=name.getText().toString();x.code=code.getText().toString();x.active=true;x.orderIndex=classes.findByMadrassa(madrassaId).size();new ClassManagementService(classes,new MadrassaAccessContext(madrassaId)).create(x);build();}catch(Exception e){show(getString(R.string.dashboard_add_class),e.getMessage()==null?"Save failed.":e.getMessage());}
+            try{ClassGroup x=new ClassGroup();x.id=IdGenerator.newId();x.madrassaId=madrassaId;x.name=name.getText().toString();x.code=code.getText().toString();x.active=true;x.orderIndex=classes.findByMadrassa(madrassaId).size();new ClassManagementService(classes,MadrassaAccessContext.forMadrassa(madrassaId)).create(x);build();}catch(Exception e){show(getString(R.string.dashboard_add_class),e.getMessage()==null?"Save failed.":e.getMessage());}
         }).show();
     }
     private int countInClass(String id){int n=0;for(Student s:students.findByMadrassa(madrassaId))if(id.equals(s.classId))n++;return n;}
