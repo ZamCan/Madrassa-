@@ -171,8 +171,8 @@ public class MainActivity extends Activity {
                                 ? getColor(R.color.edunoor_gold)
                                 : getColor(R.color.edunoor_clay),
                         primary
-                                ? R.drawable.parent_card
-                                : R.drawable.ustadh_card,
+                                ? R.drawable.glass_card_primary
+                                : R.drawable.glass_card_secondary,
                         title,
                         primary
                                 ? getColor(R.color.edunoor_white)
@@ -425,7 +425,7 @@ public class MainActivity extends Activity {
          * artifacts (design/pipeline.py -> drawable-nodpi).
          */
         root.setBackgroundResource(
-                R.drawable.edunoor_landing_bg
+                R.drawable.glass_panel
         );
 
         root.setPadding(
