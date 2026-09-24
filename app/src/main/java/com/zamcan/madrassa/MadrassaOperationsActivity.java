@@ -57,7 +57,7 @@ public final class MadrassaOperationsActivity extends Activity {
 
     private void build(){
         LinearLayout root=new LinearLayout(this); root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(dp(16),dp(12),dp(16),dp(20)); root.setBackgroundResource(R.drawable.edunoor_landing_bg);
+        root.setPadding(dp(16),dp(12),dp(16),dp(20)); root.setBackgroundResource(R.drawable.glass_panel);
         TextView back=t("‹",30,true); back.setGravity(Gravity.CENTER); back.setOnClickListener(v->finish());
         root.addView(back,new LinearLayout.LayoutParams(-1,dp(44)));
         root.addView(t(getString(R.string.dashboard_management),23,true),new LinearLayout.LayoutParams(-1,dp(48)));
