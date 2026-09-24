@@ -574,7 +574,7 @@ public class MainActivity extends Activity {
                 new FrameLayout(this);
 
         canvas.setBackgroundResource(
-                R.drawable.edunoor_canvas
+                R.drawable.glass_panel
         );
 
         /*
