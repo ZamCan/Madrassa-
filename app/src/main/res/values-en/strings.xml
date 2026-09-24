@@ -127,6 +127,7 @@
     <string name="solo_card_title">Solo Learning</string>
     <string name="solo_card_subtitle">Learn with calm and focus • Qur’an and Islamic knowledge</string>
     <string name="field_example_phone">e.g. 0712 345 678</string>
+    <string name="field_example_identifier">e.g. Nurul Islam or 0712 345 678</string>
     <string name="password_strength_weak">Weak password</string>
     <string name="password_strength_fair">Fair password</string>
     <string name="password_strength_strong">Strong password</string>

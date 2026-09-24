@@ -127,6 +127,7 @@
     <string name="solo_card_title">Solo Learning</string>
     <string name="solo_card_subtitle">تعلّم بهدوء وتركيز • القرآن الكريم والعلوم الإسلامية</string>
     <string name="field_example_phone">مثال: 0712 345 678</string>
+    <string name="field_example_identifier">مثال: نور الإسلام أو 0712 345 678</string>
     <string name="password_strength_weak">كلمة مرور ضعيفة</string>
     <string name="password_strength_fair">كلمة مرور متوسطة</string>
     <string name="password_strength_strong">كلمة مرور قوية</string>

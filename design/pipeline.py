@@ -12,8 +12,6 @@ sources in `design/assets-src/`:
                        (emerald glass tile + gold rim + MY MADRASSA emblem)
 
 Outputs:
-  mipmap-*/ic_launcher.png         legacy launcher icon (48..192 px)
-  mipmap-*/ic_launcher_round.png   circular legacy icon
   mipmap-*/ic_launcher_fg.png      adaptive-icon foreground (108..432 px)
   mipmap-xxxhdpi/ic_launcher_mono.png  monochrome (themed icon) layer
   drawable-nodpi/brand_icon.png    rounded in-app brand tile
@@ -87,10 +85,8 @@ def build_icons(icon):
         d = RES / bucket
         d.mkdir(parents=True, exist_ok=True)
 
-        icon.resize((legacy, legacy), Image.LANCZOS).save(d / "ic_launcher.png")
-        circular(icon.resize((legacy, legacy), Image.LANCZOS)).save(
-            d / "ic_launcher_round.png"
-        )
+        # minSdk 26 -> every supported device resolves the adaptive
+        # icon XML; only the foreground layer ships as bitmaps.
         # Foreground: master is already composed so the glass tile sits in
         # the central ~66% == the 72dp adaptive safe zone on a 108dp canvas.
         icon.resize((fg, fg), Image.LANCZOS).save(d / "ic_launcher_fg.png")

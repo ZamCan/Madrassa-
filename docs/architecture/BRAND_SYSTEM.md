@@ -171,9 +171,16 @@ design/assets-src/icon_fullbleed.png   (1024² master)
         │    ├─ background: @color/ic_launcher_bg
         │    ├─ foreground: @mipmap/ic_launcher_fg (glass tile in safe zone)
         │    └─ monochrome: @mipmap/ic_launcher_mono (themed icons)
-        ├─ mipmap-{m,h,x,xx,xxx}dpi/ic_launcher(.png)+_round     legacy
+        ├─ mipmap-{m,h,x,xx,xxx}dpi/ic_launcher_fg.png   foreground densities
         └─ drawable-nodpi/brand_icon.png          in-app rounded tile
 ```
+
+minSdk is 26, so the adaptive XML resolves on every supported device —
+no legacy bitmap launchers are shipped (the v0.7.1 hygiene pass removed
+them). Keep it that way: `pipeline.py` no longer emits legacy bitmaps.
+The `-v26` folder qualifier stays: AGP's AAPT2 does not resolve plain
+`mipmap-anydpi` for adaptive icons (verified empirically), and the
+single lint `ObsoleteSdkInt` note is accepted and documented.
 
 The emblem (open Qur'an + crescent + globe/arrow + MY MADRASSA banner)
 must never be redrawn by hand — always regenerate from the master.
@@ -207,4 +214,26 @@ first-strong bidirectional detection — do **not** force
 - Don't stretch `brand_icon` beyond ~96 dp or the emblem detail turns muddy.
 - Don't edit generated bitmaps; regenerate via the pipeline.
 
-— Maintained by the EduNoor engineering stages. Last applied: V7 brand integration.
+## 9. Release hygiene (v0.7.1 pass)
+
+- **Backup/transfer policy:** `res/xml/data_extraction_rules.xml` (API 31+)
+  and `res/xml/full_backup_content.xml` (API 26–30) exclude everything —
+  recovery is owned by the app's encrypted-backup stage, never platform
+  backup (spec §19). Manifest wires both plus `allowBackup="false"`.
+- **Per-app languages:** `res/xml/locales_config.xml` (sw/en/ar) +
+  `android:localeConfig` registers the LanguageManager switcher with the
+  Android 13+ system language settings. `localeConfig` is intentionally
+  API 33+ (lint `UnusedAttribute` note is by design).
+- **API 31+ system splash:** `values-v31/styles.xml` tints the system
+  splash with `edunoor_emerald_deep`, so system splash → SplashActivity
+  reads as one entrance. (The custom in-app splash remains; migrating to
+  androidx core-splashscreen is a future dependency decision.)
+- **Accepted, documented warnings:** `UnusedResources` (design-system
+  tokens + placeholders), `IconLauncherShape` on adaptive *foreground*
+  layers (by-design full-bleed), `ObsoleteSdkInt` on `mipmap-anydpi-v26`
+  (required, see §6), `AppBundleLocaleChanges` (APK distribution; AAB
+  language splits are a future store decision), `DefaultLocale`,
+  `ClickableViewAccessibility` (press effects route through
+  `performClick()` where the view is the click target).
+
+— Maintained by the EduNoor engineering stages. Last applied: v0.7.1 hygiene pass.

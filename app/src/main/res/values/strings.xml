@@ -64,6 +64,7 @@
     <string name="solo_card_title">Solo Learning</string>
     <string name="solo_card_subtitle">Jifunze kwa utulivu • Qur’an na elimu ya Kiislamu</string>
     <string name="field_example_phone">Mfano: 0712 345 678</string>
+    <string name="field_example_identifier">Mfano: Nurul Islam au 0712 345 678</string>
     <string name="password_strength_weak">Nenosiri dhaifu</string>
     <string name="password_strength_fair">Nenosiri la wastani</string>
     <string name="password_strength_strong">Nenosiri imara</string>

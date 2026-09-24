@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    EduNoor supported languages (Kiswahili default, English, Arabic).
+    Registers the in-app language switcher (LanguageManager) with the
+    Android 13+ per-app language settings, so the chosen language is
+    consistent system-wide and survives store redelivers.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="sw"/>
+    <locale android:name="en"/>
+    <locale android:name="ar"/>
+</locale-config>
