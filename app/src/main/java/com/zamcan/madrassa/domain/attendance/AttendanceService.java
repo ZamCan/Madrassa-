@@ -76,11 +76,17 @@ public final class AttendanceService {
         Attendance existing = attendance.findById(value.id.trim());
         if (existing == null) return missing("attendance_missing");
 
+        Student originalStudent = students.findById(existing.studentId);
+        ClassGroup originalGroup = classes.findById(existing.classId);
         Student student = students.findById(value.studentId.trim());
         ClassGroup group = classes.findById(value.classId.trim());
-        if (student == null || group == null) return missing("attendance_reference_missing");
+        if (originalStudent == null || originalGroup == null
+                || student == null || group == null) {
+            return missing("attendance_reference_missing");
+        }
 
-        if (!TenantPolicy.sameMadrassa(madrassaId, existingStudentMadrassa(student, existing))
+        if (!TenantPolicy.sameMadrassa(madrassaId, originalStudent.madrassaId)
+                || !TenantPolicy.sameMadrassa(madrassaId, originalGroup.madrassaId)
                 || !TenantPolicy.sameMadrassa(madrassaId, student.madrassaId)
                 || !TenantPolicy.sameMadrassa(madrassaId, group.madrassaId)) {
             return forbidden("attendance_tenant_mismatch");
@@ -95,11 +101,6 @@ public final class AttendanceService {
         return attendance.update(value)
                 ? OperationResult.success(value)
                 : failed("attendance_update_failed");
-    }
-
-    private String existingStudentMadrassa(Student current, Attendance existing) {
-        Student original = students.findById(existing.studentId);
-        return original == null ? null : original.madrassaId;
     }
 
     private static <T> OperationResult<T> invalid(String code) {
