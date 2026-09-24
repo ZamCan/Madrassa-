@@ -3,6 +3,7 @@ package com.zamcan.madrassa.domain.authorization.parent;
 import com.zamcan.madrassa.data.model.Parent;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.repository.ParentStore;
 import com.zamcan.madrassa.domain.repository.ParentStudentLinkStore;
 import com.zamcan.madrassa.domain.repository.StudentStore;
@@ -12,15 +13,18 @@ public final class ParentStudentLinkService {
     private final ParentStore parentStore;
     private final StudentStore studentStore;
     private final ParentStudentLinkStore linkStore;
+    private final MadrassaAccessContext accessContext;
 
     public ParentStudentLinkService(
             ParentStore parentStore,
             StudentStore studentStore,
-            ParentStudentLinkStore linkStore
+            ParentStudentLinkStore linkStore,
+            MadrassaAccessContext accessContext
     ) {
         this.parentStore = parentStore;
         this.studentStore = studentStore;
         this.linkStore = linkStore;
+        this.accessContext = accessContext;
     }
 
     public void link(
@@ -33,10 +37,7 @@ public final class ParentStudentLinkService {
         Student student =
                 requireStudent(studentId);
 
-        TenantPolicy.requireSameMadrassa(
-                parent.madrassaId,
-                student.madrassaId
-        );
+        requireTenant(parent, student);
 
         linkStore.link(
                 parent.id.trim(),
@@ -63,6 +64,14 @@ public final class ParentStudentLinkService {
                 parent.id.trim(),
                 student.id.trim()
         );
+    }
+
+    private void requireTenant(Parent parent, Student student) {
+        if (!accessContext.allows(parent.madrassaId)
+                || !accessContext.allows(student.madrassaId)) {
+            throw new SecurityException("Parent/student operation is outside the authorized Madrassa.");
+        }
+        TenantPolicy.requireSameMadrassa(parent.madrassaId, student.madrassaId);
     }
 
     private Parent requireParent(

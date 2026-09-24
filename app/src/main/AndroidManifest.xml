@@ -7,6 +7,9 @@
          dual calendar page, requested at runtime when the user
          taps "connect". Nothing is written or uploaded. -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:theme="@style/AppTheme"
@@ -51,9 +54,32 @@
             android:exported="false" />
 
         <activity
+            android:name=".RoleDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MadrassaOperationsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".registration.MadrassaRegistrationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <receiver
+            android:name=".salah.AdhanAlarmReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".widget.IslamicCalendarWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/islamic_calendar_widget_info" />
+        </receiver>
 
         <activity
             android:name=".SplashActivity"

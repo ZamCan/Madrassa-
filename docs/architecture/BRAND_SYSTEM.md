@@ -213,7 +213,7 @@ first-strong bidirectional detection — do **not** force
   fail WCAG AA for subtitle-size text on the cream canvas (gold_soft 3.25, text_faded
   2.45). Keep small text on glass to `text_light`/`text_faded`; the gold family stays
   on rims, symbols and arrows (large/decorative roles), never small subtitle text.
-- The legacy V3 drawables (`parent_card`, `ustadh_card`, `edunoor_canvas`, …) are still used by existing `ui/components` screens — keep them working, but prefer the glass recipes for NEW premium surfaces.
+- Superseded V3 landing drawables (`parent_card`, `ustadh_card`, `edunoor_canvas`, `edunoor_icon`, `edunoor_mark`) have been removed from the release engineering branch. The current landing uses the V7 glass recipes and `brand_icon`; do not reintroduce the prototype assets.
 - Don't stretch `brand_icon` beyond ~96 dp or the emblem detail turns muddy.
 - Don't edit generated bitmaps; regenerate via the pipeline.
 

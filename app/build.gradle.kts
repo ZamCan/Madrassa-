@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    androidResources { noCompress += listOf("mp3") }
     namespace = "com.zamcan.madrassa"
     compileSdk = 35
 

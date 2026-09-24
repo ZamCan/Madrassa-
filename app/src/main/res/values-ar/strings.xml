@@ -249,4 +249,51 @@
         <item>خمي</item><item>جمع</item><item>سبت</item><item>أحد</item>
     </string-array>
 
+    <string name="solo_qibla_short">القبلة</string>
+    <string name="solo_qibla">اتجاه القبلة</string>
+    <string name="solo_qibla_result">القبلة: %1$.1f° (%2$s)</string>
+    <string name="solo_salah">مواقيت الصلاة</string>
+    <string name="solo_adhan_settings">إعدادات الأذان</string>
+    <string name="solo_adhan_state">الأذان: %1$s</string>
+    <string name="solo_adhan_on">مفعل</string>
+    <string name="solo_adhan_off">متوقف</string>
+    <string name="solo_adhan_enabled">تم تفعيل الأذان المحلي. سيُجدول فقط عند دخول أوقات الصلاة المحسوبة، ولا يشمل الشروق.</string>
+    <string name="solo_adhan_disabled">تم إيقاف الأذان المحلي. لن يتم تشغيل منبه للصلاة.</string>
+    <string name="landing_islamic_hub">الأدوات الإسلامية</string>
+    <string name="landing_qibla">اتجاه القبلة</string>
+    <string name="landing_salah">مواقيت الصلاة</string>
+    <string name="landing_adhan">إعدادات الأذان</string>
+    <string name="landing_calendar">التقويم الهجري</string>
+    <string name="dashboard_ustadh">لوحة الأستاذ</string>
+    <string name="dashboard_parent">لوحة ولي الأمر</string>
+    <string name="dashboard_local_madrassa">مساحة المدرسة المحلية • ضمن نطاق المدرسة</string>
+    <string name="dashboard_navigation">الإدارة والتعلم</string>
+    <string name="dashboard_students">الطلاب</string>
+    <string name="dashboard_students_sub">بيانات الطالب والفصل ومستويات القرآن والحفظ</string>
+    <string name="dashboard_children">أبنائي</string>
+    <string name="dashboard_children_sub">الأبناء المرتبطون بحساب ولي الأمر</string>
+    <string name="dashboard_classes">الفصول</string>
+    <string name="dashboard_classes_sub">الانتماء إلى الفصل والمجموعة الحالية</string>
+    <string name="dashboard_management">إدارة المدرسة</string>
+    <string name="dashboard_management_sub">الطلاب والفصول وسجلات الرسوم داخل المدرسة</string>
+    <string name="dashboard_progress">التقدم التعليمي</string>
+    <string name="dashboard_progress_sub">مراجعة مستويات القرآن والحفظ وسجلات التعلم</string>
+    <string name="dashboard_fees">الرسوم والديون</string>
+    <string name="dashboard_fees_sub">حالة الرسوم والسجلات المستحقة محلياً</string>
+    <string name="dashboard_quran_levels">مستويات القرآن والحفظ</string>
+    <string name="dashboard_quran_levels_sub">مستويات المتعلمين الحالية</string>
+    <string name="dashboard_salah_sub">المواقيت والقبلة وإعدادات الأذان المحلي</string>
+    <string name="dashboard_calendar">التقويم الهجري</string>
+    <string name="dashboard_calendar_sub">التقويم الميلادي والهجري وودجت الجهاز</string>
+    <string name="dashboard_management_detail">الطلاب: %1$d\nالفصول: %2$d\nسجلات الرسوم: %3$d</string>
+    <string name="dashboard_none">لا توجد سجلات محلية.</string>
+
+    <string name="dashboard_programmes">البرامج</string>
+    <string name="dashboard_programmes_sub">البرامج الدراسية في المدرسة</string>
+    <string name="dashboard_academic_content">البنية الأكاديمية</string>
+    <string name="dashboard_academic_content_sub">المقررات والمحتوى الأكاديمي</string>
+    <string name="dashboard_add_class">إضافة فصل</string>
+    <string name="dashboard_add_class_sub">إنشاء فصل جديد داخل المدرسة</string>
+    <string name="dashboard_class_name">اسم الفصل</string>
+    <string name="dashboard_class_code">رمز الفصل (اختياري)</string>
 </resources>

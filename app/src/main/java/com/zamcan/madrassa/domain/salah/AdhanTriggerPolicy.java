@@ -1,0 +1,4 @@
+package com.zamcan.madrassa.domain.salah;
+import java.time.LocalDateTime;import java.time.LocalTime;import java.util.List;
+/** Exact-minute trigger policy: upcoming prayers are never treated as due early. */
+public final class AdhanTriggerPolicy{private AdhanTriggerPolicy(){}public static PrayerTime.Prayer duePrayer(LocalDateTime now,List<PrayerTime> schedule,PrayerTime.Prayer alreadyTriggered){if(now==null||schedule==null)return null;LocalTime current=now.toLocalTime().withSecond(0).withNano(0);for(PrayerTime p:schedule){if(p.prayer==PrayerTime.Prayer.SUNRISE)continue;if(p.time.equals(current)&&p.prayer!=alreadyTriggered)return p.prayer;}return null;}public static boolean isIqamaWindow(LocalDateTime now,LocalTime adhanTime,int minutesAfter){if(now==null||adhanTime==null||minutesAfter<0)return false;LocalTime c=now.toLocalTime(),end=adhanTime.plusMinutes(minutesAfter);return !c.isBefore(adhanTime)&&c.isBefore(end);}}

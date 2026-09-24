@@ -803,6 +803,174 @@
           ]
         }
       ]
+    },
+    {
+      "id": "hadith",
+      "symbol": "◆",
+      "title": {
+        "sw": "Hadithi",
+        "en": "Hadith",
+        "ar": "الحديث"
+      },
+      "desc": {
+        "sw": "Jifunze hadithi kwa chanzo, mpokezi na maana kwa uangalifu.",
+        "en": "Study hadith with source, narrator, grading and meaning kept explicit.",
+        "ar": "تعلّم الحديث مع بيان المصدر والراوي ودرجة الحديث والمعنى بوضوح."
+      },
+      "lessons": [
+        {
+          "id": "hadith_foundations",
+          "title": {
+            "sw": "Misingi ya Hadithi",
+            "en": "Hadith foundations",
+            "ar": "أسس الحديث"
+          },
+          "icon": "solo_hadith_book",
+          "steps": [
+            {
+              "image": "solo_hadith_book",
+              "title": {
+                "sw": "1. Msingi",
+                "en": "1. Foundation",
+                "ar": "١. الأساس"
+              },
+              "body": {
+                "sw": "Jifunze kutofautisha chanzo, mpokezi, daraja na maana. Nukuu za hadithi zinapaswa kutoka kwenye chanzo kilichothibitishwa.",
+                "en": "Learn to distinguish source, narrator, grading and meaning. Hadith quotations should come from verified source texts.",
+                "ar": "تعلّم التمييز بين المصدر والراوي والدرجة والمعنى، ولا تُعرض نصوص الحديث إلا من مصادر موثوقة."
+              },
+              "arabic": "",
+              "translit": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tawheed",
+      "symbol": "✦",
+      "title": {
+        "sw": "Tawhidi",
+        "en": "Tawheed",
+        "ar": "التوحيد"
+      },
+      "desc": {
+        "sw": "Misingi ya kumuabudu Allah kwa umoja na kujifunza aqidah kwa utaratibu.",
+        "en": "Foundations for learning worship of Allah alone and studying creed systematically.",
+        "ar": "أسس توحيد الله في العبادة ودراسة العقيدة بصورة منظمة."
+      },
+      "lessons": [
+        {
+          "id": "tawheed_foundations",
+          "title": {
+            "sw": "Msingi wa Tawhidi",
+            "en": "Tawheed foundations",
+            "ar": "أسس التوحيد"
+          },
+          "icon": "solo_tawheed_book",
+          "steps": [
+            {
+              "image": "solo_tawheed_book",
+              "title": {
+                "sw": "1. Msingi",
+                "en": "1. Foundation",
+                "ar": "١. الأساس"
+              },
+              "body": {
+                "sw": "Tawhidi huweka msingi wa kumtambua na kumuabudu Allah kwa unyenyekevu. Masomo ya kina yatafuata vyanzo vilivyothibitishwa.",
+                "en": "Tawheed establishes the foundation of knowing and worshipping Allah with sincerity. Deeper lessons should follow verified sources.",
+                "ar": "التوحيد أصل معرفة الله وعبادته بإخلاص، وتُبنى الدروس المتقدمة على المصادر الموثوقة."
+              },
+              "arabic": "",
+              "translit": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiqh",
+      "symbol": "◇",
+      "title": {
+        "sw": "Fiqhi",
+        "en": "Fiqh",
+        "ar": "الفقه"
+      },
+      "desc": {
+        "sw": "Jifunze fiqhi kwa mada, ushahidi na madhhab/utaratibu unaochaguliwa na mwanafunzi.",
+        "en": "Study fiqh by topic, evidence and the learner's selected school or curriculum.",
+        "ar": "تعلّم الفقه بحسب الموضوع والدليل والمنهج أو المذهب المعتمد في المنهج."
+      },
+      "lessons": [
+        {
+          "id": "fiqh_foundations",
+          "title": {
+            "sw": "Misingi ya Fiqhi",
+            "en": "Fiqh foundations",
+            "ar": "أسس الفقه"
+          },
+          "icon": "solo_fiqh_book",
+          "steps": [
+            {
+              "image": "solo_fiqh_book",
+              "title": {
+                "sw": "1. Msingi",
+                "en": "1. Foundation",
+                "ar": "١. الأساس"
+              },
+              "body": {
+                "sw": "Fiqhi hupanga uelewa wa hukumu za matendo. Mazingira ya Madrassa yanaweza kuchagua mtaala na madhhab unaotumika.",
+                "en": "Fiqh organizes understanding of rulings for actions. A Madrassa curriculum can define the school and teaching method used.",
+                "ar": "ينظم الفقه فهم أحكام الأفعال، ويمكن للمنهج في المدرسة أن يحدد المذهب وطريقة التدريس المعتمدة."
+              },
+              "arabic": "",
+              "translit": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "barazanj",
+      "symbol": "❖",
+      "title": {
+        "sw": "Barazanj",
+        "en": "Barzanji",
+        "ar": "البرزنجي"
+      },
+      "desc": {
+        "sw": "Sehemu ya kusoma, kusikiliza na kujifunza maandishi ya Barazanj kwa toleo lililoidhinishwa.",
+        "en": "A structured place to read and study an approved Barzanji edition.",
+        "ar": "مساحة منظمة لقراءة ودراسة نسخة معتمدة من البرزنجي."
+      },
+      "lessons": [
+        {
+          "id": "barazanj_foundations",
+          "title": {
+            "sw": "Utangulizi wa Barazanj",
+            "en": "Barzanji introduction",
+            "ar": "مقدمة البرزنجي"
+          },
+          "icon": "solo_barazanj_book",
+          "steps": [
+            {
+              "image": "solo_barazanj_book",
+              "title": {
+                "sw": "1. Msingi",
+                "en": "1. Foundation",
+                "ar": "١. الأساس"
+              },
+              "body": {
+                "sw": "Somo hili linaweka nafasi ya maandishi, msamiati, historia ya kazi na usomaji kutoka toleo lililoidhinishwa. Maandishi kamili yataongezwa kwa chanzo na toleo vilivyotajwa.",
+                "en": "This lesson provides a place for the text, vocabulary, work history and recitation from an approved edition. Full text should be added with explicit source and edition attribution.",
+                "ar": "تهيئ هذه الوحدة للنص والمفردات وسياق العمل والقراءة من نسخة معتمدة، ويُضاف النص الكامل مع بيان المصدر والطبعة."
+              },
+              "arabic": "",
+              "translit": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
