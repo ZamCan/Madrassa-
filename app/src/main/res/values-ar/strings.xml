@@ -194,4 +194,6 @@
     <string name="init_welcome">أهلاً بك</string>
     <string name="init_next_stage">ستُربط لوحة الإدارة في المرحلة التالية.</string>
 
+
+<string name="solo_qibla">القبلة</string><string name="solo_salah">الصلاة</string><string name="solo_qibla_result">اتجاه القبلة: %1$.1f° (%2$s)</string><string name="solo_quran_structure">بنية القرآن الكريم</string><string name="solo_quran_structure_detail">%1$d سورة • %2$d جزءًا</string><string name="solo_modes">قراءة • استماع • مراجعة • حفظ • تدبر</string><string name="solo_adhan_off_default">الأذان متوقف افتراضيًا. عند تفعيله لا يُشغّل إلا عند دخول وقت الصلاة المحسوب.</string><string name="solo_design_note">تصميم هادئ للتركيز والتعلّم: دون أصوات زخرفية مزعجة أو وسائط مفروضة، ودون حاجة إلى حساب سحابي لأساس التعلّم الفردي.</string>
 </resources>
