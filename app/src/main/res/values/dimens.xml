@@ -26,7 +26,7 @@
 
     <dimen name="role_card_gap">10dp</dimen>
 
-    <dimen name="card_radius">15dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
 
     <dimen name="bottom_bar_height">44dp</dimen>
 

@@ -1,5 +1,11 @@
 # Madrassa — EduNoor UI Engineering Report (Boxes 1–3)
 
+> **Historical report.** The claims below describe the earlier
+> `32c12f7`-era batch. The current `final-verification` branch is based on
+> the actual `origin/main` tree and adds tenant-scoped dashboards, Islamic
+> tools, security checks, and a fresh debug build. Device installation and
+> logcat verification remain blocked until a physical phone is attached.
+
 Date: 2026-09-23
 Project: `/data/data/com.termux/files/home/Madrassa`
 Scope: Box 1 (Foundation & Responsive UI), Box 2 (Forms, Registration &

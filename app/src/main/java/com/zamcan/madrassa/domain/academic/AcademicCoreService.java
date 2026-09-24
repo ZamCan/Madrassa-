@@ -11,6 +11,7 @@ import com.zamcan.madrassa.data.model.Programme;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.OperationResult;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.AcademicAccessContext;
 import com.zamcan.madrassa.domain.repository.AcademicUnitStore;
 import com.zamcan.madrassa.domain.repository.AssessmentStore;
 import com.zamcan.madrassa.domain.repository.AssignmentStore;
@@ -41,7 +42,18 @@ public final class AcademicCoreService {
     private final AssessmentStore assessments;
     private final LearningProgressStore progress;
     private final StudentStore students;
+    private final AcademicAccessContext accessContext;
 
+    /**
+     * Compatibility constructor for read-only/in-memory callers.
+     *
+     * <p>An unbound service deliberately rejects every write. Production
+     * composition must use {@link #AcademicCoreService(ProgrammeStore,
+     * CourseStore, AcademicUnitStore, LessonStore, LearningMaterialStore,
+     * AssignmentStore, AssessmentStore, LearningProgressStore,
+     * StudentStore, AcademicAccessContext)} through the factory.</p>
+     */
+    @Deprecated
     public AcademicCoreService(
             ProgrammeStore programmes,
             CourseStore courses,
@@ -52,6 +64,32 @@ public final class AcademicCoreService {
             AssessmentStore assessments,
             LearningProgressStore progress,
             StudentStore students
+    ) {
+        this(
+                programmes,
+                courses,
+                units,
+                lessons,
+                materials,
+                assignments,
+                assessments,
+                progress,
+                students,
+                null
+        );
+    }
+
+    public AcademicCoreService(
+            ProgrammeStore programmes,
+            CourseStore courses,
+            AcademicUnitStore units,
+            LessonStore lessons,
+            LearningMaterialStore materials,
+            AssignmentStore assignments,
+            AssessmentStore assessments,
+            LearningProgressStore progress,
+            StudentStore students,
+            AcademicAccessContext accessContext
     ) {
         if (programmes == null
                 || courses == null
@@ -76,6 +114,7 @@ public final class AcademicCoreService {
         this.assessments = assessments;
         this.progress = progress;
         this.students = students;
+        this.accessContext = accessContext;
     }
 
     /**
@@ -88,8 +127,11 @@ public final class AcademicCoreService {
      * A global course is represented by madrassaId == null.
      */
     public OperationResult<Course> createCourse(Course value) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.programmeId)
                 || blank(value.name)) {
             return invalid("course_invalid");
@@ -148,8 +190,11 @@ public final class AcademicCoreService {
     public OperationResult<AcademicUnit> createUnit(
             AcademicUnit value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.courseId)
                 || blank(value.name)) {
             return invalid("unit_invalid");
@@ -236,8 +281,11 @@ public final class AcademicCoreService {
     public OperationResult<Lesson> createLesson(
             Lesson value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.unitId)
                 || blank(value.name)
                 || blank(value.contentType)) {
@@ -342,8 +390,11 @@ public final class AcademicCoreService {
     public OperationResult<LearningMaterial> createMaterial(
             LearningMaterial value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.programmeId)
                 || blank(value.title)
                 || blank(value.type)
@@ -396,8 +447,11 @@ public final class AcademicCoreService {
     public OperationResult<Assignment> createAssignment(
             Assignment value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.programmeId)
                 || blank(value.title)
                 || value.maxPoints < 0) {
@@ -613,8 +667,11 @@ public final class AcademicCoreService {
     public OperationResult<Assessment> recordAssessment(
             Assessment value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.madrassaId)
                 || blank(value.studentId)
                 || blank(value.assignmentId)
@@ -702,8 +759,11 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordStudentProgress(
             LearningProgress value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.learnerId)
                 || blank(value.lessonId)
                 || blank(value.madrassaId)
@@ -764,6 +824,20 @@ public final class AcademicCoreService {
             return missing("progress_course_missing");
         }
 
+        if (!TenantPolicy.sameMadrassa(
+                madrassaId,
+                unit.madrassaId
+        )) {
+            return forbidden("progress_unit_tenant_mismatch");
+        }
+
+        if (!TenantPolicy.sameMadrassa(
+                madrassaId,
+                course.madrassaId
+        )) {
+            return forbidden("progress_course_tenant_mismatch");
+        }
+
         if (!course.active) {
             return forbidden("progress_course_inactive");
         }
@@ -800,6 +874,29 @@ public final class AcademicCoreService {
         value.lessonId = lessonId;
         value.updatedAt = System.currentTimeMillis();
 
+        LearningProgress existing =
+                progress.findByLearnerAndLesson(
+                        learnerId,
+                        lessonId
+                );
+
+        if (existing != null) {
+            if (!TenantPolicy.sameMadrassa(
+                    existing.madrassaId,
+                    madrassaId
+            )) {
+                return forbidden("progress_tenant_conflict");
+            }
+
+            existing.madrassaId = madrassaId;
+            existing.status = value.status;
+            existing.updatedAt = value.updatedAt;
+
+            return progress.update(existing)
+                    ? OperationResult.success(existing)
+                    : failed("progress_update_failed");
+        }
+
         return progress.save(value)
                 ? OperationResult.success(value)
                 : failed("progress_save_failed");
@@ -815,8 +912,11 @@ public final class AcademicCoreService {
     public OperationResult<LearningProgress> recordSoloProgress(
             LearningProgress value
     ) {
-        if (value == null
-                || blank(value.id)
+        if (value == null || !authorizedScope(value.madrassaId)) {
+            return forbidden("academic_scope_not_authorized");
+        }
+
+        if (blank(value.id)
                 || blank(value.learnerId)
                 || blank(value.lessonId)
                 || !blank(value.madrassaId)
@@ -840,15 +940,76 @@ public final class AcademicCoreService {
             return forbidden("solo_content_is_madrassa_owned");
         }
 
+        AcademicUnit unit = units.findById(lesson.unitId);
+
+        if (unit == null) {
+            return missing("solo_unit_missing");
+        }
+
+        if (!blank(unit.madrassaId)) {
+            return forbidden("solo_unit_is_madrassa_owned");
+        }
+
+        Course course = courses.findById(unit.courseId);
+
+        if (course == null) {
+            return missing("solo_course_missing");
+        }
+
+        if (!blank(course.madrassaId)) {
+            return forbidden("solo_course_is_madrassa_owned");
+        }
+
+        Programme programme = programmes.findById(course.programmeId);
+
+        if (programme == null) {
+            return missing("solo_programme_missing");
+        }
+
+        if (!blank(programme.madrassaId)) {
+            return forbidden("solo_programme_is_madrassa_owned");
+        }
+
         value.id = value.id.trim();
         value.learnerId = value.learnerId.trim();
         value.lessonId = lessonId;
         value.madrassaId = null;
         value.updatedAt = System.currentTimeMillis();
 
+        LearningProgress existing =
+                progress.findByLearnerAndLesson(
+                        value.learnerId,
+                        lessonId
+                );
+
+        if (existing != null) {
+            if (existing.madrassaId != null) {
+                return forbidden("solo_progress_tenant_conflict");
+            }
+
+            existing.status = value.status;
+            existing.updatedAt = value.updatedAt;
+
+            return progress.update(existing)
+                    ? OperationResult.success(existing)
+                    : failed("solo_progress_update_failed");
+        }
+
         return progress.save(value)
                 ? OperationResult.success(value)
                 : failed("solo_progress_save_failed");
+    }
+
+    private boolean authorizedScope(String madrassaId) {
+        if (accessContext == null) {
+            return false;
+        }
+
+        if (blank(madrassaId)) {
+            return accessContext.allowsGlobal();
+        }
+
+        return accessContext.allowsMadrassa(madrassaId);
     }
 
     private boolean isEnrolled(

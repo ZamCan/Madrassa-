@@ -7,15 +7,15 @@
     <string name="greeting">﷽</string>
     <string name="hero_title">Welcome to the path of knowledge and Qur\'an</string>
     <string name="splash_tagline">Madrassa Management System</string>
+    <string name="splash_welcome">Welcome</string>
+    <string name="splash_brand">EDU NOOR</string>
     <string name="hero_description">Education • Character • Progress</string>
 
     <string name="parent_title">PARENT</string>
     <string name="parent_subtitle">Follow your child\'s progress</string>
-    <string name="parent_action">Continue as Parent</string>
 
     <string name="ustadh_title">USTADH</string>
     <string name="ustadh_subtitle">Manage your Madrassa</string>
-    <string name="ustadh_action">Continue as Ustadh</string>
 
     <string name="language">Language</string>
     <string name="privacy">Privacy</string>
@@ -33,27 +33,18 @@
     <string name="parent_phone_hint">Use the phone number registered by the Madrassa.</string>
     <string name="enter_phone">Enter phone number</string>
     <string name="enter_password">Enter password</string>
-    <string name="reset_v71_message">RESET will be connected to OTP in the next stage.</string>
-    <string name="login_ui_ready">The login interface is ready.</string>
+    <string name="reset_unavailable">Password reset is not available yet. Contact your Madrassa administrator.</string>
 
     <!-- V7.1 Ustadh Authentication -->
     <string name="ustadh_role">USTADH</string>
     <string name="ustadh_login_title">USTADH LOGIN</string>
     <string name="ustadh_login_subtitle">Manage your Madrassa</string>
-    <string name="madrassa_name">Madrassa name</string>
-    <string name="enter_madrassa_name">Enter Madrassa name</string>
     <string name="register_madrassa">REGISTER MADRASSA</string>
     <string name="not_registered">Not registered yet?</string>
-    <string name="registration_v71_message">Madrassa registration will begin in the next stage.</string>
 
     <string name="language_switch_label">Language</string>
-    <string name="privacy_icon">◉</string>
-    <string name="terms_icon">§</string>
-    <string name="help_icon">?</string>
-    <string name="language_icon">文</string>
     <string name="ustadh_identifier">Madrassa name or phone number</string>
     <string name="enter_ustadh_identifier">Enter Madrassa name or phone number</string>
-    <string name="password_requirements_parent">At least 6 characters, including letters and numbers.</string>
     <string name="password_requirements_ustadh">At least 6 characters, including letters, numbers and a special character.</string>
     <string name="parent_password_requirement">At least 6 characters, with letters and numbers</string>
 <string name="registration_identity_section">Madrassa Information</string>
@@ -147,7 +138,7 @@
     <string name="solo_progress_learning">Lessons completed</string>
     <string name="solo_content_ready_title">Solo foundation is ready</string>
     <string name="solo_content_ready_message">This structure is connected to the academic UI foundation. Real Solo content will be bound to canonical global content without duplicating Madrassa content.</string>
-    <string name="solo_content_placeholder">The learning content module will be connected to canonical global academic content.</string>
+    <string name="solo_content_unavailable">This lesson is not present in the bundled learning library yet.</string>
 
     <!-- V7.3 registration location + country-code pickers -->
     <string name="registration_select_region">Select Region</string>
@@ -158,6 +149,10 @@
 
     <!-- V7.3 shared dialog copy (utility bar + state dialogs) -->
     <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="navigation_back">Back</string>
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
     <string name="privacy_message">Your information is handled securely by Madrassa — EduNoor.</string>
     <string name="terms_message">Madrassa — EduNoor terms and conditions will be displayed here.</string>
     <string name="help_message">For assistance, please contact your Madrassa administrator.</string>
@@ -188,7 +183,7 @@
     <string name="init_step_parent_session">Preparing a secure session…</string>
     <string name="init_session_ready">Your session is ready</string>
     <string name="init_welcome">Welcome</string>
-    <string name="init_next_stage">The management dashboard arrives in the next stage.</string>
+    <string name="init_next_stage">Your local workspace is ready on this device.</string>
 
     <!-- Solo Learning lesson screen -->
     <string name="solo_lesson_listen">Listen</string>
@@ -198,6 +193,7 @@
     <string name="solo_lesson_done">Done</string>
     <string name="solo_lesson_step_of">Step %1$d of %2$d</string>
     <string name="solo_lesson_audio_error">Could not play the audio</string>
+    <string name="solo_audio_provenance">This is bundled lesson audio; its recitation has not been independently authenticated.</string>
 
     <!-- Dual calendar month names -->
     <string-array name="calendar_hijri_months">
@@ -248,6 +244,101 @@
     <string-array name="calendar_weekdays">
         <item>Mo</item><item>Tu</item><item>We</item>
         <item>Th</item><item>Fr</item><item>Sa</item><item>Su</item>
+    </string-array>
+
+    <!-- Role dashboards and offline Islamic tools -->
+    <string name="dashboard_parent">PARENT DASHBOARD</string>
+    <string name="dashboard_ustadh">USTADH DASHBOARD</string>
+    <string name="dashboard_local_scope">Only records for this Madrassa are shown here.</string>
+    <string name="dashboard_scope_value">%1$s • on-device records</string>
+    <string name="dashboard_loading">Loading local records…</string>
+    <string name="dashboard_access_denied">This session is not authorized.</string>
+    <string name="dashboard_data_unavailable">The local records are not available yet.</string>
+    <string name="dashboard_snapshot">On-device summary</string>
+    <string name="dashboard_students">Students</string>
+    <string name="dashboard_classes">Classes</string>
+    <string name="dashboard_programmes">Programmes</string>
+    <string name="dashboard_fees">Fees</string>
+    <string name="dashboard_progress">Progress</string>
+    <string name="dashboard_view_students">View students</string>
+    <string name="dashboard_students_subtitle">Students registered to this Madrassa.</string>
+    <string name="dashboard_view_children">View my children</string>
+    <string name="dashboard_children_subtitle">Only students linked to your account are shown.</string>
+    <string name="dashboard_view_classes">View classes</string>
+    <string name="dashboard_classes_subtitle">Classes available to this Madrassa.</string>
+    <string name="dashboard_view_academic">Academic overview</string>
+    <string name="dashboard_academic_subtitle">Read-only programme summary; no write action is implied.</string>
+    <string name="dashboard_academic">Academic</string>
+    <string name="dashboard_view_fees">View fees</string>
+    <string name="dashboard_fees_subtitle">Fees stored for authorized students.</string>
+    <string name="dashboard_salah_qibla">Qibla, Salah and reminder</string>
+    <string name="dashboard_salah_subtitle">Local calculations, optional reminder and calendar.</string>
+    <string name="dashboard_calendar">Calendar</string>
+    <string name="dashboard_calendar_subtitle">Gregorian and Hijri dates, fully offline.</string>
+    <string name="dashboard_back_landing">Return to landing page</string>
+    <string name="dashboard_unnamed_student">Unnamed student</string>
+    <string name="dashboard_class_value">Class</string>
+    <string name="dashboard_quran_level">Qur\'an</string>
+    <string name="dashboard_no_students">No students are registered yet.</string>
+    <string name="dashboard_no_classes">No classes are available yet.</string>
+    <string name="dashboard_no_programmes">No programmes are available yet.</string>
+    <string name="dashboard_no_fees">No fees have been recorded yet.</string>
+    <string name="dashboard_not_available">—</string>
+    <string name="dashboard_inactive">inactive</string>
+    <string name="fee_status_unpaid">Unpaid</string>
+    <string name="fee_status_pending">Pending</string>
+    <string name="fee_status_confirmed">Confirmed</string>
+    <string name="fee_status_paid">Paid</string>
+    <string name="fee_status_overdue">Overdue</string>
+    <string name="fee_status_cancelled">Cancelled</string>
+    <string name="fee_status_locked">Locked</string>
+
+    <string name="islamic_tools_back">Back</string>
+    <string name="islamic_tools_title">ISLAMIC TOOLS</string>
+    <string name="islamic_tools_intro">Calculations show the selected location and method; results may vary slightly by location and convention.</string>
+    <string name="islamic_location_title">Location</string>
+    <string name="islamic_location_subtitle">Use the device for a local estimate, or continue with the bundled fallback.</string>
+    <string name="islamic_location_use_device">Use device location</string>
+    <string name="islamic_location_allow_device">Allow device location</string>
+    <string name="islamic_location_value">%1$s • %2$.4f, %3$.4f</string>
+    <string name="islamic_location_unavailable">No last-known device location is available. Dar es Salaam fallback remains active.</string>
+    <string name="islamic_location_denied">Location permission was not granted. Dar es Salaam fallback remains active.</string>
+    <string name="islamic_qibla_title">Qibla</string>
+    <string name="islamic_qibla_subtitle">Geographic bearing toward the Kaaba.</string>
+    <string name="islamic_qibla_value">%1$.1f° (%2$s)</string>
+    <string name="islamic_salah_title">Salah</string>
+    <string name="islamic_salah_subtitle">Today’s calculated timetable; sunrise is not an Adhan prayer.</string>
+    <string name="islamic_method_default">Method: Muslim World League • Asr: Standard</string>
+    <string name="islamic_method_value">Method: %1$s • Asr: %2$s</string>
+    <string name="method_mwl">Muslim World League</string>
+    <string name="method_isna">ISNA</string>
+    <string name="method_egypt">Egypt</string>
+    <string name="method_karachi">Karachi</string>
+    <string name="asr_standard">Standard</string>
+    <string name="asr_hanafi">Hanafi</string>
+    <string name="islamic_adhan_title">Adhan / reminder</string>
+    <string name="islamic_adhan_subtitle">Optional on-device reminder. No authentic adhān recording is bundled.</string>
+    <string name="islamic_adhan_neutral_reminder">If a spoken reminder is enabled, it uses a neutral time notice — it is not an adhān recitation.</string>
+    <string name="islamic_adhan_enable">Enable local reminder</string>
+    <string name="islamic_adhan_disable">Disable local reminder</string>
+    <string name="islamic_adhan_inexact">Exact alarms are not permitted; reminders use the safe inexact fallback.</string>
+    <string name="islamic_calendar_eyebrow">CALENDAR</string>
+    <string name="islamic_calendar_title">Gregorian and Hijri calendar</string>
+    <string name="islamic_calendar_subtitle">View both dates together</string>
+    <string name="islamic_calculation_unavailable">The selected details could not produce a calculation.</string>
+    <string name="islamic_not_available">—</string>
+
+    <string name="landing_islamic_hub">Qibla, Salah, Adhan and calendar</string>
+    <string name="landing_qibla">Qibla</string>
+    <string name="landing_salah">Salah</string>
+    <string name="landing_adhan">Adhan / reminder</string>
+    <string name="landing_calendar">Islamic calendar</string>
+    <string name="solo_qibla">Qibla</string>
+    <string name="solo_salah">Salah</string>
+
+    <string-array name="prayer_names">
+        <item>Fajr</item><item>Sunrise</item><item>Dhuhr</item>
+        <item>Asr</item><item>Maghrib</item><item>Isha</item>
     </string-array>
 
 </resources>

@@ -386,8 +386,8 @@ public class UstadhLoginActivity extends Activity {
         /*
          * PASSWORD RESET
          *
-         * OTP recovery is implemented in the
-         * authentication/security stage.
+         * Password reset is not implemented in this local build; the UI
+         * points the user to the Madrassa administrator.
          */
 
         reset.setOnClickListener(v -> {
@@ -395,7 +395,7 @@ public class UstadhLoginActivity extends Activity {
             Toast.makeText(
                     this,
                     getString(
-                            R.string.reset_v71_message
+                            R.string.reset_unavailable
                     ),
                     Toast.LENGTH_SHORT
             ).show();
@@ -584,7 +584,8 @@ public class UstadhLoginActivity extends Activity {
                 startActivity(
                         InitializationActivity.forUstadh(
                                 this,
-                                result.madrassa.id
+                                result.madrassa.id,
+                                result.ustadh.id
                         )
                 );
 

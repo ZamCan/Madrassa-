@@ -7,15 +7,15 @@
     <string name="greeting">﷽</string>
     <string name="hero_title">مَرْحَبًا بِكُمْ فِي رِحَابِ الْعِلْمِ وَالْقُرْآنِ</string>
     <string name="splash_tagline">Madrassa Management System</string>
+    <string name="splash_welcome">Karibu</string>
+    <string name="splash_brand">EDU NOOR</string>
     <string name="hero_description">Elimu • Malezi • Maendeleo</string>
 
     <string name="parent_title">MZAZI</string>
     <string name="parent_subtitle">Fuatilia maendeleo ya mtoto</string>
-    <string name="parent_action">Endelea kama Mzazi</string>
 
     <string name="ustadh_title">USTADH</string>
     <string name="ustadh_subtitle">Simamia Madrassa yako</string>
-    <string name="ustadh_action">Endelea kama Ustadh</string>
 
     <string name="language">Lugha</string>
     <string name="privacy">Faragha</string>
@@ -33,27 +33,18 @@
     <string name="parent_phone_hint">Tumia namba ya simu iliyosajiliwa na Madrassa.</string>
     <string name="enter_phone">Ingiza namba ya simu</string>
     <string name="enter_password">Ingiza nenosiri</string>
-    <string name="reset_v71_message">RESET itaunganishwa na OTP katika hatua inayofuata.</string>
-    <string name="login_ui_ready">Muonekano wa kuingia uko tayari.</string>
+    <string name="reset_unavailable">Urejeshaji wa nenosiri haupatikani bado. Wasiliana na msimamizi wa Madrassa.</string>
 
     <!-- V7.1 Ustadh Authentication -->
     <string name="ustadh_role">USTADH</string>
     <string name="ustadh_login_title">INGIA KAMA USTADH</string>
     <string name="ustadh_login_subtitle">Simamia Madrassa yako</string>
-    <string name="madrassa_name">Jina la Madrassa</string>
-    <string name="enter_madrassa_name">Ingiza jina la Madrassa</string>
     <string name="register_madrassa">SAJILI MADRASSA</string>
     <string name="not_registered">Bado hujasajiliwa?</string>
-    <string name="registration_v71_message">Usajili wa Madrassa utaanza katika hatua inayofuata.</string>
 
     <string name="language_switch_label">Lugha</string>
-    <string name="privacy_icon">◉</string>
-    <string name="terms_icon">§</string>
-    <string name="help_icon">?</string>
-    <string name="language_icon">文</string>
     <string name="ustadh_identifier">Jina la Madrassa au namba ya simu</string>
     <string name="enter_ustadh_identifier">Ingiza jina la Madrassa au namba ya simu</string>
-    <string name="password_requirements_parent">Angalau herufi 6, zikiwa na herufi na namba.</string>
     <string name="password_requirements_ustadh">Angalau herufi 6, zikiwa na herufi, namba na alama maalum.</string>
 
     <string name="parent_password_requirement">Angalau herufi 6, herufi na namba</string>
@@ -91,7 +82,7 @@
     <string name="solo_content_ready_title">Msingi wa Solo uko tayari</string>
     <string name="solo_content_ready_message">Muundo huu umeunganishwa na academic UI foundation. Maudhui halisi ya Solo yatafungwa kwenye canonical global content bila kuunda nakala za maudhui ya Madrassa.</string>
 
-    <string name="solo_content_placeholder">Learning content module itaunganishwa kwenye canonical global academic content.</string>
+    <string name="solo_content_unavailable">Somu hii haipo katika maktaba ya maudhui iliyobunduliwa kwa sasa.</string>
 <string name="registration_identity_section">Taarifa za Madrassa</string>
 <string name="registration_identity_title">Utambulisho wa Madrassa</string>
 <string name="registration_identity_subtitle">Weka taarifa za msingi za Madrassa yako.</string>
@@ -165,6 +156,10 @@
 
 <!-- V7.3 shared dialog copy (utility bar + state dialogs) -->
 <string name="dialog_ok">SAWA</string>
+<string name="dialog_cancel">GHAIRI</string>
+<string name="navigation_back">Rudi</string>
+<string name="previous_month">Mwezi uliopita</string>
+<string name="next_month">Mwezi ujao</string>
 <string name="privacy_message">Taarifa zako zinatunzwa kwa usalama na Madrassa — EduNoor.</string>
 <string name="terms_message">Masharti ya Madrassa — EduNoor yataonyeshwa hapa.</string>
 <string name="help_message">Kwa msaada, tafadhali wasiliana na msimamizi wa Madrassa yako.</string>
@@ -195,7 +190,7 @@
 <string name="init_step_parent_session">Kuandaa kikao salama…</string>
 <string name="init_session_ready">Kikao kiko tayari</string>
 <string name="init_welcome">Karibu</string>
-<string name="init_next_stage">Dashibodi ya usimamizi itaunganishwa katika hatua inayofuata.</string>
+<string name="init_next_stage">Eneo lako la kazi limeandaa kwenye kifaa hiki.</string>
 
     <!-- Solo Learning lesson screen -->
     <string name="solo_lesson_listen">Sikiliza</string>
@@ -205,6 +200,7 @@
     <string name="solo_lesson_done">Imekamilika</string>
     <string name="solo_lesson_step_of">Hatua %1$d kati ya %2$d</string>
     <string name="solo_lesson_audio_error">Imeshindikana kucheza sauti</string>
+    <string name="solo_audio_provenance">Sauti hii ni sauti ya somo iliyobunduliwa; uthibitisho wa recitation haujafanywa.</string>
 
     <!-- Dual calendar month names -->
     <string-array name="calendar_hijri_months">
@@ -255,6 +251,101 @@
     <string-array name="calendar_weekdays">
         <item>Jtu</item><item>Jnn</item><item>Jtn</item>
         <item>Alh</item><item>Ijn</item><item>Jms</item><item>Jpi</item>
+    </string-array>
+
+    <!-- Role dashboards and offline Islamic tools -->
+    <string name="dashboard_parent">DASHBOARD YA MZAZI</string>
+    <string name="dashboard_ustadh">DASHBOARD YA USTADH</string>
+    <string name="dashboard_local_scope">Taarifa zilizochoa hapa ni za Madrassa hii tu.</string>
+    <string name="dashboard_scope_value">%1$s • kumbukumbu ya kifaa hiki</string>
+    <string name="dashboard_loading">Inapakia taarifa zilizochoa…</string>
+    <string name="dashboard_access_denied">Ufikiaji wa kikao hiki haujaidhinishwa.</string>
+    <string name="dashboard_data_unavailable">Taarifa zilizopo hazipatikani kwa sasa.</string>
+    <string name="dashboard_snapshot">Muhtasari wa kifaa</string>
+    <string name="dashboard_students">Wanafunzi</string>
+    <string name="dashboard_classes">Madaraka</string>
+    <string name="dashboard_programmes">Programu</string>
+    <string name="dashboard_fees">Michango</string>
+    <string name="dashboard_progress">Maendeleo</string>
+    <string name="dashboard_view_students">Ona wanafunzi</string>
+    <string name="dashboard_students_subtitle">Orodha ya wanafunzi walioandikishwa kwa Madrassa hii.</string>
+    <string name="dashboard_view_children">Ona watoto wangu</string>
+    <string name="dashboard_children_subtitle">Wanafunzi waliohusishwa na akaunti yako tu.</string>
+    <string name="dashboard_view_classes">Ona madaraka</string>
+    <string name="dashboard_classes_subtitle">Madaraka yanayopatikana kwa Madrassa hii.</string>
+    <string name="dashboard_view_academic">Muhtasari wa kitaaluma</string>
+    <string name="dashboard_academic_subtitle">Programu zilizopo; hakuna uandishi wa kubonyeza hapa.</string>
+    <string name="dashboard_academic">Taaluma</string>
+    <string name="dashboard_view_fees">Ona michango</string>
+    <string name="dashboard_fees_subtitle">Michango iliyohifadhiwa kwa wanafunzi wanaoruhusiwa.</string>
+    <string name="dashboard_salah_qibla">Qibla, Salah na Adhan</string>
+    <string name="dashboard_salah_subtitle">Hesabu ya eneo lako, ukumbusho wa ndani na kalenda.</string>
+    <string name="dashboard_calendar">Kalenda</string>
+    <string name="dashboard_calendar_subtitle">Miladi na Hijriya pamoja, bila intaneti.</string>
+    <string name="dashboard_back_landing">Rudi kwenye ukurasa wa kwanza</string>
+    <string name="dashboard_unnamed_student">Mwanafunzi bila jina</string>
+    <string name="dashboard_class_value">Darasa</string>
+    <string name="dashboard_quran_level">Qur\'an</string>
+    <string name="dashboard_no_students">Hakuna wanafunzi waliandikishwa kwa sasa.</string>
+    <string name="dashboard_no_classes">Hakuna madaraka yaliyopo kwa sasa.</string>
+    <string name="dashboard_no_programmes">Hakuna programu zilizopo kwa sasa.</string>
+    <string name="dashboard_no_fees">Hakuna michango iliyorekodiwa kwa sasa.</string>
+    <string name="dashboard_not_available">—</string>
+    <string name="dashboard_inactive">haisifanyi kazi</string>
+    <string name="fee_status_unpaid">Haijalipwa</string>
+    <string name="fee_status_pending">Inasubiri</string>
+    <string name="fee_status_confirmed">Imethibitishwa</string>
+    <string name="fee_status_paid">Imelipwa</string>
+    <string name="fee_status_overdue">Imepitwa na wakati</string>
+    <string name="fee_status_cancelled">Imeghairiwa</string>
+    <string name="fee_status_locked">Imefungwa</string>
+
+    <string name="islamic_tools_back">Rudi</string>
+    <string name="islamic_tools_title">HUB YA KIISLAMU</string>
+    <string name="islamic_tools_intro">Hesabu zinaonyesha maelezo ya eneo na mbinu uliyochaguliwa; matokeo yanaweza kutofautiana kidogo.</string>
+    <string name="islamic_location_title">Eneo</string>
+    <string name="islamic_location_subtitle">Tumia rufaa kwa takwimu halisi, au endelea na mbackup uliobunduliwa.</string>
+    <string name="islamic_location_use_device">Tumia eneo la kifaa</string>
+    <string name="islamic_location_allow_device">Ruhusu eneo la kifaa</string>
+    <string name="islamic_location_value">%1$s • %2$.4f, %3$.4f</string>
+    <string name="islamic_location_unavailable">Hakuna eneo la mwisho linalopatikana kwa sasa. Mbackup wa Dar es Salaam unaendelea kutumika.</string>
+    <string name="islamic_location_denied">Ruhusu ya eneo imekataliwa. Programu inaendelea kwa mbackup wa Dar es Salaam.</string>
+    <string name="islamic_qibla_title">Qibla</string>
+    <string name="islamic_qibla_subtitle">Mwelekeo wa kijiografia kuelekea Kaaba.</string>
+    <string name="islamic_qibla_value">%1$.1f° (%2$s)</string>
+    <string name="islamic_salah_title">Salah</string>
+    <string name="islamic_salah_subtitle">Muhtasari wa tarehe ya leo; sunrise haisajiliwi kama Adhan.</string>
+    <string name="islamic_method_default">Mbinu: Muslim World League • Asr: Standard</string>
+    <string name="islamic_method_value">Mbinu: %1$s • Asr: %2$s</string>
+    <string name="method_mwl">Muslim World League</string>
+    <string name="method_isna">ISNA</string>
+    <string name="method_egypt">Egypt</string>
+    <string name="method_karachi">Karachi</string>
+    <string name="asr_standard">Standard</string>
+    <string name="asr_hanafi">Hanafi</string>
+    <string name="islamic_adhan_title">Adhan / Ukumbusho</string>
+    <string name="islamic_adhan_subtitle">Ukumbusho wa ndani wa kifaa. Hakuna rekodi ya adhan halisi iliyounganishwa.</string>
+    <string name="islamic_adhan_neutral_reminder">Ikiwa ukumbusho wa sauti utashirikiwa, matumizi yake yatatumia ujumbe rahisi wa tahadhari — si recitation ya adhan.</string>
+    <string name="islamic_adhan_enable">Washa ukumbusho wa ndani</string>
+    <string name="islamic_adhan_disable">Zima ukumbusho wa ndani</string>
+    <string name="islamic_adhan_inexact">Alarmu sahihi hauruhusuwi; alama zimewekwa kwa njia salama isiyo sahihi.</string>
+    <string name="islamic_calendar_eyebrow">KALENDA</string>
+    <string name="islamic_calendar_title">Kalenda ya miladi na Hijriya</string>
+    <string name="islamic_calendar_subtitle">Tazama tarehe mbili pamoja</string>
+    <string name="islamic_calculation_unavailable">Hesabu haipatikani kwa maelezo yaliyochaguliwa.</string>
+    <string name="islamic_not_available">—</string>
+
+    <string name="landing_islamic_hub">Qibla, Salah, Adhan na Kalenda</string>
+    <string name="landing_qibla">Qibla</string>
+    <string name="landing_salah">Salah</string>
+    <string name="landing_adhan">Adhan / Ukumbusho</string>
+    <string name="landing_calendar">Kalenda ya Kiislamu</string>
+    <string name="solo_qibla">Qibla</string>
+    <string name="solo_salah">Salah</string>
+
+    <string-array name="prayer_names">
+        <item>Fajr</item><item>Sunrise</item><item>Dhuhr</item>
+        <item>Asr</item><item>Maghrib</item><item>Isha</item>
     </string-array>
 
 </resources>

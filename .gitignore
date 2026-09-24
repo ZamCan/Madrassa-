@@ -19,6 +19,7 @@ local.properties
 manual/v71/
 manual/check-domain/
 manual/check-ui/
+manual/check-parent/
 
 # IDE / build hygiene
 .idea/

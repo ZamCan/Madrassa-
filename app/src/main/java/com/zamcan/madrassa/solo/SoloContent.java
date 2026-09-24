@@ -18,12 +18,14 @@ import java.util.List;
  * The full trilingual curriculum (Wudu, Salah, Dhikr, Qur'an)
  * ships as assets/solo/content.json: every string carries all
  * three languages ({sw, en, ar}) so the in-app language switch
- * applies instantly without reloading anything. Audio recitation
- * files live beside it in assets/solo/audio/.
+ * applies instantly without reloading anything. Audio files live beside
+ * it in assets/solo/audio/. The app treats these
+ * files as bundled lesson audio; it does not independently certify
+ * them as authentic Qur'an recitation.
  */
 public final class SoloContent {
 
-    /** A learning step: visual + localized text + optional recitation. */
+    /** A learning step: visual + localized text + optional lesson audio. */
     public static final class Step {
 
         public final String image;

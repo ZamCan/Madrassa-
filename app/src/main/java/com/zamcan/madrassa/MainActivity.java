@@ -267,6 +267,34 @@ public class MainActivity extends Activity {
         return "SW";
     }
 
+    private void showIslamicHub() {
+        String[] items = {
+                getString(R.string.landing_qibla),
+                getString(R.string.landing_salah),
+                getString(R.string.landing_adhan),
+                getString(R.string.landing_calendar)
+        };
+
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.landing_islamic_hub))
+                .setItems(items, (dialog, which) -> {
+                    if (which == 3) {
+                        startActivity(new Intent(
+                                this,
+                                com.zamcan.madrassa.core.calendar
+                                        .CalendarActivity.class
+                        ));
+                    } else {
+                        startActivity(new Intent(
+                                this,
+                                IslamicToolsActivity.class
+                        ));
+                    }
+                })
+                .setNegativeButton(getString(R.string.dialog_cancel), null)
+                .show();
+    }
+
     private void showLanguageDialog() {
         final String[] languageNames = {
                 "Kiswahili",
@@ -470,7 +498,7 @@ public class MainActivity extends Activity {
 
         TextView appName =
                 text(
-                        "MADRASSA",
+                        getString(R.string.brand_title),
                         16,
                         walnut,
                         true
@@ -525,6 +553,20 @@ public class MainActivity extends Activity {
                 )
         );
 
+        ImageView islamicHub = new ImageView(this);
+        islamicHub.setImageResource(R.drawable.edunoor_kaaba);
+        islamicHub.setContentDescription(
+                getString(R.string.landing_islamic_hub)
+        );
+        islamicHub.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        islamicHub.setPadding(dp(5), dp(5), dp(5), dp(5));
+        pressEffect(islamicHub);
+        islamicHub.setOnClickListener(v -> showIslamicHub());
+        header.addView(
+                islamicHub,
+                new LinearLayout.LayoutParams(dp(52), dp(52))
+        );
+
         TextView headerMark =
                 text(
                         languageCode(),
@@ -537,6 +579,9 @@ public class MainActivity extends Activity {
                 Gravity.CENTER
         );
 
+        headerMark.setContentDescription(
+                getString(R.string.language_switch_label)
+        );
         pressEffect(headerMark);
 
         headerMark.setOnClickListener(
@@ -954,7 +999,7 @@ public class MainActivity extends Activity {
 
         TextView middle =
                 text(
-                        "EDU NOOR",
+                        getString(R.string.splash_brand),
                         10.5f,
                         muted,
                         true
@@ -1136,7 +1181,10 @@ public class MainActivity extends Activity {
 
         bottomBg.setColor(surface);
         bottomBg.setCornerRadius(
-                dp(13)
+                getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.card_radius
+                        )
         );
 
         bottomBg.setStroke(

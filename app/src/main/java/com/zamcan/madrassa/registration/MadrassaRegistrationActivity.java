@@ -1626,7 +1626,7 @@ public class MadrassaRegistrationActivity extends Activity {
 
     private void captureIdentity() {
 
-        /* raw values: "—" is only a review placeholder and must
+        /* raw values: "—" is only a review marker and must
            never be written into the Madrassa record */
         madrassa.name =
                 madrassaName.getValue().trim();

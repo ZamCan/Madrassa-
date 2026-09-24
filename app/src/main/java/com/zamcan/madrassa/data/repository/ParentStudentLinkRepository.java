@@ -136,30 +136,27 @@ public final class ParentStudentLinkRepository
         db.beginTransaction();
 
         try {
-            Cursor cursor = db.rawQuery(
-                    "SELECT parent_id " +
-                            "FROM students " +
-                            "WHERE id = ? " +
-                            "LIMIT 1",
-                    new String[]{studentId.trim()}
-            );
+            ParentStudentData data =
+                    loadRelationshipData(
+                            db,
+                            parentId.trim(),
+                            studentId.trim()
+                    );
 
-            String currentParent = null;
-
-            try {
-                if (cursor.moveToFirst()) {
-                    currentParent = cursor.getString(0);
-                }
-            } finally {
-                cursor.close();
-            }
-
-            if (currentParent != null
-                    && !currentParent.equals(
+            if (data.studentParentId != null
+                    && !data.studentParentId.equals(
                     parentId.trim()
             )) {
                 throw new SecurityException(
                         "Parent does not own this student."
+                );
+            }
+
+            if (!data.parentMadrassaId.equals(
+                    data.studentMadrassaId
+            )) {
+                throw new SecurityException(
+                        "Cross-Madrassa student relationship is forbidden."
                 );
             }
 

@@ -113,6 +113,9 @@ public class CalendarActivity extends Activity {
         TextView back = text("‹", 30,
                 getColor(R.color.edunoor_clay), false);
         back.setGravity(Gravity.CENTER);
+        back.setContentDescription(
+                getString(R.string.navigation_back)
+        );
         back.setOnClickListener(v -> finish());
         header.addView(
                 back,
@@ -241,6 +244,9 @@ public class CalendarActivity extends Activity {
         TextView prev = text("‹", 24,
                 getColor(R.color.edunoor_gold_deep), true);
         prev.setGravity(Gravity.CENTER);
+        prev.setContentDescription(
+                getString(R.string.previous_month)
+        );
         prev.setOnClickListener(v -> {
             displayed = displayed.minusMonths(1);
             refreshGrid();
@@ -249,6 +255,9 @@ public class CalendarActivity extends Activity {
         TextView next = text("›", 24,
                 getColor(R.color.edunoor_gold_deep), true);
         next.setGravity(Gravity.CENTER);
+        next.setContentDescription(
+                getString(R.string.next_month)
+        );
         next.setOnClickListener(v -> {
             displayed = displayed.plusMonths(1);
             refreshGrid();

@@ -86,7 +86,10 @@ public class FloatingOutlineField extends FrameLayout {
 
         LayoutParams inputParams = new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                dp(58)
+                getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.field_height
+                        )
         );
 
         inputParams.leftMargin = dp(14);
@@ -160,7 +163,10 @@ public class FloatingOutlineField extends FrameLayout {
 
         LayoutParams prefixParams = new LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
-                dp(58)
+                getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.field_height
+                        )
         );
 
         prefixParams.leftMargin = dp(30);
@@ -243,7 +249,10 @@ public class FloatingOutlineField extends FrameLayout {
 
         LayoutParams chevronParams = new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                dp(58)
+                getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.field_height
+                        )
         );
 
         chevronParams.leftMargin = dp(14);

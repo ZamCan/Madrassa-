@@ -139,7 +139,9 @@ echo "Alignment: OK"
 echo
 echo "[8/8] Signing APK..."
 
-KEYSTORE="$PROJECT/manual/edunoor-debug.keystore"
+# Keep the debug signing key outside the repository. It is a local
+# development credential, never a release secret.
+KEYSTORE="$HOME/.android/debug.keystore"
 
 if [ ! -f "$KEYSTORE" ]; then
     echo "Creating debug keystore..."

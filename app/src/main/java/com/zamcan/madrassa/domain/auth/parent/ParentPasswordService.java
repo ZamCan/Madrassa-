@@ -82,6 +82,10 @@ public final class ParentPasswordService {
                 );
 
         if (!CredentialPolicy.canUse(credential)
+                || !CredentialPolicy.belongsToMadrassa(
+                        credential,
+                        parent.madrassaId
+                )
                 || !parent.id.equals(credential.accountId)) {
             return Result.invalidAccount();
         }

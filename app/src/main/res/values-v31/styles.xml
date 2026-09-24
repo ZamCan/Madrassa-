@@ -25,6 +25,14 @@
             @color/edunoor_emerald_deep
         </item>
 
+        <item name="android:windowSplashScreenAnimatedIcon">
+            @mipmap/ic_launcher
+        </item>
+
+        <item name="android:windowSplashScreenIconBackgroundColor">
+            @color/edunoor_emerald_deep
+        </item>
+
     </style>
 
 </resources>

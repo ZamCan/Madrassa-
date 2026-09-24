@@ -98,8 +98,10 @@ public final class UstadhAuthenticationService {
 
         if (ustadh == null ||
                 !ustadh.active ||
-                !identity.madrassaId.equals(
-                        ustadh.madrassaId
+                !com.zamcan.madrassa.domain.authorization
+                        .UstadhAccessPolicy.belongsToMadrassa(
+                        ustadh,
+                        identity.madrassaId
                 )) {
             return AuthenticationResult
                     .accountInactive();
