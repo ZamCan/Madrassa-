@@ -88,10 +88,8 @@
     <string name="solo_progress_subtitle">Msingi wa kufuatilia maendeleo ya mwanafunzi wa Solo</string>
     <string name="solo_progress_learning">Masomo yaliyokamilika</string>
 
-    <string name="solo_content_ready_title">Msingi wa Solo uko tayari</string>
-    <string name="solo_content_ready_message">Muundo huu umeunganishwa na academic UI foundation. Maudhui halisi ya Solo yatafungwa kwenye canonical global content bila kuunda nakala za maudhui ya Madrassa.</string>
-
-    <string name="solo_content_placeholder">Learning content module itaunganishwa kwenye canonical global academic content.</string>
+    <string name="solo_content_ready_title">Maudhui ya Solo yako</string>
+    <string name="solo_content_ready_message">Maudhui yaliyobunduliwa yanapatikana bila mtandao. Maendeleo ya Solo yatahifadhiwa kwenye kifaa hiki.</string>
 <string name="registration_identity_section">Taarifa za Madrassa</string>
 <string name="registration_identity_title">Utambulisho wa Madrassa</string>
 <string name="registration_identity_subtitle">Weka taarifa za msingi za Madrassa yako.</string>
@@ -355,6 +353,8 @@
     <string name="next_month">Mwezi ujao</string>
     <string name="reset_unavailable">Urejeshaji wa nenosiri haupatikani bado. Wasiliana na msimamizi wa Madrassa.</string>
     <string name="solo_content_unavailable">Somu hii haipo katika maktaba ya maudhui iliyobunduliwa kwa sasa.</string>
+    <string name="solo_progress_unavailable_title">Ufuatiliaji wa Solo bado haujawaanzishwa</string>
+    <string name="solo_progress_unavailable_message">Hakuna rekodi ya maendeleo ya Solo kwenye kifaa hiki bado; rekodi za Madrassa zinawekwa tofauti.</string>
     <string name="solo_audio_provenance">Sauti hii ni sauti ya somo iliyobunduliwa; uthibitisho wa recitation haujafanywa.</string>
     <string name="splash_welcome">Karibu</string>
     <string name="splash_brand">EDU NOOR</string>

@@ -145,9 +145,8 @@
     <string name="solo_progress_title">My Progress</string>
     <string name="solo_progress_subtitle">Foundation for tracking Solo learner progress</string>
     <string name="solo_progress_learning">Lessons completed</string>
-    <string name="solo_content_ready_title">Solo foundation is ready</string>
-    <string name="solo_content_ready_message">This structure is connected to the academic UI foundation. Real Solo content will be bound to canonical global content without duplicating Madrassa content.</string>
-    <string name="solo_content_placeholder">The learning content module will be connected to canonical global academic content.</string>
+    <string name="solo_content_ready_title">Your Solo content</string>
+    <string name="solo_content_ready_message">Bundled lessons are available offline. Solo progress remains local to this device.</string>
 
     <!-- V7.3 registration location + country-code pickers -->
     <string name="registration_select_region">Select Region</string>
@@ -348,6 +347,8 @@
     <string name="next_month">Next month</string>
     <string name="reset_unavailable">Password reset is not available yet. Contact your Madrassa administrator.</string>
     <string name="solo_content_unavailable">This lesson is not present in the bundled learning library yet.</string>
+    <string name="solo_progress_unavailable_title">Solo progress is not connected yet</string>
+    <string name="solo_progress_unavailable_message">There are no Solo progress records on this device yet; Madrassa progress is stored separately.</string>
     <string name="solo_audio_provenance">This is bundled lesson audio; its recitation has not been independently authenticated.</string>
     <string name="splash_welcome">Welcome</string>
     <string name="splash_brand">EDU NOOR</string>

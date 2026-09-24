@@ -18,7 +18,6 @@ import com.zamcan.madrassa.solo.LessonActivity;
 import com.zamcan.madrassa.solo.SoloContent;
 import com.zamcan.madrassa.ui.components.EduNoorButton;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
-import com.zamcan.madrassa.ui.components.EduNoorProgressView;
 import com.zamcan.madrassa.ui.components.EduNoorStateView;
 
 import java.time.LocalDate;
@@ -552,16 +551,15 @@ public class SoloLearningActivity extends Activity {
                 progressSectionParams
         );
 
-        LinearLayout progress =
-                EduNoorProgressView.create(
+        LinearLayout progressState =
+                EduNoorStateView.create(
                         this,
-                        getString(R.string.solo_progress_learning),
-                        0,
-                        0
+                        getString(R.string.solo_progress_unavailable_title),
+                        getString(R.string.solo_progress_unavailable_message)
                 );
 
         content.addView(
-                progress,
+                progressState,
                 new LinearLayout.LayoutParams(
                         -1,
                         LinearLayout.LayoutParams.WRAP_CONTENT

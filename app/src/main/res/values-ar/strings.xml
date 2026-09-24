@@ -145,9 +145,8 @@
     <string name="solo_progress_title">تقدّمي</string>
     <string name="solo_progress_subtitle">أساس متابعة تقدّم المتعلّم الفردي</string>
     <string name="solo_progress_learning">الدروس المكتملة</string>
-    <string name="solo_content_ready_title">أساس التعلّم الفردي جاهز</string>
-    <string name="solo_content_ready_message">هذا الهيكل مرتبط بأساس واجهة الأكاديمية. سيتم ربط المحتوى الحقيقي بالمحتوى العام المعتمد دون تكرار محتوى المدرسة.</string>
-    <string name="solo_content_placeholder">سيتم ربط وحدة المحتوى التعليمي بالمحتوى الأكاديمي العام المعتمد.</string>
+    <string name="solo_content_ready_title">محتوى Solo الخاص بك</string>
+    <string name="solo_content_ready_message">الدروس المضمّنة متاحة دون اتصال. يبقى تقدم Solo محفوظًا على هذا الجهاز.</string>
     <!-- V7.3 registration location + country-code pickers -->
     <string name="registration_select_region">اختر المنطقة</string>
     <string name="registration_select_district">اختر المديرية</string>
@@ -347,6 +346,8 @@
     <string name="next_month">الشهر التالي</string>
     <string name="reset_unavailable">إعادة تعيين كلمة المرور غير متاحة بعد. تواصل مع مسؤول المدرسة.</string>
     <string name="solo_content_unavailable">هذا الدرس غير موجود في مكتبة المحتوى المضمّنة حاليًا.</string>
+    <string name="solo_progress_unavailable_title">تقدم Solo غير مربوط بعد</string>
+    <string name="solo_progress_unavailable_message">لا توجد سجلات تقدم Solo على هذا الجهاز بعد؛ تقدم المدرسة مخزن بشكل منفصل.</string>
     <string name="solo_audio_provenance">هذا صوت درس مضمّن؛ لم يتم التحقق منه بصورة مستقلة كقراءة صحيحة.</string>
     <string name="splash_welcome">أهلاً بك</string>
     <string name="splash_brand">EDU NOOR</string>
