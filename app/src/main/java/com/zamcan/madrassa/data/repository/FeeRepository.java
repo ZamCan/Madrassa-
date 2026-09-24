@@ -32,6 +32,36 @@ public final class FeeRepository {
         return find("madrassa_id = ?", madrassaId);
     }
 
+    /** Inserts one fee record (used by the dev seed). */
+    public boolean save(Fee fee) {
+
+        if (fee == null
+                || fee.id == null || fee.id.trim().isEmpty()
+                || fee.studentId == null
+                || fee.madrassaId == null) {
+            return false;
+        }
+
+        android.content.ContentValues values =
+                new android.content.ContentValues();
+        values.put("id", fee.id.trim());
+        values.put("student_id", fee.studentId.trim());
+        values.put("madrassa_id", fee.madrassaId.trim());
+        values.put("type", fee.type == null ? "" : fee.type);
+        values.put("amount", fee.amount);
+        values.put("deadline", fee.deadline);
+        values.put("status", fee.status == null
+                ? FeeStatus.UNPAID.name() : fee.status.name());
+        values.put("submitted_at", fee.submittedAt);
+        values.put("confirmed_at", fee.confirmedAt);
+        values.put("locked_at", fee.lockedAt);
+        values.put("submitted_by", fee.submittedBy);
+        values.put("confirmed_by", fee.confirmedBy);
+
+        return database.getWritableDatabase()
+                .insert("fees", null, values) != -1;
+    }
+
     private List<Fee> find(String where, String value) {
 
         List<Fee> result = new ArrayList<>();

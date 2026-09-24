@@ -333,4 +333,7 @@
     <string name="bundled_deen">☾  Worship — salat, Qibla, calendar</string>
     <string name="bundled_learning">✦  Learning — full lessons with voice</string>
 
+    <string name="init_step_dev">Preparing the demo madrassa</string>
+    <string name="dev_filled">Demo credentials filled</string>
+
 </resources>

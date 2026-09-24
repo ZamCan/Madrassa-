@@ -203,6 +203,25 @@ public class UstadhLoginActivity extends Activity {
 
         title.setPadding(0, dp(8), 0, 0);
 
+        /*
+         * DEV ONLY: long-press the title to fill the demo
+         * credentials (see core/dev/DevSeed).
+         */
+        if (com.zamcan.madrassa.core.dev.DevSeed.ENABLED) {
+            title.setOnLongClickListener(v -> {
+                identifierField.setValue(
+                        com.zamcan.madrassa.core.dev.DevSeed
+                                .MADRASSA_NAME);
+                passwordField.setValue(
+                        com.zamcan.madrassa.core.dev.DevSeed
+                                .USTADH_PASSWORD);
+                android.widget.Toast.makeText(this,
+                        getString(R.string.dev_filled),
+                        android.widget.Toast.LENGTH_SHORT).show();
+                return true;
+            });
+        }
+
         addRow(root, title);
 
         TextView subtitle = text(

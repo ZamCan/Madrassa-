@@ -195,6 +195,24 @@ public class ParentLoginActivity extends Activity {
 
         addRow(root, title);
 
+        /*
+         * DEV ONLY: long-press the title to fill the demo
+         * credentials (see core/dev/DevSeed).
+         */
+        if (com.zamcan.madrassa.core.dev.DevSeed.ENABLED) {
+            title.setOnLongClickListener(v -> {
+                phone.setValue(
+                        "0713 000 222");
+                password.setValue(
+                        com.zamcan.madrassa.core.dev.DevSeed
+                                .PARENT_PASSWORD);
+                android.widget.Toast.makeText(this,
+                        getString(R.string.dev_filled),
+                        android.widget.Toast.LENGTH_SHORT).show();
+                return true;
+            });
+        }
+
         TextView subtitle = text(
                 getString(R.string.parent_login_subtitle),
                 14,

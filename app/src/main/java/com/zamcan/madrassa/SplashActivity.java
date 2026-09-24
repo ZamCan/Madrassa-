@@ -440,6 +440,18 @@ public class SplashActivity extends Activity {
              */
             announce(R.string.init_step_ustadh_status);
 
+            /*
+             * Step 3b - DEV ONLY: on a fresh install, seed the
+             * demo madrassa (accounts, class, fees, progress)
+             * so the dashboards can be reviewed end to end.
+             * Disabled by flipping DevSeed.ENABLED.
+             */
+            if (com.zamcan.madrassa.core.dev.DevSeed.ENABLED) {
+                announce(R.string.init_step_dev);
+                com.zamcan.madrassa.core.dev.DevSeed
+                        .seedIfEmpty(this);
+            }
+
             Madrassa current = madrassas.isEmpty()
                     ? null
                     : madrassas.get(0);

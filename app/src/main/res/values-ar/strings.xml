@@ -332,4 +332,7 @@
     <string name="bundled_deen">☾  العبادة — الصلاة والقبلة والتقويم</string>
     <string name="bundled_learning">✦  التعلّم — دروس كاملة مع الصوت</string>
 
+    <string name="init_step_dev">تحضير المدرسة التجريبية</string>
+    <string name="dev_filled">تم إدخال بيانات التجربة</string>
+
 </resources>

@@ -239,7 +239,7 @@
 
     <!-- Ijumaa -->
     <string name="friday_wish">Ijumaa Njema!</string>
-    <string name="friday_blessing">Ruhusi biashara na ita dhikrullah — siku ya kusali kwa pamoja imefika.</string>
+    <string name="friday_blessing">Acheni biashara na harakini kwa dhikrullah — siku ya kusali kwa pamoja imefika.</string>
     <string name="friday_verses_label">Aya za Ijumaa — Surah Al-Jumu\u2019ah</string>
     <string name="friday_v1_arabic">يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَى ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ ۚ ذَٰلِكُمْ خَيْرٌ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ</string>
     <string name="friday_v1_translit">Yā ayyuhalladhīna āmanū idhā nūdiya liṣ-ṣalāti min yawmil-jumu\u2019ati fas\u2019aw ilā dhikrillāhi wa dharul-bay\u2019, dhālikum khayrun lakum in kuntum ta\u2019lamūn</string>
@@ -261,7 +261,7 @@
     <string name="deen_title">Ibada</string>
     <string name="deen_subtitle">Swala, Qibla, Adhana na kalenda</string>
     <string name="deen_salat">Swala za leo</string>
-    <string name="deen_salat_caption">Mwelekeo wa MWL • pangilio la mji</string>
+    <string name="deen_salat_caption">Mwelekeo wa MWL • kulingana na eneo lako</string>
     <string name="prayer_fajr">Alfajiri</string>
     <string name="prayer_sunrise">Kuchomoza</string>
     <string name="prayer_dhuhr">Adhuhuri</string>
@@ -283,7 +283,7 @@
     <string name="deen_adhan_caption">Kumbusho za muda wa swala kulingana na ratiba ya hapo juu.</string>
     <string name="deen_adhan_on">Imewashwa</string>
     <string name="deen_adhan_off">Imezimwa</string>
-    <string name="deen_location">Eneo (mahali palipo)</string>
+    <string name="deen_location">Mahali ulipo</string>
     <string name="deen_location_caption">Latitudo na longitudo yanayotumika kwa ratiba na Qibla. Chaguo-msingi: Dar es Salaam.</string>
     <string name="deen_lat_hint">Latitudo (mf. -6.7924)</string>
     <string name="deen_lon_hint">Longitudo (mf. 39.2083)</string>
@@ -324,7 +324,7 @@
     <string name="fees_outstanding">Jumla ya madeni</string>
     <string name="fee_paid">Imelipwa</string>
     <string name="fee_pending">Inasubiri</string>
-    <string name="fee_overdue">Imeliwaza</string>
+    <string name="fee_overdue">Imepita muda</string>
     <string name="fee_cancelled">Imefutwa</string>
     <string name="fee_locked">Imefungwa</string>
     <string name="fee_unpaid">Haijalipwa</string>
@@ -339,5 +339,8 @@
 
     <string name="bundled_deen">☾  Ibada — swala, Qibla, kalenda</string>
     <string name="bundled_learning">✦  Masomo — masomo ya kina na sauti</string>
+
+    <string name="init_step_dev">Kuandaa mfano wa majaribio</string>
+    <string name="dev_filled">Nyurufisho za majaribio zimejazwa</string>
 
 </resources>
