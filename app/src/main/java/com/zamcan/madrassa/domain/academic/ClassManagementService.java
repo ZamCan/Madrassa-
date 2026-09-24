@@ -2,6 +2,7 @@ package com.zamcan.madrassa.domain.academic;
 
 import com.zamcan.madrassa.data.model.ClassGroup;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.repository.ClassStore;
 
 import java.util.List;
@@ -9,9 +10,11 @@ import java.util.List;
 public final class ClassManagementService {
 
     private final ClassStore classStore;
+    private final MadrassaAccessContext accessContext;
 
     public ClassManagementService(
-            ClassStore classStore
+            ClassStore classStore,
+            MadrassaAccessContext accessContext
     ) {
         if (classStore == null) {
             throw new IllegalArgumentException(
@@ -20,12 +23,15 @@ public final class ClassManagementService {
         }
 
         this.classStore = classStore;
+        if (accessContext == null) throw new IllegalArgumentException("accessContext is required");
+        this.accessContext = accessContext;
     }
 
     public boolean create(
             ClassGroup classGroup
     ) {
         validateForCreate(classGroup);
+        requireTenant(classGroup.madrassaId);
 
         if (!uniqueCode(
                 classGroup.madrassaId,
@@ -44,6 +50,7 @@ public final class ClassManagementService {
             ClassGroup classGroup
     ) {
         validateForUpdate(classGroup);
+        requireTenant(classGroup.madrassaId);
 
         ClassGroup existing =
                 classStore.findById(classGroup.id);
@@ -76,7 +83,7 @@ public final class ClassManagementService {
             String madrassaId,
             String classId
     ) {
-        if (blank(madrassaId) || blank(classId)) {
+        if (blank(madrassaId) || blank(classId) || !accessContext.allows(madrassaId)) {
             return null;
         }
 
@@ -98,7 +105,7 @@ public final class ClassManagementService {
     public List<ClassGroup> findActive(
             String madrassaId
     ) {
-        if (blank(madrassaId)) {
+        if (blank(madrassaId) || !accessContext.allows(madrassaId)) {
             return java.util.Collections.emptyList();
         }
 
@@ -124,6 +131,12 @@ public final class ClassManagementService {
         value.active = active;
 
         return classStore.update(value);
+    }
+
+    private void requireTenant(String madrassaId) {
+        if (!accessContext.allows(madrassaId)) {
+            throw new SecurityException("Class operation is outside the authorized Madrassa.");
+        }
     }
 
     private boolean uniqueCode(
