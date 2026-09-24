@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Solo Learning step visuals are referenced dynamically by name
+    (from assets/solo/content.json via getIdentifier), which lint
+    cannot trace - keep them out of the unused-resource shrink.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/solo_wudu_nia,@drawable/solo_wudu_hands,@drawable/solo_wudu_mouth_nose,@drawable/solo_wudu_face,@drawable/solo_wudu_arms,@drawable/solo_wudu_head,@drawable/solo_wudu_feet,@drawable/solo_salah_qiyam,@drawable/solo_salah_ruku,@drawable/solo_salah_sujud,@drawable/solo_salah_tashahhud" />

@@ -78,13 +78,7 @@
     <string name="solo_learning_areas">Maeneo ya Kujifunza</string>
     <string name="solo_learning_areas_subtitle">Maudhui ya msingi ya kujifunza binafsi</string>
 
-    <string name="solo_quran_eyebrow">QUR’AN</string>
-    <string name="solo_quran_title">Qur’an</string>
-    <string name="solo_quran_description">Soma na endelea kujifunza Qur’an katika mazingira ya kujifunza binafsi.</string>
 
-    <string name="solo_islamic_eyebrow">ELIMU YA KIISLAMU</string>
-    <string name="solo_islamic_title">Masomo ya Kiislamu</string>
-    <string name="solo_islamic_description">Mafunzo yaliyopangwa kwa mada, masomo na hatua za kujifunza.</string>
 
     <string name="solo_books_eyebrow">VITABU</string>
     <string name="solo_books_title">Vitabu na Masomo</string>
@@ -97,7 +91,6 @@
     <string name="solo_content_ready_title">Msingi wa Solo uko tayari</string>
     <string name="solo_content_ready_message">Muundo huu umeunganishwa na academic UI foundation. Maudhui halisi ya Solo yatafungwa kwenye canonical global content bila kuunda nakala za maudhui ya Madrassa.</string>
 
-    <string name="solo_quran_placeholder">Qur’an content module itaunganishwa kwenye canonical global learning content.</string>
     <string name="solo_content_placeholder">Learning content module itaunganishwa kwenye canonical global academic content.</string>
 <string name="registration_identity_section">Taarifa za Madrassa</string>
 <string name="registration_identity_title">Utambulisho wa Madrassa</string>
@@ -203,5 +196,28 @@
 <string name="init_session_ready">Kikao kiko tayari</string>
 <string name="init_welcome">Karibu</string>
 <string name="init_next_stage">Dashibodi ya usimamizi itaunganishwa katika hatua inayofuata.</string>
+
+    <!-- Solo Learning lesson screen -->
+    <string name="solo_lesson_listen">Sikiliza</string>
+    <string name="solo_lesson_stop">Simamisha</string>
+    <string name="solo_lesson_prev">Nyuma</string>
+    <string name="solo_lesson_next">Endelea</string>
+    <string name="solo_lesson_done">Imekamilika</string>
+    <string name="solo_lesson_step_of">Hatua %1$d kati ya %2$d</string>
+    <string name="solo_lesson_audio_error">Imeshindikana kucheza sauti</string>
+
+    <!-- Dual calendar month names -->
+    <string-array name="calendar_hijri_months">
+        <item>Muharram</item><item>Safar</item><item>Rabiʿ al-Awwal</item>
+        <item>Rabiʿ al-Thani</item><item>Jumada al-Ula</item><item>Jumada al-Akhira</item>
+        <item>Rajab</item><item>Shaʿban</item><item>Ramadhan</item>
+        <item>Shawwal</item><item>Dhu al-Qaʿda</item><item>Dhu al-Hijja</item>
+    </string-array>
+    <string-array name="calendar_gregorian_months">
+        <item>Januari</item><item>Februari</item><item>Machi</item>
+        <item>Aprili</item><item>Mei</item><item>Juni</item>
+        <item>Julai</item><item>Agosti</item><item>Septemba</item>
+        <item>Oktoba</item><item>Novemba</item><item>Desemba</item>
+    </string-array>
 
 </resources>

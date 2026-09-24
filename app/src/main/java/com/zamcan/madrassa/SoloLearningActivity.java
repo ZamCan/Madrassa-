@@ -1,6 +1,7 @@
 package com.zamcan.madrassa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -11,9 +12,15 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.zamcan.madrassa.core.LanguageManager;
+import com.zamcan.madrassa.core.calendar.EduNoorCalendars;
+import com.zamcan.madrassa.core.calendar.EduNoorDateFormatter;
+import com.zamcan.madrassa.solo.LessonActivity;
+import com.zamcan.madrassa.solo.SoloContent;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
 import com.zamcan.madrassa.ui.components.EduNoorProgressView;
 import com.zamcan.madrassa.ui.components.EduNoorStateView;
+
+import java.time.LocalDate;
 
 public class SoloLearningActivity extends Activity {
 
@@ -296,6 +303,19 @@ public class SoloLearningActivity extends Activity {
         );
 
         /*
+         * DUAL CALENDAR - every EduNoor day carries both systems:
+         * Hijri above, Miladi (Gregorian) beneath, both from the
+         * bundled Umm al-Qura engine, fully offline and localized.
+         */
+        root.addView(
+                buildCalendarStrip(),
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        /*
          * =====================================================
          * SCROLLABLE LEARNING AREA
          * =====================================================
@@ -394,7 +414,10 @@ public class SoloLearningActivity extends Activity {
         );
 
         /*
-         * LEARNING AREAS
+         * =====================================================
+         * LEARNING AREAS - real offline curriculum categories,
+         * loaded from the bundled trilingual content library.
+         * =====================================================
          */
 
         content.addView(
@@ -408,63 +431,40 @@ public class SoloLearningActivity extends Activity {
                 )
         );
 
-        LinearLayout quran =
-                EduNoorCard.create(
-                        this,
-                        getString(R.string.solo_quran_eyebrow),
-                        getString(R.string.solo_quran_title),
-                        getString(R.string.solo_quran_description),
-                        "›"
-                );
+        SoloContent contentLibrary = new SoloContent(this);
 
-        quran.setOnClickListener(
-                v -> showMessage(
-                        getString(R.string.solo_quran_title),
-                        getString(R.string.solo_quran_placeholder)
-                )
-        );
+        int categoryIndex = 0;
 
-        /*
-         * Cards wrap their own content now: the shared component
-         * needs ~97dp for eyebrow + title + two description
-         * lines, so a forced 82dp was clipping every description.
-         */
-        content.addView(
-                quran,
-                new LinearLayout.LayoutParams(
-                        -1,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-        );
+        for (SoloContent.Category category : contentLibrary.getCategories()) {
 
-        LinearLayout islamicStudies =
-                EduNoorCard.create(
-                        this,
-                        getString(R.string.solo_islamic_eyebrow),
-                        getString(R.string.solo_islamic_title),
-                        getString(R.string.solo_islamic_description),
-                        "›"
-                );
+            LinearLayout card =
+                    EduNoorCard.create(
+                            this,
+                            category.symbol + "  " + category.title,
+                            category.title,
+                            category.desc,
+                            "›"
+                    );
 
-        islamicStudies.setOnClickListener(
-                v -> showMessage(
-                        getString(R.string.solo_islamic_title),
-                        getString(R.string.solo_content_placeholder)
-                )
-        );
+            card.setOnClickListener(
+                    v -> openCategory(category)
+            );
 
-        LinearLayout.LayoutParams islamicParams =
-                new LinearLayout.LayoutParams(
-                        -1,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                );
+            LinearLayout.LayoutParams cardParams =
+                    new LinearLayout.LayoutParams(
+                            -1,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    );
 
-        islamicParams.topMargin = dp(10);
+            cardParams.topMargin = categoryIndex == 0 ? 0 : dp(10);
 
-        content.addView(
-                islamicStudies,
-                islamicParams
-        );
+            content.addView(
+                    card,
+                    cardParams
+            );
+
+            categoryIndex++;
+        }
 
         LinearLayout books =
                 EduNoorCard.create(
@@ -570,6 +570,118 @@ public class SoloLearningActivity extends Activity {
         );
 
         setContentView(root);
+    }
+
+    /*
+     * =========================================================
+     * DUAL CALENDAR STRIP
+     * =========================================================
+     */
+
+    private LinearLayout buildCalendarStrip() {
+
+        LocalDate today = LocalDate.now();
+        EduNoorCalendars.HijriDate hijri =
+                EduNoorCalendars.toHijri(today);
+
+        String[] hijriMonths = getResources()
+                .getStringArray(R.array.calendar_hijri_months);
+        String[] gregorianMonths = getResources()
+                .getStringArray(R.array.calendar_gregorian_months);
+
+        String hijriLine =
+                EduNoorDateFormatter.formatHijri(hijri, hijriMonths);
+        String gregorianLine =
+                EduNoorDateFormatter.formatGregorian(today, gregorianMonths);
+
+        LinearLayout strip = new LinearLayout(this);
+        strip.setOrientation(LinearLayout.VERTICAL);
+        strip.setGravity(Gravity.CENTER);
+        strip.setPadding(dp(18), dp(12), dp(18), dp(12));
+        strip.setBackground(getDrawable(R.drawable.edunoor_canvas));
+
+        TextView hijriText = text("☾  " + hijriLine, 13,
+                getColor(R.color.edunoor_gold_deep), true);
+        hijriText.setGravity(Gravity.CENTER);
+
+        TextView gregorianText = text(gregorianLine, 10.5f,
+                getColor(R.color.edunoor_muted), false);
+        gregorianText.setGravity(Gravity.CENTER);
+
+        LinearLayout.LayoutParams gregorianParams =
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+        gregorianParams.topMargin = dp(3);
+
+        strip.addView(
+                hijriText,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+        strip.addView(gregorianText, gregorianParams);
+
+        LinearLayout stripWrap = new LinearLayout(this);
+        stripWrap.setOrientation(LinearLayout.VERTICAL);
+        stripWrap.setPadding(dp(16), dp(8), dp(16), 0);
+        stripWrap.addView(
+                strip,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        return stripWrap;
+    }
+
+    /*
+     * =========================================================
+     * LESSON ENTRY - single-lesson categories open directly;
+     * multi-lesson ones present the bundled lesson list.
+     * =========================================================
+     */
+
+    private void openCategory(SoloContent.Category category) {
+
+        if (category.lessons.size() == 1) {
+            openLesson(category, category.lessons.get(0));
+            return;
+        }
+
+        String[] titles = new String[category.lessons.size()];
+        for (int i = 0; i < titles.length; i++) {
+            titles[i] = category.lessons.get(i).title;
+        }
+
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(category.symbol + "  " + category.title)
+                .setItems(
+                        titles,
+                        (dialog, which) ->
+                                openLesson(
+                                        category,
+                                        category.lessons.get(which)
+                                )
+                )
+                .setNegativeButton(
+                        getString(R.string.registration_cancel),
+                        null
+                )
+                .show();
+    }
+
+    private void openLesson(
+            SoloContent.Category category,
+            SoloContent.Lesson lesson
+    ) {
+        Intent intent = new Intent(this, LessonActivity.class);
+        intent.putExtra(LessonActivity.EXTRA_CATEGORY_ID, category.id);
+        intent.putExtra(LessonActivity.EXTRA_LESSON_ID, lesson.id);
+        startActivity(intent);
     }
 
     private void showMessage(

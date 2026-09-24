@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tashahhud posture pictogram (seated, index finger raised).
+    Vector companion to the generated gold step icons; tinted with
+    the brand gold so it sits seamlessly beside them.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- head -->
+    <path
+        android:pathData="M20,9 m-3.2,0 a3.2,3.2 0 1,1 6.4,0 a3.2,3.2 0 1,1 -6.4,0"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.6"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- seated back and body -->
+    <path
+        android:pathData="M20,12.6 C18.4,15 17.6,17.6 17.6,20.6 L17.6,27 L25,27"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.6"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+
+    <!-- folded legs -->
+    <path
+        android:pathData="M12.4,33.4 L31,33.4 M31,33.4 C33.4,33.4 34.6,31.8 34.6,30"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.6"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+
+    <!-- resting hand -->
+    <path
+        android:pathData="M25,27 C27.4,27 29,28.2 29.8,30.2"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.6"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+
+    <!-- raised index finger -->
+    <path
+        android:pathData="M34.6,30 L34.6,20.8"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.8"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+
+    <!-- ground line -->
+    <path
+        android:pathData="M9,36.4 L39,36.4"
+        android:strokeColor="@color/edunoor_gold"
+        android:strokeWidth="1.4"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+</vector>

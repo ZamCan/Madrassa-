@@ -139,12 +139,6 @@
     <string name="solo_learning_offline">مساحة تعلّم تعمل دون الحاجة إلى حساب مدرسة قرآنية أو اتصال بالخادم.</string>
     <string name="solo_learning_areas">مجالات التعلّم</string>
     <string name="solo_learning_areas_subtitle">محتوى أساسي للتعلّم الذاتي</string>
-    <string name="solo_quran_eyebrow">القرآن الكريم</string>
-    <string name="solo_quran_title">القرآن الكريم</string>
-    <string name="solo_quran_description">اقرأ وواصل تعلّم القرآن الكريم في بيئة تعلّم فردية.</string>
-    <string name="solo_islamic_eyebrow">العلوم الإسلامية</string>
-    <string name="solo_islamic_title">الدروس الإسلامية</string>
-    <string name="solo_islamic_description">دروس منظمة حسب الموضوع والدرس وخطوات التعلّم.</string>
     <string name="solo_books_eyebrow">الكتب</string>
     <string name="solo_books_title">الكتب والدروس</string>
     <string name="solo_books_description">محتوى تعليمي يمكن تنظيمه وقراءته بالتسلسل.</string>
@@ -153,7 +147,6 @@
     <string name="solo_progress_learning">الدروس المكتملة</string>
     <string name="solo_content_ready_title">أساس التعلّم الفردي جاهز</string>
     <string name="solo_content_ready_message">هذا الهيكل مرتبط بأساس واجهة الأكاديمية. سيتم ربط المحتوى الحقيقي بالمحتوى العام المعتمد دون تكرار محتوى المدرسة.</string>
-    <string name="solo_quran_placeholder">سيتم ربط وحدة محتوى القرآن الكريم بالمحتوى التعليمي العام المعتمد.</string>
     <string name="solo_content_placeholder">سيتم ربط وحدة المحتوى التعليمي بالمحتوى الأكاديمي العام المعتمد.</string>
     <!-- V7.3 registration location + country-code pickers -->
     <string name="registration_select_region">اختر المنطقة</string>
@@ -195,5 +188,28 @@
     <string name="init_session_ready">الجلسة جاهزة</string>
     <string name="init_welcome">أهلاً بك</string>
     <string name="init_next_stage">ستُربط لوحة الإدارة في المرحلة التالية.</string>
+
+    <!-- Solo Learning lesson screen -->
+    <string name="solo_lesson_listen">استمع</string>
+    <string name="solo_lesson_stop">إيقاف</string>
+    <string name="solo_lesson_prev">السابق</string>
+    <string name="solo_lesson_next">التالي</string>
+    <string name="solo_lesson_done">تمّ</string>
+    <string name="solo_lesson_step_of">الخطوة %1$d من %2$d</string>
+    <string name="solo_lesson_audio_error">تعذّر تشغيل الصوت</string>
+
+    <!-- Dual calendar month names -->
+    <string-array name="calendar_hijri_months">
+        <item>محرّم</item><item>صفر</item><item>ربيع الأول</item>
+        <item>ربيع الآخر</item><item>جمادى الأولى</item><item>جمادى الآخرة</item>
+        <item>رجب</item><item>شعبان</item><item>رمضان</item>
+        <item>شوّال</item><item>ذو القعدة</item><item>ذو الحجّة</item>
+    </string-array>
+    <string-array name="calendar_gregorian_months">
+        <item>يناير</item><item>فبراير</item><item>مارس</item>
+        <item>أبريل</item><item>مايو</item><item>يونيو</item>
+        <item>يوليو</item><item>أغسطس</item><item>سبتمبر</item>
+        <item>أكتوبر</item><item>نوفمبر</item><item>ديسمبر</item>
+    </string-array>
 
 </resources>

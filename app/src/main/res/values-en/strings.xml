@@ -139,12 +139,6 @@
     <string name="solo_learning_offline">A learning area that works without a Madrassa account or server connection.</string>
     <string name="solo_learning_areas">Learning Areas</string>
     <string name="solo_learning_areas_subtitle">Core content for independent learning</string>
-    <string name="solo_quran_eyebrow">QUR\'AN</string>
-    <string name="solo_quran_title">Qur\'an</string>
-    <string name="solo_quran_description">Read and continue learning the Qur\'an in an independent learning environment.</string>
-    <string name="solo_islamic_eyebrow">ISLAMIC STUDIES</string>
-    <string name="solo_islamic_title">Islamic Lessons</string>
-    <string name="solo_islamic_description">Structured lessons organised by topic, lesson and learning step.</string>
     <string name="solo_books_eyebrow">BOOKS</string>
     <string name="solo_books_title">Books and Lessons</string>
     <string name="solo_books_description">Educational content that can be organised and read in sequence.</string>
@@ -153,7 +147,6 @@
     <string name="solo_progress_learning">Lessons completed</string>
     <string name="solo_content_ready_title">Solo foundation is ready</string>
     <string name="solo_content_ready_message">This structure is connected to the academic UI foundation. Real Solo content will be bound to canonical global content without duplicating Madrassa content.</string>
-    <string name="solo_quran_placeholder">The Qur\'an content module will be connected to canonical global learning content.</string>
     <string name="solo_content_placeholder">The learning content module will be connected to canonical global academic content.</string>
 
     <!-- V7.3 registration location + country-code pickers -->
@@ -196,5 +189,28 @@
     <string name="init_session_ready">Your session is ready</string>
     <string name="init_welcome">Welcome</string>
     <string name="init_next_stage">The management dashboard arrives in the next stage.</string>
+
+    <!-- Solo Learning lesson screen -->
+    <string name="solo_lesson_listen">Listen</string>
+    <string name="solo_lesson_stop">Stop</string>
+    <string name="solo_lesson_prev">Back</string>
+    <string name="solo_lesson_next">Next</string>
+    <string name="solo_lesson_done">Done</string>
+    <string name="solo_lesson_step_of">Step %1$d of %2$d</string>
+    <string name="solo_lesson_audio_error">Could not play the audio</string>
+
+    <!-- Dual calendar month names -->
+    <string-array name="calendar_hijri_months">
+        <item>Muharram</item><item>Safar</item><item>Rabi\u02bf al-Awwal</item>
+        <item>Rabi\u02bf al-Thani</item><item>Jumada al-Ula</item><item>Jumada al-Akhirah</item>
+        <item>Rajab</item><item>Sha\u02bfban</item><item>Ramadan</item>
+        <item>Shawwal</item><item>Dhu al-Qa\u02bfdah</item><item>Dhu al-Hijjah</item>
+    </string-array>
+    <string-array name="calendar_gregorian_months">
+        <item>January</item><item>February</item><item>March</item>
+        <item>April</item><item>May</item><item>June</item>
+        <item>July</item><item>August</item><item>September</item>
+        <item>October</item><item>November</item><item>December</item>
+    </string-array>
 
 </resources>

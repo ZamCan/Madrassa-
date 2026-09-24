@@ -12,6 +12,7 @@ sources in `design/assets-src/`:
                        (emerald glass tile + gold rim + MY MADRASSA emblem)
   books_trio.png       gold open-Qur'an + flanking books emblem on black
                        (landing ornament, converted to translucent alpha)
+  solo_*.png           Solo Learning step icons (gold on black -> alpha)
 
 Outputs:
   mipmap-*/ic_launcher_fg.png      adaptive-icon foreground (108..432 px)
@@ -202,12 +203,35 @@ def build_books_ornament():
     gold.save(RES / "drawable-nodpi" / "ornament_books.png")
 
 
+def build_solo_assets():
+    """Solo Learning step visuals: gold-on-black masters -> transparent
+    gold-alpha PNGs that composite onto the emerald glass cards."""
+    out_dir = RES / "drawable-nodpi"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for src in sorted(SRC.glob("solo_*.png")):
+        art = Image.open(src).convert("L")
+        bbox = art.point(lambda v: 255 if v > 24 else 0).getbbox()
+        if bbox:
+            art = art.crop(bbox)
+        target = 560
+        w, h = art.size
+        if w >= h:
+            art = art.resize((target, round(h * target / w)), Image.LANCZOS)
+        else:
+            art = art.resize((round(w * target / h), target), Image.LANCZOS)
+        gold = Image.new("RGBA", art.size, (214, 170, 92, 0))
+        gold.putalpha(art.point(lambda v: min(240, int(v * 1.25 * 0.94))))
+        gold.save(out_dir / (src.stem + ".png"))
+        print("  solo asset:", src.stem)
+
+
 def main():
     icon, tile, art = load_masters()
     build_icons(icon)
     build_landing_bg(tile, art)
     build_splash_bg(art)
     build_books_ornament()
+    build_solo_assets()
     print("Brand assets regenerated into", RES.relative_to(ROOT))
 
 
