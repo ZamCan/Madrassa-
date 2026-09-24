@@ -2,6 +2,10 @@ package com.zamcan.madrassa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.view.View;
+import android.widget.FrameLayout;
+import com.zamcan.madrassa.core.deen.DeenPrefs;
+import com.zamcan.madrassa.core.sound.EduNoorSounds;
 import android.os.Bundle;
 import android.os.Handler;
 import android.graphics.Typeface;
@@ -238,6 +242,49 @@ public class SplashActivity extends Activity {
         );
 
         /*
+         * Boot shimmer: a small gold light gliding along a thin
+         * track - the "shine" of the boot, quiet by design.
+         */
+        FrameLayout shineTrack =
+                new FrameLayout(this);
+
+        shineTrack.setAlpha(0f);
+
+        View shineBar =
+                new View(this);
+
+        shineBar.setBackgroundColor(
+                getColor(R.color.edunoor_gold)
+        );
+
+        FrameLayout.LayoutParams barParams =
+                new FrameLayout.LayoutParams(
+                        dp(44),
+                        dp(2)
+                );
+
+        shineBar.setLayoutParams(barParams);
+
+        FrameLayout.LayoutParams trackParams =
+                new FrameLayout.LayoutParams(
+                        dp(140),
+                        dp(2)
+                );
+
+        trackParams.gravity =
+                android.view.Gravity.CENTER_HORIZONTAL;
+
+        trackParams.topMargin =
+                dp(12);
+
+        shineTrack.addView(shineBar);
+
+        root.addView(
+                shineTrack,
+                trackParams
+        );
+
+        /*
          * REAL INITIALIZATION STATUS — each line shown here is
          * the work genuinely running at that moment (opening
          * the local store, loading records, checking their
@@ -265,13 +312,48 @@ public class SplashActivity extends Activity {
         setContentView(root);
 
         /*
-         * Gentle professional entrance.
+         * Gentle professional entrance. A warm chime welcomes
+         * the boot (respects the sound preference), the emblem
+         * breathes twice, and the shine glides.
          */
+        EduNoorSounds.chime(this);
+
+        shineTrack.setAlpha(0.85f);
+
+        android.animation.ValueAnimator shine =
+                new android.animation.ValueAnimator();
+
+        shine.setFloatValues(0f, dp(96));
+        shine.setDuration(1150);
+        shine.setRepeatCount(
+                android.animation.ValueAnimator.INFINITE);
+        shine.setRepeatMode(
+                android.animation.ValueAnimator.REVERSE);
+        shine.setInterpolator(
+                new android.view.animation
+                        .AccelerateDecelerateInterpolator());
+        shine.addUpdateListener(
+                animator -> shineBar.setTranslationX(
+                        (float) animator.getAnimatedValue()));
+        shine.start();
+
         icon.animate()
                 .alpha(1f)
                 .scaleX(1f)
                 .scaleY(1f)
                 .setDuration(500)
+                .withEndAction(() ->
+                        icon.animate()
+                                .scaleX(1.03f)
+                                .scaleY(1.03f)
+                                .setDuration(420)
+                                .withEndAction(() ->
+                                        icon.animate()
+                                                .scaleX(1f)
+                                                .scaleY(1f)
+                                                .setDuration(420)
+                                                .start())
+                                .start())
                 .start();
 
         bismillah.animate()

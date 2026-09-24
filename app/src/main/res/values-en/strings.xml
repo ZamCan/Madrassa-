@@ -250,4 +250,42 @@
         <item>Th</item><item>Fr</item><item>Sa</item><item>Su</item>
     </string-array>
 
+    <!-- Deen panel (Kaaba services) -->
+    <string name="deen_title">Worship</string>
+    <string name="deen_subtitle">Salat, Qibla, adhana and calendar</string>
+    <string name="deen_salat">Today\u2019s prayers</string>
+    <string name="deen_salat_caption">MWL convention \u2022 set by your location</string>
+    <string name="prayer_fajr">Fajr</string>
+    <string name="prayer_sunrise">Sunrise</string>
+    <string name="prayer_dhuhr">Dhuhr</string>
+    <string name="prayer_asr">Asr</string>
+    <string name="prayer_maghrib">Maghrib</string>
+    <string name="prayer_isha">Isha</string>
+    <string name="deen_qibla">Qibla direction</string>
+    <string name="deen_qibla_value">Qibla: %1$s\u00b0 (%2$s)</string>
+    <string name="deen_qibla_caption">Direction from your location to the Holy Kaaba</string>
+    <string name="deen_dir_n">North</string>
+    <string name="deen_dir_ne">North-east</string>
+    <string name="deen_dir_e">East</string>
+    <string name="deen_dir_se">South-east</string>
+    <string name="deen_dir_s">South</string>
+    <string name="deen_dir_sw">South-west</string>
+    <string name="deen_dir_w">West</string>
+    <string name="deen_dir_nw">North-west</string>
+    <string name="deen_adhan">Adhana</string>
+    <string name="deen_adhan_caption">Prayer-time reminders based on the timetable above.</string>
+    <string name="deen_adhan_on">On</string>
+    <string name="deen_adhan_off">Off</string>
+    <string name="deen_location">Location</string>
+    <string name="deen_location_caption">Latitude and longitude used for the timetable and Qibla. Default: Dar es Salaam.</string>
+    <string name="deen_lat_hint">Latitude (e.g. -6.7924)</string>
+    <string name="deen_lon_hint">Longitude (e.g. 39.2083)</string>
+    <string name="deen_save">Save</string>
+    <string name="deen_saved">Location saved</string>
+    <string name="deen_invalid_location">Invalid values. Latitude: -90 to 90, longitude: -180 to 180.</string>
+    <string name="deen_calendar">Calendar</string>
+    <string name="deen_open_calendar">Open the full calendar</string>
+    <string name="deen_hijri_days">Hijri adjustment: %+d</string>
+    <string name="deen_hijri_caption">Display adjustment for the Hijri date (your local moon sighting).</string>
+
 </resources>

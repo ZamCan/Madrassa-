@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.core.calendar.EduNoorCalendars;
 import com.zamcan.madrassa.core.calendar.EduNoorDateFormatter;
+import com.zamcan.madrassa.core.deen.DeenPrefs;
 import com.zamcan.madrassa.solo.LessonActivity;
 import com.zamcan.madrassa.solo.SoloContent;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
@@ -582,7 +583,9 @@ public class SoloLearningActivity extends Activity {
 
         LocalDate today = LocalDate.now();
         EduNoorCalendars.HijriDate hijri =
-                EduNoorCalendars.toHijri(today);
+                EduNoorCalendars.toHijri(
+                        today.plusDays(
+                                DeenPrefs.hijriAdjust(this)));
 
         String[] hijriMonths = getResources()
                 .getStringArray(R.array.calendar_hijri_months);

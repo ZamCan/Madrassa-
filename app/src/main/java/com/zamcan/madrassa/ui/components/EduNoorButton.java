@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zamcan.madrassa.R;
+import com.zamcan.madrassa.core.sound.EduNoorSounds;
 
 public final class EduNoorButton {
 
@@ -160,6 +161,8 @@ public final class EduNoorButton {
 
                     if (event.getAction() ==
                             MotionEvent.ACTION_DOWN) {
+
+                        EduNoorSounds.tap(context);
 
                         v.animate()
                                 .scaleX(0.98f)

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.content.Intent;
 import com.zamcan.madrassa.core.LanguageManager;
+import com.zamcan.madrassa.core.deen.DeenPanelActivity;
+import com.zamcan.madrassa.core.deen.DeenPrefs;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -551,6 +553,44 @@ public class MainActivity extends Activity {
                 )
         );
 
+        /*
+         * Kaaba mark: the door to the Deen services panel
+         * (salat timetable, Qibla, adhana, calendar settings).
+         * It rests at the top-right corner, opposite the brand
+         * icon, beside the language mark.
+         */
+        ImageView kaabaMark =
+                new ImageView(this);
+
+        kaabaMark.setImageResource(
+                R.drawable.faith_kaaba
+        );
+
+        kaabaMark.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        kaabaMark.setPadding(dp(9), dp(9), dp(9), dp(9));
+
+        pressEffect(kaabaMark);
+
+        kaabaMark.setOnClickListener(
+                v -> startActivity(
+                        new Intent(
+                                this,
+                                DeenPanelActivity.class
+                        )
+                )
+        );
+
+        header.addView(
+                kaabaMark,
+                new LinearLayout.LayoutParams(
+                        dp(48),
+                        dp(48)
+                )
+        );
+
         root.addView(
                 header,
                 new LinearLayout.LayoutParams(
@@ -1027,7 +1067,8 @@ public class MainActivity extends Activity {
          * silent against the dark glass.
          */
         EduNoorCalendars.HijriDate todayHijri =
-                EduNoorCalendars.toHijri(LocalDate.now());
+                EduNoorCalendars.toHijri(
+                        DeenPrefs.adjustedToday(this));
 
         String hijriLine = "☾  " + EduNoorDateFormatter.formatHijri(
                 todayHijri,

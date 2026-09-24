@@ -257,4 +257,42 @@
         <item>Alh</item><item>Ijn</item><item>Jms</item><item>Jpi</item>
     </string-array>
 
+    <!-- Deen panel (Kaaba services) -->
+    <string name="deen_title">Ibada</string>
+    <string name="deen_subtitle">Swala, Qibla, Adhana na kalenda</string>
+    <string name="deen_salat">Swala za leo</string>
+    <string name="deen_salat_caption">Mwelekeo wa MWL • pangilio la mji</string>
+    <string name="prayer_fajr">Alfajiri</string>
+    <string name="prayer_sunrise">Kuchomoza</string>
+    <string name="prayer_dhuhr">Adhuhuri</string>
+    <string name="prayer_asr">Alasiri</string>
+    <string name="prayer_maghrib">Machweo</string>
+    <string name="prayer_isha">Al-Isha</string>
+    <string name="deen_qibla">Mwelekeo wa Qibla</string>
+    <string name="deen_qibla_value">Qibla: %1$s° (%2$s)</string>
+    <string name="deen_qibla_caption">Mwelekeo kutoka eneo lako hadi Al-Kaaba</string>
+    <string name="deen_dir_n">Kaskazini</string>
+    <string name="deen_dir_ne">Kaskazini-mashariki</string>
+    <string name="deen_dir_e">Mashariki</string>
+    <string name="deen_dir_se">Kusini-mashariki</string>
+    <string name="deen_dir_s">Kusini</string>
+    <string name="deen_dir_sw">Kusini-magharibi</string>
+    <string name="deen_dir_w">Magharibi</string>
+    <string name="deen_dir_nw">Kaskazini-magharibi</string>
+    <string name="deen_adhan">Adhana</string>
+    <string name="deen_adhan_caption">Kumbusho za muda wa swala kulingana na ratiba ya hapo juu.</string>
+    <string name="deen_adhan_on">Imewashwa</string>
+    <string name="deen_adhan_off">Imezimwa</string>
+    <string name="deen_location">Eneo (mahali palipo)</string>
+    <string name="deen_location_caption">Latitudo na longitudo yanayotumika kwa ratiba na Qibla. Chaguo-msingi: Dar es Salaam.</string>
+    <string name="deen_lat_hint">Latitudo (mf. -6.7924)</string>
+    <string name="deen_lon_hint">Longitudo (mf. 39.2083)</string>
+    <string name="deen_save">Hifadhi</string>
+    <string name="deen_saved">Eneo limehifadhiwa</string>
+    <string name="deen_invalid_location">Thamani si sahihi. Latitudo: -90 hadi 90, longitudo: -180 hadi 180.</string>
+    <string name="deen_calendar">Kalenda</string>
+    <string name="deen_open_calendar">Fungua kalenda kamili</string>
+    <string name="deen_hijri_days">Rekebisho la Hijri: %+d</string>
+    <string name="deen_hijri_caption">Rekebisho la mwonekano wa tarehe ya Hijri (msemo wa mwezi kwako).</string>
+
 </resources>

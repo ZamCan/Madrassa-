@@ -32,6 +32,10 @@
             android:exported="false" />
 
         <activity
+            android:name="com.zamcan.madrassa.core.deen.DeenPanelActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
 

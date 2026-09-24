@@ -13,6 +13,7 @@ sources in `design/assets-src/`:
   books_trio.png       gold open-Qur'an + flanking books emblem on black
                        (landing ornament, converted to translucent alpha)
   solo_*.png           Solo Learning step icons (gold on black -> alpha)
+  faith_*.png          Deen service icons: Kaaba, Qibla compass rose
 
 Outputs:
   mipmap-*/ic_launcher_fg.png      adaptive-icon foreground (108..432 px)
@@ -248,6 +249,40 @@ def build_solo_assets():
         print("  solo asset:", src.stem)
 
 
+def build_faith_assets():
+    """Deen service icons (Kaaba, Qibla rose): same clean gold-alpha
+    treatment as the solo assets - no background of any kind."""
+    out_dir = RES / "drawable-nodpi"
+    for src in sorted(SRC.glob("faith_*.png")):
+        art = Image.open(src).convert("L")
+        w, h = art.size
+        px = art.load()
+        border = [px[x, y] for x in range(0, w, 4) for y in (0, h - 1)]
+        border += [px[x, y] for y in range(0, h, 4) for x in (0, w - 1)]
+        if sum(border) / len(border) > 100:
+            art = art.point(lambda v: 255 - v)
+        bbox = art.point(lambda v: 255 if v > 24 else 0).getbbox()
+        if bbox:
+            art = art.crop(bbox)
+        target = 560
+        w, h = art.size
+        if w >= h:
+            art = art.resize((target, round(h * target / w)), Image.LANCZOS)
+        else:
+            art = art.resize((round(w * target / h), target), Image.LANCZOS)
+
+        def clean_alpha(v):
+            if v <= 28:
+                return 0
+            t = (v - 28) / (255 - 28)
+            return min(240, round((t ** 1.25) * 255 * 0.94))
+
+        gold = Image.new("RGBA", art.size, (214, 170, 92, 0))
+        gold.putalpha(art.point(clean_alpha))
+        gold.save(out_dir / (src.stem + ".png"))
+        print("  faith asset:", src.stem)
+
+
 def main():
     icon, tile, art = load_masters()
     build_icons(icon)
@@ -255,6 +290,7 @@ def main():
     build_splash_bg(art)
     build_books_ornament()
     build_solo_assets()
+    build_faith_assets()
     print("Brand assets regenerated into", RES.relative_to(ROOT))
 
 

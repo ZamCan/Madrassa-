@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.zamcan.madrassa.R;
 import com.zamcan.madrassa.core.LanguageManager;
+import com.zamcan.madrassa.core.deen.DeenPrefs;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -354,6 +355,7 @@ public class CalendarActivity extends Activity {
         );
 
         LocalDate today = LocalDate.now();
+        int hijriShift = DeenPrefs.hijriAdjust(this);
         int leadingBlanks = first.getDayOfWeek().getValue() - 1;
 
         LinearLayout row = null;
@@ -375,7 +377,8 @@ public class CalendarActivity extends Activity {
 
             LocalDate date = displayed.atDay(day);
             EduNoorCalendars.HijriDate hijri =
-                    EduNoorCalendars.toHijri(date);
+                    EduNoorCalendars.toHijri(
+                            date.plusDays(hijriShift));
 
             boolean hijriMonthStart = hijri.day == 1;
             boolean isToday = date.equals(today);
@@ -440,10 +443,12 @@ public class CalendarActivity extends Activity {
         bannerBox.removeAllViews();
 
         LocalDate today = LocalDate.now();
+        LocalDate hijriToday = today.plusDays(
+                DeenPrefs.hijriAdjust(this));
         EduNoorCalendars.HijriDate hijri =
-                EduNoorCalendars.toHijri(today);
+                EduNoorCalendars.toHijri(hijriToday);
 
-        String message = specialMessage(today, hijri);
+        String message = specialMessage(hijriToday, hijri);
         if (message == null) {
             bannerBox.setVisibility(View.GONE);
             return;
