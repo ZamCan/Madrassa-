@@ -105,7 +105,7 @@ public final class SmsQueueService {
         return OperationResult.forbidden(code, "SMS operation is not authorized.");
     }
     private static <T> OperationResult<T> failed(String code) {
-        return OperationResult.failure(code, "SMS operation failed.");
+        return OperationResult.failed(code, "SMS operation failed.");
     }
     private static boolean blank(String v) { return v == null || v.trim().isEmpty(); }
 }
