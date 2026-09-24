@@ -235,7 +235,6 @@ public class MadrassaRegistrationActivity extends Activity {
         final int clay = getColor(R.color.edunoor_clay);
         final int ivory = getColor(R.color.edunoor_surface);
         final int muted = getColor(R.color.edunoor_muted);
-        final int gold = getColor(R.color.edunoor_gold);
 
         getWindow().setStatusBarColor(ivory);
         getWindow().setNavigationBarColor(ivory);
@@ -275,7 +274,7 @@ public class MadrassaRegistrationActivity extends Activity {
         TextView arabic = text(
                 getString(R.string.brand_subtitle),
                 14,
-                gold,
+                getColor(R.color.edunoor_gold_deep),
                 true
         );
 

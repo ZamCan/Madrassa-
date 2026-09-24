@@ -7,7 +7,8 @@
     <color name="edunoor_walnut">#3E2920</color>
     <color name="edunoor_ink">#3E2920</color>
     <color name="edunoor_ink_soft">#60483A</color>
-    <color name="edunoor_muted">#806E60</color>
+    <!-- WCAG AA on parchment & ivory at small sizes (>= 4.5:1) -->
+    <color name="edunoor_muted">#6E5C4E</color>
 
     <color name="edunoor_clay">#A95F3D</color>
     <color name="edunoor_clay_dark">#81452F</color>

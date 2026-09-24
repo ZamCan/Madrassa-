@@ -160,7 +160,7 @@ public class ParentLoginActivity extends Activity {
         TextView arabic = text(
                 getString(R.string.brand_subtitle),
                 15,
-                gold,
+                getColor(R.color.edunoor_gold_deep),
                 true
         );
 
@@ -254,9 +254,15 @@ public class ParentLoginActivity extends Activity {
 
         /*
          * Keyboard "Done" submits the form, so the login can be
-         * completed without leaving the keyboard.
+         * completed without leaving the keyboard. "Done"/"Next"
+         * on the phone field advances to the password field so
+         * the two-step form flows without dismissing the
+         * keyboard.
          */
         password.setOnDoneAction(v -> attemptLogin());
+        phone.setOnDoneAction(
+                v -> password.getEditText().requestFocus()
+        );
 
         root.addView(
                 password,

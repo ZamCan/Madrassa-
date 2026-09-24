@@ -214,6 +214,15 @@ public class FloatingOutlineField extends FrameLayout {
         chevron.setText("▾");
         chevron.setTextColor(mutedColor);
         chevron.setTextSize(14);
+
+        /*
+         * The chevron only decorates the picker; the prefix text
+         * next to it carries the information, so it is silent to
+         * accessibility services.
+         */
+        chevron.setImportantForAccessibility(
+                IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
         chevron.setSingleLine(true);
         chevron.setGravity(
                 Gravity.CENTER_VERTICAL |

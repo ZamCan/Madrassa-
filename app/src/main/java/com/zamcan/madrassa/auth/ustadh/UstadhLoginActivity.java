@@ -169,7 +169,7 @@ public class UstadhLoginActivity extends Activity {
         TextView arabic = text(
                 getString(R.string.brand_subtitle),
                 15,
-                gold,
+                getColor(R.color.edunoor_gold_deep),
                 true
         );
 
@@ -230,8 +230,14 @@ public class UstadhLoginActivity extends Activity {
         );
 
         identifierField.setTextMode();
+
+        /*
+         * The field accepts either the Madrassa name or its phone
+         * number, so the in-box example shows both forms instead
+         * of borrowing the phone-only example.
+         */
         identifierField.setExample(
-                getString(R.string.field_example_phone)
+                getString(R.string.field_example_identifier)
         );
 
         root.addView(
@@ -259,9 +265,14 @@ public class UstadhLoginActivity extends Activity {
         passwordField.setPasswordMode();
 
         /*
-         * Keyboard "Done" submits the form.
+         * Keyboard "Done" submits the form. On the identifier
+         * field it advances to the password field, keeping the
+         * two-step flow inside one keyboard session.
          */
         passwordField.setOnDoneAction(v -> attemptLogin());
+        identifierField.setOnDoneAction(
+                v -> passwordField.getEditText().requestFocus()
+        );
 
         root.addView(
                 passwordField,

@@ -193,7 +193,7 @@ public class MainActivity extends Activity {
         TextView item =
                 text(
                         value,
-                        10,
+                        11,
                         getColor(
                                 R.color.edunoor_muted
                         ),
@@ -572,7 +572,7 @@ public class MainActivity extends Activity {
                 dp(17),
                 dp(20),
                 dp(17),
-                dp(10)
+                dp(16)
         );
 
         /*
@@ -688,11 +688,32 @@ public class MainActivity extends Activity {
                         false
                 );
 
+        /*
+         * GOLD ORNAMENT — purely decorative: silent to
+         * accessibility services, wrap-height cells so the
+         * glyphs scale without clipping.
+         */
+        left.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        diamond.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        right.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        left.setMinimumHeight(dp(20));
+        diamond.setMinimumHeight(dp(20));
+        right.setMinimumHeight(dp(20));
+
         ornament.addView(
                 left,
                 new LinearLayout.LayoutParams(
                         dp(35),
-                        dp(20)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -700,7 +721,7 @@ public class MainActivity extends Activity {
                 diamond,
                 new LinearLayout.LayoutParams(
                         dp(16),
-                        dp(20)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -708,14 +729,14 @@ public class MainActivity extends Activity {
                 right,
                 new LinearLayout.LayoutParams(
                         dp(35),
-                        dp(20)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
         LinearLayout.LayoutParams ornamentParams =
                 new LinearLayout.LayoutParams(
                         dp(86),
-                        dp(20)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
         ornamentParams.topMargin =
@@ -876,7 +897,7 @@ public class MainActivity extends Activity {
         TextView middle =
                 text(
                         "EDU NOOR",
-                        9,
+                        10.5f,
                         muted,
                         true
                 );
@@ -891,11 +912,29 @@ public class MainActivity extends Activity {
                         false
                 );
 
+        /*
+         * Decorative brand row: the marks are silent to
+         * accessibility services; the wordmark itself is real
+         * text. Cells wrap and carry minimum heights so larger
+         * font scales grow the row instead of clipping it.
+         */
+        leftMark.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        rightMark.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        leftMark.setMinimumHeight(dp(24));
+        middle.setMinimumHeight(dp(24));
+        rightMark.setMinimumHeight(dp(24));
+
         lower.addView(
                 leftMark,
                 new LinearLayout.LayoutParams(
                         dp(28),
-                        dp(24)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -903,7 +942,7 @@ public class MainActivity extends Activity {
                 middle,
                 new LinearLayout.LayoutParams(
                         dp(75),
-                        dp(24)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -911,7 +950,7 @@ public class MainActivity extends Activity {
                 rightMark,
                 new LinearLayout.LayoutParams(
                         dp(28),
-                        dp(24)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -919,7 +958,7 @@ public class MainActivity extends Activity {
                 lower,
                 new LinearLayout.LayoutParams(
                         -1,
-                        dp(30)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 

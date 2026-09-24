@@ -155,11 +155,25 @@ public final class EduNoorCard {
 
         symbolView.setGravity(Gravity.CENTER);
 
+        /*
+         * Decorative glyph: the card title carries the meaning,
+         * so the symbol is silent to accessibility services and
+         * grows with font scaling instead of clipping inside a
+         * fixed-height cell.
+         */
+        symbolView.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        symbolView.setMinimumHeight(
+                dp(context, 52)
+        );
+
         card.addView(
                 symbolView,
                 new LinearLayout.LayoutParams(
                         dp(context, 40),
-                        dp(context, 52)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -194,7 +208,7 @@ public final class EduNoorCard {
                 text(
                         context,
                         subtitle,
-                        10.5f,
+                        11.5f,
                         subtitleColor,
                         false
                 );
@@ -231,11 +245,23 @@ public final class EduNoorCard {
 
         arrow.setGravity(Gravity.CENTER);
 
+        /*
+         * Decorative chevron — silent to accessibility services
+         * and free to grow with the user's font scale.
+         */
+        arrow.setImportantForAccessibility(
+                View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        );
+
+        arrow.setMinimumHeight(
+                dp(context, 52)
+        );
+
         card.addView(
                 arrow,
                 new LinearLayout.LayoutParams(
                         dp(context, 32),
-                        dp(context, 52)
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
 
