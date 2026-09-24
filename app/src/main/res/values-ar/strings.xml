@@ -287,4 +287,13 @@
     <string name="dashboard_calendar_sub">التقويم الميلادي والهجري وودجت الجهاز</string>
     <string name="dashboard_management_detail">الطلاب: %1$d\nالفصول: %2$d\nسجلات الرسوم: %3$d</string>
     <string name="dashboard_none">لا توجد سجلات محلية.</string>
+
+    <string name="dashboard_programmes">البرامج</string>
+    <string name="dashboard_programmes_sub">البرامج الدراسية في المدرسة</string>
+    <string name="dashboard_academic_content">البنية الأكاديمية</string>
+    <string name="dashboard_academic_content_sub">المقررات والمحتوى الأكاديمي</string>
+    <string name="dashboard_add_class">إضافة فصل</string>
+    <string name="dashboard_add_class_sub">إنشاء فصل جديد داخل المدرسة</string>
+    <string name="dashboard_class_name">اسم الفصل</string>
+    <string name="dashboard_class_code">رمز الفصل (اختياري)</string>
 </resources>
