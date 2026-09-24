@@ -260,7 +260,7 @@ public class InitializationActivity extends Activity {
         madrassaNameView = text(
                 "",
                 22,
-                android.graphics.Color.WHITE,
+                getColor(R.color.edunoor_white),
                 true
         );
 

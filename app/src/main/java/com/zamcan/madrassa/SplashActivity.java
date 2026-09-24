@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
@@ -178,7 +177,7 @@ public class SplashActivity extends Activity {
                 text(
                         "مَرْحَبًا بِكُمْ",
                         20,
-                        Color.WHITE,
+                        getColor(R.color.edunoor_white),
                         true
                 );
 

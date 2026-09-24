@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.content.Intent;
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
@@ -168,14 +167,14 @@ public class MainActivity extends Activity {
                                 : R.drawable.ustadh_card,
                         title,
                         primary
-                                ? Color.WHITE
+                                ? getColor(R.color.edunoor_white)
                                 : getColor(R.color.edunoor_walnut),
                         subtitle,
                         primary
-                                ? getColor(R.color.edunoor_gold_soft)
+                                ? getColor(R.color.edunoor_text_light)
                                 : getColor(R.color.edunoor_muted),
                         primary
-                                ? Color.WHITE
+                                ? getColor(R.color.edunoor_white)
                                 : getColor(R.color.edunoor_clay)
                 );
 

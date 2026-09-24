@@ -1,7 +1,6 @@
 package com.zamcan.madrassa.ui.components;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
@@ -129,7 +128,9 @@ public final class EduNoorButton {
 
         if (primary) {
             background.setColor(clay);
-            button.setTextColor(Color.WHITE);
+            button.setTextColor(
+                    context.getColor(R.color.edunoor_white)
+            );
         } else {
             background.setColor(surface);
             background.setStroke(

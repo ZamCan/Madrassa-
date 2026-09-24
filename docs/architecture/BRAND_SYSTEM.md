@@ -105,8 +105,8 @@ Corner radius scale: panels 24, cards 18, inputs/bar 13–14, buttons 26.
 | Drawable | Fill | Stroke | Use |
 |---|---|---|---|
 | `glass_panel.xml` | `#B80C2B1F` (72 %) | 1 dp `#59C69A45` (35 %) | The large landing canvas hosting hero + cards |
-| `glass_card_primary.xml` | `#C2155941` (76 % of *primary emerald*) | 1.5 dp solid gold | Primary role card (MZAZI) |
-| `glass_card_secondary.xml` | `#990C2B1F` (60 %) | 1 dp `#66C69A45` (40 %) | Secondary role card (USTADH) |
+| `glass_card_primary.xml` | `#D1155941` (82 % of *primary emerald*) | 1.5 dp solid gold | Primary role card (MZAZI) |
+| `glass_card_secondary.xml` | `#D10C2B1F` (82 %) | 1 dp `#66C69A45` (40 %) | Secondary role card (USTADH) |
 | `glass_input.xml` | `#A60C2B1F` (65 %) | 1 dp `#4DC69A45` (30 %) | Text inputs, segmented-control chips |
 | `glass_bar.xml` | `#960C2B1F` (59 %) | 1 dp `#3DC69A45` (24 %) | Bottom utility bar |
 | `gold_button.xml` | solid `edunoor_gold` | 1 dp `edunoor_gold_deep` | Primary actions (LOGIN / REGISTER) |
@@ -209,7 +209,10 @@ first-strong bidirectional detection — do **not** force
 ## 8. Don'ts
 
 - Don't put gateway credentials, real OTP logic, or DB code into these screens (spec §15/§19 — later stages, server-side).
-- Don't raise glass alpha above ~80 % — the pattern/artifacts must read through.
+- Card glass sits at 82 % (`0xD1`): the accessibility pass proved 60–76 % composites
+  fail WCAG AA for subtitle-size text on the cream canvas (gold_soft 3.25, text_faded
+  2.45). Keep small text on glass to `text_light`/`text_faded`; the gold family stays
+  on rims, symbols and arrows (large/decorative roles), never small subtitle text.
 - The legacy V3 drawables (`parent_card`, `ustadh_card`, `edunoor_canvas`, …) are still used by existing `ui/components` screens — keep them working, but prefer the glass recipes for NEW premium surfaces.
 - Don't stretch `brand_icon` beyond ~96 dp or the emblem detail turns muddy.
 - Don't edit generated bitmaps; regenerate via the pipeline.
