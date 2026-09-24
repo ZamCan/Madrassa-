@@ -723,7 +723,7 @@ public class SoloLearningActivity extends Activity {
                 message.append(p.prayer.name()).append("  ").append(p.time).append("\\n");
             }
         }
-        message.append("\\n").append(getString(R.string.solo_adhan_state, settings.enabled));
+        message.append("\\n").append(getString(R.string.solo_adhan_state, settings.enabled ? getString(R.string.solo_adhan_on) : getString(R.string.solo_adhan_off)));
         new android.app.AlertDialog.Builder(this)
                 .setTitle(getString(R.string.solo_salah))
                 .setMessage(message.toString())
