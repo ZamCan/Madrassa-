@@ -145,7 +145,7 @@ public final class FeeService {
         return OperationResult.forbidden(code, "Finance operation is not authorized.");
     }
     private static <T> OperationResult<T> failed(String code) {
-        return OperationResult.failure(code, "Finance operation failed.");
+        return OperationResult.failed(code, "Finance operation failed.");
     }
     private static boolean blank(String v) { return v == null || v.trim().isEmpty(); }
 }
