@@ -257,4 +257,14 @@
         <item>Alh</item><item>Ijn</item><item>Jms</item><item>Jpi</item>
     </string-array>
 
+    <string name="solo_qibla_short">Qibla</string>
+    <string name="solo_qibla">Qibla direction</string>
+    <string name="solo_qibla_result">Qibla: %1$.1f° (%2$s)</string>
+    <string name="solo_salah">Salah timetable</string>
+    <string name="solo_adhan_settings">Adhan settings</string>
+    <string name="solo_adhan_state">Adhan: %1$s</string>
+    <string name="solo_adhan_on">On</string>
+    <string name="solo_adhan_off">Off</string>
+    <string name="solo_adhan_enabled">Local Adhan is enabled. It is scheduled only at calculated prayer times; Sunrise is excluded.</string>
+    <string name="solo_adhan_disabled">Local Adhan is disabled. No prayer alarm will be played.</string>
 </resources>
