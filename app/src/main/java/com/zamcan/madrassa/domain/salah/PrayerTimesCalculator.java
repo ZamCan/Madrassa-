@@ -38,7 +38,7 @@ public final class PrayerTimesCalculator {
  }
  private static double asr(double noon,double lat,double dec){
   double phi=Math.toRadians(lat);
-  double altitude=-Math.toDegrees(Math.atan(1.0/(1.0+Math.tan(Math.abs(phi-dec))));
+  double altitude=-Math.toDegrees(Math.atan(1.0/(1.0+Math.tan(Math.abs(phi-dec)))));
   return event(noon,lat,dec,altitude,true);
  }
  private static LocalTime toTime(double m){
