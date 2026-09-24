@@ -12,6 +12,8 @@ import com.zamcan.madrassa.domain.parent.ParentStudentAccessService;
 import com.zamcan.madrassa.domain.students.StudentClassAssignmentService;
 import com.zamcan.madrassa.domain.attendance.AttendanceService;
 import com.zamcan.madrassa.domain.communication.SmsQueueService;
+import com.zamcan.madrassa.domain.communication.SmsDispatchService;
+import com.zamcan.madrassa.domain.integration.SmsGateway;
 import com.zamcan.madrassa.domain.finance.FeeService;
 
 public final class BackendCoreServiceFactory {
@@ -46,6 +48,25 @@ public final class BackendCoreServiceFactory {
         require(database, madrassaId);
         return new SmsQueueService(
                 new SmsRepository(database),
+                madrassaId
+        );
+    }
+
+    public static SmsDispatchService smsDispatch(
+            EduNoorDatabase database,
+            String madrassaId,
+            SmsGateway gateway
+    ) {
+        require(database, madrassaId);
+        if (gateway == null) {
+            throw new IllegalArgumentException("sms gateway is required");
+        }
+        SmsRepository repository = new SmsRepository(database);
+        SmsQueueService queue = new SmsQueueService(repository, madrassaId);
+        return new SmsDispatchService(
+                repository,
+                queue,
+                gateway,
                 madrassaId
         );
     }
