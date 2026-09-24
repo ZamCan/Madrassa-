@@ -4,8 +4,6 @@ import com.zamcan.madrassa.data.model.Programme;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
 import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
-import com.zamcan.madrassa.data.local.DatabaseTransactionRunner;
-import com.zamcan.madrassa.data.local.EduNoorDatabase;
 import com.zamcan.madrassa.domain.repository.ProgrammeStore;
 import com.zamcan.madrassa.domain.repository.StudentStore;
 
@@ -14,7 +12,6 @@ public final class StudentProgrammeEnrollmentService {
     private final StudentStore studentStore;
     private final ProgrammeStore programmeStore;
     private final MadrassaAccessContext accessContext;
-    private final DatabaseTransactionRunner transactions;
 
     public StudentProgrammeEnrollmentService(
             StudentStore studentStore,
@@ -27,7 +24,6 @@ public final class StudentProgrammeEnrollmentService {
         this.studentStore = studentStore;
         this.programmeStore = programmeStore;
         this.accessContext = accessContext;
-        this.transactions = null;
     }
 
     public void enroll(
@@ -39,8 +35,6 @@ public final class StudentProgrammeEnrollmentService {
         Programme programme = requireProgramme(programmeId);
 
         requireActive(student, programme);
-        requireTenant(student, programme);
-
         requireTenant(student, programme);
 
         if (student.programmeIds == null) {
@@ -68,10 +62,7 @@ public final class StudentProgrammeEnrollmentService {
         Programme programme =
                 requireProgramme(programmeId);
 
-        TenantPolicy.requireSameMadrassa(
-                student.madrassaId,
-                programme.madrassaId
-        );
+        requireTenant(student, programme);
 
         if (student.programmeIds == null) {
             return;
