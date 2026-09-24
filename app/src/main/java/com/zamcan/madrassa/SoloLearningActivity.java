@@ -14,6 +14,14 @@ import android.widget.TextView;
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.core.calendar.EduNoorCalendars;
 import com.zamcan.madrassa.core.calendar.EduNoorDateFormatter;
+import com.zamcan.madrassa.domain.geography.LocationProfile;
+import com.zamcan.madrassa.domain.salah.AdhanSettings;
+import com.zamcan.madrassa.domain.salah.QiblaCalculator;
+import com.zamcan.madrassa.domain.salah.PrayerTime;
+import com.zamcan.madrassa.domain.salah.SalahReminderEngine;
+import com.zamcan.madrassa.salah.AdhanSettingsStore;
+import com.zamcan.madrassa.salah.DeviceLocationProfileProvider;
+import com.zamcan.madrassa.salah.SalahAlarmScheduler;
 import com.zamcan.madrassa.solo.LessonActivity;
 import com.zamcan.madrassa.solo.SoloContent;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
@@ -294,6 +302,20 @@ public class SoloLearningActivity extends Activity {
                 )
         );
 
+        LinearLayout qiblaMark = new LinearLayout(this);
+        qiblaMark.setOrientation(LinearLayout.VERTICAL);
+        qiblaMark.setGravity(Gravity.CENTER);
+        qiblaMark.setPadding(dp(4), dp(2), dp(4), dp(2));
+        ImageView kaaba = new ImageView(this);
+        kaaba.setImageResource(R.drawable.edunoor_kaaba);
+        kaaba.setContentDescription(getString(R.string.solo_qibla));
+        qiblaMark.addView(kaaba, new LinearLayout.LayoutParams(dp(34), dp(34)));
+        TextView qiblaLabel = text(getString(R.string.solo_qibla_short), 8.5f, clay, true);
+        qiblaLabel.setGravity(Gravity.CENTER);
+        qiblaMark.addView(qiblaLabel, new LinearLayout.LayoutParams(dp(42), dp(18)));
+        qiblaMark.setOnClickListener(v -> showQibla());
+        header.addView(qiblaMark, new LinearLayout.LayoutParams(dp(46), dp(50)));
+
         root.addView(
                 header,
                 new LinearLayout.LayoutParams(
@@ -412,6 +434,21 @@ public class SoloLearningActivity extends Activity {
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
+
+        LinearLayout quickTools = new LinearLayout(this);
+        quickTools.setGravity(Gravity.CENTER_VERTICAL);
+        quickTools.setPadding(0, dp(10), 0, dp(2));
+        TextView qiblaButton = com.zamcan.madrassa.ui.components.EduNoorButton.secondary(
+                this, getString(R.string.solo_qibla));
+        qiblaButton.setOnClickListener(v -> showQibla());
+        quickTools.addView(qiblaButton, new LinearLayout.LayoutParams(0, -2, 1));
+        TextView salahButton = com.zamcan.madrassa.ui.components.EduNoorButton.secondary(
+                this, getString(R.string.solo_salah));
+        salahButton.setOnClickListener(v -> showSalah());
+        LinearLayout.LayoutParams salahParams = new LinearLayout.LayoutParams(0, -2, 1);
+        salahParams.leftMargin = dp(7);
+        quickTools.addView(salahButton, salahParams);
+        content.addView(quickTools, new LinearLayout.LayoutParams(-1, -2));
 
         /*
          * =====================================================
@@ -657,6 +694,59 @@ public class SoloLearningActivity extends Activity {
      * multi-lesson ones present the bundled lesson list.
      * =========================================================
      */
+
+    private LocationProfile currentLocation() {
+        return DeviceLocationProfileProvider.current(this);
+    }
+
+    private void showQibla() {
+        LocationProfile location = currentLocation();
+        double bearing = QiblaCalculator.bearingDegrees(location.latitude, location.longitude);
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.solo_qibla))
+                .setMessage(getString(R.string.solo_qibla_result, bearing, QiblaCalculator.cardinal(bearing)))
+                .setPositiveButton(getString(R.string.dialog_ok), null)
+                .show();
+        if (checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != android.content.pm.PackageManager.PERMISSION_GRANTED
+                && checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != android.content.pm.PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION}, 4101);
+        }
+    }
+
+    private void showSalah() {
+        LocationProfile location = currentLocation();
+        java.util.List<PrayerTime> times = SalahReminderEngine.today(LocalDate.now(), location);
+        AdhanSettings settings = AdhanSettingsStore.read(this);
+        StringBuilder message = new StringBuilder();
+        for (PrayerTime p : times) {
+            if (p.prayer != PrayerTime.Prayer.SUNRISE) {
+                message.append(p.prayer.name()).append("  ").append(p.time).append("\\n");
+            }
+        }
+        message.append("\\n").append(getString(R.string.solo_adhan_state, settings.enabled));
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.solo_salah))
+                .setMessage(message.toString())
+                .setNegativeButton(getString(R.string.solo_adhan_settings), (d, w) -> toggleAdhan(location))
+                .setPositiveButton(getString(R.string.dialog_ok), null)
+                .show();
+    }
+
+    private void toggleAdhan(LocationProfile location) {
+        AdhanSettings current = AdhanSettingsStore.read(this);
+        boolean enabled = !current.enabled;
+        AdhanSettingsStore.setEnabled(this, enabled);
+        if (enabled) {
+            SalahAlarmScheduler.scheduleDay(this, LocalDate.now(), location);
+        } else {
+            SalahAlarmScheduler.cancelDay(this, LocalDate.now(), location);
+        }
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.solo_adhan_settings))
+                .setMessage(enabled ? getString(R.string.solo_adhan_enabled) : getString(R.string.solo_adhan_disabled))
+                .setPositiveButton(getString(R.string.dialog_ok), null)
+                .show();
+    }
 
     private void openCategory(SoloContent.Category category) {
 
