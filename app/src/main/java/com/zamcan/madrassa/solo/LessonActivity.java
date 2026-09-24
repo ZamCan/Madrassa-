@@ -226,7 +226,7 @@ public class LessonActivity extends Activity {
         stepCard.setGravity(Gravity.CENTER_HORIZONTAL);
         stepCard.setPadding(dp(18), dp(18), dp(18), dp(18));
         stepCard.setBackground(
-                getDrawable(R.drawable.edunoor_canvas)
+                getDrawable(R.drawable.glass_panel)
         );
 
         stepImage = new ImageView(this);
