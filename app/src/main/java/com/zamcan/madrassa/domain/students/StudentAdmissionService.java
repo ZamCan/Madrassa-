@@ -5,6 +5,7 @@ import com.zamcan.madrassa.data.model.Parent;
 import com.zamcan.madrassa.data.model.Programme;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.repository.ClassStore;
 import com.zamcan.madrassa.domain.repository.ParentStore;
 import com.zamcan.madrassa.domain.repository.ProgrammeStore;
@@ -18,19 +19,22 @@ public final class StudentAdmissionService {
     private final ClassStore classStore;
     private final ProgrammeStore programmeStore;
     private final StudentAdmissionStore admissionStore;
+    private final MadrassaAccessContext accessContext;
 
     public StudentAdmissionService(
             ParentStore parentStore,
             StudentStore studentStore,
             ClassStore classStore,
             ProgrammeStore programmeStore,
-            StudentAdmissionStore admissionStore
+            StudentAdmissionStore admissionStore,
+            MadrassaAccessContext accessContext
     ) {
         this.parentStore = parentStore;
         this.studentStore = studentStore;
         this.classStore = classStore;
         this.programmeStore = programmeStore;
         this.admissionStore = admissionStore;
+        this.accessContext = accessContext;
     }
 
     public void admit(
@@ -56,10 +60,12 @@ public final class StudentAdmissionService {
             );
         }
 
-        TenantPolicy.requireSameMadrassa(
-                student.madrassaId,
-                parent.madrassaId
-        );
+        if (!accessContext.allows(student.madrassaId)
+                || !accessContext.allows(parent.madrassaId)) {
+            throw new SecurityException("Admission is outside the authorized Madrassa.");
+        }
+
+        TenantPolicy.requireSameMadrassa(student.madrassaId, parent.madrassaId);
 
         if (studentStore.findById(
                 student.id.trim()
