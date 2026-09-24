@@ -19,6 +19,8 @@ import com.zamcan.madrassa.data.model.Madrassa;
 import com.zamcan.madrassa.data.model.Parent;
 import com.zamcan.madrassa.data.repository.MadrassaRepository;
 import com.zamcan.madrassa.data.repository.ParentRepository;
+import com.zamcan.madrassa.domain.academic.AcademicCoreServiceFactory;
+import com.zamcan.madrassa.domain.programme.ProgrammeSetupService;
 import com.zamcan.madrassa.domain.session.ParentSession;
 import com.zamcan.madrassa.domain.session.ParentSessionFactory;
 import com.zamcan.madrassa.ui.components.EduNoorButton;
@@ -422,6 +424,7 @@ public class InitializationActivity extends Activity {
 
                     if (madrassa != null) {
                         madrassaName = madrassa.name;
+                        AcademicCoreServiceFactory.forMadrassa(database, parent.madrassaId);
                     }
 
                     /*
@@ -471,6 +474,10 @@ public class InitializationActivity extends Activity {
                                                 .login_madrassa_inactive
                                 );
                     } else {
+                        AcademicCoreServiceFactory.forMadrassa(database, madrassaId);
+                        new ProgrammeSetupService(
+                                new com.zamcan.madrassa.data.repository.ProgrammeRepository(database)
+                        ).ensureMadrassaDefaults(madrassaId);
                         statusLine =
                                 getString(
                                         R.string
