@@ -231,6 +231,13 @@ first-strong bidirectional detection — do **not** force
   splash with `edunoor_emerald_deep`, so system splash → SplashActivity
   reads as one entrance. (The custom in-app splash remains; migrating to
   androidx core-splashscreen is a future dependency decision.)
+- **Deferred decision (recorded):** centralizing the glass fill hexes into
+  named `glass_*_fill` color tokens was evaluated and deliberately reverted
+  (v0.8.0 re-verification): the glass drawables are not yet wired to any
+  screen, so tokens would ship as +5 unused-resource warnings with zero
+  runtime benefit. Introduce the fill tokens **in the same commit as the
+  first consumer** (auth/dashboard restage). The glass table above remains
+  the single source for the recipe values until then.
 - **Accepted, documented warnings:** `UnusedResources` (design-system
   tokens + placeholders), `IconLauncherShape` on adaptive *foreground*
   layers (by-design full-bleed), `ObsoleteSdkInt` on `mipmap-anydpi-v26`
