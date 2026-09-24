@@ -80,9 +80,9 @@ public final class AttendanceService {
         ClassGroup group = classes.findById(value.classId.trim());
         if (student == null || group == null) return missing("attendance_reference_missing");
 
-        if (!TenantPolicy.sameMadrassa(madrassaId, student.madrassaId)
-                || !TenantPolicy.sameMadrassa(madrassaId, group.madrassaId)
-                || !TenantPolicy.sameMadrassa(madrassaId, student.madrassaId)) {
+        if (!TenantPolicy.sameMadrassa(madrassaId, existingStudentMadrassa(student, existing))
+                || !TenantPolicy.sameMadrassa(madrassaId, student.madrassaId)
+                || !TenantPolicy.sameMadrassa(madrassaId, group.madrassaId)) {
             return forbidden("attendance_tenant_mismatch");
         }
 
@@ -95,6 +95,11 @@ public final class AttendanceService {
         return attendance.update(value)
                 ? OperationResult.success(value)
                 : failed("attendance_update_failed");
+    }
+
+    private String existingStudentMadrassa(Student current, Attendance existing) {
+        Student original = students.findById(existing.studentId);
+        return original == null ? null : original.madrassaId;
     }
 
     private static <T> OperationResult<T> invalid(String code) {
@@ -110,7 +115,7 @@ public final class AttendanceService {
         return OperationResult.forbidden(code, "Attendance operation is not authorized.");
     }
     private static <T> OperationResult<T> failed(String code) {
-        return OperationResult.failure(code, "Attendance operation failed.");
+        return OperationResult.failed(code, "Attendance operation failed.");
     }
     private static boolean blank(String v) { return v == null || v.trim().isEmpty(); }
 }
