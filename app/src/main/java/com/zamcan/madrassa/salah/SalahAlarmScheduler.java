@@ -30,5 +30,17 @@ public final class SalahAlarmScheduler {
    if(android.os.Build.VERSION.SDK_INT>=31 && !alarms.canScheduleExactAlarms()) alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,when,pi);
    else alarms.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,when,pi);
   }
+ public static void cancelDay(Context context,LocalDate date,LocationProfile location){
+  if(context==null||date==null||location==null)return;
+  AlarmManager alarms=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);if(alarms==null)return;
+  List<PrayerTime> schedule=PrayerTimesCalculator.calculate(date,location);
+  for(PrayerTime p:schedule){
+   if(p.prayer==PrayerTime.Prayer.SUNRISE)continue;
+   int request=(int)(Math.abs(date.toEpochDay())*10+(p.prayer.ordinal()+1));
+   Intent i=new Intent(context,AdhanAlarmReceiver.class).putExtra("prayer",p.prayer.name());
+   PendingIntent pi=PendingIntent.getBroadcast(context,request,i,PendingIntent.FLAG_NO_CREATE|PendingIntent.FLAG_IMMUTABLE);
+   if(pi!=null){alarms.cancel(pi);pi.cancel();}
+  }
+ }
  }
 }
