@@ -33,6 +33,7 @@ public final class DeviceLocationProfileProvider {
             Location best = null;
             if (fine && manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 best = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (best == null && fine) best = manager.getCurrentLocation(LocationManager.GPS_PROVIDER, null, context.getMainExecutor(), null);
             }
             if (best == null && manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
                 best = manager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
