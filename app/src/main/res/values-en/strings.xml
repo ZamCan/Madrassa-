@@ -288,4 +288,13 @@
     <string name="dashboard_calendar_sub">Gregorian + Hijri calendar and device widget</string>
     <string name="dashboard_management_detail">Students: %1$d\nClasses: %2$d\nFee records: %3$d</string>
     <string name="dashboard_none">No local records found.</string>
+
+    <string name="dashboard_programmes">Programmes</string>
+    <string name="dashboard_programmes_sub">Madrassa academic programmes</string>
+    <string name="dashboard_academic_content">Academic structure</string>
+    <string name="dashboard_academic_content_sub">Courses and academic content</string>
+    <string name="dashboard_add_class">Add class</string>
+    <string name="dashboard_add_class_sub">Create a new class in this Madrassa</string>
+    <string name="dashboard_class_name">Class name</string>
+    <string name="dashboard_class_code">Class code (optional)</string>
 </resources>
