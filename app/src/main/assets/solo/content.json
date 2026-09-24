@@ -1,745 +1,808 @@
 {
- "version": 1,
- "categories": [
-  {
-   "id": "wudu",
-   "symbol": "☾",
-   "title": {
-    "sw": "Utakasaji (Wudhu)",
-    "en": "Wudu (Ablution)",
-    "ar": "الوضوء"
-   },
-   "desc": {
-    "sw": "Jifunze utakasaji kabla ya swalat, hatua kwa hatua.",
-    "en": "Learn the purification before prayer, step by step.",
-    "ar": "تعلّم الطهور قبل الصلاة خطوة بخطوة."
-   },
-   "lessons": [
+  "version": 1,
+  "categories": [
     {
-     "id": "wudu_steps",
-     "title": {
-      "sw": "Wudhu kamili",
-      "en": "Complete Wudu",
-      "ar": "الوضوء الكامل"
-     },
-     "icon": "solo_wudu_hands",
-     "steps": [
-      {
-       "image": "solo_wudu_nia",
-       "title": {
-        "sw": "1. Nia",
-        "en": "1. Intention (Niyya)",
-        "ar": "١. النية"
-       },
-       "body": {
-        "sw": "Nia iko moyoni: unataka kutoa wudhu kwa ajili ya swalat. Hu lazimi kusema kwa sauti.",
-        "en": "The intention is in the heart: you intend to perform wudu for prayer. It need not be spoken.",
-        "ar": "النية في القلب: القصد أداء الوضوء للصلاة، ولا يلزم النطق بها."
-       },
-       "arabic": "",
-       "translit": ""
+      "id": "wudu",
+      "symbol": "☾",
+      "title": {
+        "sw": "Utakasaji (Wudhu)",
+        "en": "Wudu (Ablution)",
+        "ar": "الوضوء"
       },
-      {
-       "image": "solo_wudu_hands",
-       "title": {
-        "sw": "2. Mikono",
-        "en": "2. Wash the hands",
-        "ar": "٢. غسل الكفين"
-       },
-       "body": {
-        "sw": "Osha mikono yote miwili mara tatu, kuanzia vidole hadi mabaka.",
-        "en": "Wash both hands up to the wrists three times.",
-        "ar": "اغسل كفيك ثلاث مرات."
-       },
-       "arabic": "بِسْمِ اللَّهِ",
-       "translit": "Bismillāh"
+      "desc": {
+        "sw": "Jifunze utakasaji kabla ya swalat, hatua kwa hatua.",
+        "en": "Learn the purification before prayer, step by step.",
+        "ar": "تعلّم الطهور قبل الصلاة خطوة بخطوة."
       },
-      {
-       "image": "solo_wudu_mouth_nose",
-       "title": {
-        "sw": "3. Kinywa na Pua",
-        "en": "3. Mouth and nose",
-        "ar": "٣. المضمضة والاستنشاق"
-       },
-       "body": {
-        "sw": "Chuja maji kinywani mara tatu, kisha vuta maji punjeni na yatoe mara tatu.",
-        "en": "Rinse the mouth three times, then sniff water into the nose and expel it three times.",
-        "ar": "تسمض وتمتثر ثلاث مرات."
-       },
-       "arabic": "",
-       "translit": ""
+      "lessons": [
+        {
+          "id": "wudu_steps",
+          "title": {
+            "sw": "Wudhu kamili",
+            "en": "Complete Wudu",
+            "ar": "الوضوء الكامل"
+          },
+          "icon": "solo_wudu_hands",
+          "steps": [
+            {
+              "image": "solo_wudu_nia",
+              "title": {
+                "sw": "1. Nia",
+                "en": "1. Intention (Niyya)",
+                "ar": "١. النية"
+              },
+              "body": {
+                "sw": "Nia iko moyoni: unataka kutoa wudhu kwa ajili ya swalat. Hu lazimi kusema kwa sauti.",
+                "en": "The intention is in the heart: you intend to perform wudu for prayer. It need not be spoken.",
+                "ar": "النية في القلب: القصد أداء الوضوء للصلاة، ولا يلزم النطق بها."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_wudu_hands",
+              "title": {
+                "sw": "2. Mikono",
+                "en": "2. Wash the hands",
+                "ar": "٢. غسل الكفين"
+              },
+              "body": {
+                "sw": "Osha mikono yote miwili mara tatu, kuanzia vidole hadi mabaka.",
+                "en": "Wash both hands up to the wrists three times.",
+                "ar": "اغسل كفيك ثلاث مرات."
+              },
+              "arabic": "بِسْمِ اللَّهِ",
+              "translit": "Bismillāh"
+            },
+            {
+              "image": "solo_wudu_mouth_nose",
+              "title": {
+                "sw": "3. Kinywa na Pua",
+                "en": "3. Mouth and nose",
+                "ar": "٣. المضمضة والاستنشاق"
+              },
+              "body": {
+                "sw": "Chuja maji kinywani mara tatu, kisha vuta maji punjeni na yatoe mara tatu.",
+                "en": "Rinse the mouth three times, then sniff water into the nose and expel it three times.",
+                "ar": "تسمض وتمتثر ثلاث مرات."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_wudu_face",
+              "title": {
+                "sw": "4. Uso",
+                "en": "4. Wash the face",
+                "ar": "٤. غسل الوجه"
+              },
+              "body": {
+                "sw": "Osha uso wote: kutoka nywele hadi taya, sikio moja hadi jingine, mara tatu.",
+                "en": "Wash the whole face — forehead to chin, ear to ear — three times.",
+                "ar": "اغسل وجهك كله ثلاث مرات."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_wudu_arms",
+              "title": {
+                "sw": "5. Mabawa",
+                "en": "5. Wash the arms",
+                "ar": "٥. غسل الذراعين"
+              },
+              "body": {
+                "sw": "Osha mkono wa kulia hadi kiwiko mara tatu, kisha wa kushoto vivyo hivyo.",
+                "en": "Wash the right arm to the elbow three times, then the left likewise.",
+                "ar": "اغسل الذراع اليمنى ثلاثا ثم اليسرى."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_wudu_head",
+              "title": {
+                "sw": "6. Kichwa na Masikio",
+                "en": "6. Wipe head and ears",
+                "ar": "٦. مسح الرأس والأذنين"
+              },
+              "body": {
+                "sw": "Futa kichwa chote mmarika mara moja, na masikio kwa vidole.",
+                "en": "Wipe the wet head once, and the ears with the fingers.",
+                "ar": "امسح رأسك مرة واحدة وأذنيك."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_wudu_feet",
+              "title": {
+                "sw": "7. Miguu",
+                "en": "7. Wash the feet",
+                "ar": "٧. غسل الرجلين"
+              },
+              "body": {
+                "sw": "Osha mguu wa kulia hadi/viwiko vya miguu mara tatu, kisha wa kushoto. Wudhu imekamilika!",
+                "en": "Wash the right foot to the ankle three times, then the left. Wudu is complete!",
+                "ar": "اغسل قدميك ثلاث مرات. تم الوضوء!"
+              },
+              "arabic": "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ",
+              "translit": "Ash-hadu an lā ilāha illallāh, wa ash-hadu anna muḥammadan rasūlullāh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salah",
+      "symbol": "✦",
+      "title": {
+        "sw": "Swalat",
+        "en": "Prayer (Salah)",
+        "ar": "الصلاة"
       },
-      {
-       "image": "solo_wudu_face",
-       "title": {
-        "sw": "4. Uso",
-        "en": "4. Wash the face",
-        "ar": "٤. غسل الوجه"
-       },
-       "body": {
-        "sw": "Osha uso wote: kutoka nywele hadi taya, sikio moja hadi jingine, mara tatu.",
-        "en": "Wash the whole face — forehead to chin, ear to ear — three times.",
-        "ar": "اغسل وجهك كله ثلاث مرات."
-       },
-       "arabic": "",
-       "translit": ""
+      "desc": {
+        "sw": "Swalat kutoka mwanzo hadi mwisho.",
+        "en": "Prayer from the very beginning to the end.",
+        "ar": "الصلاة من بدايتها إلى نهايتها."
       },
-      {
-       "image": "solo_wudu_arms",
-       "title": {
-        "sw": "5. Mabawa",
-        "en": "5. Wash the arms",
-        "ar": "٥. غسل الذراعين"
-       },
-       "body": {
-        "sw": "Osha mkono wa kulia hadi kiwiko mara tatu, kisha wa kushoto vivyo hivyo.",
-        "en": "Wash the right arm to the elbow three times, then the left likewise.",
-        "ar": "اغسل الذراع اليمنى ثلاثا ثم اليسرى."
-       },
-       "arabic": "",
-       "translit": ""
+      "lessons": [
+        {
+          "id": "salah_steps",
+          "title": {
+            "sw": "Swalat kamili",
+            "en": "The complete prayer",
+            "ar": "الصلاة كاملة"
+          },
+          "icon": "solo_salah_qiyam",
+          "steps": [
+            {
+              "image": "solo_wudu_nia",
+              "title": {
+                "sw": "1. Nia",
+                "en": "1. Intention",
+                "ar": "١. النية"
+              },
+              "body": {
+                "sw": "Nia moyoni unaswalisha swalat gani — e.g. Swala ya Magharibi. Ukabili kibla.",
+                "en": "In your heart, intend which prayer you are performing, facing the qibla.",
+                "ar": "انوِ في قلبك أي صلاة تؤدي متجها للقبلة."
+              },
+              "arabic": "",
+              "translit": ""
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "2. Takbiri",
+                "en": "2. Takbir — begin standing",
+                "ar": "٢. التكبير"
+              },
+              "body": {
+                "sw": "Simama, mnyanyue mikono hadi masikio, useme:",
+                "en": "Stand, raise your hands to the ears, and say:",
+                "ar": "قف وارفع يديك وقل:"
+              },
+              "arabic": "اللَّهُ أَكْبَرُ",
+              "translit": "Allāhu akbar"
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "3. Kusimama — Al-Fatiha",
+                "en": "3. Standing — Al-Fatiha",
+                "ar": "٣. القيام — الفاتحة"
+              },
+              "body": {
+                "sw": "Mikono kifueni, soma Al-Fatiha. Rejea somo la Qur'an hapa chini kwa sauti.",
+                "en": "Hands on the chest, recite Surah Al-Fatiha — see the Qur'an lesson below to learn it with audio.",
+                "ar": "ضع يدك على صدرك واقرأ الفاتحة — تعلّمها في درس القرآن."
+              },
+              "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَٰهَ غَيْرُكَ",
+              "translit": "Subḥānallāhumma wa biḥamdik, wa tabārakasmuk, wa ta‘ālā jadduk, wa lā ilāha ghayruk"
+            },
+            {
+              "image": "solo_salah_ruku",
+              "title": {
+                "sw": "4. Rukuu",
+                "en": "4. Ruku — bowing",
+                "ar": "٤. الركوع"
+              },
+              "body": {
+                "sw": "Inama, mkono kwenye magoti, weka mgongo sawa, useme mara tatu:",
+                "en": "Bow with hands on knees and a straight back, saying three times:",
+                "ar": "اركع وقل ثلاث مرات:"
+              },
+              "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+              "translit": "Subḥāna rabbiyal-‘aẓīm"
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "5. I‘tidal",
+                "en": "5. I‘tidal — rising",
+                "ar": "٥. الاعتدال"
+              },
+              "body": {
+                "sw": "Nyooka tena hadi kusimama, useme:",
+                "en": "Rise back to standing, saying:",
+                "ar": "اعتدل وقل:"
+              },
+              "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، رَبَّنَا وَلَكَ الْحَمْدُ",
+              "translit": "Sami‘allāhu liman ḥamidah — rabbanā wa lakal-ḥamd"
+            },
+            {
+              "image": "solo_salah_sujud",
+              "title": {
+                "sw": "6. Sujud",
+                "en": "6. Sujud — prostration",
+                "ar": "٦. السجود"
+              },
+              "body": {
+                "sw": "Sujud: piga chini, pua na usoni ardhini, useme mara tatu:",
+                "en": "Prostrate with forehead, nose, hands, knees and toes on the ground, saying three times:",
+                "ar": "اسجد وقل ثلاث مرات:"
+              },
+              "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+              "translit": "Subḥāna rabbiyal-a‘lā"
+            },
+            {
+              "image": "solo_salah_tashahhud",
+              "title": {
+                "sw": "7. Tashahhud",
+                "en": "7. Tashahhud — sitting",
+                "ar": "٧. التشهد"
+              },
+              "body": {
+                "sw": "Keti juu ya mguu wa kushoto,ielekeze kidole cha gumba, soma tashahhud na salawati:",
+                "en": "Sit calmly and recite the tashahhud and the blessings on the Prophet ﷺ:",
+                "ar": "اجلس واقرأ التشهد والصلاة الإبراهيمية:"
+              },
+              "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+              "translit": "At-taḥiyyātu lillāhi waṣ-ṣalawātu waṭ-ṭayyibāt…"
+            },
+            {
+              "image": "solo_salah_tashahhud",
+              "title": {
+                "sw": "8. Salamu",
+                "en": "8. Salam — closing",
+                "ar": "٨. التسليم"
+              },
+              "body": {
+                "sw": "Geuka uso kulia, kisha kushoto, ukisema — swalat imekamilika!",
+                "en": "Turn the face right, then left, saying — the prayer is complete!",
+                "ar": "سلّم عن يمينك ثم عن شمالك. تمت الصلاة!"
+              },
+              "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+              "translit": "As-salāmu ‘alaykum wa raḥmatullāh"
+            }
+          ]
+        },
+        {
+          "id": "dhikr_after",
+          "title": {
+            "sw": "Dhikr baada ya swalat",
+            "en": "Remembrance after prayer",
+            "ar": "الأذكار بعد الصلاة"
+          },
+          "icon": "solo_salah_sujud",
+          "steps": [
+            {
+              "image": "solo_salah_tashahhud",
+              "title": {
+                "sw": "1. Istighfar",
+                "en": "1. Seeking forgiveness",
+                "ar": "١. الاستغفار"
+              },
+              "body": {
+                "sw": "Baada ya salamu, sema mara tatu:",
+                "en": "After the salam, say three times:",
+                "ar": "قل ثلاثا:"
+              },
+              "arabic": "أَسْتَغْفِرُ اللَّهَ",
+              "translit": "Astaghfirullāh"
+            },
+            {
+              "image": "solo_salah_tashahhud",
+              "title": {
+                "sw": "2. Dua ya salama",
+                "en": "2. Dua of peace",
+                "ar": "٢. دعاء السلام"
+              },
+              "body": {
+                "sw": "Kisha useme:",
+                "en": "Then say:",
+                "ar": "ثم قل:"
+              },
+              "arabic": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+              "translit": "Allāhumma antas-salām wa minkas-salām, tabārakta yā dhal-jalāli wal-ikrām"
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "3. Tasbihi (33-33-33)",
+                "en": "3. Tasbih (33-33-33)",
+                "ar": "٣. التسبيح"
+              },
+              "body": {
+                "sw": "SubhanAllah mara 33, Alhamdulillah mara 33, Allahu Akbar mara 33, kisha:",
+                "en": "SubhanAllah ×33, Alhamdulillah ×33, Allahu Akbar ×33, then:",
+                "ar": "سبحان الله ٣٣، والحمد لله ٣٣، والله أكبر ٣٣، ثم:"
+              },
+              "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+              "translit": "Lā ilāha illallāhu waḥdahū lā sharīka lah, lahu-l-mulk wa lahu-l-ḥamd wa huwa ‘alā kulli shay’in qadīr"
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "4. Ayatul Kursi",
+                "en": "4. Ayat al-Kursi",
+                "ar": "٤. آية الكرسي"
+              },
+              "body": {
+                "sw": "Mwenye kuisoma baada ya kila swalat, hupata udhuru wa kuswalikwa Mwenyezi Mungu hadi swalat inayofuata.",
+                "en": "Whoever recites this after every prayer is among those given glad tidings of Paradise.",
+                "ar": "من قرأها بعد كل صلاة كان من دخول الجنة."
+              },
+              "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+              "translit": ""
+            }
+          ]
+        },
+        {
+          "id": "aurah",
+          "icon": "◈",
+          "title": {
+            "sw": "Aurah — Kufunika kwa Kiislamu",
+            "en": "Awrah — Islamic Covering",
+            "ar": "ال عورة — الستر في الإسلام"
+          },
+          "steps": [
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "Aurah ni nini?",
+                "en": "What is awrah?",
+                "ar": "ما هي العورة؟"
+              },
+              "body": {
+                "sw": "Aurah ni sehemu za mwili ambazo Muislamu anatakiwa kuzifunika, hasa katika swala na mbele ya watu wengine. Kufunika ni heshima, adabu na utiifu kwa amri za Mwenyezi Mungu.",
+                "en": "Awrah is the part of the body a Muslim is required to cover, especially in salah and in front of others. Covering is dignity, modesty and obedience to the command of Allah.",
+                "ar": "العورة هي أجزاء الجسم التي يجب على المسلم تغطيتها، خاصةً في الصلاة وأمام الآخرين. السترُ عِرضٌ وحشمةٌ وطاعةٌ لأمر الله."
+              }
+            },
+            {
+              "image": "solo_salah_qiyam",
+              "title": {
+                "sw": "Aurah ya Mwanaume",
+                "en": "The awrah of a man",
+                "ar": "عورة الرجل"
+              },
+              "body": {
+                "sw": "Kwa mwanaume, aurah ni kuanzia kiuno (navel) hadi magoti pamoja — hivyo hivyo katika swala na nyakati nyingine. Pia ni sunna kuvaa kwa utulivu: kanzu au suruali ndefu na kofia, bila nguo nyembamba au zinazobana.",
+                "en": "For a man, the awrah is from the navel to the knees, inclusive — in salah and at other times. It is also his sunnah to dress with dignity: a long robe or trousers and a cap, neither tight nor transparent.",
+                "ar": "عورةُ الرجل ما بين السرَّة والركبة شاملةً لهما، في الصلاة وغيرها. ومن سنته أن يلبس المهيباً: الثوب الطويل أو السروال والطاقية، دون ضيقٍ أو شفافية."
+              }
+            },
+            {
+              "image": "solo_aurah_women",
+              "title": {
+                "sw": "Aurah ya Mwanamke",
+                "en": "The awrah of a woman",
+                "ar": "عورة المرأة"
+              },
+              "body": {
+                "sw": "Kwa mwanamke, aurah ni mwili mzima isipokuwa uso, mikono na — kwa mujibu wa madhehebu mengi — miguu. Katika swala inamfaa hijabu inayofunika nywele na mwili wote, na nguo zisizobana wala kuona mwilini. Muda wa swala: funika yote isipokuwa uso na mikono.",
+                "en": "For a woman, the awrah is her whole body except the face, the hands and — in the view of most schools — the feet. In salah she should wear a hijab that covers the hair and all of the body, with clothes that are neither tight nor see-through: everything covered except face and hands.",
+                "ar": "عورةُ المرأة جسمُها كلُّه عدا الوجه والكفيْن و — عند جماهير المذاهب — الرجليْن. ومن الأفضل في الصلاة أن تلبس حجاباً يغطي شعرها وجسمها كلَّه، بثيابٍ ليست ضيقةً ولا شفافة: يُغطّى كلُّ شيء عدا الوجه والكفّيْن."
+              }
+            },
+            {
+              "image": "solo_aurah_women",
+              "title": {
+                "sw": "Kanuni ya jumla",
+                "en": "The general principle",
+                "ar": "القاعدة العامة"
+              },
+              "body": {
+                "sw": "Lengo kubwa ni sato na unyenyekeu mbele ya Mwenyezi Mungu: pendekeza nguo ndefu, zisizobana, zisizoonyesha mwili — kwa wanaume kama na wanawake. Maelezo madogo hutofautiana kati ya madhehebu; heshima ya kufunika inabaki juu.",
+                "en": "The greater aim is dignity and humility before Allah: prefer clothing that is loose, covering and does not reveal the shape of the body — for men as for women. Small details differ between schools of thought; the honour of covering remains above them.",
+                "ar": "المقصودُ الأعظم هو السترُ والتضلُّعُ بين يدي الله: يُستحبّ لباسُ الثياب الواسعة الساترة التي لا تُظهر ملامح الجسم — للرجال كما للنساء. تفاصيلُ الفروع تختلف بين المذاهب، وعُرُضُ السترِ فوقها جميعاً."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quran",
+      "symbol": "﷽",
+      "title": {
+        "sw": "Somo la Qur'an",
+        "en": "Qur'an lessons",
+        "ar": "درس القرآن"
       },
-      {
-       "image": "solo_wudu_head",
-       "title": {
-        "sw": "6. Kichwa na Masikio",
-        "en": "6. Wipe head and ears",
-        "ar": "٦. مسح الرأس والأذنين"
-       },
-       "body": {
-        "sw": "Futa kichwa chote mmarika mara moja, na masikio kwa vidole.",
-        "en": "Wipe the wet head once, and the ears with the fingers.",
-        "ar": "امسح رأسك مرة واحدة وأذنيك."
-       },
-       "arabic": "",
-       "translit": ""
+      "desc": {
+        "sw": "Soma na usikilize kwa sauti — fatiha na sura fupi.",
+        "en": "Read and listen with audio — Al-Fatiha and the short surahs.",
+        "ar": "اقرأ واستمع — الفاتحة والسور القصار."
       },
-      {
-       "image": "solo_wudu_feet",
-       "title": {
-        "sw": "7. Miguu",
-        "en": "7. Wash the feet",
-        "ar": "٧. غسل الرجلين"
-       },
-       "body": {
-        "sw": "Osha mguu wa kulia hadi/viwiko vya miguu mara tatu, kisha wa kushoto. Wudhu imekamilika!",
-        "en": "Wash the right foot to the ankle three times, then the left. Wudu is complete!",
-        "ar": "اغسل قدميك ثلاث مرات. تم الوضوء!"
-       },
-       "arabic": "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ",
-       "translit": "Ash-hadu an lā ilāha illallāh, wa ash-hadu anna muḥammadan rasūlullāh"
-      }
-     ]
+      "lessons": [
+        {
+          "id": "surah_fatiha",
+          "title": {
+            "sw": "Sura ya 1 — Al-Fatiha",
+            "en": "Surah 1 — Al-Fatiha",
+            "ar": "سورة الفاتحة"
+          },
+          "icon": "solo_wudu_mouth_nose",
+          "steps": [
+            {
+              "arabic": "﻿بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+              "translit": "Bismillāhir-raḥmānir-raḥīm",
+              "title": {
+                "sw": "Aya 1",
+                "en": "Verse 1",
+                "ar": "آية 1"
+              },
+              "body": {
+                "sw": "Kwa jina la Mwenyezi Mungu, Mwingi wa rehema, Mwenye kurehemu.",
+                "en": "In the name of Allah, the Most Gracious, the Most Merciful.",
+                "ar": ""
+              },
+              "audio": "001001.mp3"
+            },
+            {
+              "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+              "translit": "Al-ḥamdu lillāhi rabbil-‘ālamīn",
+              "title": {
+                "sw": "Aya 2",
+                "en": "Verse 2",
+                "ar": "آية 2"
+              },
+              "body": {
+                "sw": "Sifa njema zote ni za Mwenyezi Mungu, Mola Mlezi wa viumbe vyote.",
+                "en": "All praise is due to Allah, Lord of all worlds.",
+                "ar": ""
+              },
+              "audio": "001002.mp3"
+            },
+            {
+              "arabic": "ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+              "translit": "Ar-raḥmānir-raḥīm",
+              "title": {
+                "sw": "Aya 3",
+                "en": "Verse 3",
+                "ar": "آية 3"
+              },
+              "body": {
+                "sw": "Mwingi wa rehema, Mwenye kurehemu.",
+                "en": "The Most Gracious, the Most Merciful.",
+                "ar": ""
+              },
+              "audio": "001003.mp3"
+            },
+            {
+              "arabic": "مَٰلِكِ يَوْمِ ٱلدِّينِ",
+              "translit": "Māliki yawmid-dīn",
+              "title": {
+                "sw": "Aya 4",
+                "en": "Verse 4",
+                "ar": "آية 4"
+              },
+              "body": {
+                "sw": "Mmiliki wa Siku ya Malipo.",
+                "en": "Master of the Day of Judgement.",
+                "ar": ""
+              },
+              "audio": "001004.mp3"
+            },
+            {
+              "arabic": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+              "translit": "Iyyāka na‘budu wa iyyāka nasta‘īn",
+              "title": {
+                "sw": "Aya 5",
+                "en": "Verse 5",
+                "ar": "آية 5"
+              },
+              "body": {
+                "sw": "Wewe tu tunakuabudu, na Wewe tu tunakuomba msaada.",
+                "en": "You alone we worship, and You alone we ask for help.",
+                "ar": ""
+              },
+              "audio": "001005.mp3"
+            },
+            {
+              "arabic": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
+              "translit": "Ihdinaṣ-ṣirāṭal-mustaqīm",
+              "title": {
+                "sw": "Aya 6",
+                "en": "Verse 6",
+                "ar": "آية 6"
+              },
+              "body": {
+                "sw": "Tuongezee njia iliyonyooka.",
+                "en": "Guide us along the straight path.",
+                "ar": ""
+              },
+              "audio": "001006.mp3"
+            },
+            {
+              "arabic": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
+              "translit": "Ṣirāṭal-ladhīna an‘amta ‘alayhim ghayril-maghḍūbi ‘alayhim wa laḍ-ḍāllīn",
+              "title": {
+                "sw": "Aya 7",
+                "en": "Verse 7",
+                "ar": "آية 7"
+              },
+              "body": {
+                "sw": "Njia ya ulio waneemesha — wala siyo ya walio kasirikiwa, wala walio potea.",
+                "en": "The path of those You have blessed — not of those who earned anger, nor of those who went astray.",
+                "ar": ""
+              },
+              "audio": "001007.mp3"
+            }
+          ]
+        },
+        {
+          "id": "surah_ikhlas",
+          "title": {
+            "sw": "Sura ya 112 — Al-Ikhlas",
+            "en": "Surah 112 — Al-Ikhlas",
+            "ar": "سورة الإخلاص"
+          },
+          "icon": "solo_wudu_hands",
+          "steps": [
+            {
+              "arabic": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+              "translit": "Qul huwallāhu aḥad",
+              "title": {
+                "sw": "Aya 1",
+                "en": "Verse 1",
+                "ar": "آية 1"
+              },
+              "body": {
+                "sw": "Sema: Yeye ni Mwenyezi Mungu, Mmoja.",
+                "en": "Say: He is Allah, the One.",
+                "ar": ""
+              },
+              "audio": "112001.mp3"
+            },
+            {
+              "arabic": "ٱللَّهُ ٱلصَّمَدُ",
+              "translit": "Allāhuṣ-ṣamad",
+              "title": {
+                "sw": "Aya 2",
+                "en": "Verse 2",
+                "ar": "آية 2"
+              },
+              "body": {
+                "sw": "Mwenyezi Mungu anayetegemewa na kila kitu.",
+                "en": "Allah, the Eternal Refuge.",
+                "ar": ""
+              },
+              "audio": "112002.mp3"
+            },
+            {
+              "arabic": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+              "translit": "Lam yalid wa lam yūlad",
+              "title": {
+                "sw": "Aya 3",
+                "en": "Verse 3",
+                "ar": "آية 3"
+              },
+              "body": {
+                "sw": "Hakuzaliwa na hakumzaa.",
+                "en": "He neither begets nor is born.",
+                "ar": ""
+              },
+              "audio": "112003.mp3"
+            },
+            {
+              "arabic": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+              "translit": "Wa lam yakul lahū kufuwan aḥad",
+              "title": {
+                "sw": "Aya 4",
+                "en": "Verse 4",
+                "ar": "آية 4"
+              },
+              "body": {
+                "sw": "Wala hakuwa na mwenzi yeyote.",
+                "en": "Nor is there to Him any equal.",
+                "ar": ""
+              },
+              "audio": "112004.mp3"
+            }
+          ]
+        },
+        {
+          "id": "surah_falaq",
+          "title": {
+            "sw": "Sura ya 113 — Al-Falaq",
+            "en": "Surah 113 — Al-Falaq",
+            "ar": "سورة الفلق"
+          },
+          "icon": "solo_wudu_head",
+          "steps": [
+            {
+              "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+              "translit": "Qul a‘ūdhu birabbil-falaq",
+              "title": {
+                "sw": "Aya 1",
+                "en": "Verse 1",
+                "ar": "آية 1"
+              },
+              "body": {
+                "sw": "Sema: Najilinda kwa Mola Mlezi wa alfajiri.",
+                "en": "Say: I seek refuge in the Lord of daybreak.",
+                "ar": ""
+              },
+              "audio": "113001.mp3"
+            },
+            {
+              "arabic": "مِن شَرِّ مَا خَلَقَ",
+              "translit": "Min sharri mā khalaq",
+              "title": {
+                "sw": "Aya 2",
+                "en": "Verse 2",
+                "ar": "آية 2"
+              },
+              "body": {
+                "sw": "Kutokana na mabaya ya aliyouumba.",
+                "en": "From the evil of what He created.",
+                "ar": ""
+              },
+              "audio": "113002.mp3"
+            },
+            {
+              "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+              "translit": "Wa min sharri ghāsiqin idhā waqab",
+              "title": {
+                "sw": "Aya 3",
+                "en": "Verse 3",
+                "ar": "آية 3"
+              },
+              "body": {
+                "sw": "Na kutokana na mabaya ya giza liingipopo.",
+                "en": "And from the evil of darkness as it settles.",
+                "ar": ""
+              },
+              "audio": "113003.mp3"
+            },
+            {
+              "arabic": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
+              "translit": "Wa min sharrin-naffāthāti fil-‘uqad",
+              "title": {
+                "sw": "Aya 4",
+                "en": "Verse 4",
+                "ar": "آية 4"
+              },
+              "body": {
+                "sw": "Na kutokana na mabaya ya wanaopuliza fumbo.",
+                "en": "And from the evil of those who blow on knots.",
+                "ar": ""
+              },
+              "audio": "113004.mp3"
+            },
+            {
+              "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+              "translit": "Wa min sharri ḥāsidin idhā ḥasad",
+              "title": {
+                "sw": "Aya 5",
+                "en": "Verse 5",
+                "ar": "آية 5"
+              },
+              "body": {
+                "sw": "Na kutokana na mabaya ya mwivu akihasidi.",
+                "en": "And from the evil of an envier when they envy.",
+                "ar": ""
+              },
+              "audio": "113005.mp3"
+            }
+          ]
+        },
+        {
+          "id": "surah_nas",
+          "title": {
+            "sw": "Sura ya 114 — An-Nas",
+            "en": "Surah 114 — An-Nas",
+            "ar": "سورة الناس"
+          },
+          "icon": "solo_wudu_feet",
+          "steps": [
+            {
+              "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+              "translit": "Qul a‘ūdhu birabbin-nās",
+              "title": {
+                "sw": "Aya 1",
+                "en": "Verse 1",
+                "ar": "آية 1"
+              },
+              "body": {
+                "sw": "Sema: Najilinda kwa Mola Mlezi wa wanadamu.",
+                "en": "Say: I seek refuge in the Lord of mankind.",
+                "ar": ""
+              },
+              "audio": "114001.mp3"
+            },
+            {
+              "arabic": "مَلِكِ ٱلنَّاسِ",
+              "translit": "Malikin-nās",
+              "title": {
+                "sw": "Aya 2",
+                "en": "Verse 2",
+                "ar": "آية 2"
+              },
+              "body": {
+                "sw": "Mfalme wa wanadamu.",
+                "en": "The King of mankind.",
+                "ar": ""
+              },
+              "audio": "114002.mp3"
+            },
+            {
+              "arabic": "إِلَٰهِ ٱلنَّاسِ",
+              "translit": "Ilāhin-nās",
+              "title": {
+                "sw": "Aya 3",
+                "en": "Verse 3",
+                "ar": "آية 3"
+              },
+              "body": {
+                "sw": "Mungu wa wanadamu.",
+                "en": "The God of mankind.",
+                "ar": ""
+              },
+              "audio": "114003.mp3"
+            },
+            {
+              "arabic": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
+              "translit": "Min sharril-waswāsil-khanās",
+              "title": {
+                "sw": "Aya 4",
+                "en": "Verse 4",
+                "ar": "آية 4"
+              },
+              "body": {
+                "sw": "Kutokana na mabaya ya mwenye kupekeza anayejificha.",
+                "en": "From the evil of the retreating whisperer.",
+                "ar": ""
+              },
+              "audio": "114004.mp3"
+            },
+            {
+              "arabic": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
+              "translit": "Alladhī yuwaswisu fī ṣudūrin-nās",
+              "title": {
+                "sw": "Aya 5",
+                "en": "Verse 5",
+                "ar": "آية 5"
+              },
+              "body": {
+                "sw": "Ambaye hupekeza vifua za wanadamu.",
+                "en": "Who whispers into the hearts of mankind.",
+                "ar": ""
+              },
+              "audio": "114005.mp3"
+            },
+            {
+              "arabic": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+              "translit": "Minanal-jinnati wan-nās",
+              "title": {
+                "sw": "Aya 6",
+                "en": "Verse 6",
+                "ar": "آية 6"
+              },
+              "body": {
+                "sw": "Kwa majini na wanadamu.",
+                "en": "From among jinn and mankind.",
+                "ar": ""
+              },
+              "audio": "114006.mp3"
+            }
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "salah",
-   "symbol": "✦",
-   "title": {
-    "sw": "Swalat",
-    "en": "Prayer (Salah)",
-    "ar": "الصلاة"
-   },
-   "desc": {
-    "sw": "Swalat kutoka mwanzo hadi mwisho.",
-    "en": "Prayer from the very beginning to the end.",
-    "ar": "الصلاة من بدايتها إلى نهايتها."
-   },
-   "lessons": [
-    {
-     "id": "salah_steps",
-     "title": {
-      "sw": "Swalat kamili",
-      "en": "The complete prayer",
-      "ar": "الصلاة كاملة"
-     },
-     "icon": "solo_salah_qiyam",
-     "steps": [
-      {
-       "image": "solo_wudu_nia",
-       "title": {
-        "sw": "1. Nia",
-        "en": "1. Intention",
-        "ar": "١. النية"
-       },
-       "body": {
-        "sw": "Nia moyoni unaswalisha swalat gani — e.g. Swala ya Magharibi. Ukabili kibla.",
-        "en": "In your heart, intend which prayer you are performing, facing the qibla.",
-        "ar": "انوِ في قلبك أي صلاة تؤدي متجها للقبلة."
-       },
-       "arabic": "",
-       "translit": ""
-      },
-      {
-       "image": "solo_salah_qiyam",
-       "title": {
-        "sw": "2. Takbiri",
-        "en": "2. Takbir — begin standing",
-        "ar": "٢. التكبير"
-       },
-       "body": {
-        "sw": "Simama, mnyanyue mikono hadi masikio, useme:",
-        "en": "Stand, raise your hands to the ears, and say:",
-        "ar": "قف وارفع يديك وقل:"
-       },
-       "arabic": "اللَّهُ أَكْبَرُ",
-       "translit": "Allāhu akbar"
-      },
-      {
-       "image": "solo_salah_qiyam",
-       "title": {
-        "sw": "3. Kusimama — Al-Fatiha",
-        "en": "3. Standing — Al-Fatiha",
-        "ar": "٣. القيام — الفاتحة"
-       },
-       "body": {
-        "sw": "Mikono kifueni, soma Al-Fatiha. Rejea somo la Qur'an hapa chini kwa sauti.",
-        "en": "Hands on the chest, recite Surah Al-Fatiha — see the Qur'an lesson below to learn it with audio.",
-        "ar": "ضع يدك على صدرك واقرأ الفاتحة — تعلّمها في درس القرآن."
-       },
-       "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَٰهَ غَيْرُكَ",
-       "translit": "Subḥānallāhumma wa biḥamdik, wa tabārakasmuk, wa ta‘ālā jadduk, wa lā ilāha ghayruk"
-      },
-      {
-       "image": "solo_salah_ruku",
-       "title": {
-        "sw": "4. Rukuu",
-        "en": "4. Ruku — bowing",
-        "ar": "٤. الركوع"
-       },
-       "body": {
-        "sw": "Inama, mkono kwenye magoti, weka mgongo sawa, useme mara tatu:",
-        "en": "Bow with hands on knees and a straight back, saying three times:",
-        "ar": "اركع وقل ثلاث مرات:"
-       },
-       "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
-       "translit": "Subḥāna rabbiyal-‘aẓīm"
-      },
-      {
-       "image": "solo_salah_qiyam",
-       "title": {
-        "sw": "5. I‘tidal",
-        "en": "5. I‘tidal — rising",
-        "ar": "٥. الاعتدال"
-       },
-       "body": {
-        "sw": "Nyooka tena hadi kusimama, useme:",
-        "en": "Rise back to standing, saying:",
-        "ar": "اعتدل وقل:"
-       },
-       "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، رَبَّنَا وَلَكَ الْحَمْدُ",
-       "translit": "Sami‘allāhu liman ḥamidah — rabbanā wa lakal-ḥamd"
-      },
-      {
-       "image": "solo_salah_sujud",
-       "title": {
-        "sw": "6. Sujud",
-        "en": "6. Sujud — prostration",
-        "ar": "٦. السجود"
-       },
-       "body": {
-        "sw": "Sujud: piga chini, pua na usoni ardhini, useme mara tatu:",
-        "en": "Prostrate with forehead, nose, hands, knees and toes on the ground, saying three times:",
-        "ar": "اسجد وقل ثلاث مرات:"
-       },
-       "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
-       "translit": "Subḥāna rabbiyal-a‘lā"
-      },
-      {
-       "image": "solo_salah_tashahhud",
-       "title": {
-        "sw": "7. Tashahhud",
-        "en": "7. Tashahhud — sitting",
-        "ar": "٧. التشهد"
-       },
-       "body": {
-        "sw": "Keti juu ya mguu wa kushoto,ielekeze kidole cha gumba, soma tashahhud na salawati:",
-        "en": "Sit calmly and recite the tashahhud and the blessings on the Prophet ﷺ:",
-        "ar": "اجلس واقرأ التشهد والصلاة الإبراهيمية:"
-       },
-       "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
-       "translit": "At-taḥiyyātu lillāhi waṣ-ṣalawātu waṭ-ṭayyibāt…"
-      },
-      {
-       "image": "solo_salah_tashahhud",
-       "title": {
-        "sw": "8. Salamu",
-        "en": "8. Salam — closing",
-        "ar": "٨. التسليم"
-       },
-       "body": {
-        "sw": "Geuka uso kulia, kisha kushoto, ukisema — swalat imekamilika!",
-        "en": "Turn the face right, then left, saying — the prayer is complete!",
-        "ar": "سلّم عن يمينك ثم عن شمالك. تمت الصلاة!"
-       },
-       "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-       "translit": "As-salāmu ‘alaykum wa raḥmatullāh"
-      }
-     ]
-    },
-    {
-     "id": "dhikr_after",
-     "title": {
-      "sw": "Dhikr baada ya swalat",
-      "en": "Remembrance after prayer",
-      "ar": "الأذكار بعد الصلاة"
-     },
-     "icon": "solo_salah_sujud",
-     "steps": [
-      {
-       "image": "solo_salah_tashahhud",
-       "title": {
-        "sw": "1. Istighfar",
-        "en": "1. Seeking forgiveness",
-        "ar": "١. الاستغفار"
-       },
-       "body": {
-        "sw": "Baada ya salamu, sema mara tatu:",
-        "en": "After the salam, say three times:",
-        "ar": "قل ثلاثا:"
-       },
-       "arabic": "أَسْتَغْفِرُ اللَّهَ",
-       "translit": "Astaghfirullāh"
-      },
-      {
-       "image": "solo_salah_tashahhud",
-       "title": {
-        "sw": "2. Dua ya salama",
-        "en": "2. Dua of peace",
-        "ar": "٢. دعاء السلام"
-       },
-       "body": {
-        "sw": "Kisha useme:",
-        "en": "Then say:",
-        "ar": "ثم قل:"
-       },
-       "arabic": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
-       "translit": "Allāhumma antas-salām wa minkas-salām, tabārakta yā dhal-jalāli wal-ikrām"
-      },
-      {
-       "image": "solo_salah_qiyam",
-       "title": {
-        "sw": "3. Tasbihi (33-33-33)",
-        "en": "3. Tasbih (33-33-33)",
-        "ar": "٣. التسبيح"
-       },
-       "body": {
-        "sw": "SubhanAllah mara 33, Alhamdulillah mara 33, Allahu Akbar mara 33, kisha:",
-        "en": "SubhanAllah ×33, Alhamdulillah ×33, Allahu Akbar ×33, then:",
-        "ar": "سبحان الله ٣٣، والحمد لله ٣٣، والله أكبر ٣٣، ثم:"
-       },
-       "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
-       "translit": "Lā ilāha illallāhu waḥdahū lā sharīka lah, lahu-l-mulk wa lahu-l-ḥamd wa huwa ‘alā kulli shay’in qadīr"
-      },
-      {
-       "image": "solo_salah_qiyam",
-       "title": {
-        "sw": "4. Ayatul Kursi",
-        "en": "4. Ayat al-Kursi",
-        "ar": "٤. آية الكرسي"
-       },
-       "body": {
-        "sw": "Mwenye kuisoma baada ya kila swalat, hupata udhuru wa kuswalikwa Mwenyezi Mungu hadi swalat inayofuata.",
-        "en": "Whoever recites this after every prayer is among those given glad tidings of Paradise.",
-        "ar": "من قرأها بعد كل صلاة كان من دخول الجنة."
-       },
-       "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
-       "translit": ""
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "quran",
-   "symbol": "﷽",
-   "title": {
-    "sw": "Somo la Qur'an",
-    "en": "Qur'an lessons",
-    "ar": "درس القرآن"
-   },
-   "desc": {
-    "sw": "Soma na usikilize kwa sauti — fatiha na sura fupi.",
-    "en": "Read and listen with audio — Al-Fatiha and the short surahs.",
-    "ar": "اقرأ واستمع — الفاتحة والسور القصار."
-   },
-   "lessons": [
-    {
-     "id": "surah_fatiha",
-     "title": {
-      "sw": "Sura ya 1 — Al-Fatiha",
-      "en": "Surah 1 — Al-Fatiha",
-      "ar": "سورة الفاتحة"
-     },
-     "icon": "solo_wudu_mouth_nose",
-     "steps": [
-      {
-       "arabic": "﻿بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
-       "translit": "Bismillāhir-raḥmānir-raḥīm",
-       "title": {
-        "sw": "Aya 1",
-        "en": "Verse 1",
-        "ar": "آية 1"
-       },
-       "body": {
-        "sw": "Kwa jina la Mwenyezi Mungu, Mwingi wa rehema, Mwenye kurehemu.",
-        "en": "In the name of Allah, the Most Gracious, the Most Merciful.",
-        "ar": ""
-       },
-       "audio": "001001.mp3"
-      },
-      {
-       "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
-       "translit": "Al-ḥamdu lillāhi rabbil-‘ālamīn",
-       "title": {
-        "sw": "Aya 2",
-        "en": "Verse 2",
-        "ar": "آية 2"
-       },
-       "body": {
-        "sw": "Sifa njema zote ni za Mwenyezi Mungu, Mola Mlezi wa viumbe vyote.",
-        "en": "All praise is due to Allah, Lord of all worlds.",
-        "ar": ""
-       },
-       "audio": "001002.mp3"
-      },
-      {
-       "arabic": "ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
-       "translit": "Ar-raḥmānir-raḥīm",
-       "title": {
-        "sw": "Aya 3",
-        "en": "Verse 3",
-        "ar": "آية 3"
-       },
-       "body": {
-        "sw": "Mwingi wa rehema, Mwenye kurehemu.",
-        "en": "The Most Gracious, the Most Merciful.",
-        "ar": ""
-       },
-       "audio": "001003.mp3"
-      },
-      {
-       "arabic": "مَٰلِكِ يَوْمِ ٱلدِّينِ",
-       "translit": "Māliki yawmid-dīn",
-       "title": {
-        "sw": "Aya 4",
-        "en": "Verse 4",
-        "ar": "آية 4"
-       },
-       "body": {
-        "sw": "Mmiliki wa Siku ya Malipo.",
-        "en": "Master of the Day of Judgement.",
-        "ar": ""
-       },
-       "audio": "001004.mp3"
-      },
-      {
-       "arabic": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
-       "translit": "Iyyāka na‘budu wa iyyāka nasta‘īn",
-       "title": {
-        "sw": "Aya 5",
-        "en": "Verse 5",
-        "ar": "آية 5"
-       },
-       "body": {
-        "sw": "Wewe tu tunakuabudu, na Wewe tu tunakuomba msaada.",
-        "en": "You alone we worship, and You alone we ask for help.",
-        "ar": ""
-       },
-       "audio": "001005.mp3"
-      },
-      {
-       "arabic": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
-       "translit": "Ihdinaṣ-ṣirāṭal-mustaqīm",
-       "title": {
-        "sw": "Aya 6",
-        "en": "Verse 6",
-        "ar": "آية 6"
-       },
-       "body": {
-        "sw": "Tuongezee njia iliyonyooka.",
-        "en": "Guide us along the straight path.",
-        "ar": ""
-       },
-       "audio": "001006.mp3"
-      },
-      {
-       "arabic": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
-       "translit": "Ṣirāṭal-ladhīna an‘amta ‘alayhim ghayril-maghḍūbi ‘alayhim wa laḍ-ḍāllīn",
-       "title": {
-        "sw": "Aya 7",
-        "en": "Verse 7",
-        "ar": "آية 7"
-       },
-       "body": {
-        "sw": "Njia ya ulio waneemesha — wala siyo ya walio kasirikiwa, wala walio potea.",
-        "en": "The path of those You have blessed — not of those who earned anger, nor of those who went astray.",
-        "ar": ""
-       },
-       "audio": "001007.mp3"
-      }
-     ]
-    },
-    {
-     "id": "surah_ikhlas",
-     "title": {
-      "sw": "Sura ya 112 — Al-Ikhlas",
-      "en": "Surah 112 — Al-Ikhlas",
-      "ar": "سورة الإخلاص"
-     },
-     "icon": "solo_wudu_hands",
-     "steps": [
-      {
-       "arabic": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
-       "translit": "Qul huwallāhu aḥad",
-       "title": {
-        "sw": "Aya 1",
-        "en": "Verse 1",
-        "ar": "آية 1"
-       },
-       "body": {
-        "sw": "Sema: Yeye ni Mwenyezi Mungu, Mmoja.",
-        "en": "Say: He is Allah, the One.",
-        "ar": ""
-       },
-       "audio": "112001.mp3"
-      },
-      {
-       "arabic": "ٱللَّهُ ٱلصَّمَدُ",
-       "translit": "Allāhuṣ-ṣamad",
-       "title": {
-        "sw": "Aya 2",
-        "en": "Verse 2",
-        "ar": "آية 2"
-       },
-       "body": {
-        "sw": "Mwenyezi Mungu anayetegemewa na kila kitu.",
-        "en": "Allah, the Eternal Refuge.",
-        "ar": ""
-       },
-       "audio": "112002.mp3"
-      },
-      {
-       "arabic": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-       "translit": "Lam yalid wa lam yūlad",
-       "title": {
-        "sw": "Aya 3",
-        "en": "Verse 3",
-        "ar": "آية 3"
-       },
-       "body": {
-        "sw": "Hakuzaliwa na hakumzaa.",
-        "en": "He neither begets nor is born.",
-        "ar": ""
-       },
-       "audio": "112003.mp3"
-      },
-      {
-       "arabic": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
-       "translit": "Wa lam yakul lahū kufuwan aḥad",
-       "title": {
-        "sw": "Aya 4",
-        "en": "Verse 4",
-        "ar": "آية 4"
-       },
-       "body": {
-        "sw": "Wala hakuwa na mwenzi yeyote.",
-        "en": "Nor is there to Him any equal.",
-        "ar": ""
-       },
-       "audio": "112004.mp3"
-      }
-     ]
-    },
-    {
-     "id": "surah_falaq",
-     "title": {
-      "sw": "Sura ya 113 — Al-Falaq",
-      "en": "Surah 113 — Al-Falaq",
-      "ar": "سورة الفلق"
-     },
-     "icon": "solo_wudu_head",
-     "steps": [
-      {
-       "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
-       "translit": "Qul a‘ūdhu birabbil-falaq",
-       "title": {
-        "sw": "Aya 1",
-        "en": "Verse 1",
-        "ar": "آية 1"
-       },
-       "body": {
-        "sw": "Sema: Najilinda kwa Mola Mlezi wa alfajiri.",
-        "en": "Say: I seek refuge in the Lord of daybreak.",
-        "ar": ""
-       },
-       "audio": "113001.mp3"
-      },
-      {
-       "arabic": "مِن شَرِّ مَا خَلَقَ",
-       "translit": "Min sharri mā khalaq",
-       "title": {
-        "sw": "Aya 2",
-        "en": "Verse 2",
-        "ar": "آية 2"
-       },
-       "body": {
-        "sw": "Kutokana na mabaya ya aliyouumba.",
-        "en": "From the evil of what He created.",
-        "ar": ""
-       },
-       "audio": "113002.mp3"
-      },
-      {
-       "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
-       "translit": "Wa min sharri ghāsiqin idhā waqab",
-       "title": {
-        "sw": "Aya 3",
-        "en": "Verse 3",
-        "ar": "آية 3"
-       },
-       "body": {
-        "sw": "Na kutokana na mabaya ya giza liingipopo.",
-        "en": "And from the evil of darkness as it settles.",
-        "ar": ""
-       },
-       "audio": "113003.mp3"
-      },
-      {
-       "arabic": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
-       "translit": "Wa min sharrin-naffāthāti fil-‘uqad",
-       "title": {
-        "sw": "Aya 4",
-        "en": "Verse 4",
-        "ar": "آية 4"
-       },
-       "body": {
-        "sw": "Na kutokana na mabaya ya wanaopuliza fumbo.",
-        "en": "And from the evil of those who blow on knots.",
-        "ar": ""
-       },
-       "audio": "113004.mp3"
-      },
-      {
-       "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
-       "translit": "Wa min sharri ḥāsidin idhā ḥasad",
-       "title": {
-        "sw": "Aya 5",
-        "en": "Verse 5",
-        "ar": "آية 5"
-       },
-       "body": {
-        "sw": "Na kutokana na mabaya ya mwivu akihasidi.",
-        "en": "And from the evil of an envier when they envy.",
-        "ar": ""
-       },
-       "audio": "113005.mp3"
-      }
-     ]
-    },
-    {
-     "id": "surah_nas",
-     "title": {
-      "sw": "Sura ya 114 — An-Nas",
-      "en": "Surah 114 — An-Nas",
-      "ar": "سورة الناس"
-     },
-     "icon": "solo_wudu_feet",
-     "steps": [
-      {
-       "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
-       "translit": "Qul a‘ūdhu birabbin-nās",
-       "title": {
-        "sw": "Aya 1",
-        "en": "Verse 1",
-        "ar": "آية 1"
-       },
-       "body": {
-        "sw": "Sema: Najilinda kwa Mola Mlezi wa wanadamu.",
-        "en": "Say: I seek refuge in the Lord of mankind.",
-        "ar": ""
-       },
-       "audio": "114001.mp3"
-      },
-      {
-       "arabic": "مَلِكِ ٱلنَّاسِ",
-       "translit": "Malikin-nās",
-       "title": {
-        "sw": "Aya 2",
-        "en": "Verse 2",
-        "ar": "آية 2"
-       },
-       "body": {
-        "sw": "Mfalme wa wanadamu.",
-        "en": "The King of mankind.",
-        "ar": ""
-       },
-       "audio": "114002.mp3"
-      },
-      {
-       "arabic": "إِلَٰهِ ٱلنَّاسِ",
-       "translit": "Ilāhin-nās",
-       "title": {
-        "sw": "Aya 3",
-        "en": "Verse 3",
-        "ar": "آية 3"
-       },
-       "body": {
-        "sw": "Mungu wa wanadamu.",
-        "en": "The God of mankind.",
-        "ar": ""
-       },
-       "audio": "114003.mp3"
-      },
-      {
-       "arabic": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
-       "translit": "Min sharril-waswāsil-khanās",
-       "title": {
-        "sw": "Aya 4",
-        "en": "Verse 4",
-        "ar": "آية 4"
-       },
-       "body": {
-        "sw": "Kutokana na mabaya ya mwenye kupekeza anayejificha.",
-        "en": "From the evil of the retreating whisperer.",
-        "ar": ""
-       },
-       "audio": "114004.mp3"
-      },
-      {
-       "arabic": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
-       "translit": "Alladhī yuwaswisu fī ṣudūrin-nās",
-       "title": {
-        "sw": "Aya 5",
-        "en": "Verse 5",
-        "ar": "آية 5"
-       },
-       "body": {
-        "sw": "Ambaye hupekeza vifua za wanadamu.",
-        "en": "Who whispers into the hearts of mankind.",
-        "ar": ""
-       },
-       "audio": "114005.mp3"
-      },
-      {
-       "arabic": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
-       "translit": "Minanal-jinnati wan-nās",
-       "title": {
-        "sw": "Aya 6",
-        "en": "Verse 6",
-        "ar": "آية 6"
-       },
-       "body": {
-        "sw": "Kwa majini na wanadamu.",
-        "en": "From among jinn and mankind.",
-        "ar": ""
-       },
-       "audio": "114006.mp3"
-      }
-     ]
-    }
-   ]
-  }
- ]
+  ]
 }

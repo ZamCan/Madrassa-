@@ -220,4 +220,41 @@
         <item>Oktoba</item><item>Novemba</item><item>Desemba</item>
     </string-array>
 
+    <!-- Dual calendar page -->
+    <string name="calendar_title">Kalenda</string>
+    <string name="calendar_subtitle">Miladi na Hijriya pamoja</string>
+    <string name="calendar_ramadan_countdown">Hadi Ramadhan: siku %1$d</string>
+    <string name="calendar_ramadan_active">Siku ya %1$d ya Ramadhan</string>
+    <string name="calendar_eid_fitr">Hadi Eid el-Fitri: siku %1$d</string>
+    <string name="calendar_arafah">Hadi Siku ya Arafah: siku %1$d</string>
+    <string name="calendar_eid_adha">Hadi Eid el-Adha: siku %1$d</string>
+    <string name="calendar_sacred_month">Mwezi Mtukufu wa %1$s</string>
+    <string name="calendar_events_title">Matukio ya simu</string>
+    <string name="calendar_events_invite">Unganisha kalenda ya simu kuona matukio yako ya siku 7 zijazo chini ya kalenda. Hakuna kitu kinachotoka kwenye simu yako.</string>
+    <string name="calendar_events_connect">Unganisha kalenda ya simu</string>
+    <string name="calendar_events_granted">Kalenda ya simu imeunganishwa</string>
+    <string name="calendar_events_empty">Hakuna matukio siku 7 zijazo</string>
+    <string name="calendar_events_all_day">Siku nzima</string>
+    <string name="calendar_month_title">%1$s %2$d</string>
+
+    <!-- Ijumaa -->
+    <string name="friday_wish">Ijumaa Njema!</string>
+    <string name="friday_blessing">Ruhusi biashara na ita dhikrullah — siku ya kusali kwa pamoja imefika.</string>
+    <string name="friday_verses_label">Aya za Ijumaa — Surah Al-Jumu\u2019ah</string>
+    <string name="friday_v1_arabic">يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَى ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ ۚ ذَٰلِكُمْ خَيْرٌ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ</string>
+    <string name="friday_v1_translit">Yā ayyuhalladhīna āmanū idhā nūdiya liṣ-ṣalāti min yawmil-jumu\u2019ati fas\u2019aw ilā dhikrillāhi wa dharul-bay\u2019, dhālikum khayrun lakum in kuntum ta\u2019lamūn</string>
+    <string name="friday_v1_text">Enyi mlioamini, mnapoitwa kwa swala ya Ijumaa, jitahidini kwa kukumbuka Mwenyezi Mungu na muache biashara. Hayo ni bora kwenu, mkiwa mnajua. (62:9)</string>
+    <string name="friday_v2_arabic">فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ</string>
+    <string name="friday_v2_translit">Fa\u2019idhā quḍiyatiṣ-ṣalātu fantashirū fil-arḍi wabtaghū min faḍlillāhi wadhkurullāha kathīral-la\u2019allakum tufliḥūn</string>
+    <string name="friday_v2_text">Swala ikipokonywa, tawanyikeni katika nchi na mtafute fadhila ya Mwenyezi Mungu, na mkumbukeni Mwenyezi Mungu mwingi ili mpate kufanikiwa. (62:10)</string>
+    <string name="friday_v3_arabic">وَإِذَا رَأَوْا تِجَارَةً أَوْ لَهْوًا انفَضُّوا إِلَيْهَا وَتَرَكُوكَ قَائِمًا ۚ قُلْ مَا عِندَ اللَّهِ خَيْرٌ مِّنَ اللَّهْوِ وَمِنَ التِّجَارَةِ ۚ وَاللَّهُ خَيْرُ الرَّازِقِينَ</string>
+    <string name="friday_v3_translit">Wa idhā ra\u2019aw tijāratan aw lahwan infaddū ilayhā wa tarakūka qā\u2019imā, qul mā \u2019indallāhi khayrun minal-lahwi wa minat-tijārah, wallāhu khayrur-rāziqīn</string>
+    <string name="friday_v3_text">Wanaona biashara au burudani, huenda kwayo na wakuacha wima. Sema: Kilicho kwa Mwenyezi Mungu kiko bora kuliko burudani na biashara. Na Mwenyezi Mungu ndiye Mbora wa waruzuku. (62:11)</string>
+
+    <!-- Weekday initials, Monday first -->
+    <string-array name="calendar_weekdays">
+        <item>Jtu</item><item>Jnn</item><item>Jtn</item>
+        <item>Alh</item><item>Ijn</item><item>Jms</item><item>Jpi</item>
+    </string-array>
+
 </resources>

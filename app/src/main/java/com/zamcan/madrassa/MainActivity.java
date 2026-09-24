@@ -7,6 +7,9 @@ import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,6 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.zamcan.madrassa.core.calendar.EduNoorCalendars;
+import com.zamcan.madrassa.core.calendar.EduNoorDateFormatter;
+
+import java.time.LocalDate;
 
 public class MainActivity extends Activity {
 
@@ -39,7 +47,7 @@ public class MainActivity extends Activity {
     }
 
     private TextView text(
-            String value,
+            CharSequence value,
             float size,
             int color,
             boolean bold
@@ -1010,6 +1018,57 @@ public class MainActivity extends Activity {
                         -1,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 )
+        );
+
+        /*
+         * Hijri colophon line: one quiet line under the identity
+         * mark carrying today's Islamic date only (Umm al-Qura
+         * engine, offline). Gold crescent + faded text so it stays
+         * silent against the dark glass.
+         */
+        EduNoorCalendars.HijriDate todayHijri =
+                EduNoorCalendars.toHijri(LocalDate.now());
+
+        String hijriLine = "☾  " + EduNoorDateFormatter.formatHijri(
+                todayHijri,
+                getResources()
+                        .getStringArray(R.array.calendar_hijri_months)
+        );
+
+        SpannableString hijriStyled = new SpannableString(hijriLine);
+        hijriStyled.setSpan(
+                new ForegroundColorSpan(
+                        getColor(R.color.edunoor_gold)
+                ),
+                0,
+                1,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
+        TextView hijriColophon =
+                text(
+                        hijriStyled,
+                        10.5f,
+                        muted,
+                        false
+                );
+
+        hijriColophon.setGravity(
+                Gravity.CENTER
+        );
+
+        LinearLayout.LayoutParams hijriParams =
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        hijriParams.topMargin =
+                dim(R.dimen.space_sm);
+
+        content.addView(
+                hijriColophon,
+                hijriParams
         );
 
         canvas.addView(

@@ -3,6 +3,11 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Opt-in only: powers the device-events list inside the
+         dual calendar page, requested at runtime when the user
+         taps "connect". Nothing is written or uploaded. -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
     <application
         android:theme="@style/AppTheme"
         android:label="@string/app_name"
@@ -20,6 +25,10 @@
 
         <activity
             android:name="com.zamcan.madrassa.solo.LessonActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.zamcan.madrassa.core.calendar.CalendarActivity"
             android:exported="false" />
 
         <activity

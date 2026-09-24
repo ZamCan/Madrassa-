@@ -624,6 +624,19 @@ public class SoloLearningActivity extends Activity {
         );
         strip.addView(gregorianText, gregorianParams);
 
+        /*
+         * The strip is the door to the full dual calendar page:
+         * month grid with Hijri beneath every day, Ramadan
+         * count-up/count-down, Ijumaa card and opt-in device
+         * calendar events.
+         */
+        strip.setOnClickListener(v ->
+                startActivity(new Intent(this,
+                        com.zamcan.madrassa.core.calendar
+                                .CalendarActivity.class)));
+
+        pressEffect(strip);
+
         LinearLayout stripWrap = new LinearLayout(this);
         stripWrap.setOrientation(LinearLayout.VERTICAL);
         stripWrap.setPadding(dp(16), dp(8), dp(16), 0);
