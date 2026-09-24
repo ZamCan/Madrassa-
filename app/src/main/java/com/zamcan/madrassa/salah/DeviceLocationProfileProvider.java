@@ -48,7 +48,7 @@ public final class DeviceLocationProfileProvider {
                     best.getLongitude(),
                     offset
             );
-        } catch (SecurityException | RuntimeException ignored) {
+        } catch (RuntimeException ignored) {
             return fallback;
         }
     }
