@@ -210,6 +210,18 @@ def build_solo_assets():
     out_dir.mkdir(parents=True, exist_ok=True)
     for src in sorted(SRC.glob("solo_*.png")):
         art = Image.open(src).convert("L")
+
+        # Guard against generations whose background came out
+        # bright instead of black: sample the border and invert
+        # dark-on-bright masters so lines always read as high
+        # luminance before the alpha pass.
+        w, h = art.size
+        px = art.load()
+        border = [px[x, y] for x in range(0, w, 4) for y in (0, h - 1)]
+        border += [px[x, y] for y in range(0, h, 4) for x in (0, w - 1)]
+        if sum(border) / len(border) > 100:
+            art = art.point(lambda v: 255 - v)
+
         bbox = art.point(lambda v: 255 if v > 24 else 0).getbbox()
         if bbox:
             art = art.crop(bbox)
@@ -219,8 +231,19 @@ def build_solo_assets():
             art = art.resize((target, round(h * target / w)), Image.LANCZOS)
         else:
             art = art.resize((round(w * target / h), target), Image.LANCZOS)
+
+        # Clean alpha: kill glow veils (floor) and compress faint
+        # mid-glow (gamma) so only real line work survives - the
+        # icon must sit on the parchment with NO visible box or
+        # background of any kind.
+        def clean_alpha(v):
+            if v <= 28:
+                return 0
+            t = (v - 28) / (255 - 28)
+            return min(240, round((t ** 1.25) * 255 * 0.94))
+
         gold = Image.new("RGBA", art.size, (214, 170, 92, 0))
-        gold.putalpha(art.point(lambda v: min(240, int(v * 1.25 * 0.94))))
+        gold.putalpha(art.point(clean_alpha))
         gold.save(out_dir / (src.stem + ".png"))
         print("  solo asset:", src.stem)
 
