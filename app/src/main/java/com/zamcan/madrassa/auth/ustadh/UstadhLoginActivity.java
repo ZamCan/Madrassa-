@@ -240,11 +240,15 @@ public class UstadhLoginActivity extends Activity {
                 getString(R.string.field_example_identifier)
         );
 
+        /*
+         * Wrapping height: the 58dp input plus room for the
+         * inline validation line without clipping.
+         */
         root.addView(
                 identifierField,
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
-                        dp(64)
+                        ViewGroup.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -278,7 +282,7 @@ public class UstadhLoginActivity extends Activity {
                 passwordField,
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
-                        dp(64)
+                        ViewGroup.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -440,30 +444,20 @@ public class UstadhLoginActivity extends Activity {
 
         if (typedIdentifier.isEmpty()) {
 
-            identifierField.setErrorState(true);
+            identifierField.setErrorMessage(
+                    getString(R.string.enter_ustadh_identifier)
+            );
             identifierField.getEditText().requestFocus();
-
-            Toast.makeText(
-                    this,
-                    getString(
-                            R.string.enter_ustadh_identifier
-                    ),
-                    Toast.LENGTH_SHORT
-            ).show();
 
             return;
         }
 
         if (pass.isEmpty()) {
 
-            passwordField.setErrorState(true);
+            passwordField.setErrorMessage(
+                    getString(R.string.enter_password)
+            );
             passwordField.getEditText().requestFocus();
-
-            Toast.makeText(
-                    this,
-                    getString(R.string.enter_password),
-                    Toast.LENGTH_SHORT
-            ).show();
 
             return;
         }
@@ -478,7 +472,7 @@ public class UstadhLoginActivity extends Activity {
          */
 
         busy = true;
-        loginButton.setEnabled(false);
+        EduNoorButton.setLocked(loginButton, true);
         loginButton.setText(
                 getString(R.string.login_in_progress)
         );
@@ -500,7 +494,7 @@ public class UstadhLoginActivity extends Activity {
             runOnUiThread(() -> {
 
                 busy = false;
-                loginButton.setEnabled(true);
+                EduNoorButton.setLocked(loginButton, false);
                 loginButton.setText(
                         getString(R.string.login)
                 );

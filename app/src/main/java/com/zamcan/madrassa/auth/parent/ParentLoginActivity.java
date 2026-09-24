@@ -230,11 +230,15 @@ public class ParentLoginActivity extends Activity {
                 getString(R.string.field_example_phone)
         );
 
+        /*
+         * Wrapping height: the 58dp input plus room for the
+         * inline validation line without clipping.
+         */
         root.addView(
                 phone,
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
-                        dp(64)
+                        ViewGroup.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -268,7 +272,7 @@ public class ParentLoginActivity extends Activity {
                 password,
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
-                        dp(64)
+                        ViewGroup.LayoutParams.WRAP_CONTENT
                 )
         );
 
@@ -407,14 +411,10 @@ public class ParentLoginActivity extends Activity {
 
         if (typed.isEmpty()) {
 
-            phone.setErrorState(true);
+            phone.setErrorMessage(
+                    getString(R.string.enter_phone)
+            );
             phone.getEditText().requestFocus();
-
-            Toast.makeText(
-                    this,
-                    getString(R.string.enter_phone),
-                    Toast.LENGTH_SHORT
-            ).show();
 
             return;
         }
@@ -429,28 +429,20 @@ public class ParentLoginActivity extends Activity {
                 typed
         )) {
 
-            phone.setErrorState(true);
+            phone.setErrorMessage(
+                    getString(R.string.login_invalid_phone)
+            );
             phone.getEditText().requestFocus();
-
-            Toast.makeText(
-                    this,
-                    getString(R.string.login_invalid_phone),
-                    Toast.LENGTH_SHORT
-            ).show();
 
             return;
         }
 
         if (pass.isEmpty()) {
 
-            password.setErrorState(true);
+            password.setErrorMessage(
+                    getString(R.string.enter_password)
+            );
             password.getEditText().requestFocus();
-
-            Toast.makeText(
-                    this,
-                    getString(R.string.enter_password),
-                    Toast.LENGTH_SHORT
-            ).show();
 
             return;
         }
@@ -467,7 +459,7 @@ public class ParentLoginActivity extends Activity {
                 );
 
         busy = true;
-        loginButton.setEnabled(false);
+        EduNoorButton.setLocked(loginButton, true);
         loginButton.setText(
                 getString(R.string.login_in_progress)
         );
@@ -513,7 +505,7 @@ public class ParentLoginActivity extends Activity {
             runOnUiThread(() -> {
 
                 busy = false;
-                loginButton.setEnabled(true);
+                EduNoorButton.setLocked(loginButton, false);
                 loginButton.setText(
                         getString(R.string.login)
                 );

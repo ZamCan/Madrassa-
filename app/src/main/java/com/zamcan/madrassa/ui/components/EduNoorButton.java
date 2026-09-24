@@ -45,6 +45,20 @@ public final class EduNoorButton {
         );
     }
 
+    /*
+     * Locked/loading state for async submissions. The press guard
+     * already blocks interaction; this makes the lock VISIBLE, so
+     * "the button is working / unavailable" is perceivable and
+     * every screen announces it the same way.
+     */
+    public static void setLocked(
+            TextView button,
+            boolean locked
+    ) {
+        button.setEnabled(!locked);
+        button.setAlpha(locked ? 0.45f : 1f);
+    }
+
     private static TextView create(
             Context context,
             String label,

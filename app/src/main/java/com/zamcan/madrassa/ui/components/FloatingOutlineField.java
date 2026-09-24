@@ -20,6 +20,7 @@ public class FloatingOutlineField extends FrameLayout {
 
     private final EditText input;
     private final TextView label;
+    private final TextView errorText;
     private final TextView prefix;
     private final TextView visibilityToggle;
     private final TextView chevron;
@@ -36,6 +37,7 @@ public class FloatingOutlineField extends FrameLayout {
     private final int textColor;
     private final int mutedColor;
     private final int surfaceColor;
+    private final int errorTextColor;
 
     private String labelText = "";
     private String exampleText = "";
@@ -61,9 +63,11 @@ public class FloatingOutlineField extends FrameLayout {
         textColor = context.getColor(R.color.edunoor_ink);
         mutedColor = context.getColor(R.color.edunoor_muted);
         surfaceColor = context.getColor(R.color.edunoor_surface);
+        errorTextColor = context.getColor(R.color.edunoor_clay);
 
         input = new EditText(context);
         label = new TextView(context);
+        errorText = new TextView(context);
         prefix = new TextView(context);
         visibilityToggle = new TextView(context);
         chevron = new TextView(context);
@@ -130,6 +134,7 @@ public class FloatingOutlineField extends FrameLayout {
             public void afterTextChanged(Editable s) {
                 if (error) {
                     error = false;
+                    errorText.setVisibility(GONE);
                     updateBorder();
                 }
             }
@@ -280,6 +285,30 @@ public class FloatingOutlineField extends FrameLayout {
         addView(label);
 
         label.setVisibility(INVISIBLE);
+
+        /*
+         * Inline validation message, anchored under the field.
+         * Production forms explain errors at the field instead of
+         * relying on transient toasts and a colour-only stroke:
+         * what is wrong plus how to fix it, in the product clay.
+         */
+        errorText.setTextColor(errorTextColor);
+        errorText.setTextSize(12f);
+        errorText.setGravity(Gravity.START);
+        errorText.setMaxLines(2);
+        errorText.setPadding(dp(6), dp(2), dp(6), 0);
+
+        LayoutParams errorParams = new LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+        errorParams.topMargin = dp(60);
+
+        errorText.setLayoutParams(errorParams);
+        errorText.setVisibility(GONE);
+
+        addView(errorText);
 
         input.setOnFocusChangeListener((view, focused) -> {
             updateVisualState(
@@ -605,6 +634,27 @@ public class FloatingOutlineField extends FrameLayout {
 
     public void setErrorState(boolean value) {
         error = value;
+        if (!value) {
+            errorText.setVisibility(GONE);
+        }
+        updateBorder();
+    }
+
+    /*
+     * Field-anchored validation message: turns the error stroke
+     * on and shows the explanation under the field. Cleared by
+     * the text watcher as soon as the value is corrected.
+     */
+    public void setErrorMessage(CharSequence message) {
+        error = true;
+        errorText.setText(message);
+        errorText.setVisibility(VISIBLE);
+        updateBorder();
+    }
+
+    public void clearError() {
+        error = false;
+        errorText.setVisibility(GONE);
         updateBorder();
     }
 

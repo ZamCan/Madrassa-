@@ -1446,15 +1446,9 @@ public class MadrassaRegistrationActivity extends Activity {
         }
 
         if (parseCount(value(ustadhCount)) < 1) {
-            ustadhCount.setErrorState(true);
-
-            Toast.makeText(
-                    this,
-                    getString(
-                            R.string.registration_invalid_count
-                    ),
-                    Toast.LENGTH_LONG
-            ).show();
+            ustadhCount.setErrorMessage(
+                    getString(R.string.registration_invalid_count)
+            );
 
             ustadhCount.requestFocus();
             return false;
@@ -1478,15 +1472,9 @@ public class MadrassaRegistrationActivity extends Activity {
                 selectedDial,
                 phone.getValue()
         )) {
-            phone.setErrorState(true);
-
-            Toast.makeText(
-                    this,
-                    getString(
-                            R.string.registration_invalid_phone
-                    ),
-                    Toast.LENGTH_LONG
-            ).show();
+            phone.setErrorMessage(
+                    getString(R.string.registration_invalid_phone)
+            );
 
             phone.requestFocus();
             return false;
@@ -1500,15 +1488,9 @@ public class MadrassaRegistrationActivity extends Activity {
         }
 
         if (!EduNoorRules.validEmail(value(email))) {
-            email.setErrorState(true);
-
-            Toast.makeText(
-                    this,
-                    getString(
-                            R.string.registration_invalid_email
-                    ),
-                    Toast.LENGTH_LONG
-            ).show();
+            email.setErrorMessage(
+                    getString(R.string.registration_invalid_email)
+            );
 
             email.requestFocus();
             return false;
@@ -1519,15 +1501,9 @@ public class MadrassaRegistrationActivity extends Activity {
                         selectedDial,
                         secondaryPhone.getValue()
                 )) {
-            secondaryPhone.setErrorState(true);
-
-            Toast.makeText(
-                    this,
-                    getString(
-                            R.string.registration_invalid_phone
-                    ),
-                    Toast.LENGTH_LONG
-            ).show();
+            secondaryPhone.setErrorMessage(
+                    getString(R.string.registration_invalid_phone)
+            );
 
             secondaryPhone.requestFocus();
             return false;
@@ -1551,13 +1527,7 @@ public class MadrassaRegistrationActivity extends Activity {
 
         if (!missing.isEmpty()) {
 
-            password.setErrorState(true);
-
-            Toast.makeText(
-                    this,
-                    passwordFeedback(pass),
-                    Toast.LENGTH_LONG
-            ).show();
+            password.setErrorMessage(passwordFeedback(pass));
 
             password.requestFocus();
             return false;
@@ -1565,7 +1535,9 @@ public class MadrassaRegistrationActivity extends Activity {
 
         if (!pass.equals(confirm)) {
 
-            confirmPassword.setErrorState(true);
+            confirmPassword.setErrorMessage(
+                    getString(R.string.registration_password_mismatch)
+            );
 
             confirmPassword.requestFocus();
             return false;
@@ -1637,17 +1609,13 @@ public class MadrassaRegistrationActivity extends Activity {
 
         if (field.getValue().trim().isEmpty()) {
 
-            field.setErrorState(true);
-
             /*
-             * Say exactly what is missing instead of silently
-             * stopping on the field.
+             * Say exactly what is missing, anchored at the field,
+             * instead of a transient toast.
              */
-            Toast.makeText(
-                    this,
-                    getString(messageId),
-                    Toast.LENGTH_SHORT
-            ).show();
+            field.setErrorMessage(
+                    getString(messageId)
+            );
 
             field.requestFocus();
             return false;
@@ -1762,7 +1730,7 @@ public class MadrassaRegistrationActivity extends Activity {
 
         submitting = true;
 
-        nextButton.setEnabled(false);
+        EduNoorButton.setLocked(nextButton, true);
         nextButton.setAlpha(0.5f);
 
         final String initialPassword = draftPassword;
@@ -1796,7 +1764,7 @@ public class MadrassaRegistrationActivity extends Activity {
                     return;
                 }
 
-                nextButton.setEnabled(true);
+                EduNoorButton.setLocked(nextButton, false);
                 nextButton.setAlpha(1f);
 
                 if (outcome.isSuccess()) {
