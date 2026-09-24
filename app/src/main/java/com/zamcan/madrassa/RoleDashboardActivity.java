@@ -140,7 +140,14 @@ public final class RoleDashboardActivity extends Activity {
     }
 
     private void addAction(LinearLayout root,String title,String sub,final Runnable action){
-        LinearLayout card=EduNoorCard.create(this);
+        LinearLayout card=new LinearLayout(this);
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setGravity(Gravity.CENTER_VERTICAL);
+        android.graphics.drawable.GradientDrawable cardBg=new android.graphics.drawable.GradientDrawable();
+        cardBg.setColor(getColor(R.color.edunoor_surface));
+        cardBg.setCornerRadius(dp(12));
+        cardBg.setStroke(dp(1),getColor(R.color.edunoor_border));
+        card.setBackground(cardBg);
         card.setPadding(dp(14),dp(8),dp(14),dp(8));
         TextView a=text(title,15,getColor(R.color.edunoor_walnut),true);
         TextView b=text(sub,11,getColor(R.color.edunoor_muted),false);
