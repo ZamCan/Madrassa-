@@ -108,7 +108,7 @@ public final class RoleDashboardActivity extends Activity {
         section.setPadding(0,dp(14),0,dp(6)); root.addView(section);
 
         if("ustadh".equals(role)) {
-            addAction(root,getString(R.string.dashboard_management),getString(R.string.dashboard_management_sub),()->showManagement(list,classCount,feeList));
+            addAction(root,getString(R.string.dashboard_management),getString(R.string.dashboard_management_sub),()->startActivity(new Intent(this,MadrassaOperationsActivity.class).putExtra("madrassa_id",madrassaId)));
             addAction(root,getString(R.string.dashboard_students),getString(R.string.dashboard_students_sub),()->showStudents(list));
             addAction(root,getString(R.string.dashboard_classes),getString(R.string.dashboard_classes_sub),()->showClasses());
             addAction(root,getString(R.string.dashboard_progress),getString(R.string.dashboard_progress_sub),()->showStudents(list));
