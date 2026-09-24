@@ -6,6 +6,7 @@
 
     <string name="greeting">﷽</string>
     <string name="hero_title">Welcome to the path of knowledge and Qur\'an</string>
+    <string name="splash_tagline">Madrassa Management System</string>
     <string name="hero_description">Education • Character • Progress</string>
 
     <string name="parent_title">PARENT</string>

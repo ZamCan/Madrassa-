@@ -10,6 +10,8 @@ sources in `design/assets-src/`:
   artifacts_black.png  gold Islamic line-art on black (screen-blended)
   icon_fullbleed.png   1024px full-bleed app icon master
                        (emerald glass tile + gold rim + MY MADRASSA emblem)
+  books_trio.png       gold open-Qur'an + flanking books emblem on black
+                       (landing ornament, converted to translucent alpha)
 
 Outputs:
   mipmap-*/ic_launcher_fg.png      adaptive-icon foreground (108..432 px)
@@ -17,6 +19,7 @@ Outputs:
   drawable-nodpi/brand_icon.png    rounded in-app brand tile
   drawable-nodpi/edunoor_landing_bg.webp   pattern + gold artifacts
   drawable-nodpi/edunoor_splash_bg.webp    emerald gradient + gold artifacts
+  drawable-nodpi/ornament_books.png        translucent gold books ornament
 
 Usage:  python3 design/pipeline.py   (from repo root; requires Pillow)
 
@@ -170,11 +173,41 @@ def build_splash_bg(art):
                 quality=84, method=6)
 
 
+def build_books_ornament():
+    """Landing ornament: gold books trio as translucent gilded art.
+
+    The master is gold linework on black; luminance becomes the alpha
+    channel (black -> fully transparent, gold -> opaque) so the piece
+    composites onto the cream canvas as clearly readable gilded
+    line-art with a gentle sheen - present and defined, never a
+    faint smudge and never competing with content.
+    """
+    art = Image.open(SRC / "books_trio.png").convert("L")
+    bbox = art.point(lambda v: 255 if v > 24 else 0).getbbox()
+    art = art.crop(bbox)
+
+    out_w = 720
+    out_h = round(art.size[1] * out_w / art.size[0])
+    art = art.resize((out_w, out_h), Image.LANCZOS)
+
+    # Placement is the dark emerald glass canvas, so the emblem uses
+    # the bright EduNoor gold: line cores near-solid, glow falloff
+    # soft - clearly visible, gently shining, never loud.
+    gold = Image.new("RGBA", art.size, (214, 170, 92, 0))
+    gold.putalpha(art.point(
+        lambda v: min(240, int(v * 1.25 * 0.94))
+    ))
+
+    (RES / "drawable-nodpi").mkdir(parents=True, exist_ok=True)
+    gold.save(RES / "drawable-nodpi" / "ornament_books.png")
+
+
 def main():
     icon, tile, art = load_masters()
     build_icons(icon)
     build_landing_bg(tile, art)
     build_splash_bg(art)
+    build_books_ornament()
     print("Brand assets regenerated into", RES.relative_to(ROOT))
 
 

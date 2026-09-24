@@ -219,7 +219,7 @@ public class SplashActivity extends Activity {
 
         TextView product =
                 text(
-                        "Madrassa Management",
+                        getString(R.string.splash_tagline),
                         11,
                         getColor(
                                 R.color.edunoor_gold_soft
