@@ -9,6 +9,7 @@ import com.zamcan.madrassa.data.repository.StudentRepository;
 import com.zamcan.madrassa.data.repository.ParentRepository;
 import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.parent.ParentStudentAccessService;
+import com.zamcan.madrassa.domain.students.StudentClassAssignmentService;
 import com.zamcan.madrassa.domain.attendance.AttendanceService;
 import com.zamcan.madrassa.domain.communication.SmsQueueService;
 import com.zamcan.madrassa.domain.finance.FeeService;
@@ -57,6 +58,18 @@ public final class BackendCoreServiceFactory {
         return new ParentStudentAccessService(
                 new ParentRepository(database),
                 new StudentRepository(database),
+                MadrassaAccessContext.forMadrassa(madrassaId)
+        );
+    }
+
+    public static StudentClassAssignmentService studentClassAssignment(
+            EduNoorDatabase database,
+            String madrassaId
+    ) {
+        require(database, madrassaId);
+        return new StudentClassAssignmentService(
+                new StudentRepository(database),
+                new ClassRepository(database),
                 MadrassaAccessContext.forMadrassa(madrassaId)
         );
     }
