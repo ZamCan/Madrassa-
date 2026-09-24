@@ -337,4 +337,7 @@
     <string name="progress_needs_review">Inahitaji kupitiwa</string>
     <string name="progress_not_started"> Haijaanza</string>
 
+    <string name="bundled_deen">☾  Ibada — swala, Qibla, kalenda</string>
+    <string name="bundled_learning">✦  Masomo — masomo ya kina na sauti</string>
+
 </resources>

@@ -13,7 +13,9 @@ import android.widget.TextView;
 import com.zamcan.madrassa.R;
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.core.calendar.CalendarActivity;
+import com.zamcan.madrassa.core.deen.DeenPanelActivity;
 import com.zamcan.madrassa.core.sound.EduNoorSounds;
+import com.zamcan.madrassa.SoloLearningActivity;
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
 import com.zamcan.madrassa.data.model.Fee;
 import com.zamcan.madrassa.data.model.Madrassa;
@@ -152,6 +154,30 @@ public class RoleDashboardActivity extends Activity {
                         LinearLayout.LayoutParams.WRAP_CONTENT);
         statParams.topMargin = dp(14);
         content.addView(statRow, statParams);
+
+        /*
+         * BUNDLED DEEN + LEARNING ASSETS - reachable from inside
+         * any account (ustadh or parent), fully offline. These
+         * ship inside the APK (art, audio, engines); they never
+         * touch the database and never need the network.
+         */
+        LinearLayout bundled = new LinearLayout(this);
+        bundled.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams bundledParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+        bundledParams.topMargin = dp(16);
+
+        bundled.addView(bundledButton(
+                getString(R.string.bundled_deen),
+                DeenPanelActivity.class));
+
+        bundled.addView(bundledButton(
+                getString(R.string.bundled_learning),
+                SoloLearningActivity.class));
+
+        content.addView(bundled, bundledParams);
 
         /*
          * SECTION NAVIGATION.
@@ -516,6 +542,28 @@ public class RoleDashboardActivity extends Activity {
         });
 
         sections.addView(calendar, calendarParams);
+    }
+
+    private View bundledButton(String label, Class<?> target) {
+
+        TextView button = EduNoorButton.secondary(this, label);
+
+        button.setOnClickListener(v -> {
+            EduNoorSounds.page(this);
+            startActivity(new Intent(this, target));
+        });
+
+        LinearLayout.LayoutParams params =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        dp(46));
+        params.topMargin = dp(10);
+
+        LinearLayout wrap = new LinearLayout(this);
+        wrap.setOrientation(LinearLayout.VERTICAL);
+        wrap.addView(button, params);
+
+        return wrap;
     }
 
     private View sectionButton(String label, String section) {

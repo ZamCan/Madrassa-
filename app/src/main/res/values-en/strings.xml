@@ -330,4 +330,7 @@
     <string name="progress_needs_review">Needs review</string>
     <string name="progress_not_started">Not started</string>
 
+    <string name="bundled_deen">☾  Worship — salat, Qibla, calendar</string>
+    <string name="bundled_learning">✦  Learning — full lessons with voice</string>
+
 </resources>

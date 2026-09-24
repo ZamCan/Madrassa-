@@ -329,4 +329,7 @@
     <string name="progress_needs_review">يحتاج مراجعة</string>
     <string name="progress_not_started">لم يبدأ</string>
 
+    <string name="bundled_deen">☾  العبادة — الصلاة والقبلة والتقويم</string>
+    <string name="bundled_learning">✦  التعلّم — دروس كاملة مع الصوت</string>
+
 </resources>
