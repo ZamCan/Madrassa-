@@ -20,7 +20,7 @@ Verified 2026-09-21: 128 strings in each of `values/values-en/values-ar`,
   `aapt2 compile` -> `aapt2 link` -> `javac -source 8 -target 8`
   -> `d8 --min-api 26` -> python zip add `classes.dex`
   -> `manual/align_*.py` (4096-byte alignment)
-  -> `apksigner` v1+v2+v3 with `manual/edunoor-debug.keystore`.
+  -> `apksigner` v1+v2+v3 with the local Android debug keystore.
 - Outputs in `manual/apk/`:
   `Madrassa-v6-unsigned.apk` (33K),
   `Madrassa-v6-aligned-unsigned.apk` (99K),

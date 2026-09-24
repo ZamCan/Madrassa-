@@ -125,7 +125,7 @@ public class LessonActivity extends Activity {
             fallback.setGravity(Gravity.CENTER);
             fallback.addView(
                     text(
-                            getString(R.string.solo_content_placeholder),
+                            getString(R.string.solo_content_unavailable),
                             13,
                             getColor(R.color.edunoor_walnut),
                             false
@@ -163,6 +163,9 @@ public class LessonActivity extends Activity {
         TextView back = text("‹", 30,
                 getColor(R.color.edunoor_clay), false);
         back.setGravity(Gravity.CENTER);
+        back.setContentDescription(
+                getString(R.string.navigation_back)
+        );
         back.setOnClickListener(v -> finish());
         header.addView(
                 back,
@@ -281,6 +284,18 @@ public class LessonActivity extends Activity {
         audioButton.setOnClickListener(v -> toggleAudio());
         stepCard.addView(audioButton, audioParams);
 
+        TextView audioNote = text(
+                getString(R.string.solo_audio_provenance),
+                9.5f,
+                getColor(R.color.edunoor_muted),
+                false
+        );
+        audioNote.setGravity(Gravity.CENTER);
+        LinearLayout.LayoutParams audioNoteParams =
+                new LinearLayout.LayoutParams(-1, -2);
+        audioNoteParams.topMargin = dp(6);
+        stepCard.addView(audioNote, audioNoteParams);
+
         content.addView(
                 stepCard,
                 new LinearLayout.LayoutParams(
@@ -380,7 +395,7 @@ public class LessonActivity extends Activity {
         SoloContent.Step step = lesson.steps.get(index);
 
         /*
-         * Visual (optional - Qur'an steps carry recitation instead
+         * Visual (optional - some lesson steps use lesson audio instead
          * of posture art by design).
          */
         if (step.image != null && !step.image.isEmpty()) {

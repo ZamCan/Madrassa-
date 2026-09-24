@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
+import com.zamcan.madrassa.domain.common.TenantPolicy;
 import com.zamcan.madrassa.domain.repository.ParentStudentLinkStore;
 
 public final class ParentStudentLinkRepository
@@ -52,7 +53,8 @@ public final class ParentStudentLinkRepository
                 );
             }
 
-            if (!data.parentMadrassaId.equals(
+            if (!TenantPolicy.sameMadrassa(
+                    data.parentMadrassaId,
                     data.studentMadrassaId
             )) {
                 throw new SecurityException(
@@ -136,30 +138,28 @@ public final class ParentStudentLinkRepository
         db.beginTransaction();
 
         try {
-            Cursor cursor = db.rawQuery(
-                    "SELECT parent_id " +
-                            "FROM students " +
-                            "WHERE id = ? " +
-                            "LIMIT 1",
-                    new String[]{studentId.trim()}
-            );
+            ParentStudentData data =
+                    loadRelationshipData(
+                            db,
+                            parentId.trim(),
+                            studentId.trim()
+                    );
 
-            String currentParent = null;
-
-            try {
-                if (cursor.moveToFirst()) {
-                    currentParent = cursor.getString(0);
-                }
-            } finally {
-                cursor.close();
-            }
-
-            if (currentParent != null
-                    && !currentParent.equals(
+            if (data.studentParentId == null
+                    || !data.studentParentId.equals(
                     parentId.trim()
             )) {
                 throw new SecurityException(
                         "Parent does not own this student."
+                );
+            }
+
+            if (!TenantPolicy.sameMadrassa(
+                    data.parentMadrassaId,
+                    data.studentMadrassaId
+            )) {
+                throw new SecurityException(
+                        "Cross-Madrassa student relationship is forbidden."
                 );
             }
 

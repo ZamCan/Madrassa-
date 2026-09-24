@@ -206,10 +206,13 @@ public final class StudentGroupService {
             );
         }
 
+        Student student =
+                requireStudent(madrassaId, studentId);
+
         boolean removed =
                 memberStore.remove(
                         group.id,
-                        studentId
+                        student.id
                 );
 
         if (removed) {
@@ -248,6 +251,39 @@ public final class StudentGroupService {
         return memberStore.findByGroup(
                 group.id
         );
+    }
+
+    private Student requireStudent(
+            String madrassaId,
+            String studentId
+    ) {
+        if (blank(studentId)) {
+            throw new IllegalArgumentException(
+                    "studentId is required"
+            );
+        }
+
+        Student student =
+                studentStore.findById(studentId.trim());
+
+        if (student == null) {
+            throw new IllegalArgumentException(
+                    "student does not exist"
+            );
+        }
+
+        if (!student.active) {
+            throw new SecurityException(
+                    "student is inactive"
+            );
+        }
+
+        TenantPolicy.requireSameMadrassa(
+                madrassaId,
+                student.madrassaId
+        );
+
+        return student;
     }
 
     private static void validateGroup(

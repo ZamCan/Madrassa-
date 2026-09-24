@@ -110,7 +110,10 @@ public final class EduNoorButton {
         );
 
         button.setMinHeight(
-                dp(context, 48)
+                context.getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.control_height
+                        )
         );
 
         button.setPadding(

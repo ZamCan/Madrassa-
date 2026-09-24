@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.content.Intent;
 import com.zamcan.madrassa.core.LanguageManager;
-import com.zamcan.madrassa.core.deen.DeenPanelActivity;
 import com.zamcan.madrassa.core.deen.DeenPrefs;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
 import android.graphics.Typeface;
@@ -269,6 +268,34 @@ public class MainActivity extends Activity {
         return "SW";
     }
 
+    private void showIslamicHub() {
+        String[] items = {
+                getString(R.string.landing_qibla),
+                getString(R.string.landing_salah),
+                getString(R.string.landing_adhan),
+                getString(R.string.landing_calendar)
+        };
+
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.landing_islamic_hub))
+                .setItems(items, (dialog, which) -> {
+                    if (which == 3) {
+                        startActivity(new Intent(
+                                this,
+                                com.zamcan.madrassa.core.calendar
+                                        .CalendarActivity.class
+                        ));
+                    } else {
+                        startActivity(new Intent(
+                                this,
+                                IslamicToolsActivity.class
+                        ));
+                    }
+                })
+                .setNegativeButton(getString(R.string.dialog_cancel), null)
+                .show();
+    }
+
     private void showLanguageDialog() {
         final String[] languageNames = {
                 "Kiswahili",
@@ -472,7 +499,7 @@ public class MainActivity extends Activity {
 
         TextView appName =
                 text(
-                        "MADRASSA",
+                        getString(R.string.brand_title),
                         16,
                         walnut,
                         true
@@ -527,6 +554,20 @@ public class MainActivity extends Activity {
                 )
         );
 
+        ImageView islamicHub = new ImageView(this);
+        islamicHub.setImageResource(R.drawable.edunoor_kaaba);
+        islamicHub.setContentDescription(
+                getString(R.string.landing_islamic_hub)
+        );
+        islamicHub.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        islamicHub.setPadding(dp(5), dp(5), dp(5), dp(5));
+        pressEffect(islamicHub);
+        islamicHub.setOnClickListener(v -> showIslamicHub());
+        header.addView(
+                islamicHub,
+                new LinearLayout.LayoutParams(dp(52), dp(52))
+        );
+
         TextView headerMark =
                 text(
                         languageCode(),
@@ -539,6 +580,9 @@ public class MainActivity extends Activity {
                 Gravity.CENTER
         );
 
+        headerMark.setContentDescription(
+                getString(R.string.language_switch_label)
+        );
         pressEffect(headerMark);
 
         headerMark.setOnClickListener(
@@ -547,44 +591,6 @@ public class MainActivity extends Activity {
 
         header.addView(
                 headerMark,
-                new LinearLayout.LayoutParams(
-                        dp(48),
-                        dp(48)
-                )
-        );
-
-        /*
-         * Kaaba mark: the door to the Deen services panel
-         * (salat timetable, Qibla, adhana, calendar settings).
-         * It rests at the top-right corner, opposite the brand
-         * icon, beside the language mark.
-         */
-        ImageView kaabaMark =
-                new ImageView(this);
-
-        kaabaMark.setImageResource(
-                R.drawable.faith_kaaba
-        );
-
-        kaabaMark.setImportantForAccessibility(
-                View.IMPORTANT_FOR_ACCESSIBILITY_NO
-        );
-
-        kaabaMark.setPadding(dp(9), dp(9), dp(9), dp(9));
-
-        pressEffect(kaabaMark);
-
-        kaabaMark.setOnClickListener(
-                v -> startActivity(
-                        new Intent(
-                                this,
-                                DeenPanelActivity.class
-                        )
-                )
-        );
-
-        header.addView(
-                kaabaMark,
                 new LinearLayout.LayoutParams(
                         dp(48),
                         dp(48)
@@ -994,7 +1000,7 @@ public class MainActivity extends Activity {
 
         TextView middle =
                 text(
-                        "EDU NOOR",
+                        getString(R.string.splash_brand),
                         10.5f,
                         muted,
                         true
@@ -1177,7 +1183,10 @@ public class MainActivity extends Activity {
 
         bottomBg.setColor(surface);
         bottomBg.setCornerRadius(
-                dp(13)
+                getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.card_radius
+                        )
         );
 
         bottomBg.setStroke(

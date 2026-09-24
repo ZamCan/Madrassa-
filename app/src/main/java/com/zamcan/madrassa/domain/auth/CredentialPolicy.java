@@ -65,12 +65,14 @@ public final class CredentialPolicy {
     ) {
         if (!canUse(credential) ||
                 madrassaId == null ||
-                madrassaId.trim().isEmpty()) {
+                madrassaId.trim().isEmpty() ||
+                credential.madrassaId == null ||
+                credential.madrassaId.trim().isEmpty()) {
             return false;
         }
 
-        return madrassaId.equals(
-                credential.madrassaId
+        return madrassaId.trim().equals(
+                credential.madrassaId.trim()
         );
     }
 }

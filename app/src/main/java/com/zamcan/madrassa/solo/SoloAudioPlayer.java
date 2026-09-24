@@ -5,7 +5,7 @@ import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 
 /**
- * Minimal offline recitation player for bundled lesson audio
+ * Minimal offline player for bundled lesson audio
  * (assets/solo/audio). One instance drives one playing clip at a
  * time; release() must be called from the Activity lifecycle.
  */

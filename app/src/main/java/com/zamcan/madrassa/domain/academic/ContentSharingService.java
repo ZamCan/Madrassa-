@@ -9,6 +9,7 @@ import com.zamcan.madrassa.domain.repository.ContentShareStore;
 import com.zamcan.madrassa.domain.repository.LearningMaterialStore;
 import com.zamcan.madrassa.domain.repository.LessonStore;
 import com.zamcan.madrassa.domain.common.OperationResult;
+import com.zamcan.madrassa.domain.common.TenantPolicy;
 
 public final class ContentSharingService {
 
@@ -155,7 +156,10 @@ public final class ContentSharingService {
             );
         }
 
-        if (!madrassaId.trim().equals(existing.madrassaId)) {
+        if (!TenantPolicy.sameMadrassa(
+                madrassaId,
+                existing.madrassaId
+        )) {
             return OperationResult.forbidden(
                     "content_share_revoke_cross_madrassa",
                     "share belongs to another madrassa"

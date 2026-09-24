@@ -3,7 +3,6 @@ package com.zamcan.madrassa;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
@@ -17,6 +16,7 @@ import com.zamcan.madrassa.core.calendar.EduNoorDateFormatter;
 import com.zamcan.madrassa.core.deen.DeenPrefs;
 import com.zamcan.madrassa.solo.LessonActivity;
 import com.zamcan.madrassa.solo.SoloContent;
+import com.zamcan.madrassa.ui.components.EduNoorButton;
 import com.zamcan.madrassa.ui.components.EduNoorCard;
 import com.zamcan.madrassa.ui.components.EduNoorProgressView;
 import com.zamcan.madrassa.ui.components.EduNoorStateView;
@@ -232,6 +232,9 @@ public class SoloLearningActivity extends Activity {
                 );
 
         back.setGravity(Gravity.CENTER);
+        back.setContentDescription(
+                getString(R.string.navigation_back)
+        );
 
         back.setOnClickListener(
                 v -> finish()
@@ -414,6 +417,39 @@ public class SoloLearningActivity extends Activity {
                 )
         );
 
+        LinearLayout tools = new LinearLayout(this);
+        tools.setOrientation(LinearLayout.HORIZONTAL);
+        tools.setGravity(Gravity.CENTER_VERTICAL);
+        LinearLayout.LayoutParams toolsParams =
+                new LinearLayout.LayoutParams(
+                        -1,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+        toolsParams.topMargin = dp(10);
+        toolsParams.bottomMargin = dp(4);
+
+        TextView qibla = EduNoorButton.secondary(
+                this,
+                getString(R.string.solo_qibla)
+        );
+        qibla.setOnClickListener(v -> startActivity(
+                new Intent(this, IslamicToolsActivity.class)
+        ));
+        tools.addView(qibla, new LinearLayout.LayoutParams(0, dp(48), 1));
+
+        TextView salah = EduNoorButton.secondary(
+                this,
+                getString(R.string.solo_salah)
+        );
+        LinearLayout.LayoutParams salahParams =
+                new LinearLayout.LayoutParams(0, dp(48), 1);
+        salahParams.leftMargin = dp(7);
+        salah.setOnClickListener(v -> startActivity(
+                new Intent(this, IslamicToolsActivity.class)
+        ));
+        tools.addView(salah, salahParams);
+        content.addView(tools, toolsParams);
+
         /*
          * =====================================================
          * LEARNING AREAS - real offline curriculum categories,
@@ -479,7 +515,7 @@ public class SoloLearningActivity extends Activity {
         books.setOnClickListener(
                 v -> showMessage(
                         getString(R.string.solo_books_title),
-                        getString(R.string.solo_content_placeholder)
+                        getString(R.string.solo_content_unavailable)
                 )
         );
 

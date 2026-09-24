@@ -179,7 +179,7 @@ public class SplashActivity extends Activity {
 
         TextView welcome =
                 text(
-                        "مَرْحَبًا بِكُمْ",
+                        getString(R.string.splash_welcome),
                         20,
                         getColor(R.color.edunoor_white),
                         true
@@ -203,7 +203,7 @@ public class SplashActivity extends Activity {
 
         TextView brand =
                 text(
-                        "EDU NOOR",
+                        getString(R.string.splash_brand),
                         13,
                         getColor(
                                 R.color.edunoor_gold
@@ -288,7 +288,7 @@ public class SplashActivity extends Activity {
          * REAL INITIALIZATION STATUS — each line shown here is
          * the work genuinely running at that moment (opening
          * the local store, loading records, checking their
-         * status), never a fake progress bar.
+         * status), rather than a synthetic progress bar.
          */
         stepView = text(
                 "",

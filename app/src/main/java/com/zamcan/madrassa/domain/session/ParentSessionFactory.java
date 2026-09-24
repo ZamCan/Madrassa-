@@ -1,6 +1,7 @@
 package com.zamcan.madrassa.domain.session;
 
 import com.zamcan.madrassa.data.model.Parent;
+import com.zamcan.madrassa.domain.authorization.parent.ParentAccessPolicy;
 import com.zamcan.madrassa.domain.common.IdGenerator;
 
 public final class ParentSessionFactory {
@@ -10,9 +11,9 @@ public final class ParentSessionFactory {
     }
 
     public ParentSession create(Parent parent) {
-        if (parent == null || !parent.active) {
+        if (parent == null || !ParentAccessPolicy.canLogin(parent)) {
             throw new SecurityException(
-                    "Cannot create a session for inactive parent."
+                    "Cannot create a session for an unauthorized parent."
             );
         }
 

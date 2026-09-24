@@ -73,7 +73,7 @@ public final class ParentAuthenticationService {
         if (!CredentialPolicy.canUse(credential)
                 || !CredentialPolicy.belongsToMadrassa(
                         credential,
-                        credential.madrassaId
+                        parent.madrassaId
                 )) {
             return ParentAuthenticationResult.invalidCredentials();
         }

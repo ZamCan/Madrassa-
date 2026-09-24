@@ -333,7 +333,10 @@ public final class EduNoorCard {
 
         background.setColor(surface);
         background.setCornerRadius(
-                dp(context, 14)
+                context.getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.card_radius
+                        )
         );
         background.setStroke(
                 dp(context, 1),
@@ -413,7 +416,7 @@ public final class EduNoorCard {
                             false
                     );
 
-            descriptionView.setMaxLines(2);
+            descriptionView.setMaxLines(3);
 
             LinearLayout.LayoutParams descriptionParams =
                     new LinearLayout.LayoutParams(

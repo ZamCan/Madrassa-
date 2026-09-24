@@ -14,6 +14,11 @@ public final class ParentStudentAccessService {
             ParentStore parentStore,
             StudentStore studentStore
     ) {
+        if (parentStore == null || studentStore == null) {
+            throw new IllegalArgumentException(
+                    "parentStore and studentStore are required"
+            );
+        }
         this.parentStore = parentStore;
         this.studentStore = studentStore;
     }
@@ -105,8 +110,16 @@ public final class ParentStudentAccessService {
             );
         }
 
-        return studentStore.findById(
+        Student student = studentStore.findById(
                 studentId.trim()
         );
+
+        if (student == null) {
+            throw new SecurityException(
+                    "Student is no longer available."
+            );
+        }
+
+        return student;
     }
 }

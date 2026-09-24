@@ -185,7 +185,7 @@ public class ParentLoginActivity extends Activity {
          * TITLE
          */
         TextView title = text(
-                getString(R.string.parent_role),
+                getString(R.string.parent_login_title),
                 25,
                 walnut,
                 true
@@ -375,13 +375,14 @@ public class ParentLoginActivity extends Activity {
         /*
          * PASSWORD RESET
          *
-         * Event-based OTP will be connected later.
+         * Password reset is not implemented in this local build; the UI
+         * points the user to the Madrassa administrator.
          */
         reset.setOnClickListener(v -> {
 
             Toast.makeText(
                     this,
-                    getString(R.string.reset_v71_message),
+                    getString(R.string.reset_unavailable),
                     Toast.LENGTH_SHORT
             ).show();
         });
@@ -545,8 +546,8 @@ public class ParentLoginActivity extends Activity {
 
                 /*
                  * First login with an activation password: the
-                 * guided password-change flow lands in the
-                 * next stage (spec §10).
+                 * guided password-change flow is not yet implemented
+                 * in this local build.
                  */
                 Toast.makeText(
                         this,

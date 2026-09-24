@@ -13,14 +13,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zamcan.madrassa.role.RoleDashboardActivity;
 
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
 import com.zamcan.madrassa.data.model.Madrassa;
 import com.zamcan.madrassa.data.model.Parent;
+import com.zamcan.madrassa.data.model.Ustadh;
 import com.zamcan.madrassa.data.repository.MadrassaRepository;
 import com.zamcan.madrassa.data.repository.ParentRepository;
+import com.zamcan.madrassa.data.repository.UstadhRepository;
+import com.zamcan.madrassa.domain.academic.AcademicCoreServiceFactory;
+import com.zamcan.madrassa.domain.authorization.UstadhAccessPolicy;
+import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.programme.ProgrammeSetupService;
 import com.zamcan.madrassa.domain.session.ParentSession;
 import com.zamcan.madrassa.domain.session.ParentSessionFactory;
 import com.zamcan.madrassa.ui.components.EduNoorButton;
@@ -116,6 +121,7 @@ public class InitializationActivity extends Activity {
     private String parentId;
     private String ustadhId;
 
+    private boolean sessionUsable;
     private volatile boolean workFinished = false;
     private boolean entranceFinished = false;
 
@@ -211,7 +217,7 @@ public class InitializationActivity extends Activity {
         );
 
         TextView brand = text(
-                "EDU NOOR",
+                getString(R.string.splash_brand),
                 13,
                 gold,
                 true
@@ -361,40 +367,29 @@ public class InitializationActivity extends Activity {
         setContentView(root);
 
         continueButton.setOnClickListener(v -> {
-
-            /*
-             * Hand over to the role dashboard: the live
-             * post-login home for this parent or ustadh under
-             * their madrassa ID.
-             */
-            android.content.Intent dashboard = new
-                    android.content.Intent(
-                    this,
-                    RoleDashboardActivity.class
-            );
-
-            dashboard.putExtra(
-                    RoleDashboardActivity.EXTRA_ROLE,
-                    role
-            );
-            dashboard.putExtra(
-                    RoleDashboardActivity.EXTRA_MADRASSA_ID,
-                    madrassaId
-            );
-
-            if (RoleDashboardActivity.ROLE_PARENT.equals(role)) {
-                dashboard.putExtra(
-                        RoleDashboardActivity.EXTRA_ACTOR_ID,
-                        parentId
-                );
-            } else {
-                dashboard.putExtra(
-                        RoleDashboardActivity.EXTRA_ACTOR_ID,
-                        ustadhId
-                );
+            if (!sessionUsable) {
+                return;
             }
 
-            startActivity(dashboard);
+            if (ROLE_PARENT.equals(role)
+                    && parentId != null
+                    && madrassaId != null) {
+                startActivity(RoleDashboardActivity.forParent(
+                        this,
+                        parentId,
+                        madrassaId
+                ));
+            } else if (ROLE_USTADH.equals(role)
+                    && madrassaId != null
+                    && ustadhId != null) {
+                startActivity(RoleDashboardActivity.forUstadh(
+                        this,
+                        madrassaId,
+                        ustadhId
+                ));
+            } else {
+                return;
+            }
 
             setResult(RESULT_OK);
             finish();
@@ -433,8 +428,21 @@ public class InitializationActivity extends Activity {
 
         String madrassaName = null;
         String statusLine = "";
+        boolean usable = false;
 
         try {
+            if ((!ROLE_PARENT.equals(role)
+                    && !ROLE_USTADH.equals(role))
+                    || (ROLE_PARENT.equals(role)
+                    && (parentId == null || parentId.trim().isEmpty()))
+                    || (ROLE_USTADH.equals(role)
+                    && (madrassaId == null
+                    || madrassaId.trim().isEmpty()
+                    || ustadhId == null
+                    || ustadhId.trim().isEmpty()))) {
+                throw new SecurityException("Invalid session scope.");
+            }
+
             /*
              * Step 1 — open the local database. This creates or
              * upgrades the on-device schema, which is the real
@@ -458,7 +466,7 @@ public class InitializationActivity extends Activity {
                         new ParentRepository(database)
                                 .findById(parentId);
 
-                if (parent == null) {
+                if (parent == null || !parent.active) {
                     statusLine =
                             getString(R.string.login_invalid_credentials);
                 } else {
@@ -469,25 +477,37 @@ public class InitializationActivity extends Activity {
                             new MadrassaRepository(this)
                                     .findById(parent.madrassaId);
 
-                    if (madrassa != null) {
+                    if (madrassa == null
+                            || !TenantPolicy.sameMadrassa(
+                            parent.madrassaId,
+                            madrassa.id
+                    )
+                            || madrassa.approvalStatus
+                            != com.zamcan.madrassa.data.model
+                            .ApprovalStatus.ACTIVE) {
+                        statusLine =
+                                getString(R.string.login_madrassa_inactive);
+                    } else {
+                        madrassaId = parent.madrassaId;
                         madrassaName = madrassa.name;
+
+                        /*
+                         * Step 3 — build the parent session, which
+                         * validates the account and snapshots the
+                         * students this parent may access.
+                         */
+                        announce(R.string.init_step_parent_session);
+
+                        ParentSession session =
+                                new ParentSessionFactory()
+                                        .create(parent);
+
+                        statusLine =
+                                getString(
+                                        R.string.init_session_ready
+                                );
+                        usable = true;
                     }
-
-                    /*
-                     * Step 3 — build the parent session, which
-                     * validates the account and snapshots the
-                     * students this parent may access.
-                     */
-                    announce(R.string.init_step_parent_session);
-
-                    ParentSession session =
-                            new ParentSessionFactory()
-                                    .create(parent);
-
-                    statusLine =
-                            getString(
-                                    R.string.init_session_ready
-                            );
                 }
 
             } else {
@@ -498,7 +518,16 @@ public class InitializationActivity extends Activity {
                         new MadrassaRepository(this)
                                 .findById(madrassaId);
 
-                if (madrassa == null) {
+                Ustadh ustadh =
+                        new UstadhRepository(getApplicationContext())
+                                .findById(ustadhId);
+
+                if (madrassa == null
+                        || ustadh == null
+                        || !UstadhAccessPolicy.belongsToMadrassa(
+                        ustadh,
+                        madrassa.id
+                )) {
                     statusLine =
                             getString(R.string.login_invalid_credentials);
                 } else {
@@ -510,9 +539,10 @@ public class InitializationActivity extends Activity {
                      */
                     announce(R.string.init_step_ustadh_status);
 
-                    if (madrassa.approvalStatus
+                    if (!ustadh.active
+                            || madrassa.approvalStatus
                             != com.zamcan.madrassa.data.model
-                                    .ApprovalStatus.ACTIVE) {
+                            .ApprovalStatus.ACTIVE) {
 
                         statusLine =
                                 getString(
@@ -520,11 +550,21 @@ public class InitializationActivity extends Activity {
                                                 .login_madrassa_inactive
                                 );
                     } else {
+                        AcademicCoreServiceFactory.forMadrassa(
+                                database,
+                                madrassa.id
+                        );
+                        new ProgrammeSetupService(
+                                new com.zamcan.madrassa.data.repository
+                                        .ProgrammeRepository(database)
+                        ).ensureMadrassaDefaults(madrassa.id);
+
                         statusLine =
                                 getString(
                                         R.string
                                                 .init_session_ready
                                 );
+                        usable = true;
                     }
                 }
             }
@@ -544,12 +584,16 @@ public class InitializationActivity extends Activity {
                         : madrassaName;
 
         final String finalStatus = statusLine;
+        final boolean finalUsable = usable;
 
         ui.post(() -> {
             workFinished = true;
+            sessionUsable = finalUsable;
 
             madrassaNameView.setText(finalName);
             statusView.setText(finalStatus);
+            continueButton.setEnabled(finalUsable);
+            continueButton.setAlpha(finalUsable ? 1f : 0.45f);
 
             roleView.setText(
                     ROLE_PARENT.equals(role)

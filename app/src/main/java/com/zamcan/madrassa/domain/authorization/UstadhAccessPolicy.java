@@ -17,7 +17,9 @@ public final class UstadhAccessPolicy {
             return false;
         }
 
-        if (!ustadh.active) {
+        if (!ustadh.active
+                || isBlank(ustadh.id)
+                || isBlank(ustadh.madrassaId)) {
             return false;
         }
 
@@ -35,8 +37,18 @@ public final class UstadhAccessPolicy {
             return false;
         }
 
-        return madrassaId.equals(
-                ustadh.madrassaId
+        if (madrassaId.trim().isEmpty()
+                || ustadh.madrassaId == null
+                || ustadh.madrassaId.trim().isEmpty()) {
+            return false;
+        }
+
+        return madrassaId.trim().equals(
+                ustadh.madrassaId.trim()
         );
+    }
+
+    private static boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
     }
 }

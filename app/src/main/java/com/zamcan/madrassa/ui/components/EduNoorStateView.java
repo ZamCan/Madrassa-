@@ -79,7 +79,10 @@ public final class EduNoorStateView {
 
         background.setColor(surface);
         background.setCornerRadius(
-                dp(context, 14)
+                context.getResources()
+                        .getDimensionPixelSize(
+                                R.dimen.card_radius
+                        )
         );
         background.setStroke(
                 dp(context, 1),
@@ -134,7 +137,7 @@ public final class EduNoorStateView {
                 Gravity.CENTER
         );
 
-        messageView.setMaxLines(4);
+        messageView.setMaxLines(6);
 
         root.addView(
                 messageView,
