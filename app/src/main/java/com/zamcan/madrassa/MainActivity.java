@@ -117,11 +117,9 @@ public class MainActivity extends Activity {
      * Gateway cards (Solo Learning / Parent / Ustadh).
      *
      * All three are built by the shared EduNoorCard.gateway()
-     * component: one radius, one padding system, one type
-     * hierarchy, one press behaviour, start-aligned text for RTL.
-     * Each card only supplies its identity treatment — symbol,
-     * background drawable and accent colours — so the group stays
-     * one design family while remaining recognisable.
+     * component. New gateway surfaces use the current V7 glass
+     * recipes; legacy card drawables are not used for this
+     * production landing surface.
      *
      * Text wraps and the height is a minimum, not a fixed value,
      * so longer translations and larger system font scaling grow
@@ -614,7 +612,7 @@ public class MainActivity extends Activity {
                 new FrameLayout(this);
 
         canvas.setBackgroundResource(
-                R.drawable.edunoor_canvas
+                R.drawable.glass_panel
         );
 
         /*
