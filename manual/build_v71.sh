@@ -52,6 +52,15 @@ echo "Resources compiled."
 echo
 echo "[3/8] Linking resources + generating R.java..."
 
+# Version identity comes from the Gradle config so the manual APK
+# and the Gradle APK can never disagree.
+VERSION_CODE=$(grep -oE 'versionCode = [0-9]+' \
+    "$PROJECT/app/build.gradle.kts" | grep -oE '[0-9]+' | head -1)
+VERSION_NAME=$(grep -oE 'versionName = "[^"]+"' \
+    "$PROJECT/app/build.gradle.kts" | sed 's/.*"\(.*\)"/\1/' | head -1)
+VERSION_CODE=${VERSION_CODE:-3}
+VERSION_NAME=${VERSION_NAME:-0.8.0}
+
 aapt2 link \
     -o "$APK/base-unsigned.apk" \
     --manifest "$PROJECT/app/src/main/AndroidManifest.xml" \
@@ -59,8 +68,12 @@ aapt2 link \
     --java "$GEN" \
     --min-sdk-version 26 \
     --target-sdk-version 35 \
+    --version-code "$VERSION_CODE" \
+    --version-name "$VERSION_NAME" \
     --auto-add-overlay \
     "$COMPILED"/*.flat
+
+echo "Version: $VERSION_NAME (code $VERSION_CODE)"
 
 echo "AAPT2 link: OK"
 echo "Generated R.java:"
@@ -100,13 +113,19 @@ echo "D8: OK"
 echo
 echo "[6/8] Adding classes.dex to APK..."
 
-python - "$APK/base-unsigned.apk" "$DEX/classes.dex" "$APK/Madrassa-EduNoor-v7.1-unsigned.apk" <<'PY'
+python - "$APK/base-unsigned.apk" "$DEX/classes.dex" \
+    "$PROJECT/app/src/main/assets" \
+    "$APK/Madrassa-EduNoor-v7.1-unsigned.apk" <<'PY'
+import os
 import sys
 import zipfile
 
 src = sys.argv[1]
 dex = sys.argv[2]
-dst = sys.argv[3]
+assets = sys.argv[3]
+dst = sys.argv[4]
+
+added = 0
 
 with zipfile.ZipFile(src, "r") as zin:
     with zipfile.ZipFile(dst, "w", compression=zipfile.ZIP_DEFLATED) as zout:
@@ -122,7 +141,27 @@ with zipfile.ZipFile(src, "r") as zin:
         info.external_attr = 0o644 << 16
         zout.writestr(info, data)
 
+        # Bundled educational media (Solo curriculum JSON + audio)
+        # must ship inside the APK, stored uncompressed so
+        # AssetManager.openFd() can hand raw descriptors to
+        # MediaPlayer. aapt2 does not package assets/ for us.
+        if os.path.isdir(assets):
+            for root, dirs, files in os.walk(assets):
+                dirs.sort()
+                for name in sorted(files):
+                    full = os.path.join(root, name)
+                    rel = os.path.relpath(full, assets)
+                    rel = rel.replace(os.sep, "/")
+                    with open(full, "rb") as f:
+                        payload = f.read()
+                    asset = zipfile.ZipInfo("assets/" + rel)
+                    asset.compress_type = zipfile.ZIP_STORED
+                    asset.external_attr = 0o644 << 16
+                    zout.writestr(asset, payload)
+                    added += 1
+
 print("classes.dex added.")
+print("assets packaged: %d" % added)
 PY
 
 echo "APK assembled."

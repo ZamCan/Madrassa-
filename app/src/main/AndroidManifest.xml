@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- The package attribute is required here: the canonical manual
+     build (manual/build_v71.sh) links this source manifest with
+     aapt2 directly and derives the generated R.java package from
+     it. It matches the Gradle namespace exactly, so AGP ignores
+     it and both build paths stay green. -->
 <manifest
+    package="com.zamcan.madrassa"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Opt-in only: powers the device-events list inside the

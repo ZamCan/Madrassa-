@@ -21,7 +21,15 @@ with zipfile.ZipFile(src, "r") as zin:
         name = info.filename.encode("utf-8")
         raw = zin.read(info.filename)
 
-        if info.filename in ("classes.dex", "resources.arsc"):
+        # classes.dex and resources.arsc must stay uncompressed
+        # (resources.arsc is required to be STORED on API 30+).
+        # assets/ must also stay uncompressed: AssetManager.openFd()
+        # refuses compressed entries, and the Solo audio player
+        # needs a real file descriptor for MediaPlayer.
+        if (
+            info.filename in ("classes.dex", "resources.arsc")
+            or info.filename.startswith("assets/")
+        ):
             method = zipfile.ZIP_STORED
             compressed = raw
         else:
