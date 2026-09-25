@@ -155,7 +155,7 @@ The artifacts from the approved reference are applied at three scales:
    `— ◆ —` ornament fallback.
 
 **Density rule:** artifacts decorate *gateways* (splash, landing,
-auth). Future in-app **dashboards and dense UX should quiet down** —
+auth). In-app **dashboards and dense UX should quiet down** —
 use plain `edunoor_emerald`/parchment fills and reserve artifacts for
 headers and empty-states, so data stays readable. (Spec: "Core
 educational and management workflows should remain clean.")
@@ -231,13 +231,11 @@ first-strong bidirectional detection — do **not** force
   splash with `edunoor_emerald_deep`, so system splash → SplashActivity
   reads as one entrance. (The custom in-app splash remains; migrating to
   androidx core-splashscreen is a future dependency decision.)
-- **Deferred decision (recorded):** centralizing the glass fill hexes into
-  named `glass_*_fill` color tokens was evaluated and deliberately reverted
-  (v0.8.0 re-verification): the glass drawables are not yet wired to any
-  screen, so tokens would ship as +5 unused-resource warnings with zero
-  runtime benefit. Introduce the fill tokens **in the same commit as the
-  first consumer** (auth/dashboard restage). The glass table above remains
-  the single source for the recipe values until then.
+- **Glass token decision:** the current production landing surface consumes
+  `glass_panel`, `glass_card_primary` and `glass_card_secondary`
+  directly. Keep their recipe values centralized in the drawable definitions
+  until a broader shared component set justifies named `glass_*_fill`
+  tokens. Do not duplicate these hex values in Activity code.
 - **Accepted, documented warnings:** `UnusedResources` (design-system
   tokens + placeholders), `IconLauncherShape` on adaptive *foreground*
   layers (by-design full-bleed), `ObsoleteSdkInt` on `mipmap-anydpi-v26`
