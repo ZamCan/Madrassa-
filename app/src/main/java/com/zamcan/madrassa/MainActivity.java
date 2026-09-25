@@ -170,19 +170,17 @@ public class MainActivity extends Activity {
                                 ? getColor(R.color.edunoor_gold)
                                 : getColor(R.color.edunoor_clay),
                         primary
-                                ? R.drawable.parent_card
-                                : R.drawable.ustadh_card,
+                                ? R.drawable.glass_card_primary
+                                : R.drawable.glass_card_secondary,
                         title,
-                        primary
-                                ? getColor(R.color.edunoor_white)
-                                : getColor(R.color.edunoor_walnut),
+                        getColor(R.color.edunoor_text_light),
                         subtitle,
                         primary
-                                ? getColor(R.color.edunoor_text_light)
-                                : getColor(R.color.edunoor_muted),
+                                ? getColor(R.color.edunoor_gold_soft)
+                                : getColor(R.color.edunoor_text_faded),
                         primary
-                                ? getColor(R.color.edunoor_white)
-                                : getColor(R.color.edunoor_clay)
+                                ? getColor(R.color.edunoor_gold_bright)
+                                : getColor(R.color.edunoor_gold)
                 );
 
         card.setOnClickListener(
