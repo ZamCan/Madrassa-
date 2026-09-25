@@ -189,11 +189,8 @@ public class InitializationActivity extends Activity {
         root.setGravity(Gravity.CENTER);
         root.setPadding(dp(26), dp(24), dp(26), dp(24));
 
-        root.setBackground(
-                new GradientDrawable(
-                        GradientDrawable.Orientation.TL_BR,
-                        new int[]{walnut, clayDark, walnut}
-                )
+        root.setBackgroundResource(
+                R.drawable.edunoor_splash_bg
         );
 
         /*
@@ -203,7 +200,7 @@ public class InitializationActivity extends Activity {
          */
         ImageView icon = new ImageView(this);
 
-        icon.setImageResource(R.drawable.edunoor_icon);
+        icon.setImageResource(R.drawable.brand_icon);
         icon.setScaleX(0.86f);
         icon.setScaleY(0.86f);
         icon.setAlpha(0f);
