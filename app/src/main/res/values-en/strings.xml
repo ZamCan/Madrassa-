@@ -7,14 +7,14 @@
     <string name="greeting">﷽</string>
     <string name="hero_title">Welcome to the path of knowledge and Qur\'an</string>
     <string name="splash_tagline">Madrassa Management System</string>
-    <string name="hero_description">Education • Character • Progress</string>
+    <string name="hero_description">Knowledge • Character • Progress</string>
 
     <string name="parent_title">PARENT</string>
-    <string name="parent_subtitle">Follow your child\'s progress</string>
+    <string name="parent_subtitle">Monitor your child’s progress</string>
     <string name="parent_action">Continue as Parent</string>
 
     <string name="ustadh_title">USTADH</string>
-    <string name="ustadh_subtitle">Manage your Madrassa</string>
+    <string name="ustadh_subtitle">Administer your Madrassa with care</string>
     <string name="ustadh_action">Continue as Ustadh</string>
 
     <string name="language">Language</string>
@@ -25,7 +25,7 @@
     <!-- V7.1 Authentication -->
     <string name="parent_role">PARENT/GUARDIAN</string>
     <string name="parent_login_title">PARENT/GUARDIAN LOGIN</string>
-    <string name="parent_login_subtitle">Follow the progress of your child</string>
+    <string name="parent_login_subtitle">Monitor your child’s progress</string>
     <string name="phone_number">Phone number</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
@@ -123,10 +123,10 @@
 
     <!-- 3F-A6 Solo Learning -->
     <string name="solo_learning_title">SOLO LEARNING</string>
-    <string name="solo_learning_subtitle">Learn Qur\'an and Islamic knowledge</string>
+    <string name="solo_learning_subtitle">Study the Qur’an and Islamic knowledge</string>
     <string name="solo_learning_welcome">Learn with calm and focus</string>
     <string name="solo_card_title">Solo Learning</string>
-    <string name="solo_card_subtitle">Learn with calm and focus • Qur’an and Islamic knowledge</string>
+    <string name="solo_card_subtitle">Study with calm and focus • Qur’an and Islamic knowledge</string>
     <string name="field_example_phone">e.g. 0712 345 678</string>
     <string name="field_example_identifier">e.g. Nurul Islam or 0712 345 678</string>
     <string name="password_strength_weak">Weak password</string>
@@ -329,7 +329,7 @@
     <string name="islamic_calendar_subtitle">View both dates together</string>
     <string name="islamic_calculation_unavailable">The selected details could not produce a calculation.</string>
     <string name="islamic_not_available">—</string>
-    <string name="landing_islamic_hub">Qibla, Salah, Adhan and calendar</string>
+    <string name="landing_islamic_hub">Qibla, Salah, Adhan and Calendar</string>
     <string name="landing_qibla">Qibla</string>
     <string name="landing_salah">Salah</string>
     <string name="landing_adhan">Adhan / reminder</string>

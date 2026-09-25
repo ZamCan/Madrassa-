@@ -7,14 +7,14 @@
     <string name="greeting">﷽</string>
     <string name="hero_title">مَرْحَبًا بِكُمْ فِي رِحَابِ الْعِلْمِ وَالْقُرْآنِ</string>
     <string name="splash_tagline">نظام إدارة المدرسة</string>
-    <string name="hero_description">العلم • التربية • التقدم</string>
+    <string name="hero_description">العلم • الأدب • التقدّم</string>
 
     <string name="parent_title">وَلِيُّ الأَمْر</string>
-    <string name="parent_subtitle">تابع تقدم طفلك</string>
+    <string name="parent_subtitle">تابعي تقدّم طفلك</string>
     <string name="parent_action">المتابعة كولي أمر</string>
 
     <string name="ustadh_title">الأُسْتَاذ</string>
-    <string name="ustadh_subtitle">أدر مدرستك</string>
+    <string name="ustadh_subtitle">أديري مدرستك بعناية</string>
     <string name="ustadh_action">المتابعة كأستاذ</string>
 
     <string name="language">اللغة</string>
@@ -25,7 +25,7 @@
     <!-- V7.1 Authentication -->
     <string name="parent_role">ولي الأمر</string>
     <string name="parent_login_title">تسجيل دخول ولي الأمر</string>
-    <string name="parent_login_subtitle">تابع تقدم طفلك</string>
+    <string name="parent_login_subtitle">تابعي تقدّم طفلك</string>
     <string name="phone_number">رقم الهاتف</string>
     <string name="password">كلمة المرور</string>
     <string name="login">دخول</string>
@@ -123,7 +123,7 @@
 
     <!-- 3F-A6 Solo Learning -->
     <string name="solo_learning_title">التعلّم الفردي</string>
-    <string name="solo_learning_subtitle">تعلّم القرآن الكريم والعلوم الإسلامية</string>
+    <string name="solo_learning_subtitle">ادرسي القرآن الكريم والعلوم الإسلامية</string>
     <string name="solo_learning_welcome">تعلّم بهدوء وتركيز</string>
     <string name="solo_card_title">Solo Learning</string>
     <string name="solo_card_subtitle">تعلّم بهدوء وتركيز • القرآن الكريم والعلوم الإسلامية</string>

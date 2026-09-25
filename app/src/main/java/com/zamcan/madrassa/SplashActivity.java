@@ -9,8 +9,8 @@ import com.zamcan.madrassa.core.sound.EduNoorSounds;
 import android.os.Bundle;
 import android.os.Handler;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -98,13 +98,13 @@ public class SplashActivity extends Activity {
 
         getWindow().setStatusBarColor(
                 getColor(
-                        R.color.edunoor_emerald_deep
+                        R.color.edunoor_soil_deep
                 )
         );
 
         getWindow().setNavigationBarColor(
                 getColor(
-                        R.color.edunoor_emerald_deep
+                        R.color.edunoor_soil_deep
                 )
         );
 
@@ -123,11 +123,39 @@ public class SplashActivity extends Activity {
         );
 
         /*
-         * V7 brand canvas: emerald night gradient with glowing gold
-         * artifacts (design/pipeline.py -> drawable-nodpi).
+         * The brand canvas (design/pipeline.py -> drawable-nodpi)
+         * is laid down first, then veiled with the earthen soil
+         * plate. The veil carries the boot experience in the same
+         * warm ground tone as the launcher tile and the system
+         * splash, so all three read as one identity, while the
+         * carved ornament underneath still gives depth.
          */
         root.setBackgroundResource(
                 R.drawable.edunoor_splash_bg
+        );
+
+        View soilVeil =
+                new View(this);
+
+        GradientDrawable veil =
+                new GradientDrawable();
+
+        veil.setColor(
+                getColor(
+                        R.color.edunoor_soil_deep
+                )
+        );
+
+        soilVeil.setBackground(veil);
+
+        soilVeil.setAlpha(0.82f);
+
+        root.addView(
+                soilVeil,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        -1
+                )
         );
 
         ImageView icon =

@@ -244,25 +244,11 @@ public class MainActivity extends Activity {
     }
 
     /*
-     * Header language toggle: shows the active language code.
-     * Tapping it opens the language dialog (same as the bottom
-     * Language item), so the toggle is visible without scrolling.
+     * Header language toggle retired: the bare code chip ("SW")
+     * was redundant with the footer language switcher and read as
+     * visual noise in the identity bar. The footer item remains
+     * the single, discoverable way to switch language.
      */
-    private String languageCode() {
-
-        String current =
-                LanguageManager.getLanguage(this);
-
-        if ("en".equals(current)) {
-            return "EN";
-        }
-
-        if ("ar".equals(current)) {
-            return "AR";
-        }
-
-        return "SW";
-    }
 
     private void showIslamicHub() {
         String[] items = {
@@ -443,6 +429,21 @@ public class MainActivity extends Activity {
         /*
          * =====================================================
          * TOP IDENTITY
+         *
+         * Layout, leading to trailing:
+         *   1. identity plate  — the brand mark, the wordmark
+         *      MADRASSA and the Arabic "إدارة" directly beneath
+         *      it, all carried on one milky-ivory plate that
+         *      lifts off the girih canvas behind it. The plate
+         *      owns its own background so the wordmark never
+         *      competes with the pattern for legibility.
+         *   2. Kaaba           — hung at the trailing edge on a
+         *      raised, shadowed soil tile so it reads as a 3D
+         *      object and stays a clear, clickable affordance.
+         *
+         * The bare language code ("SW") is intentionally gone
+         * from this bar: the footer carries the full language
+         * switcher, and a lone code here was visual noise.
          * =====================================================
          */
         LinearLayout header =
@@ -456,6 +457,47 @@ public class MainActivity extends Activity {
                 Gravity.CENTER_VERTICAL
         );
 
+        /*
+         * ---- identity plate -------------------------------------
+         */
+        LinearLayout plate =
+                new LinearLayout(this);
+
+        plate.setOrientation(
+                LinearLayout.HORIZONTAL
+        );
+
+        plate.setGravity(
+                Gravity.CENTER_VERTICAL
+        );
+
+        plate.setPadding(
+                dp(7),
+                dp(6),
+                dp(13),
+                dp(6)
+        );
+
+        GradientDrawable plateBg =
+                new GradientDrawable();
+
+        plateBg.setColor(
+                getColor(R.color.edunoor_plate)
+        );
+
+        plateBg.setCornerRadius(
+                getResources().getDimensionPixelSize(
+                        R.dimen.card_radius
+                )
+        );
+
+        plateBg.setStroke(
+                dp(1),
+                getColor(R.color.edunoor_plate_edge)
+        );
+
+        plate.setBackground(plateBg);
+
         ImageView mark =
                 new ImageView(this);
 
@@ -467,11 +509,15 @@ public class MainActivity extends Activity {
                 ImageView.ScaleType.CENTER_INSIDE
         );
 
-        header.addView(
+        mark.setContentDescription(
+                getString(R.string.brand_title)
+        );
+
+        plate.addView(
                 mark,
                 new LinearLayout.LayoutParams(
-                        dp(46),
-                        dp(46)
+                        dp(38),
+                        dp(38)
                 )
         );
 
@@ -541,56 +587,114 @@ public class MainActivity extends Activity {
                 )
         );
 
-        header.addView(
+        plate.addView(
                 brand,
                 new LinearLayout.LayoutParams(
                         0,
-                        -1,
+                        -2,
                         1
                 )
         );
 
-        ImageView islamicHub = new ImageView(this);
-        islamicHub.setImageResource(R.drawable.edunoor_kaaba);
-        islamicHub.setContentDescription(
-                getString(R.string.landing_islamic_hub)
-        );
-        islamicHub.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        islamicHub.setPadding(dp(5), dp(5), dp(5), dp(5));
-        pressEffect(islamicHub);
-        islamicHub.setOnClickListener(v -> showIslamicHub());
         header.addView(
-                islamicHub,
-                new LinearLayout.LayoutParams(dp(52), dp(52))
+                plate,
+                new LinearLayout.LayoutParams(
+                        0,
+                        -2,
+                        1
+                )
         );
 
-        TextView headerMark =
-                text(
-                        languageCode(),
-                        13,
-                        gold,
-                        true
+        /*
+         * ---- Kaaba, hung at the trailing edge ------------------
+         */
+        FrameLayout hubTile =
+                new FrameLayout(this);
+
+        LinearLayout.LayoutParams hubTileParams =
+                new LinearLayout.LayoutParams(
+                        dp(58),
+                        dp(58)
                 );
 
-        headerMark.setGravity(
-                Gravity.CENTER
+        /*
+         * Hangs off the trailing edge of the bar so it reads as
+         * a suspended 3D object, not a flat inline icon.
+         */
+        hubTileParams.gravity =
+                Gravity.END | Gravity.CENTER_VERTICAL;
+
+        hubTileParams.setMargins(
+                0,
+                dp(4),
+                dp(-10),
+                dp(4)
         );
 
-        headerMark.setContentDescription(
-                getString(R.string.language_switch_label)
-        );
-        pressEffect(headerMark);
+        GradientDrawable hubBg =
+                new GradientDrawable();
 
-        headerMark.setOnClickListener(
-                v -> showLanguageDialog()
+        hubBg.setColor(
+                getColor(R.color.edunoor_soil)
+        );
+
+        hubBg.setCornerRadius(
+                dp(17)
+        );
+
+        hubBg.setStroke(
+                dp(1),
+                getColor(R.color.edunoor_gold_deep)
+        );
+
+        hubTile.setBackground(hubBg);
+
+        /*
+         * A small lift gives the tile physical depth without a
+         * heavy drop.
+         */
+        hubTile.setElevation(dp(8));
+
+        ImageView islamicHub = new ImageView(this);
+
+        islamicHub.setImageResource(R.drawable.edunoor_kaaba);
+
+        islamicHub.setScaleType(
+                ImageView.ScaleType.CENTER_INSIDE
+        );
+
+        islamicHub.setPadding(
+                dp(9),
+                dp(9),
+                dp(9),
+                dp(9)
+        );
+
+        hubTile.addView(
+                islamicHub,
+                new FrameLayout.LayoutParams(
+                        -1,
+                        -1
+                )
+        );
+
+        /*
+         * The whole tile is the target, not just the glyph, so
+         * the touch area clears the 48dp accessibility minimum.
+         */
+        pressEffect(hubTile);
+
+        hubTile.setOnClickListener(
+                v -> showIslamicHub()
+        );
+
+        hubTile.setContentDescription(
+                getString(R.string.landing_islamic_hub)
         );
 
         header.addView(
-                headerMark,
-                new LinearLayout.LayoutParams(
-                        dp(48),
-                        dp(48)
-                )
+                hubTile,
+                hubTileParams
         );
 
         root.addView(

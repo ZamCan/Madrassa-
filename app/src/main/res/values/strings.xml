@@ -7,14 +7,14 @@
     <string name="greeting">﷽</string>
     <string name="hero_title">مَرْحَبًا بِكُمْ فِي رِحَابِ الْعِلْمِ وَالْقُرْآنِ</string>
     <string name="splash_tagline">Madrassa Management System</string>
-    <string name="hero_description">Elimu • Malezi • Maendeleo</string>
+    <string name="hero_description">Elimu • Adabu • Maendeleo</string>
 
     <string name="parent_title">MZAZI</string>
-    <string name="parent_subtitle">Fuatilia maendeleo ya mtoto</string>
+    <string name="parent_subtitle">Fuatilia maendeleo ya mwanafunzi wenu</string>
     <string name="parent_action">Endelea kama Mzazi</string>
 
     <string name="ustadh_title">USTADH</string>
-    <string name="ustadh_subtitle">Simamia Madrassa yako</string>
+    <string name="ustadh_subtitle">Simamia Madrassa yenu kwa utendaji</string>
     <string name="ustadh_action">Endelea kama Ustadh</string>
 
     <string name="language">Lugha</string>
@@ -25,7 +25,7 @@
     <!-- V7.1 Authentication -->
     <string name="parent_role">MZAZI/MLEZI</string>
     <string name="parent_login_title">INGIA KAMA MZAZI/MLEZI</string>
-    <string name="parent_login_subtitle">Fuatilia maendeleo ya mtoto</string>
+    <string name="parent_login_subtitle">Fuatilia maendeleo ya mwanafunzi wenu</string>
     <string name="phone_number">Namba ya simu</string>
     <string name="password">Nenosiri</string>
     <string name="login">INGIA</string>

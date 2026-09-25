@@ -9,12 +9,13 @@
         <item name="android:fontFamily">sans</item>
         <item name="android:windowActionModeOverlay">true</item>
 
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@color/edunoor_background</item>
+        <!-- Warm soil bars: light icons on a dark surface, so
+             windowLight* stays off. -->
+        <item name="android:statusBarColor">@color/edunoor_soil_deep</item>
 
-        <item name="android:navigationBarColor">@color/edunoor_background</item>
+        <item name="android:navigationBarColor">@color/edunoor_soil_deep</item>
 
-        <item name="android:colorAccent">@color/edunoor_clay</item>
+        <item name="android:colorAccent">@color/edunoor_gold</item>
 
     </style>
 

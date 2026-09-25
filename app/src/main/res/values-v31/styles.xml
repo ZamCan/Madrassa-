@@ -2,10 +2,11 @@
 <resources>
 
     <!--
-        API 31+: the system owns the first splash. Tinting it with
-        the EduNoor emerald night canvas makes the system splash and
-        SplashActivity read as one continuous brand entrance instead
-        of a white flash followed by a second screen.
+        API 31+: the system owns the first splash. It is tinted with
+        the same earthen soil plate as the launcher icon, so the
+        system splash, the launcher tile and SplashActivity read as
+        one continuous brand entrance rather than a white flash
+        followed by an unrelated second screen.
     -->
     <style name="AppTheme"
         parent="@android:style/Theme.Material.Light.NoActionBar">
@@ -13,16 +14,14 @@
         <item name="android:fontFamily">sans</item>
         <item name="android:windowActionModeOverlay">true</item>
 
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@color/edunoor_background</item>
+        <item name="android:statusBarColor">@color/edunoor_soil_deep</item>
 
-        <item name="android:navigationBarColor">@color/edunoor_background</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarColor">@color/edunoor_soil_deep</item>
 
-        <item name="android:colorAccent">@color/edunoor_clay</item>
+        <item name="android:colorAccent">@color/edunoor_gold</item>
 
         <item name="android:windowSplashScreenBackground">
-            @color/edunoor_emerald_deep
+            @color/edunoor_soil_deep
         </item>
 
         <item name="android:windowSplashScreenAnimatedIcon">

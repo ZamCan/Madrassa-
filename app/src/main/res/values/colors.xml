@@ -43,4 +43,19 @@
 
     <!-- Adaptive launcher icon background -->
     <color name="ic_launcher_bg">#04120D</color>
+
+    <!-- ============================================================ -->
+    <!-- Earthen soil family — the MY MADRASSA identity surface.    -->
+    <!-- Used for the launcher icon plate, the Android 12+ system   -->
+    <!-- splash, and the identity box on the landing header.        -->
+    <!-- Kept warm and desaturated so gold and ivory still read as -->
+    <!-- the focal accents rather than competing.                   -->
+    <!-- ============================================================ -->
+    <color name="edunoor_soil">#4A3A2C</color>
+    <color name="edunoor_soil_deep">#33271D</color>
+    <color name="edunoor_soil_soft">#6B5540</color>
+    <color name="edunoor_soil_line">#8A6E52</color>
+    <!-- Milky ivory plate that carries the wordmark on the landing -->
+    <color name="edunoor_plate">#FBF6EC</color>
+    <color name="edunoor_plate_edge">#E3D3B8</color>
 </resources>
