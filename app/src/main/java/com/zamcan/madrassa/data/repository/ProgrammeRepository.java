@@ -115,8 +115,7 @@ public final class ProgrammeRepository implements ProgrammeStore {
     ) {
         List<Programme> result = new ArrayList<>();
 
-        if (selectionArgs.length == 0
-                || blank(selectionArgs[0])) {
+        if (selectionArgs.length > 0 && blank(selectionArgs[0])) {
             return result;
         }
 

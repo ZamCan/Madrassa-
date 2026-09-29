@@ -14,53 +14,8 @@ public class LocalGeographyRepository
             datasetRegistry;
 
     public LocalGeographyRepository() {
-
-        datasetRegistry =
-                new GeographyDatasetRegistry();
-
-        countries.add(
-                new Country(
-                        "TZ",
-                        "Tanzania",
-                        true,
-                        true,
-                        true,
-                        "+255"
-                )
-        );
-
-        countries.add(
-                new Country(
-                        "KE",
-                        "Kenya",
-                        false,
-                        true,
-                        true,
-                        "+254"
-                )
-        );
-
-        countries.add(
-                new Country(
-                        "UG",
-                        "Uganda",
-                        false,
-                        true,
-                        true,
-                        "+256"
-                )
-        );
-
-        countries.add(
-                new Country(
-                        "EG",
-                        "Egypt",
-                        false,
-                        true,
-                        true,
-                        "+20"
-                )
-        );
+        datasetRegistry = new GeographyDatasetRegistry();
+        countries.addAll(CountryCatalog.all());
     }
 
     /*

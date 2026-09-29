@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
+import com.zamcan.madrassa.data.local.DatabaseTransactionRunner;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.repository.StudentStore;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public final class StudentRepository implements StudentStore {
 
     private final EduNoorDatabase database;
+    private final DatabaseTransactionRunner transactions;
 
     public StudentRepository(EduNoorDatabase database) {
         if (database == null) {
@@ -23,6 +25,7 @@ public final class StudentRepository implements StudentStore {
         }
 
         this.database = database;
+        this.transactions = new DatabaseTransactionRunner(database);
     }
 
     @Override
@@ -125,45 +128,44 @@ public final class StudentRepository implements StudentStore {
     public void save(Student student) {
         validate(student);
 
-        SQLiteDatabase db = database.getWritableDatabase();
-
-        db.insertOrThrow(
-                "students",
-                null,
-                values(student)
-        );
-
-        saveProgrammeLinks(db, student);
+        transactions.run(new DatabaseTransactionRunner.TransactionWork() {
+            @Override
+            public void execute(SQLiteDatabase db) {
+                db.insertOrThrow("students", null, values(student));
+                saveProgrammeLinks(db, student);
+            }
+        });
     }
 
     @Override
     public void update(Student student) {
         validate(student);
 
-        SQLiteDatabase db = database.getWritableDatabase();
+        transactions.run(new DatabaseTransactionRunner.TransactionWork() {
+            @Override
+            public void execute(SQLiteDatabase db) {
+                int affected = db.update(
+                        "students",
+                        values(student),
+                        "id = ?",
+                        new String[]{student.id.trim()}
+                );
 
-        int affected = db.update(
-                "students",
-                values(student),
-                "id = ?",
-                new String[]{student.id.trim()}
-        );
+                if (affected != 1) {
+                    throw new IllegalStateException(
+                            "Student update affected " + affected + " rows."
+                    );
+                }
 
-        if (affected != 1) {
-            throw new IllegalStateException(
-                    "Student update affected " +
-                            affected +
-                            " rows."
-            );
-        }
+                db.delete(
+                        "student_programmes",
+                        "student_id = ?",
+                        new String[]{student.id.trim()}
+                );
 
-        db.delete(
-                "student_programmes",
-                "student_id = ?",
-                new String[]{student.id.trim()}
-        );
-
-        saveProgrammeLinks(db, student);
+                saveProgrammeLinks(db, student);
+            }
+        });
     }
 
     private Student map(

@@ -3,6 +3,7 @@ package com.zamcan.madrassa.domain.students;
 import com.zamcan.madrassa.data.model.Programme;
 import com.zamcan.madrassa.data.model.Student;
 import com.zamcan.madrassa.domain.common.TenantPolicy;
+import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.repository.ProgrammeStore;
 import com.zamcan.madrassa.domain.repository.StudentStore;
 
@@ -10,31 +11,31 @@ public final class StudentProgrammeEnrollmentService {
 
     private final StudentStore studentStore;
     private final ProgrammeStore programmeStore;
+    private final MadrassaAccessContext accessContext;
 
     public StudentProgrammeEnrollmentService(
             StudentStore studentStore,
-            ProgrammeStore programmeStore
+            ProgrammeStore programmeStore,
+            MadrassaAccessContext accessContext
     ) {
+        if (studentStore == null || programmeStore == null || accessContext == null) {
+            throw new IllegalArgumentException("enrollment dependencies are required");
+        }
         this.studentStore = studentStore;
         this.programmeStore = programmeStore;
+        this.accessContext = accessContext;
     }
 
     public void enroll(
             String studentId,
             String programmeId
     ) {
-        Student student =
-                requireStudent(studentId);
+        Student student = requireStudent(studentId);
 
-        Programme programme =
-                requireProgramme(programmeId);
+        Programme programme = requireProgramme(programmeId);
 
         requireActive(student, programme);
-
-        TenantPolicy.requireSameMadrassa(
-                student.madrassaId,
-                programme.madrassaId
-        );
+        requireTenant(student, programme);
 
         if (student.programmeIds == null) {
             throw new IllegalStateException(
@@ -42,9 +43,7 @@ public final class StudentProgrammeEnrollmentService {
             );
         }
 
-        if (!student.programmeIds.contains(
-                programme.id
-        )) {
+        if (!student.programmeIds.contains(programme.id)) {
             student.programmeIds.add(
                     programme.id
             );
@@ -63,10 +62,7 @@ public final class StudentProgrammeEnrollmentService {
         Programme programme =
                 requireProgramme(programmeId);
 
-        TenantPolicy.requireSameMadrassa(
-                student.madrassaId,
-                programme.madrassaId
-        );
+        requireTenant(student, programme);
 
         if (student.programmeIds == null) {
             return;
@@ -135,6 +131,14 @@ public final class StudentProgrammeEnrollmentService {
         }
 
         return programme;
+    }
+
+    private void requireTenant(Student student, Programme programme) {
+        if (!accessContext.allows(student.madrassaId)
+                || !accessContext.allows(programme.madrassaId)) {
+            throw new SecurityException("Enrollment is outside the authorized Madrassa.");
+        }
+        TenantPolicy.requireSameMadrassa(student.madrassaId, programme.madrassaId);
     }
 
     private void requireActive(
