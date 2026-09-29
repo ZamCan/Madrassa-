@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "pack_id": "edunoor.academic.foundation.tz.v1",
   "title": {
     "sw": "Msingi wa Mafunzo ya Madrassa",
@@ -16,261 +16,1373 @@
   "subjects": [
     {
       "id": "quran",
-      "name": {"sw":"Qur'ani","en":"Qur'an","ar":"القرآن"},
-      "purpose": {"sw":"Kusoma, kuelewa, kuhifadhi na kuheshimu Kitabu cha Allah.","en":"Read, understand, memorise and honour the Book of Allah.","ar":"قراءة كتاب الله وفهمه وحفظه وتعظيمه."}
+      "name": {
+        "sw": "Qur'ani",
+        "en": "Qur'an",
+        "ar": "القرآن"
+      },
+      "purpose": {
+        "sw": "Kusoma, kuelewa, kuhifadhi na kuheshimu Kitabu cha Allah.",
+        "en": "Read, understand, memorise and honour the Book of Allah.",
+        "ar": "قراءة كتاب الله وفهمه وحفظه وتعظيمه."
+      }
     },
     {
       "id": "tajwid",
-      "name": {"sw":"Tajwidi","en":"Tajwid","ar":"التجويد"},
-      "purpose": {"sw":"Kusoma Qur'ani kwa matamshi na kanuni sahihi.","en":"Apply disciplined Qur'anic pronunciation and recitation rules.","ar":"ضبط تلاوة القرآن ومخارج الحروف وصفاتها وأحكامها."}
+      "name": {
+        "sw": "Tajwidi",
+        "en": "Tajwid",
+        "ar": "التجويد"
+      },
+      "purpose": {
+        "sw": "Kusoma Qur'ani kwa matamshi na kanuni sahihi.",
+        "en": "Apply disciplined Qur'anic pronunciation and recitation rules.",
+        "ar": "ضبط تلاوة القرآن ومخارج الحروف وصفاتها وأحكامها."
+      }
     },
     {
       "id": "fiqh",
-      "name": {"sw":"Fiqhi na Ibada","en":"Fiqh and Worship","ar":"الفقه والعبادات"},
-      "purpose": {"sw":"Kujifunza ibada kwa dalili na kutambua tofauti za kifiqhi kwa uaminifu.","en":"Learn worship through evidence while representing jurisprudential differences honestly.","ar":"تعلم العبادات بالدليل مع بيان الاختلاف الفقهي بأمانة."}
+      "name": {
+        "sw": "Fiqhi na Ibada",
+        "en": "Fiqh and Worship",
+        "ar": "الفقه والعبادات"
+      },
+      "purpose": {
+        "sw": "Kujifunza ibada kwa dalili na kutambua tofauti za kifiqhi kwa uaminifu.",
+        "en": "Learn worship through evidence while representing jurisprudential differences honestly.",
+        "ar": "تعلم العبادات بالدليل مع بيان الاختلاف الفقهي بأمانة."
+      }
     },
     {
       "id": "hadith",
-      "name": {"sw":"Hadithi","en":"Hadith","ar":"الحديث"},
-      "purpose": {"sw":"Kusoma hadithi kwa chanzo, maana, mafunzo na matumizi.","en":"Study hadith through source, meaning, lessons and application.","ar":"دراسة الحديث من جهة المصدر والمعنى والفوائد والتطبيق."}
+      "name": {
+        "sw": "Hadithi",
+        "en": "Hadith",
+        "ar": "الحديث"
+      },
+      "purpose": {
+        "sw": "Kusoma hadithi kwa chanzo, maana, mafunzo na matumizi.",
+        "en": "Study hadith through source, meaning, lessons and application.",
+        "ar": "دراسة الحديث من جهة المصدر والمعنى والفوائد والتطبيق."
+      }
     },
     {
       "id": "aqidah",
-      "name": {"sw":"Aqida / Tawhidi","en":"Aqidah / Tawhid","ar":"العقيدة والتوحيد"},
-      "purpose": {"sw":"Kujenga uelewa wa msingi wa imani na ibada ya Allah.","en":"Build foundational understanding of faith and worship of Allah.","ar":"بناء الفهم الأساسي للإيمان وعبادة الله."}
+      "name": {
+        "sw": "Aqida / Tawhidi",
+        "en": "Aqidah / Tawhid",
+        "ar": "العقيدة والتوحيد"
+      },
+      "purpose": {
+        "sw": "Kujenga uelewa wa msingi wa imani na ibada ya Allah.",
+        "en": "Build foundational understanding of faith and worship of Allah.",
+        "ar": "بناء الفهم الأساسي للإيمان وعبادة الله."
+      }
     },
     {
       "id": "sirah",
-      "name": {"sw":"Sira ya Mtume ﷺ","en":"Prophetic Sirah","ar":"السيرة النبوية"},
-      "purpose": {"sw":"Kujifunza maisha ya Mtume ﷺ kwa mpangilio wa kihistoria na mafunzo.","en":"Study the Prophet's life chronologically and extract lessons.","ar":"دراسة حياة النبي ﷺ زمنياً واستخراج الدروس."}
+      "name": {
+        "sw": "Sira ya Mtume ﷺ",
+        "en": "Prophetic Sirah",
+        "ar": "السيرة النبوية"
+      },
+      "purpose": {
+        "sw": "Kujifunza maisha ya Mtume ﷺ kwa mpangilio wa kihistoria na mafunzo.",
+        "en": "Study the Prophet's life chronologically and extract lessons.",
+        "ar": "دراسة حياة النبي ﷺ زمنياً واستخراج الدروس."
+      }
     },
     {
       "id": "arabic",
-      "name": {"sw":"Kiarabu","en":"Arabic","ar":"اللغة العربية"},
-      "purpose": {"sw":"Kujenga usomaji, msamiati, uandishi na sarufi kwa ajili ya ufahamu wa dini.","en":"Build reading, vocabulary, writing and grammar for Islamic learning.","ar":"بناء القراءة والمفردات والكتابة والنحو لخدمة التعلم الشرعي."}
+      "name": {
+        "sw": "Kiarabu",
+        "en": "Arabic",
+        "ar": "اللغة العربية"
+      },
+      "purpose": {
+        "sw": "Kujenga usomaji, msamiati, uandishi na sarufi kwa ajili ya ufahamu wa dini.",
+        "en": "Build reading, vocabulary, writing and grammar for Islamic learning.",
+        "ar": "بناء القراءة والمفردات والكتابة والنحو لخدمة التعلم الشرعي."
+      }
     },
     {
       "id": "akhlaq",
-      "name": {"sw":"Akhlaqi na Adabu","en":"Akhlaq and Adab","ar":"الأخلاق والآداب"},
-      "purpose": {"sw":"Kugeuza elimu kuwa tabia, heshima na uwajibikaji.","en":"Turn knowledge into character, respect and responsibility.","ar":"تحويل العلم إلى خلق وأدب ومسؤولية."}
+      "name": {
+        "sw": "Akhlaqi na Adabu",
+        "en": "Akhlaq and Adab",
+        "ar": "الأخلاق والآداب"
+      },
+      "purpose": {
+        "sw": "Kugeuza elimu kuwa tabia, heshima na uwajibikaji.",
+        "en": "Turn knowledge into character, respect and responsibility.",
+        "ar": "تحويل العلم إلى خلق وأدب ومسؤولية."
+      }
     }
   ],
   "lessons": [
     {
-      "id":"quran_001",
-      "subject":"quran",
-      "title":{"sw":"Kwa nini tunajifunza Qur'ani?","en":"Why do we learn the Qur'an?","ar":"لماذا نتعلم القرآن؟"},
-      "duration_minutes":45,
-      "level":"foundation",
-      "objectives":["Kutambua Qur'ani kama wahyi wa Allah.","Kueleza tofauti kati ya kusoma, kuhifadhi na kutafakari.","Kuweka lengo la somo la Qur'ani kwa heshima na uthabiti."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Salamu, nia, mahudhurio na kukumbusha adabu ya kushika/kusoma Qur'ani.","en":"Greeting, intention, attendance and Qur'an learning etiquette.","ar":"السلام، النية، الحضور وآداب تعلم القرآن."},
-        {"phase":"teach","sw":"Eleza kuwa Qur'ani ni wahyi wa Allah na somo linahitaji usomaji, uelewa na matendo.","en":"Explain revelation, then connect recitation, understanding and action.","ar":"بيان أن القرآن وحي من الله وربط التلاوة بالفهم والعمل."},
-        {"phase":"demonstrate","sw":"Ustadh asome aya kwa utulivu, wanafunzi wasikilize kisha warudie kwa zamu.","en":"Teacher recites calmly; learners listen and repeat in turns.","ar":"يقرأ الأستاذ بهدوء ثم يستمع الطلاب ويكررون بالتناوب."},
-        {"phase":"practice","sw":"Kila mwanafunzi atoe usomaji mfupi; mwalimu aandike kosa moja la msingi na marekebisho yake.","en":"Each learner reads briefly; teacher records one key correction.","ar":"يقرأ كل طالب مقطعاً قصيراً ويسجل المعلم تصحيحاً أساسياً."}
+      "id": "quran_001",
+      "subject": "quran",
+      "title": {
+        "sw": "Kwa nini tunajifunza Qur'ani?",
+        "en": "Why do we learn the Qur'an?",
+        "ar": "لماذا نتعلم القرآن؟"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua Qur'ani kama wahyi wa Allah.",
+        "Kueleza tofauti kati ya kusoma, kuhifadhi na kutafakari.",
+        "Kuweka lengo la somo la Qur'ani kwa heshima na uthabiti."
       ],
-      "knowledge":{"sw":"Kujifunza Qur'ani si mashindano ya kasi. Mwalimu anajenga usahihi, heshima, uelewa na mazoea ya kurudia.","en":"Qur'an learning is not a speed contest. The teacher builds accuracy, reverence, understanding and revision habits.","ar":"تعلم القرآن ليس مسابقة سرعة، بل يبني الإتقان والتعظيم والفهم والمراجعة."},
-      "assessment":["Taja malengo mawili ya kujifunza Qur'ani.","Soma kifungu ulicopewa kwa utulivu.","Eleza kwa maneno yako kwa nini kurudia ni muhimu."],
-      "homework":"Rudia kifungu cha darasani mara 3 na andika sehemu iliyohitaji marekebisho.",
-      "references":[{"type":"quran","ref":"73:4","note":"Recite the Qur'an with measured recitation."},{"type":"hadith","ref":"Sahih al-Bukhari 5027","note":"The virtue of learning and teaching the Qur'an."}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kukumbusha adabu ya kushika/kusoma Qur'ani.",
+          "en": "Greeting, intention, attendance and Qur'an learning etiquette.",
+          "ar": "السلام، النية، الحضور وآداب تعلم القرآن."
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza kuwa Qur'ani ni wahyi wa Allah na somo linahitaji usomaji, uelewa na matendo.",
+          "en": "Explain revelation, then connect recitation, understanding and action.",
+          "ar": "بيان أن القرآن وحي من الله وربط التلاوة بالفهم والعمل."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh asome aya kwa utulivu, wanafunzi wasikilize kisha warudie kwa zamu.",
+          "en": "Teacher recites calmly; learners listen and repeat in turns.",
+          "ar": "يقرأ الأستاذ بهدوء ثم يستمع الطلاب ويكررون بالتناوب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Kila mwanafunzi atoe usomaji mfupi; mwalimu aandike kosa moja la msingi na marekebisho yake.",
+          "en": "Each learner reads briefly; teacher records one key correction.",
+          "ar": "يقرأ كل طالب مقطعاً قصيراً ويسجل المعلم تصحيحاً أساسياً."
+        }
+      ],
+      "knowledge": {
+        "sw": "Kujifunza Qur'ani si mashindano ya kasi. Mwalimu anajenga usahihi, heshima, uelewa na mazoea ya kurudia.",
+        "en": "Qur'an learning is not a speed contest. The teacher builds accuracy, reverence, understanding and revision habits.",
+        "ar": "تعلم القرآن ليس مسابقة سرعة، بل يبني الإتقان والتعظيم والفهم والمراجعة."
+      },
+      "assessment": [
+        "Taja malengo mawili ya kujifunza Qur'ani.",
+        "Soma kifungu ulicopewa kwa utulivu.",
+        "Eleza kwa maneno yako kwa nini kurudia ni muhimu."
+      ],
+      "homework": "Rudia kifungu cha darasani mara 3 na andika sehemu iliyohitaji marekebisho.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "73:4",
+          "note": "Recite the Qur'an with measured recitation."
+        },
+        {
+          "type": "hadith",
+          "ref": "Sahih al-Bukhari 5027",
+          "note": "The virtue of learning and teaching the Qur'an."
+        }
+      ]
     },
     {
-      "id":"quran_002",
-      "subject":"quran",
-      "title":{"sw":"Kusoma kwa usahihi: kusikia, kuiga, kurekebisha","en":"Accurate recitation: listen, imitate, correct","ar":"الإتقان في التلاوة: الاستماع والمحاكاة والتصحيح"},
-      "duration_minutes":50,
-      "level":"foundation",
-      "objectives":["Kusoma kwa kuzingatia matamshi.","Kugundua kosa la sauti kabla ya kuendelea.","Kutumia mzunguko wa sikiliza-rudia-rekebisha."],
-      "teacher_flow":[
-        {"phase":"revision","sw":"Rudia kifungu cha jana kwa makundi madogo.","en":"Review yesterday's passage in small groups.","ar":"مراجعة مقطع الأمس في مجموعات صغيرة."},
-        {"phase":"teach","sw":"Eleza kuwa kosa linaloathiri herufi au haraka linahitaji kusimamishwa na kurekebishwa, si kufichwa.","en":"Explain that a material pronunciation error should be corrected rather than passed over.","ar":"بيان ضرورة تصحيح الخطأ المؤثر في الحرف أو الحركة."},
-        {"phase":"demonstrate","sw":"Soma mfano sahihi, kisha mfano wenye kosa واضحة, waulize wanafunzi watambue tofauti.","en":"Model a correct and intentionally incorrect example; learners identify the difference.","ar":"عرض المثال الصحيح والخطأ المقصود ليحدد الطلاب الفرق."},
-        {"phase":"practice","sw":"Pair work: mwanafunzi A anasoma, B anafuata maandishi; kisha wanabadilishana.","en":"Pair work: one reads while the other follows the text, then switch.","ar":"عمل ثنائي: يقرأ أحدهما ويتابع الآخر النص ثم يتبادلان."}
+      "id": "quran_002",
+      "subject": "quran",
+      "title": {
+        "sw": "Kusoma kwa usahihi: kusikia, kuiga, kurekebisha",
+        "en": "Accurate recitation: listen, imitate, correct",
+        "ar": "الإتقان في التلاوة: الاستماع والمحاكاة والتصحيح"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kusoma kwa kuzingatia matamshi.",
+        "Kugundua kosa la sauti kabla ya kuendelea.",
+        "Kutumia mzunguko wa sikiliza-rudia-rekebisha."
       ],
-      "knowledge":{"sw":"Usahihi wa Qur'ani unajengwa kwa kusikiliza mfano sahihi, kuiga, kupata marekebisho na kurudia kwa vipindi.","en":"Accuracy grows through correct modelling, imitation, feedback and spaced revision.","ar":"يتحقق الإتقان بالنموذج الصحيح والمحاكاة والتصحيح والمراجعة المتدرجة."},
-      "assessment":["Soma mistari iliyochaguliwa.","Taja kosa moja ulilorekebisha leo.","Onyesha kwa vitendo mzunguko wa kusikia-rudia-rekebisha."],
-      "homework":"Dakika 10 za usomaji uliorekodiwa na kujikagua kwa orodha ya makosa.",
-      "references":[{"type":"quran","ref":"73:4","note":"Measured recitation."}]
+      "teacher_flow": [
+        {
+          "phase": "revision",
+          "sw": "Rudia kifungu cha jana kwa makundi madogo.",
+          "en": "Review yesterday's passage in small groups.",
+          "ar": "مراجعة مقطع الأمس في مجموعات صغيرة."
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza kuwa kosa linaloathiri herufi au haraka linahitaji kusimamishwa na kurekebishwa, si kufichwa.",
+          "en": "Explain that a material pronunciation error should be corrected rather than passed over.",
+          "ar": "بيان ضرورة تصحيح الخطأ المؤثر في الحرف أو الحركة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Soma mfano sahihi, kisha mfano wenye kosa واضحة, waulize wanafunzi watambue tofauti.",
+          "en": "Model a correct and intentionally incorrect example; learners identify the difference.",
+          "ar": "عرض المثال الصحيح والخطأ المقصود ليحدد الطلاب الفرق."
+        },
+        {
+          "phase": "practice",
+          "sw": "Pair work: mwanafunzi A anasoma, B anafuata maandishi; kisha wanabadilishana.",
+          "en": "Pair work: one reads while the other follows the text, then switch.",
+          "ar": "عمل ثنائي: يقرأ أحدهما ويتابع الآخر النص ثم يتبادلان."
+        }
+      ],
+      "knowledge": {
+        "sw": "Usahihi wa Qur'ani unajengwa kwa kusikiliza mfano sahihi, kuiga, kupata marekebisho na kurudia kwa vipindi.",
+        "en": "Accuracy grows through correct modelling, imitation, feedback and spaced revision.",
+        "ar": "يتحقق الإتقان بالنموذج الصحيح والمحاكاة والتصحيح والمراجعة المتدرجة."
+      },
+      "assessment": [
+        "Soma mistari iliyochaguliwa.",
+        "Taja kosa moja ulilorekebisha leo.",
+        "Onyesha kwa vitendo mzunguko wa kusikia-rudia-rekebisha."
+      ],
+      "homework": "Dakika 10 za usomaji uliorekodiwa na kujikagua kwa orodha ya makosa.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "73:4",
+          "note": "Measured recitation."
+        }
+      ]
     },
     {
-      "id":"tajwid_001",
-      "subject":"tajwid",
-      "title":{"sw":"Makhārij: herufi hutoka wapi?","en":"Makharij: where do letters come from?","ar":"مخارج الحروف"},
-      "duration_minutes":50,
-      "level":"foundation",
-      "objectives":["Kuelewa maana ya makhraj.","Kutambua maeneo makuu ya kutokea kwa sauti.","Kufanya mazoezi ya kusikia na kutamka herufi zinazofanana."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Warm-up ya sauti bila kukimbiza.","en":"Controlled pronunciation warm-up.","ar":"تمرين نطقي منضبط."},
-        {"phase":"teach","sw":"Tambulisha maeneo makuu ya kutokea kwa herufi na eleza kuwa tofauti ndogo za matamshi zinaweza kubadili herufi.","en":"Introduce the principal articulation regions and why precision matters.","ar":"بيان المخارج الأساسية وأهمية الدقة في تمييز الحروف."},
-        {"phase":"demonstrate","sw":"Ustadh atamke jozi za herufi zinazoweza kuchanganywa na aonyeshe nafasi ya ulimi/mdomo.","en":"Demonstrate commonly confused letter pairs and mouth/tongue placement.","ar":"عرض أزواج الحروف المتقاربة وموضع اللسان والفم."},
-        {"phase":"practice","sw":"Wanafunzi watamke jozi kwa sauti ya chini, kisha mmoja mmoja.","en":"Learners practise pairs quietly, then individually.","ar":"يتدرب الطلاب على الأزواج ثم فردياً."}
+      "id": "tajwid_001",
+      "subject": "tajwid",
+      "title": {
+        "sw": "Makhārij: herufi hutoka wapi?",
+        "en": "Makharij: where do letters come from?",
+        "ar": "مخارج الحروف"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kuelewa maana ya makhraj.",
+        "Kutambua maeneo makuu ya kutokea kwa sauti.",
+        "Kufanya mazoezi ya kusikia na kutamka herufi zinazofanana."
       ],
-      "knowledge":{"sw":"Makhārij ni msingi wa kutenganisha herufi. Mazoezi yanapaswa kuanzia sauti rahisi kwenda maneno na aya.","en":"Makharij underpin letter distinction; practice should move from isolated sounds to words and verses.","ar":"المخارج أساس تمييز الحروف، والتدريب ينتقل من الصوت المفرد إلى الكلمة والآية."},
-      "assessment":["Taja maana ya makhraj.","Tamka jozi mbili zilizofundishwa.","Mwalimu athibitishe usahihi wa mwanafunzi mmoja mmoja."],
-      "homework":"Mazoezi ya jozi za herufi kwa dakika 5–10 kila siku.",
-      "references":[{"type":"curriculum_note","ref":"Tajwid foundation","note":"Detailed articulation classifications should follow the madrassa's adopted tajwid text."}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Warm-up ya sauti bila kukimbiza.",
+          "en": "Controlled pronunciation warm-up.",
+          "ar": "تمرين نطقي منضبط."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambulisha maeneo makuu ya kutokea kwa herufi na eleza kuwa tofauti ndogo za matamshi zinaweza kubadili herufi.",
+          "en": "Introduce the principal articulation regions and why precision matters.",
+          "ar": "بيان المخارج الأساسية وأهمية الدقة في تمييز الحروف."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh atamke jozi za herufi zinazoweza kuchanganywa na aonyeshe nafasi ya ulimi/mdomo.",
+          "en": "Demonstrate commonly confused letter pairs and mouth/tongue placement.",
+          "ar": "عرض أزواج الحروف المتقاربة وموضع اللسان والفم."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi watamke jozi kwa sauti ya chini, kisha mmoja mmoja.",
+          "en": "Learners practise pairs quietly, then individually.",
+          "ar": "يتدرب الطلاب على الأزواج ثم فردياً."
+        }
+      ],
+      "knowledge": {
+        "sw": "Makhārij ni msingi wa kutenganisha herufi. Mazoezi yanapaswa kuanzia sauti rahisi kwenda maneno na aya.",
+        "en": "Makharij underpin letter distinction; practice should move from isolated sounds to words and verses.",
+        "ar": "المخارج أساس تمييز الحروف، والتدريب ينتقل من الصوت المفرد إلى الكلمة والآية."
+      },
+      "assessment": [
+        "Taja maana ya makhraj.",
+        "Tamka jozi mbili zilizofundishwa.",
+        "Mwalimu athibitishe usahihi wa mwanafunzi mmoja mmoja."
+      ],
+      "homework": "Mazoezi ya jozi za herufi kwa dakika 5–10 kila siku.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Tajwid foundation",
+          "note": "Detailed articulation classifications should follow the madrassa's adopted tajwid text."
+        }
+      ]
     },
     {
-      "id":"tajwid_002",
-      "subject":"tajwid",
-      "title":{"sw":"Madd ya msingi na muda wa sauti","en":"Foundational madd and controlled length","ar":"المد الأساسي وضبط مقدار الصوت"},
-      "duration_minutes":45,
-      "level":"foundation",
-      "objectives":["Kutambua alama za msingi za madd.","Kutofautisha sauti fupi na iliyorefushwa.","Kusoma mifano kwa kipimo kinachofundishwa na mwalimu."],
-      "teacher_flow":[
-        {"phase":"revision","sw":"Rudia makhārij ya herufi zilizopita.","en":"Review previous articulation work.","ar":"مراجعة المخارج السابقة."},
-        {"phase":"teach","sw":"Tambulisha madd ya asili kwa mfano wa maandishi na usomaji wa mwalimu.","en":"Introduce natural madd using written examples and teacher modelling.","ar":"عرض المد الطبيعي بأمثلة مكتوبة ونموذج صوتي."},
-        {"phase":"demonstrate","sw":"Soma mfano mfupi na mrefu kwa kulinganisha, bila kuharakisha.","en":"Contrast short and extended sound without rushing.","ar":"المقارنة بين الصوت القصير والممدود دون استعجال."},
-        {"phase":"practice","sw":"Wanafunzi warudie kwa makundi na kisha mmoja mmoja.","en":"Group repetition followed by individual turns.","ar":"تكرار جماعي ثم فردي."}
+      "id": "tajwid_002",
+      "subject": "tajwid",
+      "title": {
+        "sw": "Madd ya msingi na muda wa sauti",
+        "en": "Foundational madd and controlled length",
+        "ar": "المد الأساسي وضبط مقدار الصوت"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua alama za msingi za madd.",
+        "Kutofautisha sauti fupi na iliyorefushwa.",
+        "Kusoma mifano kwa kipimo kinachofundishwa na mwalimu."
       ],
-      "knowledge":{"sw":"Madd haipaswi kufundishwa kwa makadirio yasiyo na mpangilio. Tumia kipimo kinachofundishwa katika mtaala wa madrassa na uthibitishe kwa kusikiliza.","en":"Teach madd using the measured convention of the adopted curriculum and verify by listening.","ar":"يُعلّم المد بالمقدار المعتمد في المنهج ويثبت بالسماع والتطبيق."},
-      "assessment":["Tambua mfano wa madd.","Soma mifano miwili kwa kipimo kilichofundishwa.","Eleza tofauti kati ya sauti fupi na iliyorefushwa."],
-      "homework":"Kurudia mifano 10 ya madd kutoka kwenye somo la Qur'ani.",
-      "references":[{"type":"curriculum_note","ref":"Tajwid foundation","note":"Length conventions must be tied to the selected tajwid curriculum."}]
+      "teacher_flow": [
+        {
+          "phase": "revision",
+          "sw": "Rudia makhārij ya herufi zilizopita.",
+          "en": "Review previous articulation work.",
+          "ar": "مراجعة المخارج السابقة."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambulisha madd ya asili kwa mfano wa maandishi na usomaji wa mwalimu.",
+          "en": "Introduce natural madd using written examples and teacher modelling.",
+          "ar": "عرض المد الطبيعي بأمثلة مكتوبة ونموذج صوتي."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Soma mfano mfupi na mrefu kwa kulinganisha, bila kuharakisha.",
+          "en": "Contrast short and extended sound without rushing.",
+          "ar": "المقارنة بين الصوت القصير والممدود دون استعجال."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi warudie kwa makundi na kisha mmoja mmoja.",
+          "en": "Group repetition followed by individual turns.",
+          "ar": "تكرار جماعي ثم فردي."
+        }
+      ],
+      "knowledge": {
+        "sw": "Madd haipaswi kufundishwa kwa makadirio yasiyo na mpangilio. Tumia kipimo kinachofundishwa katika mtaala wa madrassa na uthibitishe kwa kusikiliza.",
+        "en": "Teach madd using the measured convention of the adopted curriculum and verify by listening.",
+        "ar": "يُعلّم المد بالمقدار المعتمد في المنهج ويثبت بالسماع والتطبيق."
+      },
+      "assessment": [
+        "Tambua mfano wa madd.",
+        "Soma mifano miwili kwa kipimo kilichofundishwa.",
+        "Eleza tofauti kati ya sauti fupi na iliyorefushwa."
+      ],
+      "homework": "Kurudia mifano 10 ya madd kutoka kwenye somo la Qur'ani.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Tajwid foundation",
+          "note": "Length conventions must be tied to the selected tajwid curriculum."
+        }
+      ]
     },
     {
-      "id":"fiqh_001",
-      "subject":"fiqh",
-      "title":{"sw":"Wudhu: maandalizi ya ibada","en":"Wudu: preparation for worship","ar":"الوضوء: الاستعداد للعبادة"},
-      "duration_minutes":50,
-      "level":"foundation",
-      "objectives":["Kutambua msingi wa wudhu katika Qur'ani.","Kufanya hatua zinazofundishwa kwa mpangilio.","Kujua kuwa baadhi ya maelezo yana tofauti za kifiqhi."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Uliza: ni lini tunahitaji twahara kabla ya Swala?","en":"Ask when purification is required before prayer.","ar":"متى نحتاج إلى الطهارة قبل الصلاة؟"},
-        {"phase":"teach","sw":"Soma na eleza Qur'ani 5:6 kwa lugha rahisi.","en":"Read and explain Qur'an 5:6 in accessible language.","ar":"قراءة وشرح الآية 5:6 بلغة ميسرة."},
-        {"phase":"demonstrate","sw":"Ustadh aonyeshe hatua kwa vitendo kwa kutumia maji kwa kiasi na usafi wa mazingira.","en":"Teacher demonstrates the adopted sequence practically and hygienically.","ar":"عرض عملي للخطوات المعتمدة مع مراعاة النظافة وعدم الإسراف."},
-        {"phase":"practice","sw":"Wanafunzi wafanye kwa zamu; mwalimu atumie checklist ya hatua.","en":"Learners perform in turns using a teacher checklist.","ar":"يطبق الطلاب بالتناوب باستخدام قائمة تحقق."}
+      "id": "fiqh_001",
+      "subject": "fiqh",
+      "title": {
+        "sw": "Wudhu: maandalizi ya ibada",
+        "en": "Wudu: preparation for worship",
+        "ar": "الوضوء: الاستعداد للعبادة"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua msingi wa wudhu katika Qur'ani.",
+        "Kufanya hatua zinazofundishwa kwa mpangilio.",
+        "Kujua kuwa baadhi ya maelezo yana tofauti za kifiqhi."
       ],
-      "knowledge":{"sw":"Qur'ani 5:6 inaeleza wudhu kabla ya Swala na pia hali za kuhitaji ghusl/tayammum. Maelezo ya hatua na mambo yanayobatilisha yanaweza kutofautiana kwa madhehebu; EduNoor lazima ionyeshe mtaala uliowekwa na madrassa.","en":"Qur'an 5:6 establishes purification instructions. Detailed steps and nullifiers can differ by school; EduNoor must label the adopted curriculum rather than conceal differences.","ar":"تقرر الآية 5:6 أحكام الطهارة، وقد تختلف بعض التفاصيل بين المذاهب، لذلك يجب أن يبيّن EduNoor المنهج المعتمد."},
-      "assessment":["Eleza kwa nini wudhu ni muhimu.","Fanya hatua zilizo kwenye checklist.","Taja kwamba tofauti za kifiqhi zinahitaji kutajwa kwa uwazi."],
-      "homework":"Fanya wudhu kwa kuzingatia checklist na muulize Ustadh akague kosa moja.",
-      "references":[{"type":"quran","ref":"5:6","note":"Purification instructions."}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Uliza: ni lini tunahitaji twahara kabla ya Swala?",
+          "en": "Ask when purification is required before prayer.",
+          "ar": "متى نحتاج إلى الطهارة قبل الصلاة؟"
+        },
+        {
+          "phase": "teach",
+          "sw": "Soma na eleza Qur'ani 5:6 kwa lugha rahisi.",
+          "en": "Read and explain Qur'an 5:6 in accessible language.",
+          "ar": "قراءة وشرح الآية 5:6 بلغة ميسرة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh aonyeshe hatua kwa vitendo kwa kutumia maji kwa kiasi na usafi wa mazingira.",
+          "en": "Teacher demonstrates the adopted sequence practically and hygienically.",
+          "ar": "عرض عملي للخطوات المعتمدة مع مراعاة النظافة وعدم الإسراف."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi wafanye kwa zamu; mwalimu atumie checklist ya hatua.",
+          "en": "Learners perform in turns using a teacher checklist.",
+          "ar": "يطبق الطلاب بالتناوب باستخدام قائمة تحقق."
+        }
+      ],
+      "knowledge": {
+        "sw": "Qur'ani 5:6 inaeleza wudhu kabla ya Swala na pia hali za kuhitaji ghusl/tayammum. Maelezo ya hatua na mambo yanayobatilisha yanaweza kutofautiana kwa madhehebu; EduNoor lazima ionyeshe mtaala uliowekwa na madrassa.",
+        "en": "Qur'an 5:6 establishes purification instructions. Detailed steps and nullifiers can differ by school; EduNoor must label the adopted curriculum rather than conceal differences.",
+        "ar": "تقرر الآية 5:6 أحكام الطهارة، وقد تختلف بعض التفاصيل بين المذاهب، لذلك يجب أن يبيّن EduNoor المنهج المعتمد."
+      },
+      "assessment": [
+        "Eleza kwa nini wudhu ni muhimu.",
+        "Fanya hatua zilizo kwenye checklist.",
+        "Taja kwamba tofauti za kifiqhi zinahitaji kutajwa kwa uwazi."
+      ],
+      "homework": "Fanya wudhu kwa kuzingatia checklist na muulize Ustadh akague kosa moja.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "5:6",
+          "note": "Purification instructions."
+        }
+      ]
     },
     {
-      "id":"fiqh_002",
-      "subject":"fiqh",
-      "title":{"sw":"Swala: muundo wa ibada na nidhamu yake","en":"Salah: structure and discipline","ar":"الصلاة: بنيتها وانضباطها"},
-      "duration_minutes":55,
-      "level":"foundation",
-      "objectives":["Kutambua sehemu kuu za Swala.","Kufanya mazoezi ya mpangilio kwa utulivu.","Kuelewa kuwa baadhi ya maelezo ya kifiqhi yanaweza kutofautiana."],
-      "teacher_flow":[
-        {"phase":"revision","sw":"Kagua wudhu kwa maswali ya haraka.","en":"Quick review of wudu.","ar":"مراجعة سريعة للوضوء."},
-        {"phase":"teach","sw":"Eleza umuhimu wa Swala na mpangilio wa msingi wa rakaa kwa mujibu wa mtaala.","en":"Explain the purpose of salah and the adopted rak'ah structure.","ar":"بيان مكانة الصلاة وبنية الركعة وفق المنهج المعتمد."},
-        {"phase":"demonstrate","sw":"Ustadh aonyeshe takbira, qiyam, ruku, sujud na kukaa kwa utulivu.","en":"Demonstrate the major postures with calmness.","ar":"عرض التكبير والقيام والركوع والسجود والجلوس بسكينة."},
-        {"phase":"practice","sw":"Wanafunzi wafanye kwa vikundi vidogo; mwalimu arekebishe mpangilio na utulivu.","en":"Small-group practice with sequence and composure corrections.","ar":"تطبيق مجموعات صغيرة مع تصحيح الترتيب والسكينة."}
+      "id": "fiqh_002",
+      "subject": "fiqh",
+      "title": {
+        "sw": "Swala: muundo wa ibada na nidhamu yake",
+        "en": "Salah: structure and discipline",
+        "ar": "الصلاة: بنيتها وانضباطها"
+      },
+      "duration_minutes": 55,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua sehemu kuu za Swala.",
+        "Kufanya mazoezi ya mpangilio kwa utulivu.",
+        "Kuelewa kuwa baadhi ya maelezo ya kifiqhi yanaweza kutofautiana."
       ],
-      "knowledge":{"sw":"Swala inahitaji elimu na utekelezaji. Mwalimu anatakiwa kutofautisha mambo ya lazima, sunna na maeneo yenye khilafu kulingana na mtaala unaotumika.","en":"Salah requires knowledge and practice. Teachers should distinguish required elements, sunnah practices and areas of legitimate jurisprudential difference.","ar":"الصلاة تحتاج إلى علم وتطبيق، وينبغي تمييز الواجبات والسنن ومواضع الخلاف المعتبر."},
-      "assessment":["Panga hatua kuu za rakaa.","Onyesha ruku na sujud kwa utulivu.","Eleza kwa nini EduNoor lazima ihifadhi mtaala wa fiqhi unaotumika."],
-      "homework":"Tumia checklist ya Swala kujikagua kwa ibada moja, bila kubadilل العبادة بسبب التطبيق.",
-      "references":[{"type":"quran","ref":"2:238","note":"Guard the prayers."},{"type":"hadith","ref":"Sahih al-Bukhari 631","note":"Pray as the Prophet taught by demonstration."}]
+      "teacher_flow": [
+        {
+          "phase": "revision",
+          "sw": "Kagua wudhu kwa maswali ya haraka.",
+          "en": "Quick review of wudu.",
+          "ar": "مراجعة سريعة للوضوء."
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza umuhimu wa Swala na mpangilio wa msingi wa rakaa kwa mujibu wa mtaala.",
+          "en": "Explain the purpose of salah and the adopted rak'ah structure.",
+          "ar": "بيان مكانة الصلاة وبنية الركعة وفق المنهج المعتمد."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh aonyeshe takbira, qiyam, ruku, sujud na kukaa kwa utulivu.",
+          "en": "Demonstrate the major postures with calmness.",
+          "ar": "عرض التكبير والقيام والركوع والسجود والجلوس بسكينة."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi wafanye kwa vikundi vidogo; mwalimu arekebishe mpangilio na utulivu.",
+          "en": "Small-group practice with sequence and composure corrections.",
+          "ar": "تطبيق مجموعات صغيرة مع تصحيح الترتيب والسكينة."
+        }
+      ],
+      "knowledge": {
+        "sw": "Swala inahitaji elimu na utekelezaji. Mwalimu anatakiwa kutofautisha mambo ya lazima, sunna na maeneo yenye khilafu kulingana na mtaala unaotumika.",
+        "en": "Salah requires knowledge and practice. Teachers should distinguish required elements, sunnah practices and areas of legitimate jurisprudential difference.",
+        "ar": "الصلاة تحتاج إلى علم وتطبيق، وينبغي تمييز الواجبات والسنن ومواضع الخلاف المعتبر."
+      },
+      "assessment": [
+        "Panga hatua kuu za rakaa.",
+        "Onyesha ruku na sujud kwa utulivu.",
+        "Eleza kwa nini EduNoor lazima ihifadhi mtaala wa fiqhi unaotumika."
+      ],
+      "homework": "Tumia checklist ya Swala kujikagua kwa ibada moja, bila kubadilل العبادة بسبب التطبيق.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "2:238",
+          "note": "Guard the prayers."
+        },
+        {
+          "type": "hadith",
+          "ref": "Sahih al-Bukhari 631",
+          "note": "Pray as the Prophet taught by demonstration."
+        }
+      ]
     },
     {
-      "id":"hadith_001",
-      "subject":"hadith",
-      "title":{"sw":"Hadithi ni nini? Chanzo, matini na maana","en":"What is hadith? Source, text and meaning","ar":"ما هو الحديث؟ المصدر والمتن والمعنى"},
-      "duration_minutes":45,
-      "level":"foundation",
-      "objectives":["Kutofautisha hadithi na maelezo ya kawaida.","Kujua kwa nini chanzo na daraja ni muhimu.","Kusoma hadithi kwa kuangalia matini na maana."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Uliza: tukisikia kauli ya Mtume ﷺ, tunajuaje chanzo chake?","en":"Ask how a prophetic report is verified.","ar":"كيف نتحقق من مصدر الحديث؟"},
-        {"phase":"teach","sw":"Tambulisha istilahi rahisi: matini, mpokezi/isnad, chanzo na daraja.","en":"Introduce text, chain/narrator, source and grading at an age-appropriate level.","ar":"تعريف المتن والسند والمصدر والدرجة بصورة مناسبة للمستوى."},
-        {"phase":"demonstrate","sw":"Onyesha hadithi yenye rejea kamili na linganisha na nukuu isiyo na chanzo.","en":"Compare a fully referenced hadith with an unattributed quote.","ar":"مقارنة حديث موثق بنص بلا مصدر."},
-        {"phase":"practice","sw":"Wanafunzi watafute chanzo kwenye kitabu cha darasa na waandike somo moja.","en":"Learners locate the source in the class text and write one lesson.","ar":"يبحث الطلاب عن المصدر في الكتاب ويسجلون فائدة واحدة."}
+      "id": "hadith_001",
+      "subject": "hadith",
+      "title": {
+        "sw": "Hadithi ni nini? Chanzo, matini na maana",
+        "en": "What is hadith? Source, text and meaning",
+        "ar": "ما هو الحديث؟ المصدر والمتن والمعنى"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kutofautisha hadithi na maelezo ya kawaida.",
+        "Kujua kwa nini chanzo na daraja ni muhimu.",
+        "Kusoma hadithi kwa kuangalia matini na maana."
       ],
-      "knowledge":{"sw":"EduNoor haipaswi kuonyesha nukuu kama hadithi bila chanzo. Kila hadithi iliyohifadhiwa kwenye mfumo iwe na kitabu, namba/rejea inapopatikana, na maelezo ya daraja kutoka chanzo kinachoaminika.","en":"EduNoor should never label an unattributed quotation as hadith. Stored hadith should carry source, reference where available, and grading information from a reliable source.","ar":"لا ينبغي لـ EduNoor أن ينسب قولاً إلى الحديث بلا مصدر. يجب حفظ المصدر والمرجع والدرجة عند توفرها."},
-      "assessment":["Taja vipengele vinne vya msingi vya kuhakiki hadithi.","Toa mfano wa rejea kamili.","Eleza kwa nini nukuu isiyo na chanzo haipaswi kupewa lebo ya hadithi."],
-      "homework":"Chagua hadithi moja kutoka kitabu cha darasa na andika chanzo chake na somo lake.",
-      "references":[{"type":"hadith_method","ref":"Source-and-grading discipline","note":"Use the adopted hadith textbook and verified primary collections."}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Uliza: tukisikia kauli ya Mtume ﷺ, tunajuaje chanzo chake?",
+          "en": "Ask how a prophetic report is verified.",
+          "ar": "كيف نتحقق من مصدر الحديث؟"
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambulisha istilahi rahisi: matini, mpokezi/isnad, chanzo na daraja.",
+          "en": "Introduce text, chain/narrator, source and grading at an age-appropriate level.",
+          "ar": "تعريف المتن والسند والمصدر والدرجة بصورة مناسبة للمستوى."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Onyesha hadithi yenye rejea kamili na linganisha na nukuu isiyo na chanzo.",
+          "en": "Compare a fully referenced hadith with an unattributed quote.",
+          "ar": "مقارنة حديث موثق بنص بلا مصدر."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi watafute chanzo kwenye kitabu cha darasa na waandike somo moja.",
+          "en": "Learners locate the source in the class text and write one lesson.",
+          "ar": "يبحث الطلاب عن المصدر في الكتاب ويسجلون فائدة واحدة."
+        }
+      ],
+      "knowledge": {
+        "sw": "EduNoor haipaswi kuonyesha nukuu kama hadithi bila chanzo. Kila hadithi iliyohifadhiwa kwenye mfumo iwe na kitabu, namba/rejea inapopatikana, na maelezo ya daraja kutoka chanzo kinachoaminika.",
+        "en": "EduNoor should never label an unattributed quotation as hadith. Stored hadith should carry source, reference where available, and grading information from a reliable source.",
+        "ar": "لا ينبغي لـ EduNoor أن ينسب قولاً إلى الحديث بلا مصدر. يجب حفظ المصدر والمرجع والدرجة عند توفرها."
+      },
+      "assessment": [
+        "Taja vipengele vinne vya msingi vya kuhakiki hadithi.",
+        "Toa mfano wa rejea kamili.",
+        "Eleza kwa nini nukuu isiyo na chanzo haipaswi kupewa lebo ya hadithi."
+      ],
+      "homework": "Chagua hadithi moja kutoka kitabu cha darasa na andika chanzo chake na somo lake.",
+      "references": [
+        {
+          "type": "hadith_method",
+          "ref": "Source-and-grading discipline",
+          "note": "Use the adopted hadith textbook and verified primary collections."
+        }
+      ]
     },
     {
-      "id":"hadith_002",
-      "subject":"hadith",
-      "title":{"sw":"Nia na ubora wa matendo","en":"Intention and the quality of deeds","ar":"النية وجودة العمل"},
-      "duration_minutes":45,
-      "level":"foundation",
-      "objectives":["Kueleza dhana ya nia.","Kutofautisha nia njema na matokeo ya tendo.","Kuweka nia ya kujifunza kwa ajili ya Allah."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Wanafunzi waeleze kwa nini wamekuja darasani.","en":"Learners explain why they came to class.","ar":"يذكر الطلاب سبب حضورهم للدرس."},
-        {"phase":"teach","sw":"Soma hadithi ya nia na eleza maana yake bila kuifanya kuwa kauli ya kwamba matokeo hayajalishi.","en":"Teach the hadith on intentions without implying that outcomes and conduct do not matter.","ar":"شرح حديث النية دون إلغاء أهمية العمل والنتائج."},
-        {"phase":"demonstrate","sw":"Tengeneza mifano: kusoma, kusaidia mzazi, kufanya kazi; jadili nia na tabia sahihi.","en":"Use examples of study, helping parents and work; discuss intention and conduct.","ar":"أمثلة في الدراسة وخدمة الوالدين والعمل مع مناقشة النية والسلوك."},
-        {"phase":"practice","sw":"Kila mwanafunzi aandike nia moja ya kujifunza na hatua moja ya kuonyesha kwa vitendo.","en":"Each learner writes one intention and one observable action.","ar":"يكتب كل طالب نية وعملاً ظاهراً يترجمها."}
+      "id": "hadith_002",
+      "subject": "hadith",
+      "title": {
+        "sw": "Nia na ubora wa matendo",
+        "en": "Intention and the quality of deeds",
+        "ar": "النية وجودة العمل"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kueleza dhana ya nia.",
+        "Kutofautisha nia njema na matokeo ya tendo.",
+        "Kuweka nia ya kujifunza kwa ajili ya Allah."
       ],
-      "knowledge":{"sw":"Hadithi maarufu ya nia imepokelewa katika Sahih al-Bukhari 1 na Sahih Muslim 1907. Somo la darasa liunganishe nia na uadilifu wa matendo.","en":"The well-known hadith on intentions is recorded in Sahih al-Bukhari 1 and Sahih Muslim 1907. Connect intention with ethical conduct.","ar":"ورد حديث النية في صحيح البخاري 1 وصحيح مسلم 1907، وينبغي ربط النية بحسن العمل."},
-      "assessment":["Eleza maana ya nia.","Taja mfano wa nia nzuri inayofuatwa na tendo sahihi.","Taja rejea ya hadithi iliyofundishwa."],
-      "homework":"Andika nia ya wiki hii ya masomo na kipimo cha tabia kitakachoonyesha utekelezaji.",
-      "references":[{"type":"hadith","ref":"Sahih al-Bukhari 1"},{"type":"hadith","ref":"Sahih Muslim 1907"}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Wanafunzi waeleze kwa nini wamekuja darasani.",
+          "en": "Learners explain why they came to class.",
+          "ar": "يذكر الطلاب سبب حضورهم للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Soma hadithi ya nia na eleza maana yake bila kuifanya kuwa kauli ya kwamba matokeo hayajalishi.",
+          "en": "Teach the hadith on intentions without implying that outcomes and conduct do not matter.",
+          "ar": "شرح حديث النية دون إلغاء أهمية العمل والنتائج."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Tengeneza mifano: kusoma, kusaidia mzazi, kufanya kazi; jadili nia na tabia sahihi.",
+          "en": "Use examples of study, helping parents and work; discuss intention and conduct.",
+          "ar": "أمثلة في الدراسة وخدمة الوالدين والعمل مع مناقشة النية والسلوك."
+        },
+        {
+          "phase": "practice",
+          "sw": "Kila mwanafunzi aandike nia moja ya kujifunza na hatua moja ya kuonyesha kwa vitendo.",
+          "en": "Each learner writes one intention and one observable action.",
+          "ar": "يكتب كل طالب نية وعملاً ظاهراً يترجمها."
+        }
+      ],
+      "knowledge": {
+        "sw": "Hadithi maarufu ya nia imepokelewa katika Sahih al-Bukhari 1 na Sahih Muslim 1907. Somo la darasa liunganishe nia na uadilifu wa matendo.",
+        "en": "The well-known hadith on intentions is recorded in Sahih al-Bukhari 1 and Sahih Muslim 1907. Connect intention with ethical conduct.",
+        "ar": "ورد حديث النية في صحيح البخاري 1 وصحيح مسلم 1907، وينبغي ربط النية بحسن العمل."
+      },
+      "assessment": [
+        "Eleza maana ya nia.",
+        "Taja mfano wa nia nzuri inayofuatwa na tendo sahihi.",
+        "Taja rejea ya hadithi iliyofundishwa."
+      ],
+      "homework": "Andika nia ya wiki hii ya masomo na kipimo cha tabia kitakachoonyesha utekelezaji.",
+      "references": [
+        {
+          "type": "hadith",
+          "ref": "Sahih al-Bukhari 1"
+        },
+        {
+          "type": "hadith",
+          "ref": "Sahih Muslim 1907"
+        }
+      ]
     },
     {
-      "id":"aqidah_001",
-      "subject":"aqidah",
-      "title":{"sw":"Tawhidi: kumuabudu Allah Mmoja","en":"Tawhid: worshipping Allah alone","ar":"التوحيد: عبادة الله وحده"},
-      "duration_minutes":50,
-      "level":"foundation",
-      "objectives":["Kueleza maana ya Tawhidi kwa lugha rahisi.","Kutofautisha kumtambua Allah na kutekeleza ibada kwa ajili Yake.","Kuheshimu tofauti za kiwango cha mwanafunzi na kuepuka mabishano yasiyofaa."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Swali la msingi: ibada ni ya nani?","en":"Foundational question: whom is worship for?","ar":"لمن تكون العبادة؟"},
-        {"phase":"teach","sw":"Eleza msingi wa kumpwekesha Allah kwa kutumia Qur'ani na mifano ya ibada.","en":"Explain exclusive worship using Qur'anic evidence and examples.","ar":"شرح إفراد الله بالعبادة بالأدلة والأمثلة."},
-        {"phase":"demonstrate","sw":"Tengeneza ramani: imani → nia → ibada → tabia.","en":"Map faith to intention, worship and character.","ar":"ربط الإيمان بالنية والعبادة والأخلاق."},
-        {"phase":"practice","sw":"Wanafunzi waainishe mifano ya ibada na tabia zinazotokana na imani.","en":"Learners classify examples of worship and conduct flowing from faith.","ar":"تصنيف أمثلة العبادة والسلوك الناتج عن الإيمان."}
+      "id": "aqidah_001",
+      "subject": "aqidah",
+      "title": {
+        "sw": "Tawhidi: kumuabudu Allah Mmoja",
+        "en": "Tawhid: worshipping Allah alone",
+        "ar": "التوحيد: عبادة الله وحده"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kueleza maana ya Tawhidi kwa lugha rahisi.",
+        "Kutofautisha kumtambua Allah na kutekeleza ibada kwa ajili Yake.",
+        "Kuheshimu tofauti za kiwango cha mwanafunzi na kuepuka mabishano yasiyofaa."
       ],
-      "knowledge":{"sw":"Qur'ani 112 ni msingi mfupi wa kueleza upekee wa Allah. Qur'ani 51:56 inaeleza kusudi la kuumbwa kwa majini na watu katika muktadha wa ibada.","en":"Qur'an 112 provides a concise foundation about Allah's uniqueness; Qur'an 51:56 states the purpose of creation in the context of worship.","ar":"سورة الإخلاص أصل مختصر في توحيد الله، و51:56 تبين غاية الخلق في سياق العبادة."},
-      "assessment":["Eleza Tawhidi kwa sentensi moja.","Taja aya moja inayohusiana na somo.","Toa mfano wa ibada inayodhihirisha Tawhidi."],
-      "homework":"Soma Surah al-Ikhlas na uandike mafunzo matatu.",
-      "references":[{"type":"quran","ref":"112:1-4"},{"type":"quran","ref":"51:56"}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Swali la msingi: ibada ni ya nani?",
+          "en": "Foundational question: whom is worship for?",
+          "ar": "لمن تكون العبادة؟"
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza msingi wa kumpwekesha Allah kwa kutumia Qur'ani na mifano ya ibada.",
+          "en": "Explain exclusive worship using Qur'anic evidence and examples.",
+          "ar": "شرح إفراد الله بالعبادة بالأدلة والأمثلة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Tengeneza ramani: imani → nia → ibada → tabia.",
+          "en": "Map faith to intention, worship and character.",
+          "ar": "ربط الإيمان بالنية والعبادة والأخلاق."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi waainishe mifano ya ibada na tabia zinazotokana na imani.",
+          "en": "Learners classify examples of worship and conduct flowing from faith.",
+          "ar": "تصنيف أمثلة العبادة والسلوك الناتج عن الإيمان."
+        }
+      ],
+      "knowledge": {
+        "sw": "Qur'ani 112 ni msingi mfupi wa kueleza upekee wa Allah. Qur'ani 51:56 inaeleza kusudi la kuumbwa kwa majini na watu katika muktadha wa ibada.",
+        "en": "Qur'an 112 provides a concise foundation about Allah's uniqueness; Qur'an 51:56 states the purpose of creation in the context of worship.",
+        "ar": "سورة الإخلاص أصل مختصر في توحيد الله، و51:56 تبين غاية الخلق في سياق العبادة."
+      },
+      "assessment": [
+        "Eleza Tawhidi kwa sentensi moja.",
+        "Taja aya moja inayohusiana na somo.",
+        "Toa mfano wa ibada inayodhihirisha Tawhidi."
+      ],
+      "homework": "Soma Surah al-Ikhlas na uandike mafunzo matatu.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "112:1-4"
+        },
+        {
+          "type": "quran",
+          "ref": "51:56"
+        }
+      ]
     },
     {
-      "id":"sirah_001",
-      "subject":"sirah",
-      "title":{"sw":"Makkah: mazingira ya mwanzo wa utume","en":"Makkah: the setting of the beginning of prophethood","ar":"مكة وبداية البعثة"},
-      "duration_minutes":55,
-      "level":"foundation",
-      "objectives":["Kuweka mwanzo wa utume katika mpangilio wa kihistoria.","Kutambua ujumbe mkuu wa mwanzo wa da'wah.","Kujifunza historia bila kuchanganya riwaya zenye viwango tofauti vya uthibitisho."],
-      "teacher_flow":[
-        {"phase":"timeline","sw":"Tengeneza mstari wa muda: kuzaliwa → utu uzima → Hira → mwanzo wa wahyi.","en":"Build a timeline from birth to Hira and the beginning of revelation.","ar":"إنشاء خط زمني من الميلاد إلى حراء وبداية الوحي."},
-        {"phase":"teach","sw":"Eleza mazingira ya Makkah na kuanza kwa wahyi kwa mpangilio wa msingi.","en":"Explain the Makkan context and beginning of revelation in sequence.","ar":"شرح سياق مكة وبداية الوحي بترتيب."},
-        {"phase":"demonstrate","sw":"Onyesha kwenye ramani maeneo muhimu kwa maelezo mafupi.","en":"Use a map to locate key places with concise explanations.","ar":"استخدام خريطة للمواقع المهمة."},
-        {"phase":"practice","sw":"Wanafunzi waweke matukio kwenye timeline bila kupewa mpangilio.","en":"Learners reconstruct the timeline from event cards.","ar":"يعيد الطلاب ترتيب الأحداث."}
+      "id": "sirah_001",
+      "subject": "sirah",
+      "title": {
+        "sw": "Makkah: mazingira ya mwanzo wa utume",
+        "en": "Makkah: the setting of the beginning of prophethood",
+        "ar": "مكة وبداية البعثة"
+      },
+      "duration_minutes": 55,
+      "level": "foundation",
+      "objectives": [
+        "Kuweka mwanzo wa utume katika mpangilio wa kihistoria.",
+        "Kutambua ujumbe mkuu wa mwanzo wa da'wah.",
+        "Kujifunza historia bila kuchanganya riwaya zenye viwango tofauti vya uthibitisho."
       ],
-      "knowledge":{"sw":"Mafunzo ya Sira yanapaswa kutenganisha matukio yenye ushahidi madhubuti na simulizi zinazohitaji tahadhari. Mfumo uhifadhi chanzo cha kila tukio.","en":"Sirah teaching should distinguish well-attested events from reports requiring caution; each event should carry source metadata.","ar":"ينبغي التمييز بين الأحداث الثابتة والروايات التي تحتاج إلى احتياط، مع حفظ مصدر كل حدث."},
-      "assessment":["Panga matukio manne kwa mpangilio.","Taja kwa nini chanzo ni muhimu katika Sira.","Eleza somo moja la subira au uaminifu linalotokana na tukio lililofundishwa."],
-      "homework":"Chora timeline ya somo na ongeza rejea za kitabu kilichotumiwa darasani.",
-      "references":[{"type":"quran","ref":"96:1-5","note":"Beginning of revelation is traditionally taught alongside the first revelation reports; use an adopted reliable sirah text for the narrative details."}]
+      "teacher_flow": [
+        {
+          "phase": "timeline",
+          "sw": "Tengeneza mstari wa muda: kuzaliwa → utu uzima → Hira → mwanzo wa wahyi.",
+          "en": "Build a timeline from birth to Hira and the beginning of revelation.",
+          "ar": "إنشاء خط زمني من الميلاد إلى حراء وبداية الوحي."
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza mazingira ya Makkah na kuanza kwa wahyi kwa mpangilio wa msingi.",
+          "en": "Explain the Makkan context and beginning of revelation in sequence.",
+          "ar": "شرح سياق مكة وبداية الوحي بترتيب."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Onyesha kwenye ramani maeneo muhimu kwa maelezo mafupi.",
+          "en": "Use a map to locate key places with concise explanations.",
+          "ar": "استخدام خريطة للمواقع المهمة."
+        },
+        {
+          "phase": "practice",
+          "sw": "Wanafunzi waweke matukio kwenye timeline bila kupewa mpangilio.",
+          "en": "Learners reconstruct the timeline from event cards.",
+          "ar": "يعيد الطلاب ترتيب الأحداث."
+        }
+      ],
+      "knowledge": {
+        "sw": "Mafunzo ya Sira yanapaswa kutenganisha matukio yenye ushahidi madhubuti na simulizi zinazohitaji tahadhari. Mfumo uhifadhi chanzo cha kila tukio.",
+        "en": "Sirah teaching should distinguish well-attested events from reports requiring caution; each event should carry source metadata.",
+        "ar": "ينبغي التمييز بين الأحداث الثابتة والروايات التي تحتاج إلى احتياط، مع حفظ مصدر كل حدث."
+      },
+      "assessment": [
+        "Panga matukio manne kwa mpangilio.",
+        "Taja kwa nini chanzo ni muhimu katika Sira.",
+        "Eleza somo moja la subira au uaminifu linalotokana na tukio lililofundishwa."
+      ],
+      "homework": "Chora timeline ya somo na ongeza rejea za kitabu kilichotumiwa darasani.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "96:1-5",
+          "note": "Beginning of revelation is traditionally taught alongside the first revelation reports; use an adopted reliable sirah text for the narrative details."
+        }
+      ]
     },
     {
-      "id":"arabic_001",
-      "subject":"arabic",
-      "title":{"sw":"Msamiati wa darasa: kusoma neno, maana na sentensi","en":"Classroom vocabulary: read, mean and use","ar":"مفردات الصف: قراءة الكلمة ومعناها واستعمالها"},
-      "duration_minutes":45,
-      "level":"foundation",
-      "objectives":["Kusoma maneno rahisi ya Kiarabu.","Kutoa maana kwa Kiswahili.","Kutumia neno katika sentensi rahisi."],
-      "teacher_flow":[
-        {"phase":"warmup","sw":"Soma herufi na silabi zilizojulikana.","en":"Review known letters and syllables.","ar":"مراجعة الحروف والمقاطع المعروفة."},
-        {"phase":"teach","sw":"Tambulisha maneno 6–8 tu kwa somo moja.","en":"Introduce only 6–8 words in one session.","ar":"تقديم 6–8 كلمات فقط في الحصة."},
-        {"phase":"demonstrate","sw":"Ustadh asome, atoe maana na atumie neno kwenye sentensi.","en":"Teacher reads, translates and uses each word in a sentence.","ar":"يقرأ المعلم ويترجم ويستعمل الكلمة في جملة."},
-        {"phase":"practice","sw":"Flash prompts: soma → maana → sentensi.","en":"Prompt cycle: read → meaning → sentence.","ar":"دورة: قراءة → معنى → جملة."}
+      "id": "arabic_001",
+      "subject": "arabic",
+      "title": {
+        "sw": "Msamiati wa darasa: kusoma neno, maana na sentensi",
+        "en": "Classroom vocabulary: read, mean and use",
+        "ar": "مفردات الصف: قراءة الكلمة ومعناها واستعمالها"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kusoma maneno rahisi ya Kiarabu.",
+        "Kutoa maana kwa Kiswahili.",
+        "Kutumia neno katika sentensi rahisi."
       ],
-      "knowledge":{"sw":"Msamiati haupaswi kuwa orodha ya kukariri pekee. Neno linawekwa kwenye sentensi na kurudiwa katika vipindi tofauti.","en":"Vocabulary should not be a memorisation list only; words return in sentences and spaced review.","ar":"لا تكون المفردات قائمة حفظ فقط، بل تستخدم في جمل وتراجع على فترات."},
-      "assessment":["Soma maneno sita.","Tafsiri matatu.","Tengeneza sentensi mbili rahisi."],
-      "homework":"Andika maneno 6 na sentensi moja kwa kila neno.",
-      "references":[{"type":"curriculum_note","ref":"Arabic foundation","note":"Vocabulary should be aligned to the selected madrassa Arabic textbook."}]
+      "teacher_flow": [
+        {
+          "phase": "warmup",
+          "sw": "Soma herufi na silabi zilizojulikana.",
+          "en": "Review known letters and syllables.",
+          "ar": "مراجعة الحروف والمقاطع المعروفة."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambulisha maneno 6–8 tu kwa somo moja.",
+          "en": "Introduce only 6–8 words in one session.",
+          "ar": "تقديم 6–8 كلمات فقط في الحصة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh asome, atoe maana na atumie neno kwenye sentensi.",
+          "en": "Teacher reads, translates and uses each word in a sentence.",
+          "ar": "يقرأ المعلم ويترجم ويستعمل الكلمة في جملة."
+        },
+        {
+          "phase": "practice",
+          "sw": "Flash prompts: soma → maana → sentensi.",
+          "en": "Prompt cycle: read → meaning → sentence.",
+          "ar": "دورة: قراءة → معنى → جملة."
+        }
+      ],
+      "knowledge": {
+        "sw": "Msamiati haupaswi kuwa orodha ya kukariri pekee. Neno linawekwa kwenye sentensi na kurudiwa katika vipindi tofauti.",
+        "en": "Vocabulary should not be a memorisation list only; words return in sentences and spaced review.",
+        "ar": "لا تكون المفردات قائمة حفظ فقط، بل تستخدم في جمل وتراجع على فترات."
+      },
+      "assessment": [
+        "Soma maneno sita.",
+        "Tafsiri matatu.",
+        "Tengeneza sentensi mbili rahisi."
+      ],
+      "homework": "Andika maneno 6 na sentensi moja kwa kila neno.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Arabic foundation",
+          "note": "Vocabulary should be aligned to the selected madrassa Arabic textbook."
+        }
+      ]
     },
     {
-      "id":"akhlaq_001",
-      "subject":"akhlaq",
-      "title":{"sw":"Adabu ya mwanafunzi na heshima ya darasa","en":"Student adab and classroom respect","ar":"أدب الطالب واحترام الصف"},
-      "duration_minutes":40,
-      "level":"foundation",
-      "objectives":["Kutambua tabia za mwanafunzi mwenye adabu.","Kutumia kusikiliza, kuuliza na kurekebishwa kwa heshima.","Kuhusisha adabu na mazingira salama ya kujifunza."],
-      "teacher_flow":[
-        {"phase":"opening","sw":"Wanafunzi wataje tabia inayosaidia darasa kujifunza.","en":"Learners name behaviours that help learning.","ar":"يذكر الطلاب سلوكيات تساعد على التعلم."},
-        {"phase":"teach","sw":"Eleza heshima, ukweli, usafi, muda na kusikiliza.","en":"Teach respect, truthfulness, cleanliness, time and listening.","ar":"تعليم الاحترام والصدق والنظافة والوقت والاستماع."},
-        {"phase":"demonstrate","sw":"Role-play: mwanafunzi anakosea; Ustadh anamrekebisha; mwanafunzi anajibu kwa adabu.","en":"Role-play correction and respectful response.","ar":"تمثيل موقف التصحيح والرد بأدب."},
-        {"phase":"practice","sw":"Vikundi vitengeneze kanuni 5 za darasa na zipeleke kwenye makubaliano ya pamoja.","en":"Groups draft five classroom norms and agree collectively.","ar":"تضع المجموعات خمس قواعد للصف وتتفق عليها."}
+      "id": "akhlaq_001",
+      "subject": "akhlaq",
+      "title": {
+        "sw": "Adabu ya mwanafunzi na heshima ya darasa",
+        "en": "Student adab and classroom respect",
+        "ar": "أدب الطالب واحترام الصف"
+      },
+      "duration_minutes": 40,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua tabia za mwanafunzi mwenye adabu.",
+        "Kutumia kusikiliza, kuuliza na kurekebishwa kwa heshima.",
+        "Kuhusisha adabu na mazingira salama ya kujifunza."
       ],
-      "knowledge":{"sw":"Akhlaq inakuwa sehemu ya mfumo pale inapoonekana katika tabia zinazoweza kufundishwa, kuonekana na kurekebishwa kwa heshima.","en":"Akhlaq becomes educational when translated into observable behaviours that can be taught and corrected respectfully.","ar":"تتحول الأخلاق إلى تعلم عندما تترجم إلى سلوكيات ظاهرة يمكن تعليمها وتصحيحها بأدب."},
-      "assessment":["Taja adabu tatu.","Onyesha jinsi ya kupokea marekebisho.","Chagua kanuni moja ya darasa utakayoitekeleza wiki hii."],
-      "homework":"Andika mfano mmoja wa adabu ulioutumia nyumbani au madrassa.",
-      "references":[{"type":"quran","ref":"49:11-12","note":"Respect, avoiding mockery and harmful suspicion/backbiting."}]
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Wanafunzi wataje tabia inayosaidia darasa kujifunza.",
+          "en": "Learners name behaviours that help learning.",
+          "ar": "يذكر الطلاب سلوكيات تساعد على التعلم."
+        },
+        {
+          "phase": "teach",
+          "sw": "Eleza heshima, ukweli, usafi, muda na kusikiliza.",
+          "en": "Teach respect, truthfulness, cleanliness, time and listening.",
+          "ar": "تعليم الاحترام والصدق والنظافة والوقت والاستماع."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Role-play: mwanafunzi anakosea; Ustadh anamrekebisha; mwanafunzi anajibu kwa adabu.",
+          "en": "Role-play correction and respectful response.",
+          "ar": "تمثيل موقف التصحيح والرد بأدب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Vikundi vitengeneze kanuni 5 za darasa na zipeleke kwenye makubaliano ya pamoja.",
+          "en": "Groups draft five classroom norms and agree collectively.",
+          "ar": "تضع المجموعات خمس قواعد للصف وتتفق عليها."
+        }
+      ],
+      "knowledge": {
+        "sw": "Akhlaq inakuwa sehemu ya mfumo pale inapoonekana katika tabia zinazoweza kufundishwa, kuonekana na kurekebishwa kwa heshima.",
+        "en": "Akhlaq becomes educational when translated into observable behaviours that can be taught and corrected respectfully.",
+        "ar": "تتحول الأخلاق إلى تعلم عندما تترجم إلى سلوكيات ظاهرة يمكن تعليمها وتصحيحها بأدب."
+      },
+      "assessment": [
+        "Taja adabu tatu.",
+        "Onyesha jinsi ya kupokea marekebisho.",
+        "Chagua kanuni moja ya darasa utakayoitekeleza wiki hii."
+      ],
+      "homework": "Andika mfano mmoja wa adabu ulioutumia nyumbani au madrassa.",
+      "references": [
+        {
+          "type": "quran",
+          "ref": "49:11-12",
+          "note": "Respect, avoiding mockery and harmful suspicion/backbiting."
+        }
+      ]
+    },
+    {
+      "id": "quran_003",
+      "subject": "quran",
+      "title": {
+        "sw": "Kusoma kwa aya: kusoma, kuelewa, kuhifadhi",
+        "en": "Verse study: recite, understand, retain",
+        "ar": "دراسة الآية: تلاوة وفهم وحفظ"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Kusoma kifungu kwa mfano wa Ustadh, kutaja maana kuu, kisha kurudia kwa vipande vidogo.",
+          "en": "Recite after teacher modelling, identify the main meaning, then repeat in small segments.",
+          "ar": "التلاوة بعد نموذج المعلم، وفهم المعنى العام، ثم التكرار في مقاطع قصيرة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Qur'an foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "quran_004",
+      "subject": "quran",
+      "title": {
+        "sw": "Muraja'a ya Hifz kwa vipindi",
+        "en": "Spaced Hifz revision",
+        "ar": "مراجعة الحفظ على فترات"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Kusoma kifungu kwa mfano wa Ustadh, kutaja maana kuu, kisha kurudia kwa vipande vidogo.",
+          "en": "Recite after teacher modelling, identify the main meaning, then repeat in small segments.",
+          "ar": "التلاوة بعد نموذج المعلم، وفهم المعنى العام، ثم التكرار في مقاطع قصيرة."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Qur'an foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "tajwid_003",
+      "subject": "tajwid",
+      "title": {
+        "sw": "Nun sakinah na tanwin: utambuzi wa msingi",
+        "en": "Nun sakinah and tanwin: foundation",
+        "ar": "النون الساكنة والتنوين: الأساس"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambua kanuni kwenye mifano, sikiliza mfano, kisha tumia kanuni kwenye maneno ya Qur'ani.",
+          "en": "Identify the rule in examples, listen to a model, then apply it in Qur'anic words.",
+          "ar": "تحديد الحكم في الأمثلة ثم سماع النموذج وتطبيقه في كلمات قرآنية."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Tajwid foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "fiqh_003",
+      "subject": "fiqh",
+      "title": {
+        "sw": "Ghusl na hali za twahara",
+        "en": "Ghusl and states of purification",
+        "ar": "الغسل وحالات الطهارة"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Anza na dalili/misingi, mwalimu aonyeshe hatua, mwanafunzi atekeleze kwa checklist.",
+          "en": "Start with evidence/foundations, demonstrate the procedure, then practise with a checklist.",
+          "ar": "البدء بالدليل والأساس ثم التطبيق العملي باستخدام قائمة تحقق."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Fiqh and Worship foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "hadith_003",
+      "subject": "hadith",
+      "title": {
+        "sw": "Kusikia, kuhifadhi na kutenda hadithi",
+        "en": "Hear, retain and practise hadith",
+        "ar": "سماع الحديث وحفظه والعمل به"
+      },
+      "duration_minutes": 45,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tambulisha chanzo, soma matini, eleza maana, kisha geuza fundisho kuwa tabia inayoweza kuonekana.",
+          "en": "Identify the source, read the text, explain meaning, then turn the lesson into observable conduct.",
+          "ar": "بيان المصدر وقراءة المتن وشرح المعنى ثم تحويل الفائدة إلى سلوك ظاهر."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Hadith foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "arabic_002",
+      "subject": "arabic",
+      "title": {
+        "sw": "Jumla rahisi: isim, fi'l na harf",
+        "en": "Simple sentences: noun, verb and particle",
+        "ar": "الجملة البسيطة: الاسم والفعل والحرف"
+      },
+      "duration_minutes": 50,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Soma mifano, bainisha muundo, tengeneza sentensi, kisha tumia msamiati katika mazungumzo mafupi.",
+          "en": "Read examples, identify structure, build sentences, then use vocabulary in short exchanges.",
+          "ar": "قراءة الأمثلة وتحديد البنية وبناء الجمل ثم استعمال المفردات في حوار قصير."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Arabic foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "akhlaq_002",
+      "subject": "akhlaq",
+      "title": {
+        "sw": "Uaminifu na kutunza amana",
+        "en": "Truthfulness and keeping trusts",
+        "ar": "الصدق وأداء الأمانة"
+      },
+      "duration_minutes": 40,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Tumia tukio la kawaida, jadili chaguo, role-play, kisha weka hatua ya tabia ya wiki.",
+          "en": "Use a realistic scenario, discuss choices, role-play, then set one weekly behaviour action.",
+          "ar": "استخدام موقف واقعي ومناقشة الخيارات والتمثيل ثم تحديد سلوك عملي للأسبوع."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Akhlaq and Adab foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
+    },
+    {
+      "id": "sirah_002",
+      "subject": "sirah",
+      "title": {
+        "sw": "Madina: kujenga jamii na udugu",
+        "en": "Madinah: community and brotherhood",
+        "ar": "المدينة وبناء المجتمع والأخوة"
+      },
+      "duration_minutes": 55,
+      "level": "foundation",
+      "objectives": [
+        "Kutambua dhana kuu ya somo.",
+        "Kufuata mfano wa Ustadh kwa usahihi.",
+        "Kuonyesha ushahidi wa kujifunza kabla ya kuendelea."
+      ],
+      "teacher_flow": [
+        {
+          "phase": "opening",
+          "sw": "Salamu, nia, mahudhurio na kuweka lengo la somo.",
+          "en": "Greeting, intention, attendance and lesson goal.",
+          "ar": "السلام والنية والحضور وتحديد هدف الدرس."
+        },
+        {
+          "phase": "revision",
+          "sw": "Rudia maarifa ya awali yanayohitajika kwa somo hili.",
+          "en": "Retrieve prerequisite knowledge needed for this lesson.",
+          "ar": "استرجاع المعرفة السابقة اللازمة للدرس."
+        },
+        {
+          "phase": "teach",
+          "sw": "Weka tukio kwenye timeline, soma chanzo kilichochaguliwa, jadili mazingira na toa funzo linaloweza kutekelezwa.",
+          "en": "Place the event on a timeline, read the selected source, discuss context and extract an actionable lesson.",
+          "ar": "وضع الحدث في خط زمني وقراءة المصدر المختار ومناقشة السياق واستخراج فائدة عملية."
+        },
+        {
+          "phase": "demonstrate",
+          "sw": "Ustadh afanye mfano kamili hatua kwa hatua na aeleze sababu ya kila hatua.",
+          "en": "Teacher performs a complete worked example and explains each step.",
+          "ar": "يقدم المعلم مثالاً كاملاً خطوة بخطوة مع بيان السبب."
+        },
+        {
+          "phase": "practice",
+          "sw": "Mazoezi ya kuongozwa, kisha zamu binafsi; mwalimu arekebishe kosa kuu kabla ya kuendelea.",
+          "en": "Guided practice followed by individual turns; correct the key error before progressing.",
+          "ar": "تطبيق موجه ثم فردي مع تصحيح الخطأ الأساسي قبل التقدم."
+        }
+      ],
+      "knowledge": {
+        "sw": "Somo linajengwa kwa mzunguko wa eleza → onyesha → mwanafunzi afanye → rekebisha → rudia.",
+        "en": "The lesson follows explain → demonstrate → learner performs → correct → repeat.",
+        "ar": "يبنى الدرس على: شرح ← عرض ← تطبيق الطالب ← تصحيح ← تكرار."
+      },
+      "assessment": [
+        "Mwanafunzi aeleze dhana kuu kwa maneno yake.",
+        "Mwanafunzi afanye mfano bila msaada kamili.",
+        "Ustadh aandike kosa/mafanikio na hatua inayofuata."
+      ],
+      "homework": "Rudia kazi ya darasani kwa muda mfupi kila siku na leta swali moja au ushahidi wa mazoezi.",
+      "references": [
+        {
+          "type": "curriculum_note",
+          "ref": "Prophetic Sirah foundation",
+          "note": "Use the madrassa's adopted primary textbook and verified source references for detailed content."
+        }
+      ]
     }
   ]
 }
