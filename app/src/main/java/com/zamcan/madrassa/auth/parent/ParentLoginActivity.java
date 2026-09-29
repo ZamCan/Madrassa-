@@ -425,6 +425,14 @@ public class ParentLoginActivity extends Activity {
             return;
         }
 
+        if (demoPhone(typed) && "Demo123".equals(pass)) {
+            startActivity(new android.content.Intent(
+                    this,
+                    com.zamcan.madrassa.demo.DemoDashboardActivity.class
+            ).putExtra("demo_role", "parent"));
+            return;
+        }
+
         /*
          * Parent accounts belong to registered Madrassa phone
          * numbers, so the entered number must be a valid
@@ -637,15 +645,20 @@ public class ParentLoginActivity extends Activity {
                         getString(R.string.demo_access_title),
                         (dialog, which) -> {
                             if (this instanceof com.zamcan.madrassa.auth.parent.ParentLoginActivity) {
-                                phone.setValueForDemo("0712345678");
-                                password.setValueForDemo("Demo123");
+                                phone.setValue("0712345678");
+                                password.setValue("Demo123");
                             } else {
-                                identifierField.setValueForDemo("Demo Madrassa");
-                                passwordField.setValueForDemo("Demo@123");
+                                identifierField.setValue("Demo Madrassa");
+                                passwordField.setValue("Demo@123");
                             }
                         })
                 .setNegativeButton(getString(R.string.dialog_cancel), null)
                 .show();
+    }
+
+    private boolean demoPhone(String value) {
+        String digits = value.replaceAll("[^0-9]", "");
+        return digits.endsWith("0712345678") || digits.endsWith("2550712345678");
     }
 
 
