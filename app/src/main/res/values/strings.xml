@@ -359,4 +359,33 @@
     <string name="splash_welcome">Karibu</string>
     <string name="splash_brand">EDU NOOR</string>
 
+
+    <!-- Demo access: clearly separated from real authentication -->
+    <string name="demo_access_title">DEMO ACCESS</string>
+    <string name="demo_access_hint">Tazama mfumo bila kuunda akaunti. Hii ni data ya mfano tu.</string>
+    <string name="demo_credentials_parent">Mzazi: 0712 345 678  •  Nenosiri: Demo123</string>
+    <string name="demo_credentials_ustadh">Ustadh: Demo Madrassa  •  Nenosiri: Demo@123</string>
+    <string name="demo_open_parent">FUNGUA DEMO YA MZAZI</string>
+    <string name="demo_open_ustadh">FUNGUA DEMO YA USTADH</string>
+    <string name="demo_badge">DEMO • DATA YA MFANO • SI AKAUNTI HALISI</string>
+    <string name="demo_parent_title">Dashibodi ya Mzazi</string>
+    <string name="demo_ustadh_title">Dashibodi ya Ustadh</string>
+    <string name="demo_parent_scope">Mfano wa akaunti ya mzazi: mtoto, maendeleo ya kujifunza na taarifa za malipo.</string>
+    <string name="demo_ustadh_scope">Mfano wa akaunti ya Ustadh: madarasa, wanafunzi, taaluma na ufuatiliaji.</string>
+    <string name="demo_child_card_title">Mtoto wangu</string>
+    <string name="demo_child_card_body">Amina Hassan • Darasa la Qur’an 2 • Qur’an: Juzuu 2 • Hifz: Inaendelea</string>
+    <string name="demo_learning_card_title">Maendeleo ya kujifunza</string>
+    <string name="demo_learning_card_body">Masomo 8 yameanza • 5 yamekamilika • Somo linalofuata: Tajwid — Nun Sakinah</string>
+    <string name="demo_fees_card_title">Malipo na michango</string>
+    <string name="demo_fees_card_body">Ada ya mwezi: Imelipwa • Mchango wa hiari: Imethibitishwa</string>
+    <string name="demo_class_card_title">Madarasa</string>
+    <string name="demo_class_card_body">Qur’an 2 • Tajwid 1 • Adab 2 • Wanafunzi 36 kwa jumla</string>
+    <string name="demo_students_card_title">Wanafunzi</string>
+    <string name="demo_students_card_body">36 wanafunzi • 31 wanaendelea • 5 wanahitaji mapitio</string>
+    <string name="demo_academic_card_title">Taaluma</string>
+    <string name="demo_academic_card_body">Qur’an • Tajwid • Fiqh • Hadith • Aqidah • Sirah • Arabic • Akhlaq</string>
+    <string name="demo_ustadh_fees_card_body">Ada 34 zimehifadhiwa • 3 zinasubiri • 2 zimechelewa</string>
+    <string name="demo_open_class_studio">FUNGUA ACADEMIC CLASS STUDIO</string>
+    <string name="demo_open_solo">FUNGUA SOLO LEARNING</string>
+
 </resources>

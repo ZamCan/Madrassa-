@@ -321,6 +321,11 @@ public class ParentLoginActivity extends Activity {
                 )
         );
 
+        TextView demo = EduNoorButton.secondary(this, getString(R.string.demo_access_title));
+        demo.setOnClickListener(v -> showDemoAccess());
+        root.addView(demo, new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, dp(52)));
+
         /*
          * RESET
          */
@@ -417,6 +422,14 @@ public class ParentLoginActivity extends Activity {
             );
             phone.getEditText().requestFocus();
 
+            return;
+        }
+
+        if (demoPhone(typed) && "Demo123".equals(pass)) {
+            startActivity(new android.content.Intent(
+                    this,
+                    com.zamcan.madrassa.demo.DemoDashboardActivity.class
+            ).putExtra("demo_role", "parent"));
             return;
         }
 
@@ -621,4 +634,32 @@ public class ParentLoginActivity extends Activity {
 
         worker.shutdownNow();
     }
+    private void showDemoAccess() {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle(getString(R.string.demo_access_title))
+                .setMessage(getString(R.string.demo_access_hint) + "\n\n"
+                        + (this instanceof com.zamcan.madrassa.auth.parent.ParentLoginActivity
+                        ? getString(R.string.demo_credentials_parent)
+                        : getString(R.string.demo_credentials_ustadh)))
+                .setPositiveButton(
+                        getString(R.string.demo_access_title),
+                        (dialog, which) -> {
+                            if (this instanceof com.zamcan.madrassa.auth.parent.ParentLoginActivity) {
+                                phone.setValue("0712345678");
+                                password.setValue("Demo123");
+                            } else {
+                                identifierField.setValue("Demo Madrassa");
+                                passwordField.setValue("Demo@123");
+                            }
+                        })
+                .setNegativeButton(getString(R.string.dialog_cancel), null)
+                .show();
+    }
+
+    private boolean demoPhone(String value) {
+        String digits = value.replaceAll("[^0-9]", "");
+        return digits.endsWith("0712345678") || digits.endsWith("2550712345678");
+    }
+
+
 }
