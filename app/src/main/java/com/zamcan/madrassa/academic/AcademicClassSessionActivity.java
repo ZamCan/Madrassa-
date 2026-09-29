@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Typeface;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 
 import org.json.JSONArray;
@@ -19,6 +19,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Academic Class Studio.
+ * Deliberately restrained: the academic content carries the identity;
+ * decoration stays quiet so the screen feels like a professional
+ * learning workspace rather than a themed poster.
+ */
 public final class AcademicClassSessionActivity extends Activity {
     private final List<JSONObject> lessons = new ArrayList<>();
     private LinearLayout content;
@@ -33,6 +39,7 @@ public final class AcademicClassSessionActivity extends Activity {
         t.setTextSize(size);
         t.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_walnut));
         t.setTypeface(Typeface.create("sans", bold ? Typeface.BOLD : Typeface.NORMAL));
+        t.setIncludeFontPadding(false);
         t.setPadding(dp(2), dp(3), dp(2), dp(3));
         return t;
     }
@@ -61,29 +68,30 @@ public final class AcademicClassSessionActivity extends Activity {
     private void build() {
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(dp(16), dp(12), dp(16), dp(20));
-        root.setBackgroundResource(com.zamcan.madrassa.R.drawable.glass_panel);
+        root.setPadding(dp(18), dp(10), dp(18), dp(18));
+        root.setBackgroundResource(com.zamcan.madrassa.R.drawable.edunoor_canvas);
 
-        TextView back = text("‹", 30, true);
-        back.setGravity(Gravity.CENTER);
+        TextView back = text("‹", 28, false);
+        back.setGravity(Gravity.CENTER_VERTICAL);
         back.setOnClickListener(v -> finish());
-        root.addView(back, new LinearLayout.LayoutParams(-1, dp(42)));
+        root.addView(back, new LinearLayout.LayoutParams(-1, dp(34)));
 
-        TextView title = text("EDUNOOR • ACADEMIC CLASS", 20, true);
-        root.addView(title);
+        TextView title = text("Academic Class", 21, true);
+        root.addView(title, new LinearLayout.LayoutParams(-1, dp(34)));
 
         TextView subtitle = text(
-                "Real class-session flow • knowledge • practice • assessment • revision",
+                "Teach • practise • assess • revise",
                 11, false);
         subtitle.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_muted));
-        root.addView(subtitle);
+        root.addView(subtitle, new LinearLayout.LayoutParams(-1, dp(28)));
 
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
-        content.setPadding(0, dp(12), 0, dp(12));
+        content.setPadding(0, dp(8), 0, dp(14));
 
         ScrollView scroll = new ScrollView(this);
         scroll.setFillViewport(true);
+        scroll.setClipToPadding(false);
         scroll.addView(content);
         root.addView(scroll, new LinearLayout.LayoutParams(-1, 0, 1));
 
@@ -100,7 +108,9 @@ public final class AcademicClassSessionActivity extends Activity {
 
         JSONObject lesson = lessons.get(current);
         String subject = lesson.optString("subject", "").toUpperCase();
-        String title = lesson.optJSONObject("title").optString("sw", lesson.optString("title"));
+        JSONObject titleObject = lesson.optJSONObject("title");
+        String title = titleObject == null ? lesson.optString("title") :
+                titleObject.optString("sw", lesson.optString("title"));
         int duration = lesson.optInt("duration_minutes", 45);
 
         addHeader(subject, title, duration);
@@ -114,26 +124,30 @@ public final class AcademicClassSessionActivity extends Activity {
 
     private void addHeader(String subject, String title, int duration) {
         LinearLayout card = card();
-        TextView s = text(subject + "  •  " + duration + " MIN", 11, true);
+        TextView s = text(subject + "  ·  " + duration + " MIN", 10, true);
         s.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_clay));
         card.addView(s);
-        card.addView(text(title, 20, true));
-        card.addView(text("Ustadh session • evidence of learning required before mastery", 11, false));
-        content.addView(card, params(12));
+        card.addView(text(title, 19, true), new LinearLayout.LayoutParams(-1, dp(34)));
+        TextView meta = text("Ustadh session  ·  evidence of learning before mastery", 10, false);
+        meta.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_muted));
+        card.addView(meta);
+        content.addView(card, params(10));
     }
 
     private void addPhaseRail() {
         String[] phases = {"opening","revision","teach","demonstrate","practice","assessment","homework"};
         LinearLayout rail = new LinearLayout(this);
         rail.setOrientation(LinearLayout.HORIZONTAL);
+        rail.setPadding(0, 0, 0, dp(4));
         for (String p : phases) {
-            TextView b = text(p.equals(phase) ? "● " + p : p, 9, p.equals(phase));
+            TextView b = text(p.equals(phase) ? "• " + p : p, 8.5f, p.equals(phase));
             b.setGravity(Gravity.CENTER);
-            b.setPadding(dp(7), dp(6), dp(7), dp(6));
+            b.setPadding(dp(4), dp(6), dp(4), dp(6));
+            if (p.equals(phase)) b.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_clay));
             b.setOnClickListener(v -> { phase = p; render(); });
-            rail.addView(b, new LinearLayout.LayoutParams(0, dp(38), 1));
+            rail.addView(b, new LinearLayout.LayoutParams(0, dp(34), 1));
         }
-        content.addView(rail, params(4));
+        content.addView(rail, params(2));
     }
 
     private void addCurrentPhase(JSONObject lesson) {
@@ -153,10 +167,12 @@ public final class AcademicClassSessionActivity extends Activity {
                         break;
                     }
                 }
-                if (body.isEmpty()) body = "Select the phase above to conduct this part of the lesson.";
+                if (body.isEmpty()) body = "Select a class phase above.";
             }
         } catch (Exception ignored) {}
-        card.addView(text("CURRENT CLASS PHASE", 10, true));
+        TextView label = text("CLASS PHASE  ·  " + phase.toUpperCase(), 9, true);
+        label.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_clay));
+        card.addView(label);
         TextView bodyView = text(body, 14, false);
         bodyView.setPadding(0, dp(8), 0, 0);
         card.addView(bodyView);
@@ -165,40 +181,46 @@ public final class AcademicClassSessionActivity extends Activity {
 
     private void addObjectives(JSONObject lesson) {
         LinearLayout card = card();
-        card.addView(text("LEARNING OBJECTIVES", 10, true));
+        card.addView(text("LEARNING OBJECTIVES", 9, true));
         card.addView(text(join(lesson.optJSONArray("objectives")), 13, false));
         content.addView(card, params(10));
     }
 
     private void addAssessment(JSONObject lesson) {
         LinearLayout card = card();
-        card.addView(text("QUICK EVIDENCE CHECK", 10, true));
+        card.addView(text("EVIDENCE CHECK", 9, true));
         card.addView(text(join(lesson.optJSONArray("assessment")), 13, false));
         content.addView(card, params(10));
     }
 
     private void addKnowledge(JSONObject lesson) {
         LinearLayout card = card();
-        card.addView(text("CORE KNOWLEDGE", 10, true));
+        card.addView(text("CORE KNOWLEDGE", 9, true));
         JSONObject k = lesson.optJSONObject("knowledge");
         if (k != null) {
-            card.addView(text("SW", 11, true));
-            card.addView(text(k.optString("sw"), 13, false));
-            card.addView(text("EN", 11, true));
-            card.addView(text(k.optString("en"), 13, false));
-            card.addView(text("AR", 11, true));
-            card.addView(text(k.optString("ar"), 14, false));
+            addLanguageBlock(card, "SW", k.optString("sw"));
+            addLanguageBlock(card, "EN", k.optString("en"));
+            addLanguageBlock(card, "AR", k.optString("ar"));
         }
         JSONArray refs = lesson.optJSONArray("references");
         if (refs != null) {
-            card.addView(text("SOURCES / REFERENCES", 10, true));
+            card.addView(text("SOURCE NOTES", 9, true));
             for (int i = 0; i < refs.length(); i++) {
                 JSONObject ref = refs.optJSONObject(i);
-                card.addView(text(ref.optString("type") + " • " + ref.optString("ref")
-                        + (ref.optString("note").isEmpty() ? "" : "\n" + ref.optString("note")), 11, false));
+                if (ref == null) continue;
+                card.addView(text(ref.optString("type") + "  ·  " + ref.optString("ref")
+                        + (ref.optString("note").isEmpty() ? "" : "\n" + ref.optString("note")), 10, false));
             }
         }
         content.addView(card, params(10));
+    }
+
+    private void addLanguageBlock(LinearLayout card, String language, String value) {
+        TextView label = text(language, 8.5f, true);
+        label.setTextColor(getColor(com.zamcan.madrassa.R.color.edunoor_muted));
+        label.setPadding(0, dp(7), 0, dp(2));
+        card.addView(label);
+        card.addView(text(value, 12.5f, false));
     }
 
     private void addNavigation() {
@@ -212,17 +234,17 @@ public final class AcademicClassSessionActivity extends Activity {
         next.setEnabled(current + 1 < lessons.size());
         next.setOnClickListener(v -> { current++; phase = "opening"; render(); });
 
-        row.addView(previous, new LinearLayout.LayoutParams(0, dp(48), 1));
-        row.addView(next, new LinearLayout.LayoutParams(0, dp(48), 1));
+        row.addView(previous, new LinearLayout.LayoutParams(0, dp(46), 1));
+        row.addView(next, new LinearLayout.LayoutParams(0, dp(46), 1));
         content.addView(row, params(10));
     }
 
     private TextView button(String label) {
-        TextView b = text(label, 11, true);
+        TextView b = text(label, 10, true);
         b.setGravity(Gravity.CENTER);
         GradientDrawable bg = new GradientDrawable();
         bg.setColor(getColor(com.zamcan.madrassa.R.color.edunoor_surface));
-        bg.setCornerRadius(dp(14));
+        bg.setCornerRadius(dp(12));
         bg.setStroke(dp(1), getColor(com.zamcan.madrassa.R.color.edunoor_border));
         b.setBackground(bg);
         return b;
@@ -231,7 +253,7 @@ public final class AcademicClassSessionActivity extends Activity {
     private LinearLayout card() {
         LinearLayout c = new LinearLayout(this);
         c.setOrientation(LinearLayout.VERTICAL);
-        c.setPadding(dp(14), dp(12), dp(14), dp(12));
+        c.setPadding(dp(15), dp(13), dp(15), dp(13));
         c.setBackgroundResource(com.zamcan.madrassa.R.drawable.edunoor_canvas);
         return c;
     }
