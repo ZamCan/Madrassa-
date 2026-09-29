@@ -28,8 +28,11 @@
             @mipmap/ic_launcher
         </item>
 
+        <!-- Keep the Android 12+ icon tile on the same earthen surface as
+             the system splash and custom SplashActivity; the old emerald
+             tile created a visible brand/color discontinuity during boot. -->
         <item name="android:windowSplashScreenIconBackgroundColor">
-            @color/edunoor_emerald_deep
+            @color/edunoor_soil_deep
         </item>
 
     </style>
