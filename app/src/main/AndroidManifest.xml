@@ -9,9 +9,6 @@
     package="com.zamcan.madrassa"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Opt-in only: powers the device-events list inside the
-         dual calendar page, requested at runtime when the user
-         taps "connect". Nothing is written or uploaded. -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -30,86 +27,32 @@
         android:localeConfig="@xml/locales_config"
         android:supportsRtl="true">
 
-        <activity
-            android:name=".SoloLearningActivity"
-            android:exported="false" />
+        <activity android:name=".academic.AcademicClassSessionActivity" android:exported="false" />
+        <activity android:name=".SoloLearningActivity" android:exported="false" />
+        <activity android:name="com.zamcan.madrassa.solo.LessonActivity" android:exported="false" />
+        <activity android:name="com.zamcan.madrassa.core.calendar.CalendarActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".auth.parent.ParentLoginActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".auth.ustadh.UstadhLoginActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".InitializationActivity" android:exported="false" />
+        <activity android:name=".RoleDashboardActivity" android:exported="false" />
+        <activity android:name=".IslamicToolsActivity" android:exported="false" />
+        <activity android:name=".registration.MadrassaRegistrationActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
 
-        <activity
-            android:name="com.zamcan.madrassa.solo.LessonActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.zamcan.madrassa.core.calendar.CalendarActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".auth.parent.ParentLoginActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".auth.ustadh.UstadhLoginActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-
-        <activity
-            android:name=".InitializationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".RoleDashboardActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".IslamicToolsActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".registration.MadrassaRegistrationActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <receiver
-            android:name=".salah.AdhanAlarmReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
+        <receiver android:name=".salah.AdhanAlarmReceiver" android:enabled="true" android:exported="false">
+            <intent-filter><action android:name="android.intent.action.BOOT_COMPLETED" /></intent-filter>
         </receiver>
 
-        <receiver
-            android:name=".widget.IslamicCalendarWidgetProvider"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/islamic_calendar_widget_info" />
+        <receiver android:name=".widget.IslamicCalendarWidgetProvider" android:exported="false">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/islamic_calendar_widget_info" />
         </receiver>
 
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true">
-
+        <activity android:name=".SplashActivity" android:exported="true">
             <intent-filter>
-
-                <action
-                    android:name="android.intent.action.MAIN" />
-
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
-
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
-
 </manifest>
