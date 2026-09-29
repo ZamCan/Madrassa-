@@ -3,12 +3,12 @@ package com.zamcan.madrassa;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.Gravity;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.content.Intent;
 
 import com.zamcan.madrassa.core.LanguageManager;
 import com.zamcan.madrassa.data.local.EduNoorDatabase;
@@ -25,7 +25,6 @@ import com.zamcan.madrassa.data.repository.StudentRepository;
 import com.zamcan.madrassa.domain.academic.ClassManagementService;
 import com.zamcan.madrassa.domain.authorization.MadrassaAccessContext;
 import com.zamcan.madrassa.domain.common.IdGenerator;
-import com.zamcan.madrassa.domain.students.StudentClassAssignmentService;
 import java.util.List;
 
 public final class MadrassaOperationsActivity extends Activity {
@@ -70,6 +69,7 @@ public final class MadrassaOperationsActivity extends Activity {
         action(root,getString(R.string.dashboard_quran_levels),getString(R.string.dashboard_quran_levels_sub),()->showLevels());
         action(root,getString(R.string.dashboard_programmes),getString(R.string.dashboard_programmes_sub),()->showProgrammes());
         action(root,getString(R.string.dashboard_academic_content),getString(R.string.dashboard_academic_content_sub),()->showAcademicContent());
+        action(root,"ACADEMIC CLASS STUDIO","Real lessons • teacher flow • practice • assessment • revision",()->startActivity(new Intent(this,com.zamcan.madrassa.academic.AcademicClassSessionActivity.class)));
         action(root,getString(R.string.dashboard_add_class),getString(R.string.dashboard_add_class_sub),()->addClass());
 
         ScrollView scroll=new ScrollView(this); scroll.setFillViewport(true); scroll.addView(root); setContentView(scroll);
