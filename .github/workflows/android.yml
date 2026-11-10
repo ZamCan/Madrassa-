@@ -20,7 +20,9 @@ jobs:
           test -f "$ANDROID_HOME/platforms/android-35/android.jar" || { echo 'Android API 35 platform missing'; exit 1; }
       - name: Unit tests and debug build
         run: |
-          sed -i '/^android\\.aapt2FromMavenOverride=/d' gradle.properties
+          grep -v '^android.aapt2FromMavenOverride=' gradle.properties > gradle.properties.ci
+          mv gradle.properties.ci gradle.properties
+          ! grep -q 'aapt2FromMavenOverride' gradle.properties
           bash ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
       - name: Upload debug APK
         if: success()
