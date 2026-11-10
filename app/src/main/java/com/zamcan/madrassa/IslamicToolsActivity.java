@@ -5,6 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.hardware.GeomagneticField;
+import com.zamcan.madrassa.ui.components.QiblaCompassView;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -43,6 +49,27 @@ import java.util.Locale;
 public final class IslamicToolsActivity extends Activity {
 
     private static final int REQUEST_LOCATION = 71;
+    private SensorManager compassSensors;
+    private Sensor rotationSensor;
+    private QiblaCompassView compassView;
+    private final SensorEventListener compassListener = new SensorEventListener() {
+        @Override public void onSensorChanged(SensorEvent event) {
+            float[] rotation = new float[9];
+            float[] orientation = new float[3];
+            SensorManager.getRotationMatrixFromVector(rotation, event.values);
+            SensorManager.getOrientation(rotation, orientation);
+            double magneticHeading = Math.toDegrees(orientation[0]);
+            GeomagneticField field = new GeomagneticField((float)location.latitude,
+                    (float)location.longitude, 0f, System.currentTimeMillis());
+            double trueHeading = (magneticHeading + field.getDeclination() + 360) % 360;
+            if (compassView != null) compassView.setHeading(trueHeading,
+                    event.accuracy >= SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM);
+        }
+        @Override public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            if (compassView != null && accuracy < SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM)
+                compassView.setHeading(0, false);
+        }
+    };
 
     private LocationProfile location;
     private AdhanSettingsStore settingsStore;
@@ -97,6 +124,8 @@ public final class IslamicToolsActivity extends Activity {
             location = savedLocation;
         }
         settings = settingsStore.load();
+        compassSensors = (SensorManager)getSystemService(SENSOR_SERVICE);
+        rotationSensor = compassSensors.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
 
         int background = getColor(R.color.edunoor_background);
         getWindow().setStatusBarColor(background);
@@ -224,6 +253,12 @@ public final class IslamicToolsActivity extends Activity {
         qiblaValue.setGravity(Gravity.CENTER);
         qiblaValue.setPadding(0, dp(10), 0, dp(4));
         card.addView(qiblaValue);
+        compassView = new QiblaCompassView(this);
+        card.addView(compassView, new LinearLayout.LayoutParams(-1, dp(230)));
+        if (rotationSensor == null) {
+            card.addView(text("Compass sensor unavailable — use the numerical Qibla bearing.", 11,
+                    getColor(R.color.edunoor_muted), false));
+        }
         content.addView(card, cardParams());
     }
 
@@ -330,6 +365,7 @@ public final class IslamicToolsActivity extends Activity {
                     location.latitude,
                     location.longitude
             );
+            if (compassView != null) compassView.setBearing(bearing);
             if (qiblaValue != null) {
                 qiblaValue.setText(getString(
                         R.string.islamic_qibla_value,
@@ -518,4 +554,15 @@ public final class IslamicToolsActivity extends Activity {
             ).show();
         }
     }
+    @Override protected void onResume() {
+        super.onResume();
+        if (compassSensors != null && rotationSensor != null)
+            compassSensors.registerListener(compassListener, rotationSensor, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override protected void onPause() {
+        if (compassSensors != null) compassSensors.unregisterListener(compassListener);
+        super.onPause();
+    }
+
 }
