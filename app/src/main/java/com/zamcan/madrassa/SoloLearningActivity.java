@@ -455,6 +455,12 @@ public class SoloLearningActivity extends Activity {
         mp3.setOnClickListener(v -> startActivity(new Intent(this,
                 com.zamcan.madrassa.solo.QuranAudioLibraryActivity.class)));
         content.addView(mp3, mp3Params);
+        TextView mushaf = EduNoorButton.secondary(this, "۞  Mushaf • Qur'an");
+        LinearLayout.LayoutParams mushafParams = new LinearLayout.LayoutParams(-1, dp(48));
+        mushafParams.bottomMargin = dp(12);
+        mushaf.setOnClickListener(v -> startActivity(new Intent(this,
+                com.zamcan.madrassa.solo.MushafReaderActivity.class)));
+        content.addView(mushaf, mushafParams);
 
         /*
          * =====================================================
