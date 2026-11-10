@@ -359,4 +359,21 @@
     <string name="splash_welcome">Karibu</string>
     <string name="splash_brand">EDU NOOR</string>
 
+    <string name="dashboard_management">Usimamizi wa Madrassa</string>
+    <string name="dashboard_management_detail">Wanafunzi: %1$d  •  Madarasa: %2$d  •  Ada: %3$d</string>
+    <string name="dashboard_students_sub">Orodha ya wanafunzi</string>
+    <string name="dashboard_classes_sub">Madarasa na idadi ya wanafunzi</string>
+    <string name="dashboard_progress_sub">Maendeleo ya kujifunza</string>
+    <string name="dashboard_fees_sub">Ada na malipo</string>
+    <string name="dashboard_quran_levels">Viwango vya Qur'an</string>
+    <string name="dashboard_quran_levels_sub">Hifdh na usomaji</string>
+    <string name="dashboard_programmes_sub">Programu za madrassa</string>
+    <string name="dashboard_academic_content">Maudhui ya masomo</string>
+    <string name="dashboard_academic_content_sub">Mtaala na nyenzo</string>
+    <string name="dashboard_add_class">Ongeza darasa</string>
+    <string name="dashboard_add_class_sub">Unda darasa jipya</string>
+    <string name="dashboard_class_name">Jina la darasa</string>
+    <string name="dashboard_class_code">Msimbo wa darasa</string>
+    <string name="dialog_save">HIFADHI</string>
+    <string name="dashboard_none">Hakuna taarifa kwa sasa</string>
 </resources>
