@@ -34,9 +34,10 @@ public final class SoloAudioPlayer {
                             .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                             .build()
             );
-            player.setDataSource(
-                    context.getAssets().openFd("solo/audio/" + asset)
-            );
+            try (android.content.res.AssetFileDescriptor fd =
+                    context.getAssets().openFd("solo/audio/" + asset)) {
+                player.setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getLength());
+            }
             player.prepare();
             player.setOnCompletionListener(mp -> stop());
             player.start();
