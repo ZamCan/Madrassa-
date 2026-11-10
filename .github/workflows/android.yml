@@ -19,7 +19,9 @@ jobs:
           echo "ANDROID_HOME=$ANDROID_HOME"
           test -f "$ANDROID_HOME/platforms/android-35/android.jar" || { echo 'Android API 35 platform missing'; exit 1; }
       - name: Unit tests and debug build
-        run: bash ./gradlew --no-daemon -Pandroid.aapt2FromMavenOverride= :app:testDebugUnitTest :app:assembleDebug
+        run: |
+          sed -i '/^android\\.aapt2FromMavenOverride=/d' gradle.properties
+          bash ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
       - name: Upload debug APK
         if: success()
         uses: actions/upload-artifact@v4
