@@ -449,6 +449,13 @@ public class SoloLearningActivity extends Activity {
         tools.addView(salah, salahParams);
         content.addView(tools, toolsParams);
 
+        TextView mp3 = EduNoorButton.secondary(this, "♫  Qur'an MP3");
+        LinearLayout.LayoutParams mp3Params = new LinearLayout.LayoutParams(-1, dp(48));
+        mp3Params.bottomMargin = dp(12);
+        mp3.setOnClickListener(v -> startActivity(new Intent(this,
+                com.zamcan.madrassa.solo.QuranAudioLibraryActivity.class)));
+        content.addView(mp3, mp3Params);
+
         /*
          * =====================================================
          * LEARNING AREAS - real offline curriculum categories,
