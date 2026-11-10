@@ -34,6 +34,8 @@
             android:name=".SoloLearningActivity"
             android:exported="false" />
 
+        <activity android:name=".solo.QuranAudioLibraryActivity" android:exported="false" />
+
         <activity
             android:name="com.zamcan.madrassa.solo.LessonActivity"
             android:exported="false" />
