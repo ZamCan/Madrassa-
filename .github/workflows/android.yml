@@ -19,18 +19,28 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: gradle
-      - name: Inspect Android SDK
+      - name: Prepare Android SDK 35
         run: |
+          set -euo pipefail
           echo "ANDROID_HOME=$ANDROID_HOME"
-          test -f "$ANDROID_HOME/platforms/android-35/android.jar" || { echo 'Android API 35 platform missing'; exit 1; }
+          if ! test -f "$ANDROID_HOME/platforms/android-35/android.jar"; then
+            yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0"
+          fi
+          test -s "$ANDROID_HOME/platforms/android-35/android.jar"
       - name: Prepare CI Gradle properties
         run: |
           if test -f gradle.properties; then
             sed '/^android\.aapt2FromMavenOverride=/d' gradle.properties > gradle.properties.ci
             mv gradle.properties.ci gradle.properties
           fi
+      - name: Verify Gradle wrapper and Java
+        run: |
+          test -s gradle/wrapper/gradle-wrapper.jar
+          java -version
+          bash ./gradlew --version
       - name: Unit tests and debug build
-        run: bash ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
+        run: bash ./gradlew --no-daemon --stacktrace :app:testDebugUnitTest :app:assembleDebug
       - name: Verify APK and write checksums
         run: |
           set -eu
