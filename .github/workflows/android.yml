@@ -1,32 +1,56 @@
-name: Android validation
+name: Android validation and preview
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
-      - name: Inspect runner Android SDK
+          cache: gradle
+      - name: Inspect Android SDK
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
           test -f "$ANDROID_HOME/platforms/android-35/android.jar" || { echo 'Android API 35 platform missing'; exit 1; }
-      - name: Unit tests and debug build
+      - name: Prepare CI Gradle properties
         run: |
-          grep -v '^android.aapt2FromMavenOverride=' gradle.properties > gradle.properties.ci
-          mv gradle.properties.ci gradle.properties
-          ! grep -q 'aapt2FromMavenOverride' gradle.properties
-          bash ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
-      - name: Upload debug APK
+          if test -f gradle.properties; then
+            sed '/^android\.aapt2FromMavenOverride=/d' gradle.properties > gradle.properties.ci
+            mv gradle.properties.ci gradle.properties
+          fi
+      - name: Unit tests and debug build
+        run: bash ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
+      - name: Verify APK and write checksums
+        run: |
+          set -eu
+          test -s app/build/outputs/apk/debug/app-debug.apk
+          mkdir -p preview
+          cp app/build/outputs/apk/debug/app-debug.apk preview/EduNoor-preview-debug.apk
+          (cd preview && sha256sum EduNoor-preview-debug.apk > SHA256SUMS.txt)
+          printf 'Commit: %s\nBuild: %s\nArtifact: EduNoor-preview-debug.apk\nStatus: automated debug build only; device verification pending\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > preview/BUILD-INFO.txt
+      - name: Upload installable preview and checksums
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: edunoor-debug
-          path: app/build/outputs/apk/debug/*.apk
+          name: EduNoor-Android-preview
+          path: preview/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload unit-test reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EduNoor-test-reports
+          path: app/build/reports/tests/
+          if-no-files-found: ignore
